@@ -1,4 +1,4 @@
-﻿\documentclass[12pt,a4paper,finnish]{tutthesis}
+\documentclass[12pt,a4paper,finnish]{tutthesis}
  
 % LaTeX-tiedosto opinnäytepohjaksi
 % Tekijä: Sami Paavilainen
@@ -36,7 +36,7 @@
  
 \noindent{\bf\large \textsf{Mikko Pohja}}\\
 {\bf\large \textsf{Maximizing quality in a small budget software project}}\\
-\textsf{Diplomityö}
+\textsf{Master of Science Thesis}
  
 \vspace{8.7cm} % jos kaksi otsikkoriviä vaihda -> 6.7cm
  
@@ -44,10 +44,11 @@
   
 \begin{minipage}[c]{6.8cm}
 \begin{spacing}{1.0}
-\textsf{Tarkastaja: Tarkastaja 1}\\
-\textsf{Tarkastaja ja aihe hyväksytty}\\ 
-\textsf{xxxxxxx tiedekuntaneuvoston}\\
-\textsf{kokouksessa xx.xx.xxxx}\\
+\textsf{Examiners: Tarkastaja 1}\\
+\textsf{Examiners and topic approved in}\\ 
+\textsf{the Information Technology}\\
+\textsf{Department Council meeting on}\\
+\textsf{xx.xx.xxxx}\\
 \end{spacing}
 \end{minipage}
 \end{flushright}
@@ -59,7 +60,7 @@
 \chapter*{TIIVISTELMÄ}
 \begin{spacing}{1.0}
 \textsf{TAMPEREEN TEKNILLINEN YLIOPISTO}\\
-\textsf{xxxxxxxxxxxxx koulutusohjelma}\\
+\textsf{Tietotekniikan koulutusohjelma}\\
 {\bf \textsf{Mikko Pohja: Maximizing quality in a small budget software project}}\\
 \textsf{Diplomityö, xx sivua, x liitesivua}\\
 \textsf{Xxxxxkuu 201x}\\
@@ -77,7 +78,7 @@ Toinen kappale
 \chapter*{ABSTRACT}
 \begin{spacing}{1.0}
 \textsf{TAMPERE UNIVERSITY OF TECHNOLOGY}\\
-\textsf{Master's Degree Programme in xxxxxxx Technology}\\
+\textsf{Master's Degree Programme in Information Technology}\\
 {\bf \textsf{AUTHOR : Title}}\\
 \textsf{Master of Science Thesis, xx pages, x Appendix pages}\\
 \textsf{xxxxxx 201x}\\
@@ -94,7 +95,7 @@ Second paragraph
  
 \newpage
  
-\chapter*{ALKUSANAT}
+\chapter*{PREFACE}
 \noindent Tämä (\textit{d-tyo.tex}) on \LaTeX-pohja Tampereen teknillisen
 yliopiston opinnäytetöitä varten. Samaan pakettiin kuuluu myös
 tiedosto \mbox{\textit{tutthesis.cls}}, joka sisältää taittoteknisiä
@@ -110,7 +111,7 @@ olla joko \textit{.eps}- tai \textit{.pdf}-muodossa riippuen \LaTeX-versiosta.
 %\listoffigures
 %\listoftables
 \newpage
-\chapter*{TERMIT JA NIIDEN MÄÄRITELMÄT}
+\chapter*{TERMS AND DEFINITIONS}
  
  
 \begin{termiluettelo}
@@ -129,16 +130,11 @@ olla joko \textit{.eps}- tai \textit{.pdf}-muodossa riippuen \LaTeX-versiosta.
 % Tästä alkaa varsinainen teksti
 \pagenumbering{arabic}
  
-\chapter{Johdanto}
+\chapter{Introduction}
  
  ECO: Economics of software quality
  ROI: Improving the ROI of software quality--
  
- \section{TODO}
-
-
-
-
  \begin{itemize}
 
 
@@ -148,47 +144,15 @@ olla joko \textit{.eps}- tai \textit{.pdf}-muodossa riippuen \LaTeX-versiosta.
  
  \end{itemize} 
  
- \chapter{Quality Assurance in Futurice}
- 
-TODO
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- \chapter{Startup}
- 
- \section{Budget}
+ SOFTWARE QUALITY
 
-
-
-
- \begin{itemize}
-  \item Startup financing cycle (Valley of Death)
- \end{itemize}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
- \section{Life cycle}
-
-
-
-
- \begin{itemize}
- 
- \item Scope
- \item MVP
- \item Oikeat feature
- \item Validoinnit: I Know I When I See It
- \item Lyhyet sprintit
- 
- \end{itemize}
- 
- \section{Analytics}
- 
- \begin{itemize}
- 
- \item Ominaisuuksien priorisointi (esim. käytön mukaan)
- 
- \end{itemize}
-  
  \chapter{Software Quality}
  
- \section{Software quality in General}
+  \section{Software quality in General}
  
  \begin{itemize}
  
@@ -252,6 +216,38 @@ TODO
  \subsection{Continuous integration}
  
  \subsection{Lean}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	QUALITY ASSURANCE IN STARTUP SOFTWARE PROJECT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \chapter{Quality Assurance in software startup project}
+
+ \section{Startup}
+ 
+ \subsection{Life cycle}
+
+ \begin{itemize}
+
+ \item Startup financing cycle (Valley of Death)
+ \item Iteratiivinen kehitys
+ \item Lyhyet sprintit
+ 
+ \end{itemize}
+ 
+ \subsection{Scope}
+ 
+ \begin{itemize}
+ 
+ \item Analytics
+ \item Ominaisuuksien priorisointi (esim. käytön mukaan)
+ \item Scope
+ \item MVP
+ \item Valitaan oikeat feature
+ \item Validoinnit: I Know I When I See It
+ \item Leanista jotain tännekin
+ 
+ \end{itemize}
  
  \section{Evaluation of QA methods}
  
@@ -265,7 +261,7 @@ TODO
  
  \subsection{Point of diminishing returns}
  
- \subsection{The Don't}
+ \subsection{The Don'ts}
  
  \begin{itemize}
  
@@ -276,8 +272,17 @@ TODO
  
  \end{itemize}
  
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	CASE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
  \chapter{Case: Päikky}
  
+ \section{Quality Assurance in Futurice}
+
+ \section{Project objectives}
+
  \section{QA methods and processes used}
  
  \begin{itemize}
@@ -289,9 +294,6 @@ TODO
  
  \section{Achieved quality in the project}
 
-
-
-
  \begin{itemize}
  
  \item Kartoitetaan bugit (Mailit, Pivotal, Repo)  
@@ -299,12 +301,16 @@ TODO
  
  \end{itemize}
  
- \chapter{Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	CONCLUSIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \chapter{Conclusions}
  
 % lähdeluettelo
 \newpage
-\addcontentsline{toc}{chapter}{Lähteet} % Lisää tämäkin sisällysluetteloon
-\renewcommand{\bibname}{Lähteet} 
+\addcontentsline{toc}{chapter}{References} % Lisää tämäkin sisällysluetteloon
+\renewcommand{\bibname}{References} 
 \begin{thebibliography}{99}
 \bibitem{Hirs} Hirsjärvi, S., Remes, P., ja Sajavaara, P. 2005. Tutki ja
   kirjoita, 11. painos. Helsinki, Tammi. 436 s. 
@@ -317,8 +323,8 @@ Carlisle, D., Rowley, C. 2004. The Latex Companion, 2. painos. Boston, Addison-W
 %\bibliographystyle{plain}
 %\bibliography{kirjat}
  
-\appendix
-\renewcommand{\chaptername}{Liite}
+%\appendix
+%\renewcommand{\chaptername}{Liite}
  
-\chapter{Liitteitä}
+%\chapter{Liitteitä}
 \end{document}
