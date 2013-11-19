@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": "/C/Users/mpoh/Documents/Koulu/Dippa/dtyo"
+		}
+	],
+	"build_systems":
+    [
+        {
+            "name": "pdflatex",
+            "cmd": ["pdflatex", "-interaction=nonstopmode", "DippaLatex.tex"],
+			"working_dir": "C:/Users/mpoh/Documents/Koulu/Dippa/dtyo"
+        }
+    ]
+}

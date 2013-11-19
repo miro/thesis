@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,finnish]{tutthesis}
+\documentclass[12pt,a4paper,finnish]{tillbehor/tutthesis}
  
 % LaTeX-tiedosto opinnäytepohjaksi
 % Tekijä: Sami Paavilainen
@@ -9,322 +9,49 @@
 
 \usepackage[utf8]{inputenc}
 
-
-
-
-
-
-
-
 \usepackage[small]{caption}% kuvatekstien kirjasinkoko ja asettelu
 %omia käskyjä voi lisätä tähän väliin, esim. \newcommand{\angs}{\textsl{\AA}}
 \pagenumbering{Roman}
 % alkuvalmistelut loppuu
  
 \begin{document}
- 
-\thispagestyle{empty}
- 
-\vspace*{-.5cm}\noindent
- 
-% If thesis is in English, use the file "tut-logo"
-% instead of "tty-logo" in the following:
- 
-\includegraphics[width=8cm]{tut-logo}
- 
-\vspace{6.8cm}
- 
-\noindent{\bf\large \textsf{Mikko Pohja}}\\
-{\bf\large \textsf{Maximizing quality in a small budget software project}}\\
-\textsf{Master of Science Thesis}
- 
-\vspace{8.7cm} % jos kaksi otsikkoriviä vaihda -> 6.7cm
- 
-\begin{flushright}
-  
-\begin{minipage}[c]{6.8cm}
-\begin{spacing}{1.0}
-\textsf{Examiners: Tarkastaja 1}\\
-\textsf{Examiners and topic approved in}\\ 
-\textsf{the Information Technology}\\
-\textsf{Department Council meeting on}\\
-\textsf{xx.xx.xxxx}\\
-\end{spacing}
-\end{minipage}
-\end{flushright}
- 
-\newpage
- 
-\setcounter{page}{1} % tämä tarvitaan, jottei ensimmäinen sivu kansilehden jälkeen olisi numero 2.
- 
-\chapter*{TIIVISTELMÄ}
-\begin{spacing}{1.0}
-\textsf{TAMPEREEN TEKNILLINEN YLIOPISTO}\\
-\textsf{Tietotekniikan koulutusohjelma}\\
-{\bf \textsf{Mikko Pohja: Maximizing quality in a small budget software project}}\\
-\textsf{Diplomityö, xx sivua, x liitesivua}\\
-\textsf{Xxxxxkuu 201x}\\
-\textsf{Pääaine: }\\
-\textsf{Tarkastajat: }\\
-\textsf{Avainsanat: }\\
-\end{spacing}
- 
-\noindent
-Ensimmäinen kappale
- 
-\noindent
-Toinen kappale
-\newpage
-\chapter*{ABSTRACT}
-\begin{spacing}{1.0}
-\textsf{TAMPERE UNIVERSITY OF TECHNOLOGY}\\
-\textsf{Master's Degree Programme in Information Technology}\\
-{\bf \textsf{AUTHOR : Title}}\\
-\textsf{Master of Science Thesis, xx pages, x Appendix pages}\\
-\textsf{xxxxxx 201x}\\
-\textsf{Major: }\\
-\textsf{Examiner: }\\
-\textsf{Keywords: }\\
-\end{spacing}
- 
-\noindent 
-First paragraph
- 
-\noindent
-Second paragraph
- 
-\newpage
- 
-\chapter*{PREFACE}
-\noindent Tämä (\textit{d-tyo.tex}) on \LaTeX-pohja Tampereen teknillisen
-yliopiston opinnäytetöitä varten. Samaan pakettiin kuuluu myös
-tiedosto \mbox{\textit{tutthesis.cls}}, joka sisältää taittoteknisiä
-lisäyksiä \LaTeX:n alkuperäiseen \textit{report.cls}-luokkatiedostoon.
- 
-Lisäksi otsikkosivua varten tarvitaan tiedosto \textit{tut-logo.xxx}, jonka
-tulee sisältää TTY:n logo. Tiedoston tulee
-olla joko \textit{.eps}- tai \textit{.pdf}-muodossa riippuen \LaTeX-versiosta.
- 
-\newpage
-\tableofcontents
-%\newpage
-%\listoffigures
-%\listoftables
-\newpage
-\chapter*{TERMS AND DEFINITIONS}
- 
- 
-\begin{termiluettelo}
- 
-\item [$\hbar$] Redusoitu Planckin vakio
-\item [SNR] Signaali-kohinasuhde (engl.: Signal to Noise Ratio)
- 
-\end{termiluettelo} 
- 
- 
-\newpage
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter. \ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{}{}}
-\lhead{\fancyplain{}{\leftmark}}
- 
+
+\input{general/c_pretext}
+
 % Tästä alkaa varsinainen teksti
 \pagenumbering{arabic}
  
-\chapter{Introduction}
- 
- ECO: Economics of software quality
- ROI: Improving the ROI of software quality--
- 
- \begin{itemize}
-
-
-
-
- \item Technical debt ECO: Chapter 7
- 
- \end{itemize} 
+\input{general/c_intro}
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
  SOFTWARE QUALITY
-
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
- \chapter{Software Quality}
- 
-  \section{Software quality in General}
- 
- \begin{itemize}
- 
- \item mittaus
- 
- \item tavoitteena luoda arvoa asiakkaalle
- 
- \item Motivaatio:
- 
- \begin{itemize}
- 
- \item ECO: it is gratifying to observe that high quality levels are invariably associated with shorter-than-average development schedules and lower-than-average development costs
- \item ECO: Shortens development schedules, Lowers development costs, Lowers maintenance costs, Reduces warranty costs, Increases customer satisfaction
- \item ECO: Chapter 1, software has become..
- 
- \end{itemize}
- 
- \item Qualityn määritelmä
-
-
-
-
- \begin{itemize}
- 
- \item ECO: Chapter 1
- 
- \end{itemize}
- 
- \end{itemize}
- 
- \section{Methods for improving quality}
- 
- \begin{itemize}
- 
- \item ECO: pretest and tests
- 
- \item ECO: Chapter 3 preventing defects 
- 
- \item ROI: Three main activities: Review, process audit and testing
- 
- \end{itemize}
- 
- \subsection{Testing}
- 
- \begin{itemize}
- 
- \item Crash, Smoke and Kattava testaus
- 
- \item ECO: Chapter 5
- 
- \end{itemize}
- 
- \subsection{Reviews, Inspections and other pretest procedures}
- 
- \begin{itemize}
-  
- \item ECO: chapter 4, pretest defect removal
- 
- \end{itemize}
- 
- \subsection{Continuous integration}
- 
- \subsection{Lean}
+ \input{quality/c_quality}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	QUALITY ASSURANCE IN STARTUP SOFTWARE PROJECT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
- \chapter{Quality Assurance in software startup project}
-
- \section{Startup}
- 
- \subsection{Life cycle}
-
- \begin{itemize}
-
- \item Startup financing cycle (Valley of Death)
- \item Iteratiivinen kehitys
- \item Lyhyet sprintit
- 
- \end{itemize}
- 
- \subsection{Scope}
- 
- \begin{itemize}
- 
- \item Analytics
- \item Ominaisuuksien priorisointi (esim. käytön mukaan)
- \item Scope
- \item MVP
- \item Valitaan oikeat feature
- \item Validoinnit: I Know I When I See It
- \item Leanista jotain tännekin
- 
- \end{itemize}
- 
- \section{Evaluation of QA methods}
- 
- \begin{itemize}
-  
- \item ECO: We use these quality metrics to compare a number of quality improvement techniques at each stage of the software development life cycle and quantify their efficacy using data from real-world applications.
- 
- \end{itemize}
- 
- \subsection{Methods in different phases of the life cycle}
- 
- \subsection{Point of diminishing returns}
- 
- \subsection{The Don'ts - Things to avoid}
- 
- \begin{itemize}
- 
- \item Liittyy vahvasti Leanin Wasteen
- \item Älä raportoi bugeja, joista tiedät, ettei niitä korjata
- \item Ei turhia raportteja
- \item ECO: Cost per defect => paras tulos bugisimmassa projektissa
- 
- \end{itemize}
- 
+\input{qa_startup/c_qa_startup}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	CASE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- \chapter{Case: Päikky}
- 
- \section{Quality Assurance in Futurice}
+\input{case/c_case}
 
- \section{Project objectives}
-
- \section{QA methods and processes used}
- 
- \begin{itemize}
- 
- \item Käytetyt QA-metodit
- \item Kerrotaan prosessista ja tiimistä
- 
- \end{itemize}
- 
- \section{Achieved quality in the project}
-
- \begin{itemize}
- 
- \item Kartoitetaan bugit (Mailit, Pivotal, Repo)  
- \item Asiakkaan ja loppukäyttäjien tyytyväisyys
- 
- \end{itemize}
- 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	CONCLUSIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- \chapter{Conclusions}
- 
-% lähdeluettelo
-\newpage
-\addcontentsline{toc}{chapter}{References} % Lisää tämäkin sisällysluetteloon
-\renewcommand{\bibname}{References} 
-\begin{thebibliography}{99}
-\bibitem{Hirs} Hirsjärvi, S., Remes, P., ja Sajavaara, P. 2005. Tutki ja
-  kirjoita, 11. painos. Helsinki, Tammi. 436 s. 
-\bibitem{Mittelbach} Mittelbach, F., Goossens, M., Braams, J., 
-Carlisle, D., Rowley, C. 2004. The Latex Companion, 2. painos. Boston, Addison-Wesley. 1120 s.
- 
-\end{thebibliography}
- 
-% seuraavia voi käyttää bibtex:n kanssa (edellyttää tiedoston kirjat.bib)
-%\bibliographystyle{plain}
-%\bibliography{kirjat}
- 
-%\appendix
-%\renewcommand{\chaptername}{Liite}
+\input{conclusions/c_conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	REFERENCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{general/c_references}
  
 %\chapter{Liitteitä}
 \end{document}

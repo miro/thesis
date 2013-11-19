@@ -1,0 +1,704 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"background",
+				"background-position"
+			],
+			[
+				"areaAns",
+				"areaAnswers"
+			],
+			[
+				"questi",
+				"questionResult"
+			],
+			[
+				"question",
+				"questionResult"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"b",
+				"bold"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"hide",
+				"hidePreview"
+			],
+			[
+				"show",
+				"showPreview"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"background-",
+				"background-image"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"assertTe",
+				"test.assertSelectorHasText"
+			],
+			[
+				"allerg",
+				"allergyText"
+			],
+			[
+				"upda",
+				"updateText"
+			],
+			[
+				"Assert",
+				"test.assertEquals"
+			],
+			[
+				"waitFor",
+				"waitForSelector"
+			],
+			[
+				"ass",
+				"test.assertSelectorHasText"
+			],
+			[
+				"getEle",
+				"getElementInfo"
+			],
+			[
+				"wa",
+				"waitUntilVisible"
+			],
+			[
+				"wait",
+				"waitUntilVisible"
+			],
+			[
+				"price",
+				"priceSorted"
+			],
+			[
+				"class",
+				"case class	case class"
+			],
+			[
+				"log",
+				"logWithLabel"
+			],
+			[
+				"us",
+				"usernameField"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"address",
+				"addressBookAsArray"
+			],
+			[
+				"to",
+				"toLowerCase"
+			],
+			[
+				"Location",
+				"LocationUpdate"
+			],
+			[
+				"start",
+				"startService"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "DippaLatex.tex",
+			"settings":
+			{
+				"buffer_size": 1905,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/User/DippaBuild.sublime-build",
+			"settings":
+			{
+				"buffer_size": 71,
+				"line_ending": "Windows",
+				"name": "untitled.sublime-build"
+			}
+		},
+		{
+			"file": "general/c_intro.tex",
+			"settings":
+			{
+				"buffer_size": 186,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "general/c_pretext.tex",
+			"settings":
+			{
+				"buffer_size": 2612,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/User/DippaBuild.sublime-build",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Snippet: casthe",
+				"Snippet: Casper.then()"
+			],
+			[
+				"Snippet: cspc",
+				"Snippet: Casper.each()"
+			],
+			[
+				"Prefe",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"Snippet: cs",
+				"Snippet: Casper test suite"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/DippaLatex.toc",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/c_qa_startup",
+		"/C/Users/mpoh/Documents/HSAndroid/GCMTestActivity.java",
+		"/C/Dev/svn/trunk/.classpath",
+		"/C/Dev/other/RTSPoc/app/controllers/Application.scala",
+		"/C/Dev/other/RTSPoc/app/controllers/API.scala",
+		"/C/Dev/other/RTSPoc/app/util/Secured.scala",
+		"/C/Dev/git/idea/helen-mukava/webapp/app/controllers/Energiahaukka.scala",
+		"/C/Dev/git/rakettipeli/.gitignore",
+		"/C/Users/mpoh/Downloads/d-tyo.tex",
+		"/C/Users/mpoh/Downloads/tutthesis.cls",
+		"/C/Dev/svn/trunk/signature_keystore/password.txt",
+		"/C/Users/mpoh/Documents/Hackatron-talk.txt",
+		"/C/Users/mpoh/Documents/HSAndroid/tmp/.classpath",
+		"/C/Users/mpoh/Downloads/DippaLatex.txt",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/DippaLatex.tex",
+		"/C/Dev/git/elenia/elenia_form_poll/template/team_template.html",
+		"/C/Dev/git/rakettipeli/README.md",
+		"/C/Dev/git/tana-mvp-dashboard/client/bower.json",
+		"/C/Dev/git/tana-mvp-dashboard/client/app/scripts/main.js",
+		"/C/Dev/git/tana-mvp-dashboard/client/.bowerrc",
+		"/C/Program Files/Lightworks/config.dat",
+		"/E/Biisit.txt",
+		"/C/Dev/svn/trunk/.classpath.r403",
+		"/C/Users/mpoh/AppData/Local/Temp/7zOA3B9.tmp/SPNSBroadcastReceiver.class",
+		"/C/Dev/git/elenia/elenia_form_poll/nocommit/areas.json",
+		"/C/Dev/git/elenia/elenia_form_poll/css/reset.css",
+		"/C/Dev/git/elenia/elenia_form_poll/api/submit.php",
+		"/C/Dev/git/elenia/elenia_form_poll/js/jquery-tmpl.jquery.json",
+		"/C/Users/mpoh/Documents/Metso/UX-test/test.css",
+		"/C/Users/mpoh/Documents/Elenia/Lomake/css/lomake.css",
+		"/C/Dev/git/elenia/elenia_form_poll/index.html",
+		"/C/Users/mpoh/Documents/Elenia/Lomake/lomake.html",
+		"/C/Users/mpoh/Documents/Elenia/Lomake/lomake.js",
+		"/C/Dev/git/elenia/elenia_form_poll/js/main.js",
+		"/C/Users/mpoh/Documents/Elenia/Lomake/lomake.css",
+		"/C/Users/mpoh/Documents/Metso/UX-test/test.html",
+		"/C/Users/mpoh/Documents/Dropbox/Public/uxtest/test.html",
+		"/C/Users/mpoh/Documents/Elenia/lomake.html",
+		"/C/Dev/other/RTSPoc/public/gmaps.html",
+		"/C/Users/mpoh/Pictures/Rauniokartanot/JPS/HDR_7858.SH",
+		"/C/Dev/other/RTSPoc/Tileloop.scala",
+		"/C/Dev/other/ruuhka/ruuhka/app/Global.scala",
+		"/C/Dev/other/RTSPoc/getLocationByBearAndDist.scalaish",
+		"/C/Dev/other/ruuhka/ruuhka/app/util/TKL.scala",
+		"/C/Dev/git/helen-mukava/webapp/app/controllers/Energiahaukka.scala",
+		"/C/Dev/git/helen-mukava/csv2json/src/main/scala/parser/Consumption2Json.scala",
+		"/C/Dev/git/helen-mukava/webapp/app/utils/Secured.scala",
+		"/C/Users/mpoh/hjackpasscode",
+		"/C/Users/mpoh/kanava.m3u",
+		"/E/DCIM/100CANON/HDR_8083.SH",
+		"/C/Dev/other/tmp/NFC/AndroidManifest.xml",
+		"/C/Dev/other/tmp/NFC/src/com/netmagazine/nfcdemo/CardActivity.java",
+		"/C/Dev/other/tmp/tmp2/nfc/.gitignore",
+		"/C/Dev/other/tmp/NFC/src/com/netmagazine/nfcdemo/MainActivity.java",
+		"/C/Dev/git/paikky/mukavait-paivahoito-kindergarten-ui/Gruntfile.js",
+		"/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Dev/git/paikky/mukavait-paivahoito-family-ui/tests/test/test_children_visible.js",
+		"/C/Dev/git/paikky/mukavait-paivahoito-family-ui/tests/test/test_children_present.js",
+		"/C/Users/mpoh/git/paikky/mukavait-paivahoito-kindergarten-ui/test-results.xml",
+		"/C/Users/mpoh/git/paikky/mukavait-paivahoito-kindergarten-ui/googlelinks.js",
+		"/C/Dev/phantomjs/README.md",
+		"/C/Dev/scripts/helen/consumptionReader.scala",
+		"/C/Dev/scripts/helen/heatingByHour.json",
+		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/HistoryUtils.scala",
+		"/C/Users/mpoh/git/helen-mukava/csv2json/src/main/scala/parser/Consumption2Json.scala",
+		"/C/Users/mpoh/git/helen-mukava/csv2json/consumptionByHour.json",
+		"/C/Users/mpoh/git/helen-mukava/csv2json/heatingByHour.json",
+		"/C/Users/mpoh/git/helen-mukava/csv2json/pricesByHour.json",
+		"/C/Users/mpoh/git/helen-mukava/webapp/public/helen/consumptionByHour.json",
+		"/C/Users/mpoh/Documents/Helen/Summary-doc/consumptiondata.csv",
+		"/C/Users/mpoh/git/helen-mukava/webapp/public/helen/heatingByHour.json",
+		"/C/Users/mpoh/Documents/Helen/Summary-doc/heatingdata.csv",
+		"/C/Users/mpoh/git/helen-mukava/webapp/logs/application.log",
+		"/C/Users/mpoh/git/helen-mukava/webapp/public/helen/pricesByHour.json",
+		"/C/Users/mpoh/Documents/Helen/Summary-doc/pricedata.csv",
+		"/C/Dev/scripts/helen/consumptionByHour.json",
+		"/C/Dev/scripts/helen/tuntidata_wanha.csv",
+		"/C/Dev/scripts/helen/jukkaparseri/src/main/scala/parser/HelenCsv2Json.scala",
+		"/C/Dev/other/Hero/Android/LocalHero/src/util/HeroUtil.java",
+		"/C/Dev/other/Hero/Android/LocalHero/src/ServerCommunication/ServerConstants.java",
+		"/C/Users/mpoh/git/helen-mukava/webapp/app/models/TemperatureHistoryItem.scala",
+		"/C/Dev/scripts/helen/tuntidata.csv",
+		"/C/Users/mpoh/git/helen-mukava/webapp/app/controllers/There.scala",
+		"/C/Dev/other/Hero/Android/LocalHero/src/localHeroes/LocalHero/RouteListView.java",
+		"/C/Dev/other/Hero/Android/LocalHero/src/Route/Route.java",
+		"/C/Dev/other/Hero/Android/LocalHero/src/ServerCommunication/ServerConnection.java",
+		"/C/Dev/other/Hero/Android/LocalHero/src/Data/RouteFactory.java",
+		"/C/Dev/scripts/helen/spotprices.csv",
+		"/C/Dev/scripts/helen/jukkaparseri/pricesByHour.json",
+		"/C/Users/mpoh/git/helen-mukava/webapp/.gitignore",
+		"/C/Dev/other/Hero/Android/.gitignore",
+		"/C/Dev/scripts/helen/pricesByHour.json",
+		"/C/Dev/scripts/helen/jukkaparseri/heatingByHour.json",
+		"/C/Dev/scripts/helen/priceReader.scala",
+		"/C/Users/mpoh/Documents/Helen/Kotispot_01012012-25032013.csv",
+		"/C/Users/mpoh/Documents/Helen/kp2241927_01012012-25032013.csv",
+		"/C/Dev/other/ruuhka/ruuhka/conf/application.conf",
+		"/C/Dev/other/ruuhka/ruuhka/project/Build.scala",
+		"/C/Users/mpoh/git/helen-mukava/webapp/conf/application.conf",
+		"/C/Users/mpoh/git/helen-mukava/webapp/app/Global.scala",
+		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/LocalHero/conf/evolutions/default/1.sql",
+		"/C/Users/mpoh/git/helen-mukava/webapp/conf/evolutions/default/1.sql",
+		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/SlickDao.scala",
+		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/Document/luontilauseet.sql",
+		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/Config.scala",
+		"/C/Users/mpoh/git/helen-mukava/webapp/project/Build.scala",
+		"/C/Dev/FP/futurice_frp/mocks.js",
+		"/C/Dev/scripts/helen/consumptionByHour",
+		"/C/Dev/scripts/helen/weatherByDay.csv",
+		"/C/Dev/FP/futurice_frp/main.js",
+		"/C/Dev/FP/futurice_frp/README.md",
+		"/C/Users/mpoh/.gitconfig",
+		"/C/Dev/FP/futurice_fp/address-book.js",
+		"/C/Dev/FP/futurice_fp/index.html",
+		"/C/Dev/FP/futurice_fp/main.js",
+		"/C/Users/mpoh/Documents/Helen/Datatarpeet.txt",
+		"/C/Users/mpoh/Downloads/luontilauseet.sql",
+		"/C/Dev/other/ruuhka/ruuhka/app/model/LocationUpdate.scala",
+		"/C/Users/mpoh/.ssh/id_rsa.pub",
+		"/C/Dev/other/ruuhka/ruuhka/app/controllers/Application.scala",
+		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/.git/config",
+		"/C/Dev/other/1.sql",
+		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/.gitignore",
+		"/C/Dev/other/ruuhka/db/play.trace.db",
+		"/C/Dev/other/ruuhka/ruuhka/conf/evolutions/default/1.sql.disable.sql",
+		"/C/Dev/other/ruuhka/ruuhka/conf/routes",
+		"/C/Dev/other/Hero/Backend/.gitignore"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"*.scala",
+			"",
+			"C:\\Dev\\git\\paikky\\mukavait-paivahoito-family-ui\\tests\\test",
+			"",
+			"C:\\Dev\\git\\paikky\\mukavait-paivahoito-kindergarten-ui",
+			"<open folders>",
+			"C:\\Users\\mpoh\\git\\paikky\\mukavait-paivahoito-kindergarten-ui"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"enable",
+			"itemize",
+			"{itemize",
+			"\\par",
+			"\\chapter",
+			"chapter",
+			"latin",
+			";",
+			"]",
+			"Message",
+			"\n",
+			"bodyText",
+			"1379303581345",
+			",",
+			"id",
+			"1379303581345",
+			"1379134664122",
+			"Worms",
+			"&",
+			"console.",
+			"this",
+			"span",
+			"left",
+			"team_deta",
+			"data-id",
+			"arrow_box",
+			":&nbps;",
+			"_1",
+			"_2",
+			"_1",
+			"</span>",
+			"12:56 <xxxxx>",
+			"@teosd",
+			"style",
+			"%.",
+			"!<%#/",
+			"writes",
+			"yield",
+			"map",
+			"displayMessage",
+			"Vili Holappa exists in guardian list",
+			"Vili",
+			"editable",
+			"identification",
+			"_renderTrustees",
+			"waitForResource",
+			"casper.fill",
+			"fill",
+			"nth",
+			"i18n.translate.bind",
+			"URL fragment is #home",
+			"tester",
+			"test_*.js",
+			"homepageURL",
+			"4.019",
+			",",
+			"\\n",
+			",",
+			".",
+			",",
+			".",
+			",",
+			"},",
+			" \"price\": ",
+			"{\"time\": ",
+			"},",
+			" \"heating\": ",
+			"{\"time\": ",
+			"1356991200000",
+			"},",
+			" \"consumption\": ",
+			"{\"time\": ",
+			"1365494400000",
+			"src",
+			"1350421200000",
+			"-",
+			"<br>\\n",
+			"<br>",
+			",",
+			"json",
+			"\\n",
+			"\\",
+			",",
+			"\\n",
+			",",
+			"\\n",
+			",",
+			";",
+			",",
+			";",
+			",",
+			"	",
+			",",
+			"(:0)",
+			":0",
+			";",
+			",",
+			";",
+			"\\n",
+			";",
+			"{",
+			"\\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			";\\n",
+			",\\n",
+			".",
+			" + ",
+			".",
+			";",
+			",",
+			";",
+			",",
+			";",
+			"",
+			"consumptionSrc",
+			"0.0",
+			"\\n",
+			", ",
+			".",
+			", ",
+			" ,",
+			".",
+			",",
+			".",
+			",",
+			".",
+			",",
+			".",
+			",",
+			".",
+			"\\i",
+			"},{\"ts\":0, \"price\":",
+			",\"price\":",
+			".",
+			",\"price\":",
+			"}\\n{",
+			"}{",
+			"{{",
+			"},\\n{",
+			"},{"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "DippaLatex.tex",
+					"settings":
+					{
+						"buffer_size": 1905,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/User/DippaBuild.sublime-build",
+					"settings":
+					{
+						"buffer_size": 71,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "general/c_intro.tex",
+					"settings":
+					{
+						"buffer_size": 186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "general/c_pretext.tex",
+					"settings":
+					{
+						"buffer_size": 2612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								147,
+								147
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 422.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 215.0,
+	"status_bar_visible": true
+}
