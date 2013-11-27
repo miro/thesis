@@ -30,3 +30,7 @@
 *.vrb
 *.xdy
 *.tdo
+*.exe
+*.txt
+DippaLatex.pdf
+sumatrapdfcache/

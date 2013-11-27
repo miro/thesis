@@ -8,8 +8,9 @@
 	"build_systems":
     [
         {
+			"shell": true,
             "name": "pdflatex",
-            "cmd": ["pdflatex", "-interaction=nonstopmode", "DippaLatex.tex"],
+            "cmd": ["pdflatex -interaction=nonstopmode DippaLatex.tex & bibtex DippaLatex.aux & pdflatex -interaction=nonstopmode DippaLatex.tex & pdflatex -interaction=nonstopmode DippaLatex.tex"],
 			"working_dir": "C:/Users/mpoh/Documents/Koulu/Dippa/dtyo"
         }
     ]

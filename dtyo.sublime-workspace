@@ -144,24 +144,66 @@
 	"buffers":
 	[
 		{
-			"file": "DippaLatex.tex",
+			"contents": "\\section{Software quality in General}\n \n\\subsection{Software quality defined}\n\nQuality is an attribute of the item in question. It is often described as a combination of qualitative and quantitative attributes. Quality is an ambiguous attribute, because it is subjective and thus differs when viewed from different perspectives. American Society for Quality has two definitions for technical quality: 1. the products ability to satisfy its needs; 2. the products lack of deficiencies [VIITE American Society for Quality] \nIn software business, quality has also multiple viewpoints. Quality has different meanings for vendors, customers, end-users etc. \n\n \\begin{itemize}\n \n \\item ECO: Chapter 1\n \n \\item Haikala s.48: toiminnan laatu vs tuotteen laatu\n\n \\item Haikala s.49 verification/validation 'tehdäänkö tuotetta oikein' ja 'tehdäänkö oikeaa tuotetta'\n\n \\item mittaus\n \n \\item Subjektiivista\n\n \\item Virallinen, ISO 9126: FUnctionality, reliability, usability, efficiency, maintainability, portability\n\n \\item tavoitteena luoda arvoa asiakkaalle\n\n\\end{itemize}\n\n\\subsection{Motivation}\n\nSoftware is one of the most used type of product in human history. At the same time it has one of the highest failure rates of any type of product mainly due to poor quality. With those facts, it is clear that the total influence of low quality software is considerable in both money and time. Still it is a known fact that a common practise to cut costs is reducing the effort used in software quality. Convincing the payer to allow using effort to achieve good quality can be difficult but crucial. The topic is widely researched and the results speak in behalf of quality.\n\nPhil Crosby has made popular a concept that establishing a quality program will return in savings more than the program costs and thus \"quality is free\" [VIITE Quality is free]. Even though Crosbys concept is used mainly in manufacturing sector, it has some truth that can apply to software business.  In addition, the \"cost of quality\" is a slightly inappropriate term, considering that quality in itself doesn't create costs but the lack of it. \n\nStudies have shown that software quality has huge impact on project costs and success. Measurements on 10000 function point projects show that about 31\\% of projects that size come to an end by cancellation. The average cost of these cancelled projects is about \\$35,000,000. Succesfull projects the same size with good quality have about 40\\% lower costs. These figures endorse the effort put to the software quality and make it clear that at least in large scale projects, quality control shouldn't be ignored.\n\nCapers Jones has listed several points that make high quality a major enocomic benefit.\n\nViittaus \\cite{jones2011economics}\n\n \\begin{itemize}\n %\\item ECO: Cancellation 31\\% for 10000 function point projects. Costs 35M\\$ vs high quality 20m\\$\n \\item ECO: it is gratifying to observe that high quality levels are invariably associated with shorter-than-average development schedules and lower-than-average development costs\n \\item ECO: page 19 Reduces the odds of large-system cancellations, Shortens development schedules, Lowers development costs, Lowers maintenance costs, Reduces warranty costs, Increases customer satisfaction\n % \\item ECO: Chapter 1, software has become..\n \n \\end{itemize}\n",
+			"file": "quality/s_quality_general.tex",
+			"file_size": 3227,
+			"file_write_time": 130297710363777494,
 			"settings":
 			{
-				"buffer_size": 1905,
+				"buffer_size": 3325,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/User/DippaBuild.sublime-build",
+			"file": "/C/Users/mpoh/Downloads/bugreport-2013-11-25-16-16-03.txt",
 			"settings":
 			{
-				"buffer_size": 71,
-				"line_ending": "Windows",
-				"name": "untitled.sublime-build"
+				"buffer_size": 7103486,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "general/c_intro.tex",
+			"file": "/C/Users/mpoh/Downloads/d-tyo.tex",
+			"settings":
+			{
+				"buffer_size": 6377,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dtyo.sublime-project",
+			"settings":
+			{
+				"buffer_size": 445,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "DippaLatex.tex",
+			"settings":
+			{
+				"buffer_size": 1911,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "quality/c_quality.tex",
+			"settings":
+			{
+				"buffer_size": 412,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "quality/s_quality_methods.tex",
+			"settings":
+			{
+				"buffer_size": 370,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "general/c_references.tex",
 			"settings":
 			{
 				"buffer_size": 186,
@@ -169,18 +211,18 @@
 			}
 		},
 		{
-			"file": "general/c_pretext.tex",
+			"file": "books.bib",
 			"settings":
 			{
-				"buffer_size": 2612,
+				"buffer_size": 285,
 				"line_ending": "Windows"
 			}
 		}
 	],
-	"build_system": "Packages/User/DippaBuild.sublime-build",
+	"build_system": "pdflatex",
 	"command_palette":
 	{
-		"height": 58.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
@@ -215,13 +257,35 @@
 		"menu_visible": true,
 		"show_minimap": false,
 		"show_open_files": false,
-		"show_tabs": false,
+		"show_tabs": true,
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
 	"file_history":
 	[
+		"/C/Users/mpoh/Downloads/The_Economics_of_Software_Quality (1).bibtex",
+		"/C/Dev/other/somepaska/some/routes/index.js",
+		"/C/Dev/other/somepaska/some/README.md",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/DippaLatex.toc",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/DippaLatex.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/general/c_intro.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/general/c_pretext.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/c_quality.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/s_quality_methods.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/ss_lean.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/ss_CI.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/ss_rev_insp_other.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/ss_testing.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/qa_startup/c_qa_startup.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/qa_startup/s_evaluation.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/qa_startup/s_startup.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/conclusions/c_conclusions.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/case/c_case.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/case/s_methods_processes.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/case/s_objectives.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/case/s_qa_futurice.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/dtyo.sublime-project",
+		"/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/User/DippaBuild.sublime-build",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/c_qa_startup",
 		"/C/Users/mpoh/Documents/HSAndroid/GCMTestActivity.java",
 		"/C/Dev/svn/trunk/.classpath",
@@ -236,7 +300,6 @@
 		"/C/Users/mpoh/Documents/Hackatron-talk.txt",
 		"/C/Users/mpoh/Documents/HSAndroid/tmp/.classpath",
 		"/C/Users/mpoh/Downloads/DippaLatex.txt",
-		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/DippaLatex.tex",
 		"/C/Dev/git/elenia/elenia_form_poll/template/team_template.html",
 		"/C/Dev/git/rakettipeli/README.md",
 		"/C/Dev/git/tana-mvp-dashboard/client/bower.json",
@@ -327,28 +390,7 @@
 		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/SlickDao.scala",
 		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/Document/luontilauseet.sql",
 		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/Config.scala",
-		"/C/Users/mpoh/git/helen-mukava/webapp/project/Build.scala",
-		"/C/Dev/FP/futurice_frp/mocks.js",
-		"/C/Dev/scripts/helen/consumptionByHour",
-		"/C/Dev/scripts/helen/weatherByDay.csv",
-		"/C/Dev/FP/futurice_frp/main.js",
-		"/C/Dev/FP/futurice_frp/README.md",
-		"/C/Users/mpoh/.gitconfig",
-		"/C/Dev/FP/futurice_fp/address-book.js",
-		"/C/Dev/FP/futurice_fp/index.html",
-		"/C/Dev/FP/futurice_fp/main.js",
-		"/C/Users/mpoh/Documents/Helen/Datatarpeet.txt",
-		"/C/Users/mpoh/Downloads/luontilauseet.sql",
-		"/C/Dev/other/ruuhka/ruuhka/app/model/LocationUpdate.scala",
-		"/C/Users/mpoh/.ssh/id_rsa.pub",
-		"/C/Dev/other/ruuhka/ruuhka/app/controllers/Application.scala",
-		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/.git/config",
-		"/C/Dev/other/1.sql",
-		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/.gitignore",
-		"/C/Dev/other/ruuhka/db/play.trace.db",
-		"/C/Dev/other/ruuhka/ruuhka/conf/evolutions/default/1.sql.disable.sql",
-		"/C/Dev/other/ruuhka/ruuhka/conf/routes",
-		"/C/Dev/other/Hero/Backend/.gitignore"
+		"/C/Users/mpoh/git/helen-mukava/webapp/project/Build.scala"
 	],
 	"find":
 	{
@@ -373,6 +415,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".hs",
+			"hs.",
+			";",
+			"\", \"",
+			"&",
+			"\\",
 			"enable",
 			"itemize",
 			"{itemize",
@@ -524,20 +572,74 @@
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": false
+		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "DippaLatex.tex",
+					"file": "quality/s_quality_general.tex",
 					"settings":
 					{
-						"buffer_size": 1905,
+						"buffer_size": 3325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2718,
+								2718
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 706.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/mpoh/Downloads/bugreport-2013-11-25-16-16-03.txt",
+					"settings":
+					{
+						"buffer_size": 7103486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1013613,
+								1013613
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 247056.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/mpoh/Downloads/d-tyo.tex",
+					"settings":
+					{
+						"buffer_size": 6377,
 						"regions":
 						{
 						},
@@ -553,25 +655,25 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2932.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/User/DippaBuild.sublime-build",
+					"buffer": 3,
+					"file": "dtyo.sublime-project",
 					"settings":
 					{
-						"buffer_size": 71,
+						"buffer_size": 445,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								237,
+								237
 							]
 						],
 						"settings":
@@ -585,11 +687,37 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "general/c_intro.tex",
+					"buffer": 4,
+					"file": "DippaLatex.tex",
 					"settings":
 					{
-						"buffer_size": 186,
+						"buffer_size": 1911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								872,
+								872
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 770.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "quality/c_quality.tex",
+					"settings":
+					{
+						"buffer_size": 412,
 						"regions":
 						{
 						},
@@ -611,24 +739,78 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "general/c_pretext.tex",
+					"buffer": 6,
+					"file": "quality/s_quality_methods.tex",
 					"settings":
 					{
-						"buffer_size": 2612,
+						"buffer_size": 370,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								147,
-								147
+								43,
+								43
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "general/c_references.tex",
+					"settings":
+					{
+						"buffer_size": 186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "books.bib",
+					"settings":
+					{
+						"buffer_size": 285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								31
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
+							"tab_size": 8,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -641,7 +823,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 36.0
 	},
 	"input":
 	{
@@ -672,7 +854,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 422.0
+		"height": 196.0
 	},
 	"replace":
 	{
@@ -699,6 +881,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 215.0,
+	"side_bar_width": 141.0,
 	"status_bar_visible": true
 }
