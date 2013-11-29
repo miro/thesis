@@ -144,29 +144,18 @@
 	"buffers":
 	[
 		{
-			"contents": "\\section{Software quality in General}\n \n\\subsection{Software quality defined}\n\nQuality is an attribute of the item in question. It is often described as a combination of qualitative and quantitative attributes. Quality is an ambiguous attribute, because it is subjective and thus differs when viewed from different perspectives. American Society for Quality has two definitions for technical quality: 1. the products ability to satisfy its needs; 2. the products lack of deficiencies [VIITE American Society for Quality] \nIn software business, quality has also multiple viewpoints. Quality has different meanings for vendors, customers, end-users etc. \n\n \\begin{itemize}\n \n \\item ECO: Chapter 1\n \n \\item Haikala s.48: toiminnan laatu vs tuotteen laatu\n\n \\item Haikala s.49 verification/validation 'tehdäänkö tuotetta oikein' ja 'tehdäänkö oikeaa tuotetta'\n\n \\item mittaus\n \n \\item Subjektiivista\n\n \\item Virallinen, ISO 9126: FUnctionality, reliability, usability, efficiency, maintainability, portability\n\n \\item tavoitteena luoda arvoa asiakkaalle\n\n\\end{itemize}\n\n\\subsection{Motivation}\n\nSoftware is one of the most used type of product in human history. At the same time it has one of the highest failure rates of any type of product mainly due to poor quality. With those facts, it is clear that the total influence of low quality software is considerable in both money and time. Still it is a known fact that a common practise to cut costs is reducing the effort used in software quality. Convincing the payer to allow using effort to achieve good quality can be difficult but crucial. The topic is widely researched and the results speak in behalf of quality.\n\nPhil Crosby has made popular a concept that establishing a quality program will return in savings more than the program costs and thus \"quality is free\" [VIITE Quality is free]. Even though Crosbys concept is used mainly in manufacturing sector, it has some truth that can apply to software business.  In addition, the \"cost of quality\" is a slightly inappropriate term, considering that quality in itself doesn't create costs but the lack of it. \n\nStudies have shown that software quality has huge impact on project costs and success. Measurements on 10000 function point projects show that about 31\\% of projects that size come to an end by cancellation. The average cost of these cancelled projects is about \\$35,000,000. Succesfull projects the same size with good quality have about 40\\% lower costs. These figures endorse the effort put to the software quality and make it clear that at least in large scale projects, quality control shouldn't be ignored.\n\nCapers Jones has listed several points that make high quality a major enocomic benefit.\n\nViittaus \\cite{jones2011economics}\n\n \\begin{itemize}\n %\\item ECO: Cancellation 31\\% for 10000 function point projects. Costs 35M\\$ vs high quality 20m\\$\n \\item ECO: it is gratifying to observe that high quality levels are invariably associated with shorter-than-average development schedules and lower-than-average development costs\n \\item ECO: page 19 Reduces the odds of large-system cancellations, Shortens development schedules, Lowers development costs, Lowers maintenance costs, Reduces warranty costs, Increases customer satisfaction\n % \\item ECO: Chapter 1, software has become..\n \n \\end{itemize}\n",
 			"file": "quality/s_quality_general.tex",
-			"file_size": 3227,
-			"file_write_time": 130297710363777494,
 			"settings":
 			{
-				"buffer_size": 3325,
+				"buffer_size": 7830,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/mpoh/Downloads/bugreport-2013-11-25-16-16-03.txt",
-			"settings":
-			{
-				"buffer_size": 7103486,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "/C/Users/mpoh/Downloads/d-tyo.tex",
 			"settings":
 			{
-				"buffer_size": 6377,
+				"buffer_size": 6378,
 				"line_ending": "Windows"
 			}
 		},
@@ -214,8 +203,24 @@
 			"file": "books.bib",
 			"settings":
 			{
-				"buffer_size": 285,
+				"buffer_size": 425,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 254,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "DippaLatex.aux",
+			"settings":
+			{
+				"buffer_size": 2756,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -263,6 +268,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/mpoh/Downloads/bugreport-2013-11-25-16-16-03.txt",
 		"/C/Users/mpoh/Downloads/The_Economics_of_Software_Quality (1).bibtex",
 		"/C/Dev/other/somepaska/some/routes/index.js",
 		"/C/Dev/other/somepaska/some/README.md",
@@ -389,8 +395,7 @@
 		"/C/Users/mpoh/git/helen-mukava/webapp/conf/evolutions/default/1.sql",
 		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/SlickDao.scala",
 		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/Document/luontilauseet.sql",
-		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/Config.scala",
-		"/C/Users/mpoh/git/helen-mukava/webapp/project/Build.scala"
+		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/Config.scala"
 	],
 	"find":
 	{
@@ -415,6 +420,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"the criterion in which",
+			"citation",
+			"Shredder",
+			"A ",
+			"A",
+			"a",
+			"A",
+			"a",
+			"A",
+			"a",
+			"A",
+			" \\item",
 			".hs",
 			"hs.",
 			";",
@@ -577,7 +594,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -585,69 +602,42 @@
 					"file": "quality/s_quality_general.tex",
 					"settings":
 					{
-						"buffer_size": 3325,
+						"buffer_size": 7830,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2718,
-								2718
+								2090,
+								2090
 							]
 						],
 						"settings":
 						{
+							"spell_check": true,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 706.0,
+						"translation.y": 373.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Users/mpoh/Downloads/bugreport-2013-11-25-16-16-03.txt",
-					"settings":
-					{
-						"buffer_size": 7103486,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1013613,
-								1013613
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 247056.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "/C/Users/mpoh/Downloads/d-tyo.tex",
 					"settings":
 					{
-						"buffer_size": 6377,
+						"buffer_size": 6378,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								505,
+								505
 							]
 						],
 						"settings":
@@ -655,13 +645,13 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2932.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "dtyo.sublime-project",
 					"settings":
 					{
@@ -672,8 +662,8 @@
 						"selection":
 						[
 							[
-								237,
-								237
+								179,
+								179
 							]
 						],
 						"settings":
@@ -687,7 +677,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "DippaLatex.tex",
 					"settings":
 					{
@@ -698,8 +688,8 @@
 						"selection":
 						[
 							[
-								872,
-								872
+								1911,
+								1911
 							]
 						],
 						"settings":
@@ -713,7 +703,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "quality/c_quality.tex",
 					"settings":
 					{
@@ -739,7 +729,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "quality/s_quality_methods.tex",
 					"settings":
 					{
@@ -765,7 +755,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "general/c_references.tex",
 					"settings":
 					{
@@ -791,19 +781,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "books.bib",
 					"settings":
 					{
-						"buffer_size": 285,
+						"buffer_size": 425,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13,
-								31
+								8,
+								19
 							]
 						],
 						"settings":
@@ -811,6 +801,58 @@
 							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
 							"tab_size": 8,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": ".gitignore",
+					"settings":
+					{
+						"buffer_size": 254,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								211,
+								211
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "DippaLatex.aux",
+					"settings":
+					{
+						"buffer_size": 2756,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -854,7 +896,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 196.0
+		"height": 617.0
 	},
 	"replace":
 	{
@@ -881,6 +923,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 141.0,
+	"side_bar_width": 206.0,
 	"status_bar_visible": true
 }
