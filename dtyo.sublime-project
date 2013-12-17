@@ -10,7 +10,7 @@
         {
 			"shell": true,
             "name": "pdflatex",
-            "cmd": ["pdflatex -interaction=nonstopmode DippaLatex.tex & bibtex DippaLatex.aux & pdflatex -interaction=nonstopmode DippaLatex.tex & pdflatex -interaction=nonstopmode DippaLatex.tex"],
+            "cmd": ["pdflatex -interaction=nonstopmode DippaLatex.tex & bibtex DippaLatex.aux & pdflatex -interaction=nonstopmode DippaLatex.tex & pdflatex -interaction=nonstopmode DippaLatex.tex & SumatraPDF.exe DippaLatex.pdf"],
 			"working_dir": "C:/Users/mpoh/Documents/Koulu/Dippa/dtyo"
         }
     ]

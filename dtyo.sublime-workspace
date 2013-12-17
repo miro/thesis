@@ -144,58 +144,18 @@
 	"buffers":
 	[
 		{
-			"file": "quality/s_quality_general.tex",
-			"settings":
-			{
-				"buffer_size": 7830,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/mpoh/Downloads/d-tyo.tex",
-			"settings":
-			{
-				"buffer_size": 6378,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "dtyo.sublime-project",
-			"settings":
-			{
-				"buffer_size": 445,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "DippaLatex.tex",
-			"settings":
-			{
-				"buffer_size": 1911,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "quality/c_quality.tex",
-			"settings":
-			{
-				"buffer_size": 412,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "quality/s_quality_methods.tex",
 			"settings":
 			{
-				"buffer_size": 370,
+				"buffer_size": 2709,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "general/c_references.tex",
+			"file": "/C/Dev/git/rakettipeli/ohje.txt",
 			"settings":
 			{
-				"buffer_size": 186,
+				"buffer_size": 2943,
 				"line_ending": "Windows"
 			}
 		},
@@ -203,31 +163,79 @@
 			"file": "books.bib",
 			"settings":
 			{
-				"buffer_size": 425,
+				"buffer_size": 631,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": ".gitignore",
+			"file": "quality/ss_testing.tex",
 			"settings":
 			{
-				"buffer_size": 254,
+				"buffer_size": 194,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "DippaLatex.aux",
+			"file": "case/s_methods_processes.tex",
 			"settings":
 			{
-				"buffer_size": 2756,
-				"line_ending": "Unix"
+				"buffer_size": 494,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "qa_startup/s_evaluation.tex",
+			"settings":
+			{
+				"buffer_size": 1586,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "quality/ss_post_release.tex",
+			"settings":
+			{
+				"buffer_size": 25,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "quality/ss_pretest.tex",
+			"settings":
+			{
+				"buffer_size": 1942,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "quality/ss_preventing.tex",
+			"settings":
+			{
+				"buffer_size": 5271,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "qa_startup/c_qa_startup.tex",
+			"settings":
+			{
+				"buffer_size": 121,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "general/c_pretext.tex",
+			"settings":
+			{
+				"buffer_size": 2591,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "pdflatex",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 35.0,
 		"selected_items":
 		[
 			[
@@ -255,7 +263,7 @@
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 160.0
 	},
 	"distraction_free":
 	{
@@ -268,15 +276,30 @@
 	},
 	"file_history":
 	[
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/DippaLatex.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/general/c_intro.tex",
+		"/C/Dev/git/rakettipeli/rakettipeli/idea.txt",
+		"/C/Dev/git/rakettipeli/idea.txt",
+		"/C/Dev/other/hackatron/hackatron/app/scripts/iiallu.js",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/case/c_case.tex",
+		"/C/Users/mpoh/Documents/TANA/protrack-2013-12-05.sql",
+		"/C/Users/mpoh/Documents/TANA/muistilappu.txt",
+		"/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/dtyo.sublime-project",
+		"/C/Dev/git/rakettipeli/Assets/Level1.unity",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/s_quality_general.tex",
+		"/C/Users/mpoh/Downloads/d-tyo.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/c_quality.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/general/c_references.tex",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/books.bib",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/.gitignore",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/DippaLatex.aux",
+		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/general/c_pretext.tex",
 		"/C/Users/mpoh/Downloads/bugreport-2013-11-25-16-16-03.txt",
 		"/C/Users/mpoh/Downloads/The_Economics_of_Software_Quality (1).bibtex",
 		"/C/Dev/other/somepaska/some/routes/index.js",
 		"/C/Dev/other/somepaska/some/README.md",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/DippaLatex.toc",
-		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/DippaLatex.tex",
-		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/general/c_intro.tex",
-		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/general/c_pretext.tex",
-		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/c_quality.tex",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/s_quality_methods.tex",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/ss_lean.tex",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/ss_CI.tex",
@@ -286,11 +309,9 @@
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/qa_startup/s_evaluation.tex",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/qa_startup/s_startup.tex",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/conclusions/c_conclusions.tex",
-		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/case/c_case.tex",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/case/s_methods_processes.tex",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/case/s_objectives.tex",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/case/s_qa_futurice.tex",
-		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/dtyo.sublime-project",
 		"/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/User/DippaBuild.sublime-build",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/c_qa_startup",
 		"/C/Users/mpoh/Documents/HSAndroid/GCMTestActivity.java",
@@ -300,7 +321,6 @@
 		"/C/Dev/other/RTSPoc/app/util/Secured.scala",
 		"/C/Dev/git/idea/helen-mukava/webapp/app/controllers/Energiahaukka.scala",
 		"/C/Dev/git/rakettipeli/.gitignore",
-		"/C/Users/mpoh/Downloads/d-tyo.tex",
 		"/C/Users/mpoh/Downloads/tutthesis.cls",
 		"/C/Dev/svn/trunk/signature_keystore/password.txt",
 		"/C/Users/mpoh/Documents/Hackatron-talk.txt",
@@ -383,19 +403,7 @@
 		"/C/Users/mpoh/git/helen-mukava/webapp/.gitignore",
 		"/C/Dev/other/Hero/Android/.gitignore",
 		"/C/Dev/scripts/helen/pricesByHour.json",
-		"/C/Dev/scripts/helen/jukkaparseri/heatingByHour.json",
-		"/C/Dev/scripts/helen/priceReader.scala",
-		"/C/Users/mpoh/Documents/Helen/Kotispot_01012012-25032013.csv",
-		"/C/Users/mpoh/Documents/Helen/kp2241927_01012012-25032013.csv",
-		"/C/Dev/other/ruuhka/ruuhka/conf/application.conf",
-		"/C/Dev/other/ruuhka/ruuhka/project/Build.scala",
-		"/C/Users/mpoh/git/helen-mukava/webapp/conf/application.conf",
-		"/C/Users/mpoh/git/helen-mukava/webapp/app/Global.scala",
-		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/LocalHero/conf/evolutions/default/1.sql",
-		"/C/Users/mpoh/git/helen-mukava/webapp/conf/evolutions/default/1.sql",
-		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/SlickDao.scala",
-		"/C/Dev/other/Hero/Backend/localhero_thestrikeback/Document/luontilauseet.sql",
-		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/Config.scala"
+		"/C/Dev/scripts/helen/jukkaparseri/heatingByHour.json"
 	],
 	"find":
 	{
@@ -594,54 +602,28 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 8,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "quality/s_quality_general.tex",
+					"file": "quality/s_quality_methods.tex",
 					"settings":
 					{
-						"buffer_size": 7830,
+						"buffer_size": 2709,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2090,
-								2090
+								2583,
+								2583
 							]
 						],
 						"settings":
 						{
 							"spell_check": true,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 373.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/mpoh/Downloads/d-tyo.tex",
-					"settings":
-					{
-						"buffer_size": 6378,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								505,
-								505
-							]
-						],
-						"settings":
-						{
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -651,24 +633,66 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "dtyo.sublime-project",
+					"buffer": 1,
+					"file": "/C/Dev/git/rakettipeli/ohje.txt",
 					"settings":
 					{
-						"buffer_size": 445,
+						"buffer_size": 2943,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								179,
-								179
+								675,
+								675
+							],
+							[
+								694,
+								694
+							],
+							[
+								719,
+								719
+							],
+							[
+								728,
+								728
+							],
+							[
+								756,
+								756
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 198.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "books.bib",
+					"settings":
+					{
+						"buffer_size": 631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								631,
+								631
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -678,18 +702,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "DippaLatex.tex",
+					"file": "quality/ss_testing.tex",
 					"settings":
 					{
-						"buffer_size": 1911,
+						"buffer_size": 194,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1911,
-								1911
+								116,
+								116
 							]
 						],
 						"settings":
@@ -697,25 +721,25 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 770.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "quality/c_quality.tex",
+					"file": "case/s_methods_processes.tex",
 					"settings":
 					{
-						"buffer_size": 412,
+						"buffer_size": 494,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								493,
+								493
 							]
 						],
 						"settings":
@@ -730,18 +754,18 @@
 				},
 				{
 					"buffer": 5,
-					"file": "quality/s_quality_methods.tex",
+					"file": "qa_startup/s_evaluation.tex",
 					"settings":
 					{
-						"buffer_size": 370,
+						"buffer_size": 1586,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								43,
-								43
+								1162,
+								1162
 							]
 						],
 						"settings":
@@ -756,18 +780,18 @@
 				},
 				{
 					"buffer": 6,
-					"file": "general/c_references.tex",
+					"file": "quality/ss_post_release.tex",
 					"settings":
 					{
-						"buffer_size": 186,
+						"buffer_size": 25,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								90,
-								90
+								24,
+								24
 							]
 						],
 						"settings":
@@ -782,25 +806,23 @@
 				},
 				{
 					"buffer": 7,
-					"file": "books.bib",
+					"file": "quality/ss_pretest.tex",
 					"settings":
 					{
-						"buffer_size": 425,
+						"buffer_size": 1942,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8,
-								19
+								1780,
+								1780
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
-							"tab_size": 8,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -810,36 +832,37 @@
 				},
 				{
 					"buffer": 8,
-					"file": ".gitignore",
+					"file": "quality/ss_preventing.tex",
 					"settings":
 					{
-						"buffer_size": 254,
+						"buffer_size": 5271,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								211,
-								211
+								2913,
+								2913
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 360.0,
+						"translation.y": 440.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 9,
-					"file": "DippaLatex.aux",
+					"file": "qa_startup/c_qa_startup.tex",
 					"settings":
 					{
-						"buffer_size": 2756,
+						"buffer_size": 121,
 						"regions":
 						{
 						},
@@ -852,7 +875,33 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "general/c_pretext.tex",
+					"settings":
+					{
+						"buffer_size": 2591,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2333,
+								2333
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -869,7 +918,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 36.0
 	},
 	"layout":
 	{
@@ -896,7 +945,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 617.0
+		"height": 130.0
 	},
 	"replace":
 	{
@@ -923,6 +972,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 206.0,
+	"side_bar_width": 189.0,
 	"status_bar_visible": true
 }
