@@ -1,19 +1,71 @@
  \subsection{Pretest methods}
 
-Capers Jones suggests that in every software project there should be multiple pretest QA methods used. Jones lists a combination of methods for both small and large projects. A small software project is described to have a maximum amount of 1000 function points or 50 000 source code statements. 
+Capers Jones suggests that in every software project there should be multiple pretest QA methods used. Jones lists a combination of methods for both small and large projects. A small software project, in this context, is described to have a maximum amount of 1000 function points or 50 000 source code statements. These small projects are generally executed by a team with less than 6 software developers. These teams usually have no specialists for any quality methods, but the developers are generalists handling requirements, design, coding and testing. In many cases with Agile approach, there are users representative embedded in the team providing requirements and customers viewpoint in real time. Jones reminds that removing defects with high efficiency requires trained and technically skilled software engineers instead of generalists. However, this is not as necessary in small projects, since fortunately these projects have usually low defect potentials.
 
-These small projects are generally executed by a team with less than 6 software developers. These teams have no specialists for any quality methods, but the developers are generalists handling requirements, design, coding and testing. In many cases with Agile approach, there are users representative embedded in the team providing requirements and customers viewpoint in real time. Jones reminds that removing defects with high efficiency requires trained and technically skilled software engineers instead of generalists. However, this is not so necessary in small projects, since fortunately these projects have usually low defect potentials.
+The origins of defects in small studied projects are split into five categories. Source code is the most common origin of defects. About 1.75 defects per function point are found in source code and this leads to 1750 defects in whole projects. Software design is the second most common source of defects. Design is the origin of 1.00 defects per function point. Requirements are causing 0.75 defects per function point and documentation nearly as much with 0.65 defects. Poorly executed fixes are the origin of 0.27 defects per function point. All together these five are the source for 4420 defects in a whole 1000 function point software project. These figures represent the approximate averages and the actual values can be as much as 25\% lower or higher for every source. 
 
-The origins of defects in small studied projects are split into five categories. Source code is the most common origin of defects. About 1.75 defects per function point are found from source code and this leads to 1750 defects in whole projects. Software design is the second most common source of defects. Design is the origin of 1 defects per function point. Requirements are causing 0.75 defects per function point and documentation nearly as much with 0.65 defects. Poorly executed fixes are the origin of 0.27 defects per function point. All together these five sources are the source for 4420 defects in a whole software project. These figures represent the approximate averages and the actual values can be as much as 25\% lower or higher for every source. [TODO: C Jones: Small projects p. 196]
+Jones presents a suite of pretest defect removal activities and their efficiencies for small projects. This suite consists of five methods:
+
+\begin{enumerate}
+
+\item Personal desk checking
+
+\item Scrum sessions
+
+\item Client reviews of specifications
+
+\item Informal peer reviews
+
+\item Static analysis of source code
+
+\end{enumerate}
+
+Each of these forms of defect removal activities are targeted towards a specific type of defects, but other types of defects can be found during the activities. Jones gives several figures for the efficiency of each activity. These figures can only be created by companies that have complete accurate defect measurement programs. Because of this, these figures can vary from context to other and thus are indicative. These figures still illustrate two major problems in the software industry: the removal efficiency levels are comparatively low for most of the removal activities and the defect removal is much harder for requirements and design. The first one leads to a need for numerous kinds of defect removal activities. The latter means that a significant amount of effort must be used to assure the quality of requirements and design. Defects in requirements and design must be removed prior to testing, because the testing cannot find them. Also static analysis is incapable to finding them, because the defects are not bugs found in the code.
+
+
+% STATSIT: p.198
+
+% Desk checking p. 208
+\textbf{Personal desk checking} is a manual operation in where the logic of an algorithm is checked by the creator of the algorithm . The logic used in the desk checking is presented as a pseudo-code rather than the implemented actual program code. The algorithm is executed by a person acting as a computer. The person performing the desk checking carefully follows the algorithm while filling a table of notes with pen and paper. 
+
+The notes form a table which include columns for: line number, variables in use, conditions, input and output. Line number is necessary to identify the line being executed. All variables have a column in alphabetical order. As the value of the variable changes, the appropriate column is filled up. Conditions columns include a column for every condition in the algorithm which shows the result of the condition in either true(T) or false (F). The condition column is updated whenever the condition is evaluated. Input and output columns are used for the inputs got from the user and the output from the program.~\cite{campionDescCheck}
+
+Desk checking is the oldest form of software defect removal. It has been in use since the beginning of the history of computers. In the early days of computing, testing the programs was difficult because of the limited numbers of computers. The computers worked on production work in the daytime and often the testing had to be done at night. In those days, testing had only an efficiency of 70\% in finding bugs, because of the primitive test case design and limited time available for testing. Therefore the desk checking were a necessary addition to testing. Nowadays the desk checking is still a common activity for removing defects prior to testing. Desk checking today can be enhanced by using static analysis for program code and spell checkers and complexity tools for text documents.
+
+% Figures:
+Personal desk checking is used mainly in low-level code. Approximately over 75\% of low-level code and under 30\% of high-level code in projects are checked using personal desk checking. Additionally, personal desk checking is used for over 75\% of text documents, such as requirements. The execution time of desk checking is around 80\% of normal reading speed of text. This leads to about 5 logical statements per minute for source code.
+
+The efficiency of defect removal for personal desk checking is between 25\% and 50\% averaging 35\%. The reason for these relatively low figures can be found in human nature. Humans have a natural tendency to ignore their own mistakes. A developer making an error usually does the error thinking that the action was correct. Therefore when the developer checks the code for defects, the train of thought can remain the same and the defect is not found. This could be avoided by using proofreaders or copy editors, which is a rare habit, but could be profitable for software projects. Another solution for avoiding the blindness to own mistakes is to use peer reviews described later.
+
+% Scrum sessions p. 222
+\textbf{Scrum sessions }
+
+% Scrum <- rugby
+% Teams of generalists:
+% scrum-master, around 5 developers, embedded user/stakeholder
+% 2 week sprints: embedded user provides the requirements
+% after each sprint.. source code and supporting documentation should be ready to go production
+% Pretest: daily scrum meetups/stand-ups, 15 minutes:
+%  	-whats done
+%	-what next
+%	-problems, bugs, issues slowing them down <- relevant to pretest defect removal
+% TDD
+% For up to 2000 fp -> popular and succesful
+
+% effectivity can be better than in figures, because capturing the defect removal data is not present in agile
+
+% p. 235
+\textbf{Client reviews}
+
+% Peer review p. 209
+\textbf{Peer reviews}
+
+% Static analysis p. 267
+\textbf{Static analysis}
 
 
 
 
 
--Pretest
-Desk checking p. 208
-Peer review p. 209
-Scrum sessions p. 222
-Static analysis p. 267
 
 -ROI: Three main activities: Review, process audit and testing
