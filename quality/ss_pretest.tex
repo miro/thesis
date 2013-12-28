@@ -35,30 +35,59 @@ Desk checking is the oldest form of software defect removal. It has been in use 
 % Figures:
 Personal desk checking is used mainly in low-level code. Approximately over 75\% of low-level code and under 30\% of high-level code in projects are checked using personal desk checking. Additionally, personal desk checking is used for over 75\% of text documents, such as requirements. The execution time of desk checking is around 80\% of normal reading speed of text. This leads to about 5 logical statements per minute for source code.
 
-The efficiency of defect removal for personal desk checking is between 25\% and 50\% averaging 35\%. The reason for these relatively low figures can be found in human nature. Humans have a natural tendency to ignore their own mistakes. A developer making an error usually does the error thinking that the action was correct. Therefore when the developer checks the code for defects, the train of thought can remain the same and the defect is not found. This could be avoided by using proofreaders or copy editors, which is a rare habit, but could be profitable for software projects. Another solution for avoiding the blindness to own mistakes is to use peer reviews described later.
+The efficiency of defect removal for personal desk checking is between 25\% and 50\% averaging 35\%. The reason for these relatively low figures can be found in human nature. Humans have a natural tendency to ignore their own mistakes. A developer making an error usually does the error thinking that the action was correct. Therefore when the developer checks the code for defects, the train of thought can remain the same and the defect is not found. This could be avoided by using proofreaders or copy editors, which is a rare habit, but could be profitable for software projects. Another solution for avoiding the blindness to own mistakes is to use peer reviews.
 
-% Scrum sessions p. 222
-\textbf{Scrum sessions }
-
-% Scrum <- rugby
-% Teams of generalists:
-% scrum-master, around 5 developers, embedded user/stakeholder
-% 2 week sprints: embedded user provides the requirements
-% after each sprint.. source code and supporting documentation should be ready to go production
-% Pretest: daily scrum meetups/stand-ups, 15 minutes:
-%  	-whats done
-%	-what next
-%	-problems, bugs, issues slowing them down <- relevant to pretest defect removal
-% TDD
-% For up to 2000 fp -> popular and succesful
-
-% effectivity can be better than in figures, because capturing the defect removal data is not present in agile
-
-% p. 235
-\textbf{Client reviews}
 
 % Peer review p. 209
-\textbf{Peer reviews}
+\textbf{Peer reviews} are almost as old as desk checking. The idea of peer reviews is close to the idea of desk checking. The essential difference is that in peer reviews, the code, documentation or other product under review is checked by another person. This prevents the defects from being hidden by the human tendency to ignore their own mistakes. Peer reviews are best suited in small projects with under five developers. 
+
+In larger projects, because of the informal nature of peer reviews, the efficiency of defect removal is better with formal inspections. This leads to informal peer reviews to being the secondary method of defect removal in large projects. In large projects using Agile development method without formal inspections, peer reviews can be highly important.
+
+Peer reviews are targeted to find technical, structural and logical defects. This means that peer reviews are not to be thought as the same as proofreading or copyediting. However, the findings from these can partially overlap each other.
+
+In addition to removing defects in the pretest phase of projects, peer reviews can benefit projects other ways. Peer reviews can achieve the same effect as formal inspections: the participants of the review tend to unconsciously avoid the problems found in the review. Reviews can also be useful for learning. Novice developers can learn while reviewing the work of more experienced developers. Furthermore, experienced developers can remark the problems the novice members need to understand. Even beginner reviewing other beginners work can be better than nothing. Reviews done by expert for the work of expert can be highly efficient, but these cases can sometimes lead to social problems with big egos colliding when mistakes are being pointed out.
+
+Informal peer reviews are used in under a half of software applications. The achieved defect removal efficiency is usually between 35\% and 65\% and the average removal efficiency is 45\%. Reviews can take up to 30 minutes to prepare and the execution pace is around 70\% of the normal reading speed for text, and around 3 logical code statements per minute for source code. Best results for peer reviews can be achieved with small projects using Agile development method.
+
+% p. 235
+\textbf{Client reviews of specification} are, like the former two methods, among the oldest of defect removal methods. It is still not enough used in average software projects. One of the authors of "The Economy of Software Quality" has got experience in lawsuits for canceled or defective projects. In most of the lawsuits the supplier of the software accuses the customer for failing to review the designs and other documents or not making a remark about any problems during the reviews. In some cases the customer has even accepted the materials quoted in the trial.
+
+The products reviewed by customers usually don't include inner workings of software applications, like source code, test cases or detailed design. Capers Jones presents a list of 12 major items in directly funded software projects, which usually are reviewed:
+
+\begin{enumerate}
+	\item Requirements
+	\item Requirements changes
+	\item Architecture
+	\item High-level design, user stories, use cases
+	\item Data flow and data structure design
+	\item Development plans
+	\item Development cost estimates
+	\item Development quality estimates
+	\item Training materials
+	\item HELP text and help screens
+	\item Features of COTS packages
+	\item High-severity bug or defect repairs
+\end{enumerate}
+
+Client reviews are an important practice as the clients are paying for the software. There are many clients being active participants in reviews and paying serious attention to the deliverables of software project. Simultaneously some clients are overlooking the reviews and falsely assuming that the software teams know what they are doing. The lawsuits speak on behalf of the reviews, having passive or partial reviews as a worrying feature.
+
+The statistics show that the usage of client reviews of specifications are used in under 50\% of U.S. software applications. The defect removal efficiency varies greatly being at lowest under 15\% and sometimes reaching over 45\%. The average efficiency is around 25\%, which Jones calls "marginally adequate". The effort taken by client reviews is over 2 hours per participant for preparation and over 4 hours per participant for execution. Client reviews work best when the client is directly available, and the applications having indirect clients cannot take full advantage of it.
+
+% Scrum sessions p. 222
+\textbf{Scrum sessions} are a part of the Agile development framework Scrum. The word scrum comes from a team sport called rugby. In that context, scrum means a tactic where a whole team moves in the field at the same time. Respectively, in the development method, the work is done in teams.
+
+The development teams in scrum are usually formed by a scrum master, embedded user representative or stakeholder, possible specialists and three to five developers. In average software development, the team usually has around five software engineers plus one or more specialists as needed. Specialists may include technical writers, business analysts or database specialists. As defined in Agile and scrum, teams should be self-organized and consist of generalists. Thought in many cases having specialized requirements, some specialists are needed.
+
+Projects using Agile and scrum guidelines are split into small units of work. These units are called "sprints" and the development work needed to complete the unit can be achieved in two-week period. The embedded user in the team is responsible to provide the requirements for each sprint. The end result of a sprint should be the source code and supporting documentation ready to be published in production.
+
+One of the principles of scrum is to have daily scrum meetings or "stand ups". The latter name comes from the idea that the people attending the meeting should be standing up so the meeting can stay within the time limit of 15 minutes. During these meetings, every member of the team should describe three things: what was done yesterday, what will be done today and are there any problems that will slow things down. The most interesting topic in the context of defect removal, is listing the issues, bugs and problems there is and simultaneously sharing the knowledge among the team.
+
+Agile and scrum methods are popular and successfully applied in the relatively small, up to 2000 function point in size, projects. In larger software projects, the need for personnel and time raise and the work is more difficult to split in two-week long units. While Agile does have methods for scaling up to larger projects, there are also alternative approaches available.
+
+The statistics by Capers Jones show that Scrum sessions are used in over 90\% of Agile applications and up to 20\% in non-Agile applications. The sessions take under 15 minutes per participant to prepare and optimally not much longer than the limit of 15 minutes per participant to execute. The defect removal efficiency ranges from under 35\% to over 70\% averaging 55\% statistically. However, the statistical efficiency can be somewhat lower than the actual efficiency achieved . This is because the Agile and scrum teams are usually not very strict on collecting the data for defect removal.
+
+
+
 
 % Static analysis p. 267
 \textbf{Static analysis}
