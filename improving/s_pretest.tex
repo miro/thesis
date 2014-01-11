@@ -1,4 +1,4 @@
- \subsection{Pretest methods}
+ \section{Pretest Methods}
 
 Capers Jones suggests that in every software project there should be multiple pretest QA methods used. Jones lists a combination of methods for both small and large projects. A small software project, in this context, is described to have a maximum amount of 1000 function points or 50 000 source code statements. These small projects are generally executed by a team with less than 6 software developers. These teams usually have no specialists for any quality methods, but the developers are generalists handling requirements, design, coding and testing. In many cases with Agile approach, there are users representative embedded in the team providing requirements and customers viewpoint in real time. Jones reminds that removing defects with high efficiency requires trained and technically skilled software engineers instead of generalists. However, this is not as necessary in small projects, since fortunately these projects have usually low defect potentials.
 
@@ -26,7 +26,8 @@ Each of these forms of defect removal activities are targeted towards a specific
 % STATSIT: p.198
 
 % Desk checking p. 208
-\textbf{Personal desk checking} is a manual operation in where the logic of an algorithm is checked by the creator of the algorithm . The logic used in the desk checking is presented as a pseudo-code rather than the implemented actual program code. The algorithm is executed by a person acting as a computer. The person performing the desk checking carefully follows the algorithm while filling a table of notes with pen and paper. 
+\subsection{Personal Desk Checking} 
+Personal desk checking is a manual operation in where the logic of an algorithm is checked by the creator of the algorithm . The logic used in the desk checking is presented as a pseudo-code rather than the implemented actual program code. The algorithm is executed by a person acting as a computer. The person performing the desk checking carefully follows the algorithm while filling a table of notes with pen and paper. 
 
 The notes form a table which include columns for: line number, variables in use, conditions, input and output. Line number is necessary to identify the line being executed. All variables have a column in alphabetical order. As the value of the variable changes, the appropriate column is filled up. Conditions columns include a column for every condition in the algorithm which shows the result of the condition in either true(T) or false (F). The condition column is updated whenever the condition is evaluated. Input and output columns are used for the inputs got from the user and the output from the program.~\cite{campionDescCheck}
 
@@ -39,7 +40,8 @@ The efficiency of defect removal for personal desk checking is between 25\% and 
 
 
 % Peer review p. 209
-\textbf{Peer reviews} are almost as old as desk checking. The idea of peer reviews is close to the idea of desk checking. The essential difference is that in peer reviews, the code, documentation or other product under review is checked by another person. This prevents the defects from being hidden by the human tendency to ignore their own mistakes. Peer reviews are best suited in small projects with under five developers. 
+\subsection{Peer Reviews} 
+Peer reviews are almost as old as desk checking. The idea of peer reviews is close to the idea of desk checking. The essential difference is that in peer reviews, the code, documentation or other product under review is checked by another person. This prevents the defects from being hidden by the human tendency to ignore their own mistakes. Peer reviews are best suited in small projects with under five developers. 
 
 In larger projects, because of the informal nature of peer reviews, the efficiency of defect removal is better with formal inspections. This leads to informal peer reviews to being the secondary method of defect removal in large projects. In large projects using Agile development method without formal inspections, peer reviews can be highly important.
 
@@ -50,7 +52,8 @@ In addition to removing defects in the pretest phase of projects, peer reviews c
 Informal peer reviews are used in under a half of software applications. The achieved defect removal efficiency is usually between 35\% and 65\% and the average removal efficiency is 45\%. Reviews can take up to 30 minutes to prepare and the execution pace is around 70\% of the normal reading speed for text, and around 3 logical code statements per minute for source code. Best results for peer reviews can be achieved with small projects using Agile development method.
 
 % p. 235
-\textbf{Client reviews of specification} are, like the former two methods, among the oldest of defect removal methods. It is still not enough used in average software projects. One of the authors of "The Economy of Software Quality" has got experience in lawsuits for canceled or defective projects. In most of the lawsuits the supplier of the software accuses the customer for failing to review the designs and other documents or not making a remark about any problems during the reviews. In some cases the customer has even accepted the materials quoted in the trial.
+\subsection{Client Reviews of Specification} 
+Client reviews of specification are, like the former two methods, among the oldest of defect removal methods. It is still not enough used in average software projects. One of the authors of "The Economy of Software Quality" has got experience in lawsuits for canceled or defective projects. In most of the lawsuits the supplier of the software accuses the customer for failing to review the designs and other documents or not making a remark about any problems during the reviews. In some cases the customer has even accepted the materials quoted in the trial.
 
 The products reviewed by customers usually don't include inner workings of software applications, like source code, test cases or detailed design. Capers Jones presents a list of 12 major items in directly funded software projects, which usually are reviewed:
 
@@ -74,7 +77,8 @@ Client reviews are an important practice as the clients are paying for the softw
 The statistics show that the usage of client reviews of specifications are used in under 50\% of U.S. software applications. The defect removal efficiency varies greatly being at lowest under 15\% and sometimes reaching over 45\%. The average efficiency is around 25\%, which Jones calls "marginally adequate". The effort taken by client reviews is over 2 hours per participant for preparation and over 4 hours per participant for execution. Client reviews work best when the client is directly available, and the applications having indirect clients cannot take full advantage of it.
 
 % Scrum sessions p. 222
-\textbf{Scrum sessions} are a part of the Agile development framework Scrum. The word scrum comes from a team sport called rugby. In that context, scrum means a tactic where a whole team moves in the field at the same time. Respectively, in the development method, the work is done in teams.
+\subsection{Scrum Sessions} 
+Scrum sessions are a part of the Agile development framework Scrum. The word scrum comes from a team sport called rugby. In that context, scrum means a tactic where a whole team moves in the field at the same time. Respectively, in the development method, the work is done in teams.
 
 The development teams in scrum are usually formed by a scrum master, embedded user representative or stakeholder, possible specialists and three to five developers. In average software development, the team usually has around five software engineers plus one or more specialists as needed. Specialists may include technical writers, business analysts or database specialists. As defined in Agile and scrum, teams should be self-organized and consist of generalists. Thought in many cases having specialized requirements, some specialists are needed.
 
@@ -90,8 +94,8 @@ The statistics by Capers Jones show that Scrum sessions are used in over 90\% of
 
 
 % Static analysis p. 267
-\textbf{Static analysis}
-
+\subsection{Static Analysis} 
+Static analysis
 
 
 
