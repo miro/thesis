@@ -187,7 +187,7 @@
 			"file": "quality/ss_preventing.tex",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 16642,
 				"line_ending": "Windows"
 			}
 		},
@@ -195,7 +195,7 @@
 			"file": "quality/ss_testing.tex",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 16642,
 				"line_ending": "Windows"
 			}
 		},
@@ -211,8 +211,8 @@
 			"file": "quality/ss_life-cycle.tex",
 			"settings":
 			{
-				"buffer_size": 1848,
-				"line_ending": "Windows"
+				"buffer_size": 0,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -235,15 +235,15 @@
 			"file": "improving/s_life-cycle.tex",
 			"settings":
 			{
-				"buffer_size": 1845,
-				"line_ending": "Windows"
+				"buffer_size": 2061,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "improving/s_post_release.tex",
 			"settings":
 			{
-				"buffer_size": 22,
+				"buffer_size": 778,
 				"line_ending": "Windows"
 			}
 		},
@@ -267,7 +267,7 @@
 			"file": "improving/s_testing.tex",
 			"settings":
 			{
-				"buffer_size": 2118,
+				"buffer_size": 4673,
 				"line_ending": "Windows"
 			}
 		}
@@ -316,6 +316,7 @@
 	},
 	"file_history":
 	[
+		"/home/master/Downloads/DippaBuild.sublime-build.lnk",
 		"/C/Dev/git/tana-mvp-dashboard/server/certs/mysql-ca-cert.pem",
 		"/C/Users/mpoh/Downloads/The_Lean_Startup.bibtex",
 		"/C/Users/mpoh/Documents/Koulu/Dippa/dtyo/quality/ss_testing.tex",
@@ -442,8 +443,7 @@
 		"/C/Users/mpoh/git/helen-mukava/webapp/app/models/TemperatureHistoryItem.scala",
 		"/C/Dev/scripts/helen/tuntidata.csv",
 		"/C/Users/mpoh/git/helen-mukava/webapp/app/controllers/There.scala",
-		"/C/Dev/other/Hero/Android/LocalHero/src/localHeroes/LocalHero/RouteListView.java",
-		"/C/Dev/other/Hero/Android/LocalHero/src/Route/Route.java"
+		"/C/Dev/other/Hero/Android/LocalHero/src/localHeroes/LocalHero/RouteListView.java"
 	],
 	"find":
 	{
@@ -793,7 +793,7 @@
 					"file": "quality/ss_preventing.tex",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 16642,
 						"regions":
 						{
 						},
@@ -807,7 +807,8 @@
 						"settings":
 						{
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 1883.0,
@@ -820,7 +821,7 @@
 					"file": "quality/ss_testing.tex",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 16642,
 						"regions":
 						{
 						},
@@ -833,7 +834,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 11.0,
@@ -872,15 +875,15 @@
 					"file": "quality/ss_life-cycle.tex",
 					"settings":
 					{
-						"buffer_size": 1848,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								735,
-								735
+								0,
+								0
 							]
 						],
 						"settings":
@@ -950,15 +953,15 @@
 					"file": "improving/s_life-cycle.tex",
 					"settings":
 					{
-						"buffer_size": 1845,
+						"buffer_size": 2061,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1,
-								1
+								0,
+								0
 							]
 						],
 						"settings":
@@ -976,20 +979,21 @@
 					"file": "improving/s_post_release.tex",
 					"settings":
 					{
-						"buffer_size": 22,
+						"buffer_size": 778,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1,
-								1
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1056,15 +1060,15 @@
 					"file": "improving/s_testing.tex",
 					"settings":
 					{
-						"buffer_size": 2118,
+						"buffer_size": 4673,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1753,
-								1753
+								1032,
+								1032
 							]
 						],
 						"settings":
@@ -1073,7 +1077,7 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 920.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

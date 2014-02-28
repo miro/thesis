@@ -3,7 +3,6 @@
 
 Testing is one of the oldest forms of software defect removal. It has been the most important category of defect removal since the beginning of the software industry, and in many cases even today, it is the only defect removal activity used. Several aspects of testing is covered widely in literature such as testing itself, test case design, test libraries and others. There are also a variety of standards and certifications offered by several companies and groups. Considering the penetration and importance of testing, there is surprisingly low amounts of quantitative data available on testing and test results. Quantitative data in this context means information about numbers of test cases used, numbers of defects found and other information that can be presented in numbers. In addition to the amount of data, the variety of business sizes is not as wide as it could be. The reason for this is that small companies rarely evaluate or benchmark let alone document the results with sufficient precision.
 
- 
 % Definition??
 
 % Quantitive data?? Onko olennaista?
@@ -47,7 +46,30 @@ Testing is one of the oldest forms of software defect removal. It has been the m
 
  \subsection{Subroutine Testing}
 
- \subsection{Unit Testing}
+ Subroutine is a small piece of code that may have only a few lines of code. Testing subroutines is the lowest level of testing introduced by Capers Jones. It is a very informal way of testing and is performed almost spontaneously by compiling and executing a subroutine just created. The goal of testing the subroutines immediately after creating them is to verify the correct behavior of the algorithm before the integration of the algorithm to the larger module or application.
+
+ Subroutine testing is a glass box form of testing. It is used in almost every custom-coded software and over 90\% of defect repairs. The defect removal efficiency is between 25\% and 75\% and in average 55\%. Because subroutine testing is such a natural process and is such an efficient way to prevent defects, it is often omitted in testing literature.
+
+ \subsection{Unit Testing p.297}
+
+ Unit testing is aimed at small code modules ranging from around 100 to 1000 source code statements. Units are tested by executing the new or repaired code. In case of developing new features, also the surrounding modules can be unit tested. The testing is usually run by the developer who wrote the module. This leads to poor data collection lowering the amount of data available for unit testing.
+
+ Unit testing contains often bad test cases which are either false positives or not finding defects. When using unit testing, a significant amount of bad fixes and new bugs are introduced while repairing defects.
+
+ The unit testing is often measured by code coverage, the degree of code a certain test suite covers. Aiming for high code coverage is usually a natural objective for test suites, but sometimes a high cyclomatic complexity of the module under test can prevent achieving high coverage. Modules with complexity under 10 can be tested thoroughly but when complexity raises over 20, the removal efficiency of the unit testing will decrease.
+
+ Unit tests can be executed manually but also automatically using a test runner connected to triggers actuating the testing sequence. The usage of automatized unit tests is becoming more common, while the popularity of Continuous Integration systems increase. These systems can be bound to version control systems allowing the automatic execution of tests whenever the source code changes.
+
+ Unit testing is considered as glass box testing. It is used in over 85\% of projects using waterfall and in over 80\% of defect repairs. Unit testing removes from under 25\% to over 55\% and in average cases around 35\% of defects. Unit testing can benefit from the usage of static analysis, which is in most cases performed before the unit testing. In development of complex systems, unit testing can also benefit from code inspections.
+
+% Manual or automatic. Automatic -> increasing frequencies
+% Static analysis and Code inspections synergistic
+
+% Glass box
+% > 85% of waterfall
+% > 80% of defect repairs
+% 25%-55%, avg 35%
+% High levels of cyclomatic complexity can reduce
 
 % TDD
 
