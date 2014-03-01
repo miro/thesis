@@ -100,22 +100,19 @@ Over 95\% of new application development use regression testing. It is used also
 
  \subsection{Integration Testing}
 
- % p. 300
+Integration testing is method normally used in relatively large applications having several modules connected to each other. Generally these large applications are over 1000 function points of size. As the name implies, integration testing is testing a number of modules assembled together to form a single software system.
 
- % Testing of a number of modules or programs that have come together
- % many programmers => much test cases
- % used in large applications > 1000 fp
- % Often occurs in "waves" in pace of new builds
- % M$: daily integrations, in others: weekly or monthly
- % usually under formal configuration control
- % usually used with formal test plans, planned suites of test cases, test library support tools, formal defect reporting procedures
- % both black and glass
- % can be performed by programmers, test specialists or QA folk. Professional test personnel better in performance
- % Synergies: static analysis, formal inspections
- % Cyclomatic complexity
- % Large number of test cases => formal mathematical test case design
+The pace of integration testing is usually more or less steady as the integration tests usually target a single release or build. These builds can come in different cycles depending on the organization and the development practice. The interval between the builds can be for example a month or a week. As an example, Microsoft integrates the software projects in daily basis and thus performs daily integration tests.
 
- % Statsit
+Since the amount of modules under test can be significant, the test suites can contain significant amounts of test cases. This leads to high amounts of work needed to design the test cases. However, using mathematical test case design methods can produce high test coverages and high defect removal efficiency with relatively small amount of test cases. 
+
+With integration testing, there are in most cases other supportive tools and practices used. Testing is usually done to an application under formal configuration control. Formal defect reporting procedures and test plans, planned test suites and test library support tools are also commonly used with integration testing.
+
+Integration testing can occur as black box or glass box testing. The execution of the testing is the most effective when it is performed by professional testing personnel. Still, in addition to testing specialists, the testing can be performed by the programmers or quality assurance personnel. 
+
+Integration testing can benefit from static analysis, formal inspections and formal development practices. High cyclomatic complexity of over 20 can reduce the efficiency of integration testing. 
+
+Integration testing is rarely used in small, under 100 function point, projects. In these projects only under 10\% of projects use integration testing. In medium size projects, over 1000 function points, integration testing is used in 85\% of projects. Development of large, over 10000 function point systems use integration testing in over 99\% of projects. The defect removal efficiency of integration testing can be from under 35\% to over 65\% averaging 50\%. 
 
  \subsection{System Testing}
 
