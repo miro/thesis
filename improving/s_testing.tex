@@ -116,24 +116,24 @@ Integration testing is rarely used in small, under 100 function point, projects.
 
  \subsection{System Testing}
 
- % usually the last form of internal testing (before customer/field testing)
- % formal system testing can take months and can involve large teams
- % critical test phase => also programmers needed to fix the bugs
- % Originally for large applications, now ambiguous (almost in any size)
- % formal configuration control, formal defect tracking support
- % normally black box, sometimes glass box
- % can be performed by programmers, testing specialists, QA folk => large companies and applications use professional test personnel
- % May include concurrent testing of hardware components
- % May sometimes overlap lab testing
- % Benefits from static analysis and code inspections
- % Cyclomatic complexity
- % IBM etc story about error prone modules
- % Often necessary to remove error prone modules and rewrite
- % Inspections and static analysis effective againts error-prone modules
- % Costs, schedules, customer satisfaction
- % Identifying and preventin these modules
+System testing is in most cases the last form of internal testing. After the system testing, the system is usually tested with real customers in field testing or beta testing. 
 
- % Statsit
+Formal system testing for large systems is a critical testing stage and can require large teams of professional testing personnel and programmers involved in the development. This kind of large formal system testing can take several months, consisting of repairing the founded defects and re-testing. The expression "system testing" dates back to large applications in the 10000 function point range. Since then, the term is widely used to describe the final stage of testing of applications any size. 
+
+System testing requires a formal configuration control of the application and usually a formal defect tracking is used. System testing is generally executed using the principles of black box testing, but sometimes there is also glass box type of testing. Testing can be performed by the developers, professional testing specialists or quality assurance personnel. However, when the testing is performed in large companies or for large systems, professional testing specialists performing the tests is the most common case.
+
+If the system under test contains controls over physical devices, the term system testing can include simultaneous testing of the hardware devices. In these cases the group performing the tests can involve other engineering and quality assurance personnel dealing with the hardware.
+
+System testing can become degraded if the system under test contains error-prone modules. These are modules, that encompasses the majority of the existing defects of the system. Error-prone modules can be extremely harmful for large systems and there is a need for continuously analyzing the existence of these. It is often necessary to precisely remove the error-prone modules and rewrite them with better methods.
+
+IBM did a frequency distribution research in the 1970s for customer-reported defects. For several large applications, the distribution of defects was extremely uneven. With one product, there were 425 modules in the application. In this product, 57\% of all reported defects were found in 35 of these modules. No reported defects at all were found for around 300 modules. All of the 35 error-prone modules had no inspections done and the testing was truncated due to schedule pressures. In addition to highly skewed distribution, bad-fix injections for these error-prone modules was higher than 35\%, so fixing every third bug would generate one new bug.
+
+Error-prone modules has been researched by other companies as well and these analyses confirm that these modules are alarmingly common in large applications. These modules have typically a high cyclomatic complexity and thus have reduced test coverage and defect removal efficiency. Repairing these existing modules is difficult and expensive, but preventing creation of new error-prone modules is possible with a combination of formal inspections with pretest static analysis. In the IBM study, inspections were 100\% effective in preventing new error-prone modules. 
+
+System testing can benefit from static analysis and code inspections. IBM studies show that when error-prone modules were removed and inspections were used, the testing costs and schedules decreased by 65\%. Also the customer satisfaction increased by 75\% and development schedules were shortened by 15\%.
+
+System testing is used in over 99\% of systems over 10000 function points. 75\% of projects over 1000 function points and 50\% of projects over 100 function points are using system testing. The defect removal efficiency ranges from under 25\% to over 95\% averaging 55\%.
+ 
 
  \subsection{Agile Testing}
 
