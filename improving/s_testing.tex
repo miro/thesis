@@ -65,19 +65,86 @@ Testing is one of the oldest forms of software defect removal. It has been the m
 
 % TDD
 
-NOTE! More pollution for testing
-
-
-
-
-ASDASD
-
  \subsection{New Function Testing}
+
+New function testing is a way of testing in where tests are written for evaluating the correct functionality of new features. These features can be introduced from modification or updating of an existing application. New function testing is often combined with regression testing.
+
+In an entirely new software project, the new function testing is also known as "component testing". This is because usually the subject under test is a work of a group of developers, combining multiple code blocks into a one functioning component in a large system.
+
+Because of the multiple contributors, the testing is frequently executed by separate testing specialists. Major new functions can exceed 10000 statements of source code, or 100 function points, when added to an existing system. Usually the new function testing is aided by a formal testing plan, planned test cases and a full configuration control. New function testing can be both black box and glass box testing. One of the main targets of new function testing are the errors in the interfaces between modules and in the movement of data through the application.
+
+Like with many other testing method, a high complexity of the code can have a negative impact on new function testing. Both the defect removal efficiency and test coverage tend to decrease as the complexity raises. By using mathematical models for designing the test cases, the efficiency level of the testing can be improved without the need for infinite amount of test cases.
+
+New function testing can take advantage of static analysis and formal code inspections. A usual flow with these three begins from the static analysis of the source code, followed by formal code inspections of the most critical parts and finally performing the new function testing. This combination can reach over 99\% in defect removal efficiency, omitting the defects in requirements. Also using regression testing with new function testing can be beneficial to each other.
+
+New function testing is used in over 99\% of new software projects and also in over 99\% of enhancements to legacy applications. The defect removal efficiency is in average 40\% and ranging from under 30\% to over 55\%. 
 
  \subsection{Regression Testing}
 
+Regression testing is a method of testing targeting the opposite of new function testing. In regression testing, the subjects under tests are old functionalities and features. The word "regression", in the context of software development, means an unintentional damage done to existing features while introducing new functionality. Regression testing also aims to make sure the known defects, repaired before the implementation of the new features, don't reappear.
+
+Regression testing can be initiated during the development, when a sufficient amount of modules have been implemented. It continues through the whole development phase and further over to the post-release phase. Preventing the regression damage is very important in the systems already in maintenance phase.
+
+Testing the regression damage is one of the most extensive forms of testing. This is because the evolution of a software application usually consists of multiple releases taking place over the years. With regression testing, the library of available tests continues to grow over the releases. These libraries involve the whole code base. In large systems the code base can even exceed a million lines of code.
+
+Test libraries concerning a big amount of source code are at times problematic. They can have both useless test cases and test cases containing errors in themselves. Studies about these kind of libraries are rare, but an IBM study of a regression test library found both of the aforementioned. These erroneous test cases can raise the testing costs and lower the defect removal efficiency.
+
+Regression testing is usually done in an application under full configuration control. It can be performed by programmers themselves, testing specialists or quality assurance personnel. Regression testing can be black box of glass box testing. Regression testing can benefit from the usage of static analysis tools on the legacy code under change before implementing the changes or refactoring.
+
+High cyclomatic complexity can be harmful to regression testing. Cyclomatic complexity over 20 can lower the test coverage and defect removal efficiency.
+
+Over 95\% of new application development use regression testing. It is used also in over 97\% of legacy application enhancements and in over 85\% of software defect repairs. The defect removal efficiencies can vary from under 25\% to over 45\%. Average defect removal efficiency of regression testing is 45\%.
+
+
+ % Statsit
+
  \subsection{Integration Testing}
+
+ % p. 300
+
+ % Testing of a number of modules or programs that have come together
+ % many programmers => much test cases
+ % used in large applications > 1000 fp
+ % Often occurs in "waves" in pace of new builds
+ % M$: daily integrations, in others: weekly or monthly
+ % usually under formal configuration control
+ % usually used with formal test plans, planned suites of test cases, test library support tools, formal defect reporting procedures
+ % both black and glass
+ % can be performed by programmers, test specialists or QA folk. Professional test personnel better in performance
+ % Synergies: static analysis, formal inspections
+ % Cyclomatic complexity
+ % Large number of test cases => formal mathematical test case design
+
+ % Statsit
 
  \subsection{System Testing}
 
+ % usually the last form of internal testing (before customer/field testing)
+ % formal system testing can take months and can involve large teams
+ % critical test phase => also programmers needed to fix the bugs
+ % Originally for large applications, now ambiguous (almost in any size)
+ % formal configuration control, formal defect tracking support
+ % normally black box, sometimes glass box
+ % can be performed by programmers, testing specialists, QA folk => large companies and applications use professional test personnel
+ % May include concurrent testing of hardware components
+ % May sometimes overlap lab testing
+ % Benefits from static analysis and code inspections
+ % Cyclomatic complexity
+ % IBM etc story about error prone modules
+ % Often necessary to remove error prone modules and rewrite
+ % Inspections and static analysis effective againts error-prone modules
+ % Costs, schedules, customer satisfaction
+ % Identifying and preventin these modules
+
+ % Statsit
+
  \subsection{Agile Testing}
+
+ % Special form of testing
+ % One of the newest forms of testing
+ % Embedded users: requirements and test case definition
+ % Primarily black box
+ % for normal agile projects, effective assistance and validation
+ % Extreme Programming: test cases developed prior to writing the code
+
+ % Statsit?
