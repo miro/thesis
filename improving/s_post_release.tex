@@ -28,25 +28,35 @@ The usage of the severity scale is for arranging the defects to an order in whic
 
 \subsection{Maintainability}
 
-%Maintainability
-%	Maintenance assignment scope
-%	Cyclomatic complexity
-%	Entropy or rate of structural decay
-%
-%Positive impact on maintainability
-%	Training
-%	Structural diagrams
-%	Comments clarity
-%	No error-prone modules
-%	Maintenance tools
-%	Maintenance workloads
-%	Programming languages
-%
+The maintainability of software can be evaluated with several different metrics. The topic is researched by IBM by interviewing a wide range of maintenance programmers about what makes the software maintainability better or worse. The three most useful metrics are introduced below.
 
+\textbf{Maintenance assignment scope} is the amount of source code or functionality that a single programmer can handle for one year. The range of the maintenance assignment scope indicated by the interviews is from 300 function points to about 3000 function points. Measured in source code statements of java-like language, the range is from a low 15000 statements to a high 150000 code statements. These figures are assembled from the sizes of applications under maintenance and the sizes of the maintenance teams. These ranges seem to work well for maintenance programmers, but the same idea can be applied to other kinds of maintenance specialists.
+
+\textbf{Cyclomatic complexity} can be measured automatically with both commercial and open source tools. For easier maintenance, the cyclomatic complexity levels should be under 10. With levels over 25, the maintenance is getting increasingly harder. Furthermore, higher levels than 25 are virtually never necessary, so high levels can indicate reckless programming practices.
+
+\textbf{Rate of structural decay} is the velocity in which the small changes to the software raise the cyclomatic complexity levels and degrade the original software structure. The velocity can be lowered by running complexity analysis tools frequently. The average velocity of entropy or structural complexity seems to be a little more than 1\% per year. This means that applications with long periods of use become increasingly harder to maintain or change safely.
+
+The interviews by IBM revealed several topics that were mentioned by the dedicated maintenance personnel, which have a positive impact on the maintainability.
+
+\textbf{Training.} Training of the maintenance personnel can improve the maintenance effort. In many cases, the maintenance personnel getting the maintenance responsibility are not properly trained for the application. For large applications, the training should include the general functionality and also the specifics of the components assigned to a single maintenance person. One cost-efficient way of training the maintenance personnel into the application is to include the personnel in inspections during the development.
+
+\textbf{Structural diagrams.} Diagrams can support the understanding of the application structure in large systems. These diagrams can visualize the control flow, branches and other paths through the application. Structural diagrams can be created prior to the development of the system, which makes a requirement for keeping the diagrams up to date. If the diagrams do not exist, they can be generated using a variety of tools that analyzes and visualizes the code.
+
+\textbf{Comments clarity.} The clarity of the comments can affect both positively or negatively on the maintainability. Good comments are clear, accurate and complete. Having too much comments can degrade the understanding of the code and can be almost as bad as too few. Comments should include the purpose of the module and explanation of the calls, branches and error messages.
+
+\textbf{No error-prone modules.} Error-prone modules are one of the biggest topic degrading maintainability. These modules have usually high levels of cyclomatic complexity, are difficult to understand and can contain opaque dependencies to other modules. Perhaps the biggest problem with error-prone modules is that existing error-prone modules can be almost impossible to fix. Because of this, the main defense against error-prone modules is to prevent them from forming in the development phase by using static analysis and inspections.
+
+\textbf{Maintenance tools and workbenches.} Software maintenance can be assisted by several kinds of maintenance tools. Actual maintenance workbenches can assist in analyzing code structure; Static analysis tools can analyze the code continuously; Visualizing tools can automatically generate diagrams from the code structure; Testing tools can execute automated tests; and code refactoring tools can aid with fixing the code structure.
+
+\textbf{Programming languages.} The choice of programming language can be made for business or technical reasons, but maintenance in mind, the readability and ease of understanding can affect positively. Some languages, like Assembly and API, are hard to understand and therefore hard to maintain. Other languages such as java-like languages are readable and straightforward and can be maintained more easily than the harder ones. With several thousand programming languages, sorting them into categories based on their easiness is not easy.
+
+Considering these topics, the worst case scenario would include a long-time running software with high levels of cyclomatic complexity and several error-prone modules. There would be only messy comments or no comments at all and the software would be written in a hard or even dead language. The maintenance would be done by a novice untrained maintenance personnel with no aiding tools. In these circumstances, the maintenance assignment scope would be under 300 function points or under 15000 statements of code.
+
+Mutually, the best case would have a fresh, low complexity software with well commented source code in easy language. In this case the maintenance personnel would consist of well trained maintenance professionals having good tools for maintaining the software. In this situation, the maintenance assignment scope could be over 3000 function points or over 150000 source code statements.
 
 \subsection{First year discovery rates}
 
-\subsection{Fixers: Development personnel or Maintenance specialists}
+% \subsection{Fixers: Development personnel or Maintenance specialists}
 
 \subsection{Costs of Post-Release Defects in small application}
 
