@@ -1,38 +1,184 @@
 
+ \section{Team and Phases}
+
+% http://www.qsm.com/resources/function-point-languages-table
+% Function points
+
+% ensimmäinen MVP
+% pieni ja yksinkertainen
+% kokeilut, testausta siirrettiin tulevaisuuteen
+% featuret edellä, testaus jälkikäteen
+% asioiden validointi, epäselvät speksit -> tuntui turhalta testata ilman tietoa onko toiminnallisuus järkevää
+
+
+
+% -Kerrotaan prosessista ja tiimistä 
+
+
+
+% * Vaihe 1
+% 	* Aikataulu: 20.11.2013-15.2.2013
+% 	* Budjetti: 66 690€ (60 000€)				26%
+%	* Function points 				130 (+130)
+% 	* Pääkontentti: 
+% 		* Lasten ja hoitajien läsnäolon mobiilikirjaus
+% 		* Admin UI päiväkotien, ryhmien, lapsien ja hoitajien tietojen syöttämiseen
+% 	* Tiimi
+% 		* Osmo
+% 		* Mike
+% 		* Antti
+% 		* Jouni
+% 		* Elice
+% * Vaihe 2-3
+% 	* Aikataulu: 19.2.2013-4.6.2013
+% 	* Budjetti: 56%   144 840€ (136 000€)
+%	* Function points 				415 (+285)
+% 	* Pääkontentti: 
+% 		* Kommunikointi päiväkodin ja kodin välillä
+% 		* Hoitosuunnitelmat
+% 		* Päiväkodin käyttöliittymä tietojen selaamiseen ja muokkaukseen sekä raportointiin 
+% 	* Tiimi
+% 		* Osmo
+% 		* Mike
+% 		* Kalle
+% 		* Mikko (huhtikuu ->)
+% 		* Elice
+% * Vaihe 4
+% 	* Aikataulu: 5.6.2013 - 15.7.2013
+% 	* Budjetti: 6%   15 000€
+%	* Function points 				475 (+50)
+% 	* Pääkontentti: 
+% 		* Perhepäivähoidon toiminnot ja rajapinnat 
+% 	* Tiimi
+% 		* Osmo
+% 		* Mike (osa-aikainen)
+% 		* Miro
+% 		* Kimmo
+% 		* (Elice)
+% * Vaihe 5
+% 	* Aikataulu: 15.7.2013 - 16.7.2013
+% 	* Budjetti: 12%   30 000€
+%	* Function points 				500 (+25)
+% 	* Pääkontentti: 
+% 		* Läsnäolotietomallin uudistus, läsnäolotietojen esitys ja muokkaus, kulukorvaukset kunta UI:hin 
+% 	* Tiimi
+% 		* Osmo (osa-aikainen)
+% 		* Mike
+% 		* Miro
+% 		* Kimmo
+% 		* (Elice)
+
+
+
  \section{QA Methods and Processes Used}
 
--Kerrotaan prosessista ja tiimistä 
+
+
+% Alkuun testattiin pelkästään UI:n kautta
+% Testaus hiipui projektin myötä -> ei “riittävää” testausta
+% Bäkkärin integraatiotestit -> testattiin kriittisimpiä osia, muttei kaikkia
+% Satunnaisia testejä
+% Automaattiset testit jumiin CI:ssä -> aikaa käytettiin korjaukseen, mutta ei onnistunut -> Testit % pois käytöstä
+% Testit koetaan tärkeiksi
+% laajuus kasvaa, joten ei tiedä miten asiat toimii 
+% regressio uusien featureiden kanssa
+% turvaverkko
+% tekijät vaihtuu
+% testit valmiita esimerkkejä oikeasta käytöstä/toiminnasta
+% testien dokumentointi, ei tiedetty mitä testit testaa -> väärä luottamus
+% TDD käytetty satunnaisesti bugien korjauksissa
+
  
--Käytetyt QA-metodit
-
-	-Static code analysis (IDEn vakiot)
-
-	-Communication ("embedded users")
-
-	-Testing(frontend, backend unit testing and integration tests)
-
-	-Occasional reviews (rarely)
-
-	-Continuous Integration
+% -Käytetyt QA-metodit
+% -Static code analysis (IDEn vakiot)
+% -Communication ("embedded users")
+% -Testing(frontend, backend unit testing and integration tests)
+% -Occasional reviews (rarely)
+% -Continuous Integration
 
 
  \section{Achieved Quality in The Project}
 
--Kartoitetaan bugit (Mailit, Pivotal, Repo)  
+% bugeja huomattiin, jotka olisi löytynyt testeillä
+% Tiimin mielestä testien kirjoituksella olisi säästänyt aikaa/rahaa
+% Testiympäristö ei ollut vastaava tuotannon kanssa, muistinvarainen vs HDD, Eri tietokanta
+% Bugeja tietokannan käsittelyssä, jotka ilmaantuivat vain tietyssä kannassa
+% Skaalaus
+% Päiväkotien määrän kasvaessa suorituskyky laski eksponentiaalsesti
+% Aiemmin ei tunnettu tarvetta optimoinnille
+% indeksi
+% tiedonhaku yms.
+% Ei mikään varsinainen ongelma, mutta yllätti
 
--Asiakkaan ja loppukäyttäjien tyytyväisyys
+
+% Featuree featuren perään, asiakkaan puolelta
+% weppijutuissa nopeasti näkyvää asiaa “huonosti”
+% Tahti liian kova
+% tekninen velka -> realisoituu myöhemmin
+% Refaktoroinneille ei aikaa
+% Kunnon tekeminen vaatii aikaa, ei ratkea “rahalla”
+% Featureiden toteutus hidastuu eksponentiaalisesti kun tehdään pitkään nopeasti (ja huonosti)
+% Asiakas ei ymmärrä mitä aiemmat “oikopolut” tarkoitta
+% Asiakas ei muista teknistä velkaa
+% Kommunikaatio aluksi tae hyvälle laadulle
+% Aluksi ongelmallisin kommunikaatio asiakkaan kanssa
+% Myöhemmin kommunikaatio failannut tiimin sisälläkin, koska osa-aikaisia samassa projektissa
+% 
+% Mitä erilailla
+% Testit toimimaan
+% UI
+% Järjestelmällisemmät testit
+% Definition of Done selkeämmäksi: testit kuuluu taskiin
+% Rajapinnasta tarkempi määrittely
+% “REST”, mutta muita tapoja seassa
+% Mietitty puhdas REST vs clientille tehty API
+% Clientin helppo noutaa datoja
+% Requestien määrän minimointi
+% Dokumentointi kuntoon
+% Rakenteellinen laatu kuntoon
+% Aikavyöhykeasiat kerralla kuntoon / päätös tehdä ilman monimutkaisuutta
+% Samaan aikaan samalla tiimillä nykyisen järjestelmän ylläpitoa ja uudet featuret
+% Uudet featuret “suoraan” nykyiseen järjestelmään
+% 
+% Tulevaisuudessa paremmin
+% järjestelmällisyys
+% yhdessä sovitut prosessit
+% Pelisäännöt, ei byrokratiaa
+% Auttaisi jos ja kun porukka vaihtuu
+% kaikki koodarit samojen käytäntöjen alle, myös koodaavat asiakkaat
+% laatuasioista “valittaminen” ei henkilökohtaista
+% pitäisi sopia etukäteen, että saa sanoa mistä vaan asiasta loukkaantumatta
+% review, pullrequestit
+% todettu hyviksi nyt kun käytössä
+% pitäisi osata sanoa koodaavalle asiakkaalle, että osa siitä aiheuttaa lisätyötä tiimille
+% Kommunikaatioo paremmaksi
 
 
-Miken lista hyvästä laadusta:
 
--I Know It When I See It -> Validoinnit
 
--Lyhyet sprintit
 
--Tasainen vastuunjako
 
--Kommunikointi
 
--Refaktoroinnit
 
--MVP
+% -Kartoitetaan bugit (Mailit, Pivotal, Repo)  
+% -Asiakkaan ja loppukäyttäjien tyytyväisyys
+% 
+% Miken lista hyvästä laadusta:
+% -I Know It When I See It -> Validoinnit
+% -Lyhyet sprintit
+% -Tasainen vastuunjako
+% -Kommunikointi
+% -Refaktoroinnit
+% -MVP
+
+
+
+
+
+% Juttelut
+% 
+% -Isot teemat:
+% -testaus
+% -kiire/featurekeskeisyys
+% -MVP -> tuotteeksi ilman tuotteistusta
+% -Rakenne, API
