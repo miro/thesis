@@ -11,38 +11,24 @@ During the development, a better understanding of the market was achieved. It wa
 
 This understanding of the market was not present when deciding the priorities of the upcoming features, so some of the effort put to reporting and other features could have been allocated to more appealing features.
 
- \section{Team and Phases}
+ \section{Team and Phases VAI Project Execution}
 
-The project was divided into multiple phases. In the scope of this thesis, five phases are observed. Each of the phases had a couple of predefined objectives and a schedule.
+The project was divided into multiple phases. In the scope of this thesis, five phases are observed. Each of the phases had predefined objectives and a time frame. The project was executed using agile practices, so the phases were divided in sprints lasting usually a week. A weekly session, with both the development team and the customers present, was arranged in where the previous sprint was reviewed and the next sprint was planned. The contents of the sprints and the backlog were managed with Pivotal Tracker, a tool for agile project management.
 
-% http://www.qsm.com/resources/function-point-languages-table
-% Function points
+The development team consisted of a few developers, a user experience and design specialist and a project manager. The size and structure of the development team stayed rather consistent, but the individuals belonging to the team were changed several times during the project. Also the pace of the development varied somewhat between the phases.
 
-% ensimmäinen MVP
-% pieni ja yksinkertainen
-% kokeilut, testausta siirrettiin tulevaisuuteen
-% featuret edellä, testaus jälkikäteen
-% asioiden validointi, epäselvät speksit -> tuntui turhalta testata ilman tietoa onko toiminnallisuus järkevää
+% Content
+\textbf{Phase one.} The feature content of the first phase included the implementation of the mobile client and administration interface. The mobile client was for recording the presences of the children and the nurses. The administration interface included the principal editing of kindergartens, care groups, children and nurses.
 
+% Time frame, team, budget, new features and bugs, function points
+The phase lasted 87 calendar days and the team in the first phase consisted of three developers, a UX specialist and a project manager. Budget of the phase was 26\% of the total budget of the five stages presented here. The phase included 86 new features registered in the Pivotal Tracker. 17 bugs were found during this phase. New source code were introduced worth of 130 function points.
 
+% Things affecting quality
+In the first phase, the project quality was affected by the introduction of the continuous integration environment and a user interface testing framework. 
+The continuous integration was handled with a product called Bamboo. It was configured to track the changes in the repositories of both the mobile client and the desktop client. Whenever a change was pushed into the repository, the continuous integration system would run the tests and update the testing environment. In addition, Bamboo could update the production server by running the job manually. Testing of the mobile client was started with a small set of tests running with CasperJS.
 
-% -Kerrotaan prosessista ja tiimistä 
+\textbf{!!!!! Spock testing framework?? !!!!}
 
-
-
-% * Vaihe 1
-% 	* Aikataulu: 20.11.2013-15.2.2013
-% 	* Budjetti: 66 690€ (60 000€)				26%
-%	* Function points 				130 (+130)
-% 	* Pääkontentti: 
-% 		* Lasten ja hoitajien läsnäolon mobiilikirjaus
-% 		* Admin UI päiväkotien, ryhmien, lapsien ja hoitajien tietojen syöttämiseen
-% 	* Tiimi
-% 		* Osmo
-% 		* Mike
-% 		* Antti
-% 		* Jouni
-% 		* Elice
 % * Vaihe 2-3
 % 	* Aikataulu: 19.2.2013-4.6.2013
 % 	* Budjetti: 56%   144 840€ (136 000€)
@@ -57,6 +43,17 @@ The project was divided into multiple phases. In the scope of this thesis, five 
 % 		* Kalle
 % 		* Mikko (huhtikuu ->)
 % 		* Elice
+
+% Content
+\textbf{Phases two and three.} These two phases shared some goals so they are merged in the project records. During these phases, the development targets were in the communication, planning and administration. Communication between the kindergarten and children's home was implemented to the mobile client and the desktop client for the parents. For the parents, a tool for planning the future presences of the children was implemented. These presences were intended to help the personnel of the kindergarten plan the future shifts of the nurses. The last big feature for these phases was a desktop client for the administrative personnel of the municipality. This manager client for the kindergarten management included features for browsing and editing the kindergarten information, including the information about the children and the nurses. In addition, this manager client could generate reports describing the recent history of the kindergarten.
+
+% Time frame, team, budget, new features and bugs, function points
+Phases two and three took 105 days total. At the beginning of the phase two, the team consisted of two developers, a UX specialist and a project manager. After a one third of the period, a third developer was included in the team. These two phases took approximately 56\% of the total budget. According to the Pivotal Tracker, 55 new features were implemented and 2 bugs were fixed. New source code was worth of 285 function points, totaling 415 function points for the project so far.
+
+% Things affecting quality
+
+During these phases, the quality aspects of the project shifted in different directions. A staging server environment identical to the production server was created. The staging server was integrated with the continuous integration server. The staging server had two purposes: the customer could demonstrate the application to potential customers and some system testing could be done in the staging server. 
+
 % * Vaihe 4
 % 	* Aikataulu: 5.6.2013 - 15.7.2013
 % 	* Budjetti: 6%   15 000€
@@ -69,6 +66,13 @@ The project was divided into multiple phases. In the scope of this thesis, five 
 % 		* Miro
 % 		* Kimmo
 % 		* (Elice)
+\textbf{Phase four.}
+
+% Content
+% Time frame, team, budget, new features and bugs, function points
+% Things affecting quality
+
+
 % * Vaihe 5
 % 	* Aikataulu: 15.7.2013 - 16.7.2013
 % 	* Budjetti: 12%   30 000€
@@ -81,5 +85,22 @@ The project was divided into multiple phases. In the scope of this thesis, five 
 % 		* Miro
 % 		* Kimmo
 % 		* (Elice)
+\textbf{Phase five.}
 
+% Content
+% Time frame, team, budget, new features and bugs, function points
+% Things affecting quality
+
+% http://www.qsm.com/resources/function-point-languages-table
+% Function points
+
+
+
+
+
+
+
+% kokeilut, testausta siirrettiin tulevaisuuteen
+% featuret edellä, testaus jälkikäteen
+% asioiden validointi, epäselvät speksit -> tuntui turhalta testata ilman tietoa onko toiminnallisuus järkevää
 
