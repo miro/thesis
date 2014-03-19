@@ -196,5 +196,70 @@ There were no actual proposals for improving the communication between the team 
 
 \subsection{Customer and End Users}
 
+The main tone in the interview with the customer representative was that the realized quality in the project was close to what the customer had expected. 
+Although there were no clear problems with the quality mentioned, the need for improving the application quality in the future was acknowledged.
+
+\textbf{Overall quality.} The customer was generally quite satisfied with the achieved quality in the phases one to five. It was evident that some problems were present in the project, but the approach had been in emphasizing the effort put to the delivery of new features. The customers viewpoint was that implementing and delivering new features would open opportunities for obtaining new end customers for their product. Using less effort on testing and other quality assurance, the team would produce new features more quickly and that in turn would eventually lead to more revenue.
+
+The success of using this approach was proven by the feedback from the end users: the end users expressed interest in the system and were excited of the possibilities it could provide. The end users were satisfied with the system regardless of the quality issues which reached the end users. There was an assumption that, for the end users, the main interests regarding quality would be simplicity, logic and usability of the user interfaces. This seemed to be correct.
+
+% Kuinka tyytyväisiä laatuun?
+%	yleisesti melko tyytyväisiä
+%	asiat menneet suunnitelmien mukaan
+%	laatu ollut tarpeen mukaista
+%	asiakkaan puolelta asenne "enemmän featureita/vähemmän testausta"
+%	myöhemmin tarkoitus rakentaa laatua
+%	Palaute loppukäyttäjiltä: kiitettävä
+%	loppukäyttäjillä laatua yksinkertaisuus, loogisuus, toimivuus ja käytettävyys
+
+\textbf{Causes of problems.} It was seen that the fast pace of development and the low focus on quality aspects in the earlier phases were boomeranging to the later phases. Many of the large problems being fixed in the later phases could be traced back to the shortcuts done before. These were partially caused by the loose specification of the features and the regression formed by the new feature implementation. Some gaps in the specifications were partially consciously taken risks, as all the time spent specifying features and having meetings cost money.
+
+Some reference was given towards the changes in the team personnel. Some defects caused by regression could have been avoided if the developers implementing new features would have been familiar with the implementation of the existing features. The customers view on this lack of sufficient specification was that a constant communication about these ambiguities should have corrected most of the issues with understanding.
+
+Some mistakes were made during the project, which could have been done differently. In the manager client meant for the kindergarten management, not enough attention was put into the things the end users cared the most: simplicity, logic and usability. The manager client was implemented quickly without a proper knowledge of the actual usage it was going to.
+
+Another clear mistake was the effort put to generating automatic reports for the kindergarten personnel. After the feature was delivered, the end users expressed that they preferred to export the data to an external spreadsheet software. The effort put to this feature could have been saved and put into more efficient use. Eventually these generated reports are going to be implemented more properly, so the effort was not entirely wasted.
+
+% Mistä ilmaantunut korjattavaa/bugeja?
+%	ensimmäisen kevään nopealla tahdilla tehtyä feature-kehitystä on jouduttu tarkastelemaan ja siitä on aiheutuneet suurimmat ongelmat
+%	nämä lähinnä speksien ja regression takia
+%	nopeasti tehdessä on speksi jäänyt välillä liian kevyeksi ja refaktoroinnin osuus kasvanut liian isoksi
+%	regressiossa ja refaktoroinneissa kehittäjä ei ole täysin ymmärtänyt pohjalla olevaa toteutusta
+%	puhtaasti kustannuskysymys, yhteiset speksaukset ja miitit päätyvät suoraan laskulle
+%	täydellisen speksin sijaan tekijöiden pitäisi heti rohkeasti kysyä, jos epäselvää
+
+%	kuntaUI huonoin näillä mittareilla
+%	tilastot-feature ei vastaa ollenkaan asiakkaan tarpeisiin
+%		tilastoivat ja raportoivat mieluummin excelillä
+
+
+\textbf{Practices used.} Some practices the customer was satisfied were in the area of communication. The weekly meetings were mentioned as an important part of the development. Most importantly, in these meetings the whole team should agree on what tasks are to be done in the following sprint. Also the tasks would be discussed through to assure that everyone in the team would understand the principles of the features.
+
+In addition to the weekly meetings, communication through the digital channels were mentioned as a good practice. However, the customers view was that there could have been even more communication. The customers thoughts on this were that the development team probably would not want any more interruptions on their daily work, so the situation could have been in balance after all.
+% Mitkä laatujutut olleet hyviä/huonoja?
+%	Weeklyt olleet hyviä => kenenkään ei tarvitsisi alkaa tekemään mitään mitä ei ole sovittu tehtäväksi tai mistä ei riittävää ymmärrystä
+%	Skype & flowdock kommunikaatio ollut hyvää => asiakkaan puolesta voisi silti olla vielä lisää
+
+
+\textbf{Areas in need for improvement.} There were three topics the customer mentions that probably had room for improvement. First, more testing should have been executed using the data from production environment. Some testing had successive results when executed in either development or testing environment, but still some issues were found in production environment. The data from the production should have been duplicated to the environments the test were executed in.
+
+Second, the migrations to the database should have been tested more thoroughly. There were some issues caused by the multiple migrations done to the production database. The customers opinion was that these issues could have been avoided by using the actual production data for testing the migration.
+
+Third, the customer thinks there could have been more testing in cooperation with the development team. By testing together with the customer, the development team could have acquired deeper understanding on the requirements of the customer and end users.
+% Mihin olisi kannattanut panostaa enemmän	
+%	Tuotantodatan käyttö testauksessa
+%	Migraatioiden testaus, valmistautuminen hieman liian lepsua
+%	Yhteistä testausta voisi olla enemmän => kasvattaisi myös ymmärrystä
+
 
 \subsection{Discussion}
+
+% -Devaajien huomiot negatiivisia, asiakkaan positiivisia
+% -Laatujuttujen eri näkökulmat eroavat: mahdollisesti sopiva tasapaino laatujuttujen ja uuden kehityksen välillä
+% -Viittaus mikkosen artikkeliin
+% -Riippumatta laatujuttujen puuttumisesta, asiakas saanut toimivan systeemin ja useita asiakkaita sille.
+% -Hyvät devaajat, jotka ylpeitä työstään => riittävä laatu
+% -Testauksella ei olisi saatu kitkettyä puutteita speksissä
+% -Asiakkaan rajallinen ajankäyttö speksien ja juttujen tekemiseen vaikutti osittain negatiivisesti projektiin
+% -Kritiikki asiakkaan osallistumisesta koodaukseen => kuitenkin pakko, että pääsee sisään toiminnallisuuteen
+% -
