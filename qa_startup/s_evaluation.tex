@@ -18,7 +18,11 @@ When working with a 3D chat software called IMVU, Ries and his colleagues decide
 
 Lean Startup method is aiming for the goal of winning over customers and not opposed to building high-quality products. Thus, it is necessary to set aside some professional standards to enable the validated learning as soon as possible. This is not supposed to allow operating in an undisciplined manner. This is important as there are some quality problems that can slow down the Build-Measure-Learn feedback loop. In addition, defects complicate the evolution of the product and interfere with the ability to learn. Helping the development of the MVP means removing any feature, process or effort that does not lead directly to the learning sought.
 
-Another view of the software quality applicable to a startup environment is described in the Lean Software Development method.~\cite{poppendieck2003LSD}
+Another view of the software quality applicable to a startup environment is described in the Lean Software Development method (LSD). One of the principles of LSD is "Build Integrity In", which has its premises in high-performing automotive companies in 1980s. A study by Kim Clark found out that the product integrity was a key difference between average and high-performing companies in developing superior products. Clark found out that integrity has two dimensions: external integrity and internal integrity.~\cite{clark1991product}
+
+LSD renames these two types of integrities as perceived integrity and conceptual integrity. Perceived integrity is a balance of function, usability, reliability and economy observed by the customer. It is affected by the whole experience of the system beginning from advertising and delivery to intuitiveness and the ability to solve the problem. An analogy to the measure of perceived integrity comes from the question: which ones of the bookmarks of your browser would you add back immediately, if you wiped out them all? These are the products with perceived integrity.
+
+Conceptual integrity is smoothness and uniformity of the whole system's central concepts. The architecture of the system has an effective balance between flexibility, maintainability, efficiency and responsiveness. Conceptual integrity is a prerequisite to perceived integrity. To be able to achieve perceived integrity, the system must have a consistent design. As the system evolves and matures, conceptual integrity emerges. Although conceptual integrity is needed for perceived integrity, the existence of the former does not ensure the existence of the latter. This is because conceptual integrity is not sufficient for a successful customer experience, if the system does not meet the users' need.~\cite{poppendieck2003LSD}
 
 % LSD: p. 16-
 
@@ -57,34 +61,29 @@ Another view of the software quality applicable to a startup environment is desc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-MILLÄ MENESTYKSELLÄ TEHDÄÄN JA KUINKA SOPII TÄHÄN SCOPEEN
+% MILLÄ MENESTYKSELLÄ TEHDÄÄN JA KUINKA SOPII TÄHÄN SCOPEEN
 
+% PREVENTIVE
+% -Small business applications p.126
+% 	-1000fp
+% 	-embedded users
+% 	-agile development method
+% 	-TDD
+% 	-automated risk analysis
+% 	-static analysis on all code segments
+% -This combination should lower defect potentials by 45\% and ensure defect removal 95\%
 
-
-PREVENTIVE
--Small business applications p.126
-	-1000fp
-	-embedded users
-	-agile development method
-	-TDD
-	-automated risk analysis
-	-static analysis on all code segments
-	-This combination should lower defect potentials by 45\% and ensure defect removal 95\%
-
-
-
-
- \begin{itemize}
+% \begin{itemize}
   
- \item ECO: We use these quality metrics to compare a number of quality improvement techniques at each stage of the software development life cycle and quantify their efficacy using data from real-world applications.
+% \item ECO: We use these quality metrics to compare a number of quality improvement techniques at each stage of the software development life cycle and quantify their efficacy using data from real-world applications.
  
- \item Direct costs \& efforts p. 200 table
+% \item Direct costs \& efforts p. 200 table
 
- \item ECO: Analysis of pretest defect removal activities p. 208
+% \item ECO: Analysis of pretest defect removal activities p. 208
 
- \end{itemize}
+% \end{itemize}
  
- \subsection{Building Quality In}
+% \subsection{Building Quality In}
 
 %http://books.google.fi/books?id=RTt9AgAAQBAJ&lpg=PA27&ots=PXXKjr2e_E&dq=%22According%20to%20Shigeo%20Shingo%2C%20there%20are%20two%20kinds%20of%20inspection%22&pg=PA29#v=onepage&q&f=false
 % In Lean Software Development, the goal is to build quality into the code from the start, not test it in later. Dont focus on putting defects into a tracking system, you avoid creating defects in the first place. It takes a higly disciplined organization to do that. p26
@@ -93,22 +92,22 @@ PREVENTIVE
 
 
 
-{poppendieck2006implementing} 
+% {poppendieck2006implementing} 
 
- \subsection{Pretest defect removal}
+% \subsection{Pretest defect removal}
  
- \subsection{Testing}
+% \subsection{Testing}
  
- \subsection{The Don'ts - Things To Avoid}
+\subsection{The Don'ts - Things To Avoid}
  
- \begin{itemize}
+% \begin{itemize}
  
- \item Liittyy vahvasti Leanin Wasteen
- \item Älä raportoi bugeja, joista tiedät, ettei niitä korjata
- \item Ei turhia raportteja
- \item ECO: Cost per defect => paras tulos bugisimmassa projektissa
+% \item Liittyy vahvasti Leanin Wasteen
+% \item Älä raportoi bugeja, joista tiedät, ettei niitä korjata
+% \item Ei turhia raportteja
+% \item ECO: Cost per defect => paras tulos bugisimmassa projektissa
  
- \end{itemize}
+% \end{itemize}
 
 % ECO:  p. 127 harmful combinations PREVENTIVE
 
