@@ -9,11 +9,7 @@
 %	-Laatuun on käytössä myöhemmin enemmän resursseja, koska asiakkaita alkaa olla
 %	-Osuiskohan tähän Lean Startupin skaalausvaihe
 
- \section{Evaluation of QA Methods}
-
-Quality assurance in a startup environment differs from the QA activities in traditional software development. This is because the requirements and goals of a startup project are usually considerably different from a traditional software projects. Furthermore, even the term software quality can be partially redefined for a better fit in a software startup. Eric Ries describes that the development of Minimum Viable Products questions the traditional notions of quality and this is the most vexing aspects of the development. TODO: Viite
-
- \subsection{Quality in a Startup project}
+ \section{Quality in a Startup project}
 
 In the beginning of the chapter about role of quality, Eric Ries states that "The best professionals and craftpersons alike aspire to build quality products; it is a point of pride". This is a good summary about the attitude towards software quality in many movements about modern software development. Measuring and defining quality in modern software projects with constant changes and uncertainty can be difficult, but the development personnel should have the pursuit for high quality.
 
@@ -25,66 +21,66 @@ When working with a 3D chat software called IMVU, Ries and his colleagues decide
 
 Lean Startup method is aiming for the goal of winning over customers and not opposed to building high-quality products. Thus, it is necessary to set aside some professional standards to enable the validated learning as soon as possible. This is not supposed to allow operating in an undisciplined manner. This is important as there are some quality problems that can slow down the Build-Measure-Learn feedback loop. In addition, defects complicate the evolution of the product and interfere with the ability to learn. Helping the development of the MVP means removing any feature, process or effort that does not lead directly to the learning sought.~\cite{ries2011lean}
 
-\subsection{TODO: Foundations of high quality}
+\section{TODO: Foundations of high quality}
 
- \textbf{Clean code.} Every programmer with experience for more than two or three years have probably been slowed down by messy code. Over a couple of years of development, teams that were moving fast at the beginning of the project can be slowed down to a really slow pace. Development begins to include more and more non-trivial changes, which are about resolving the existing knots and tangles and adding new. Eventually, the mess can become so big that it can not be cleaned up at all. The total cost of owning a mess is being pondered by Robert C. Martin in his book Clean Code: A Handbook of Agile Software Craftmanship.
+ \subsection{Clean code} 
+
+ Every programmer with experience for more than two or three years have probably been slowed down by messy code. Over a couple of years of development, teams that were moving fast at the beginning of the project can be slowed down to a really slow pace. Development begins to include more and more non-trivial changes, which are about resolving the existing knots and tangles and adding new. Eventually, the mess can become so big that it can not be cleaned up at all. The total cost of owning a mess is being pondered by Robert C. Martin in his book Clean Code: A Handbook of Agile Software Craftmanship.
 
  Martin reminds that "code is really the language in which we ultimately express the requirements" and thus code is in the very foundations of every software project. A common mistake done in software projects is to increase the measure of developers in the team. This is usually done when the code has already reached a too messy state and the pace of development has slowed down. Adding new staff to the development does not improve the situation, but underlines the meaning of messy code. This new staff is not familiar with the existing system, so they easily complicate the system even further, driving the productivity even worse.
 
  A bitter fact for the developers is that usually the cause of messy code is the fault of the developers. While the management and sales staff are defending schedules and requirements, the developers should be defending the code. Many developers previously slowed down by messy code still feel the pressure of deadlines and the temptation to make messes to achieve them. Martin says that true professionals know that the only way to go fast is to keep the code as clean as possible at all times. A programmer able to write clean code is an artist, who can use all the little techniques in a disciplined manner through the sense of cleanliness.~\cite{martin2008clean}
  
- \textbf{Integrity.} One of the principles of Lean Software Development (LSD) is "Build Integrity In", which has its premises in high-performing automotive companies in 1980s. A study "Product Development Performance" by Kim Clark found out that the product integrity was a key difference between average and high-performing companies in developing superior products. Clark found out that integrity has two dimensions: external integrity and internal integrity.~\cite{clark1991product}
+ \subsection{Integrity} 
+
+ One of the principles of Lean Software Development (LSD) is "Build Integrity In", which has its premises in high-performing automotive companies in 1980s. A study "Product Development Performance" by Kim Clark found out that the product integrity was a key difference between average and high-performing companies in developing superior products. Clark found out that integrity has two dimensions: external integrity and internal integrity.~\cite{clark1991product}
 
  LSD renames these two types of integrities as perceived integrity and conceptual integrity. Perceived integrity is a balance of function, usability, reliability and economy observed by the customer. It is affected by the whole experience of the system beginning from advertising and delivery to intuitiveness and the ability to solve the problem. An analogy to the measure of perceived integrity comes from the question: which ones of the bookmarks of your browser would you add back immediately, if you wiped out them all? These are the products with perceived integrity. 
 
  Conceptual integrity is smoothness and uniformity of the whole system's central concepts. The architecture of the system has an effective balance between flexibility, maintainability, efficiency and responsiveness. Conceptual integrity is a prerequisite to perceived integrity. To be able to achieve perceived integrity, the system must have a consistent design. As the system evolves and matures, conceptual integrity emerges. Although conceptual integrity is needed for perceived integrity, the existence of the former does not ensure the existence of the latter. This is because conceptual integrity is not sufficient for a successful customer experience, if the system does not meet the users' need.~\cite{poppendieck2003LSD}
 
-\subsection{TODO: Aiming towards high quality}
+\section{TODO: Aiming towards high quality}
 
-\textbf{Build Integrity In.} In the study by Kim Clark, a primary claim is that integrity is achieved through superior information flow. Perceived integrity is a projection of the integrity of the information flow between users and developers. In turn, conceptual integrity is a projection of the integrity of the upstream and downstream of technical information flow. When reaching a system with high perceived and conceptual integrity, an excellent information flow is necessary both between customer and development team and between the upstream and downstream processes of the development team. Information flows must take into account both the current and potential uses of the system.
+\subsection{Build Integrity In} 
 
-% Perceived integrity
-In traditional software development, perceived integrity is transmitted to programmers through a multistage process. In this process, requirements are collected and processed through analysis and design. Then the design is transfered to the programmers implementing the code. These multiple hand-offs will cause the loss of considerable amount of information, key details and future perspectives. Fortunately, an alternative for this multistage process is to establish a superior customer-developer information flow by other means. With smaller systems, the development should be done by a single team having direct access to the people capable of judging the systems integrity. This team should use short iterations in where the system is demonstrated to a wide range of people giving feedback about the integrity. This way the feedback can be used for a rapid steering of course. Another technique is to use customer tests purposely created for getting feedback.
+In the study by Kim Clark, a primary claim is that integrity is achieved through superior information flow. Perceived integrity is a projection of the integrity of the information flow between users and developers. In turn, conceptual integrity is a projection of the integrity of the upstream and downstream of technical information flow. When reaching a system with high perceived and conceptual integrity, an excellent information flow is necessary both between customer and development team and between the upstream and downstream processes of the development team. Information flows must take into account both the current and potential uses of the system.
 
-% Conceptual integrity
+\textbf{Perceived integrity.} In traditional software development, perceived integrity is transmitted to programmers through a multistage process. In this process, requirements are collected and processed through analysis and design. Then the design is transfered to the programmers implementing the code. These multiple hand-offs will cause the loss of considerable amount of information, key details and future perspectives. Fortunately, an alternative for this multistage process is to establish a superior customer-developer information flow by other means. With smaller systems, the development should be done by a single team having direct access to the people capable of judging the systems integrity. This team should use short iterations in where the system is demonstrated to a wide range of people giving feedback about the integrity. This way the feedback can be used for a rapid steering of course. Another technique is to use customer tests purposely created for getting feedback.
+
 % Communicating two-ways face to face in small batches and solving the problems at the same time
+\textbf{Conceptual integrity.}
 Conceptual integrity in automotive manufacturing is pursued by using existing parts and integrated problem solving. In integrated problem solving, understanding and solving the problem happen simultaneously, instead of sequentially. The initial information is released early and not only after complete information is available. Information flow happens in two directions instead of one and it contains multiple small batches of information instead of a single large batch. The preferred communication style is face to face instead of documents. This kind of problem-solving is ideal for achieving conceptual product integrity, particularly in development of complex systems such as automobiles or software systems.
 
 In software development, using integrated problem solving means that the development must be started before the design is finalized. In addition, the developers should be able to access customers or customer representatives for getting the answers as soon as possible for any questions raised. Customer tests should be developed and ran along the iterations and not just at the end.
 
 Finally, using experienced developers in their own areas of expertise can help in achieving conceptual integrity. Not all of the developers have to be with plenty of experience, but for the complex areas, experience brings understanding of the technical details and patterns widely used to manage with the complexities. One of these experienced developers should be a master developer facilitating the effort over multiple teams. For example, integrating the decisions and trade-offs among multiple developers and customers would be the responsibility of the master developer.
 
-% Refactoring
-When the integrity of a product is building, the iterative development brings continuous improvement as the product is evolving. In software development, the system must be continuously improved by the developers. Otherwise the internal structures of the software will become calcified and fragile. In time, the system will even stop working. Refactoring is done to prevent this disintegration of the software structures over the development.
+\textbf{Refactoring.} When the integrity of a product is building, the iterative development brings continuous improvement as the product is evolving. In software development, the system must be continuously improved by the developers. Otherwise the internal structures of the software will become calcified and fragile. In time, the system will even stop working. Refactoring is done to prevent this disintegration of the software structures over the development.
 
 The need for refactoring comes when new features are added to the system one at a time and the architecture and requirements of the system change gradually. Often it would be better to think of new related features as a set and build an architectural capability to support them. If the features are added in multiple different locations of the code, the system will lose conceptual integrity. Refactoring regularly keeps the system healthy.
 
 TODO: p. 142-144
 
-% Testing
-In a traditional software development where implementation is done single module at a time, there are numerous types of testing used. There are for example unit testing, system testing, integration testing and acceptance testing used. The purpose of testing is to check that the intention behind the design is achieved and the system does what the customers want it to. In LSD, the development is done by implementing entire features instead of single modules, so the distinction between the different kinds of testing is more artificial. Instead, testing is divided into two parts: developer tests and customer tests. Developer tests are testing that the implemented features work as intended and that all the pieces work together. Customer tests are developed to verify that the system does what customers expect.
+\textbf{Testing.} In a traditional software development where implementation is done single module at a time, there are numerous types of testing used. There are for example unit testing, system testing, integration testing and acceptance testing used. The purpose of testing is to check that the intention behind the design is achieved and the system does what the customers want it to. In LSD, the development is done by implementing entire features instead of single modules, so the distinction between the different kinds of testing is more artificial. Instead, testing is divided into two parts: developer tests and customer tests. Developer tests are testing that the implemented features work as intended and that all the pieces work together. Customer tests are developed to verify that the system does what customers expect.
 
 Tests act in several different roles in the development process. First, they present the exact functioning that the features are supposed to have. Second, they also supply information on whether the features actually work as supposed. Third, tests act as a scaffolding which provides support for tools such as refactoring. This allows the developers to make changes during the development. Fourth, after the development is done, the tests provide a representation of how the system was built. Finally, developing sufficient tests for all systems in production, making changes to these systems can be verified by running the tests for all related applications.
 
-% Communication
 Tests can also work as a tool for communication. Customer tests can be written within the conversation with the customer about details of desired functionality. This way the tests can give the most accurate description of how the features should work for a customer. Likewise, developers can document the planned design by writing tests testing exactly what the design should do. There are other tools allowing the communication before the code is written, but there is no substitute for testing whether the system does what it is supposed to do. With this in mind, using tests for both tasks can be beneficial.
 
-% Feedback
 Receiving immediate feedback about the correct operation of code is important to a developer. The developer usually somehow tests the code as soon as its written, so the test could be captured as a written test allowing the reuse. Another opportunity to catch necessary experiments as tests is the review to customer within an iteration. Demonstrating the current system to a customer can be done with a set of demos or scripts, which can be captured as customer tests. These captured tests should be run as often as possible, so the team should ensure that the tests will not take too much time and are automated as much as possible.
 
-% Scaffolding
 Using automated testing with extensive test suites for both developer testing and customer testing can be an efficient way to implement scaffolding to support the development. The scaffolding is a structure supporting the developers when they are making major changes to the system. While developing software in iterations, refactoring and other tools will include changes, which tend to have unintended effects. Having these effects in the system without the scaffolding provided by automatic tests can be an unsustainable situation. Often it may seem that writing tests slows down the development, but it pays back both during development and over the systems life cycle.
 
-\textbf{Empower the Team.}
+\subsection{Empower the Team}
 
 
 
-% \textbf{TDD.}
+% \subsection{TDD}
 
-\textbf{Iterative development.}
+\subsection{Iterative development}
 % p.27
 
-\textbf{Activities.}
+\subsection{Activities}
 
 \begin{figure}[t]
 \begin{center}
@@ -120,7 +116,9 @@ Figure~\ref{fig:pretest-efficiency}
 
 % {poppendieck2006implementing} 
 
-\subsection{The Don'ts - Things To Avoid}
+
+
+\section{The Don'ts - Things To Avoid}
 
 % Liittyy vahvasti Leanin Wasteen
 % Älä raportoi bugeja, joista tiedät, ettei niitä korjata
