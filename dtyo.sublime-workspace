@@ -144,10 +144,18 @@
 	"buffers":
 	[
 		{
-			"file": "improving/c_improving.tex",
+			"file": "qa_startup/c_qa_startup.tex",
 			"settings":
 			{
-				"buffer_size": 1001,
+				"buffer_size": 666,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "qa_startup/s_evaluation.tex",
+			"settings":
+			{
+				"buffer_size": 22060,
 				"line_ending": "Windows"
 			}
 		},
@@ -155,7 +163,23 @@
 			"file": "books.bib",
 			"settings":
 			{
-				"buffer_size": 2961,
+				"buffer_size": 3890,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "improving/s_life-cycle.tex",
+			"settings":
+			{
+				"buffer_size": 2061,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "background/s_startup.tex",
+			"settings":
+			{
+				"buffer_size": 8565,
 				"line_ending": "Windows"
 			}
 		},
@@ -163,15 +187,15 @@
 			"file": "improving/s_post_release.tex",
 			"settings":
 			{
-				"buffer_size": 1842,
+				"buffer_size": 9979,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "improving/s_testing.tex",
+			"file": "general/c_references.tex",
 			"settings":
 			{
-				"buffer_size": 16854,
+				"buffer_size": 186,
 				"line_ending": "Windows"
 			}
 		}
@@ -220,22 +244,34 @@
 	},
 	"file_history":
 	[
+		"/home/master/Koulu/Dippa/dtyo/background/c_background.tex",
 		"/home/master/Koulu/Dippa/dtyo/case/c_case.tex",
-		"/home/master/Koulu/Dippa/dtyo/qa_startup/s_evaluation.tex",
 		"/home/master/Koulu/Dippa/dtyo/case/s_methods_processes.tex",
+		"/home/master/Koulu/Dippa/dtyo/case/s_objectives.tex",
+		"/home/master/Koulu/Dippa/MukavaIT-Laatu.txt",
+		"/home/master/Dev/Futuron/Futuron/app/scripts/iiallu.js",
+		"/home/master/Dev/Futuron/Futuron/app/scripts/main.js",
+		"/home/master/Koulu/Dippa/dtyo/general/c_pretext.tex",
+		"/home/master/Koulu/Dippa/dtyo/improving/c_improving.tex",
+		"/home/master/Koulu/Dippa/dtyo/books.bib",
+		"/home/master/Koulu/Dippa/dtyo/improving/s_testing.tex",
+		"/home/master/Koulu/Dippa/dtyo/improving/s_post_release.tex",
+		"/home/master/Koulu/Dippa/dtyo/case/s_qa_futurice.tex",
+		"/home/master/Koulu/Dippa/dtyo/DippaLatex.tex",
+		"/home/master/Koulu/Dippa/dtyo/quality/s_quality_general.tex",
+		"/home/master/Koulu/Dippa/dtyo/qa_startup/c_qa_startup.tex",
+		"/home/master/Koulu/Dippa/dtyo/quality/c_quality.tex",
+		"/home/master/Downloads/HamsterBall.it",
+		"/home/master/Koulu/Dippa/dtyo/qa_startup/s_evaluation.tex",
 		"/home/master/Koulu/Dippa/dtyo/dtyo.sublime-project",
 		"/home/master/Koulu/Dippa/dtyo/improving/s_preventing.tex",
 		"/home/master/Koulu/Dippa/dtyo/improving/s_pretest.tex",
 		"/home/master/Koulu/Dippa/dtyo/improving/s_life-cycle.tex",
-		"/home/master/Koulu/Dippa/dtyo/DippaLatex.tex",
-		"/home/master/Koulu/Dippa/dtyo/quality/s_quality_general.tex",
 		"/home/master/Koulu/Dippa/dtyo/quality/ss_life-cycle.tex",
-		"/home/master/Koulu/Dippa/dtyo/quality/c_quality.tex",
 		"/home/master/Koulu/Dippa/dtyo/quality/ss_testing.tex",
 		"/home/master/Koulu/Dippa/dtyo/quality/ss_preventing.tex",
 		"/home/master/Koulu/Dippa/dtyo/quality/ss_pretest.tex",
 		"/home/master/Koulu/Dippa/dtyo/qa_startup/s_startup.tex",
-		"/home/master/Koulu/Dippa/dtyo/qa_startup/c_qa_startup.tex",
 		"/home/master/Downloads/DippaBuild.sublime-build.lnk",
 		"/C/Dev/git/tana-mvp-dashboard/server/certs/mysql-ca-cert.pem",
 		"/C/Users/mpoh/Downloads/The_Lean_Startup.bibtex",
@@ -335,19 +371,7 @@
 		"/C/Dev/other/tmp/tmp2/nfc/.gitignore",
 		"/C/Dev/other/tmp/NFC/src/com/netmagazine/nfcdemo/MainActivity.java",
 		"/C/Dev/git/paikky/mukavait-paivahoito-kindergarten-ui/Gruntfile.js",
-		"/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Dev/git/paikky/mukavait-paivahoito-family-ui/tests/test/test_children_visible.js",
-		"/C/Dev/git/paikky/mukavait-paivahoito-family-ui/tests/test/test_children_present.js",
-		"/C/Users/mpoh/git/paikky/mukavait-paivahoito-kindergarten-ui/test-results.xml",
-		"/C/Users/mpoh/git/paikky/mukavait-paivahoito-kindergarten-ui/googlelinks.js",
-		"/C/Dev/phantomjs/README.md",
-		"/C/Dev/scripts/helen/consumptionReader.scala",
-		"/C/Dev/scripts/helen/heatingByHour.json",
-		"/C/Users/mpoh/git/helen-mukava/webapp/app/utils/HistoryUtils.scala",
-		"/C/Users/mpoh/git/helen-mukava/csv2json/src/main/scala/parser/Consumption2Json.scala",
-		"/C/Users/mpoh/git/helen-mukava/csv2json/consumptionByHour.json",
-		"/C/Users/mpoh/git/helen-mukava/csv2json/heatingByHour.json",
-		"/C/Users/mpoh/git/helen-mukava/csv2json/pricesByHour.json"
+		"/C/Users/mpoh/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap"
 	],
 	"find":
 	{
@@ -373,6 +397,46 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"%",
+			".}",
+			"} ",
+			"}",
+			"} ",
+			"textbf",
+			"} ",
+			"textbf",
+			"subsection",
+			"benefici",
+			"\n",
+			"\\item",
+			"\n",
+			"\n\n\n\n\n",
+			"\n\n\n\n",
+			"\n\n\n",
+			"\n\n",
+			" \\",
+			"}",
+			"\n-",
+			"-",
+			" \\",
+			"during",
+			"ROI",
+			"45\\%",
+			"%",
+			"\n-",
+			"-",
+			"%",
+			",",
+			"\n%",
+			"%",
+			"}",
+			"%	",
+			"Budjetti",
+			"*",
+			"\n",
+			"%",
+			"\n",
+			",",
 			"\n",
 			"%",
 			"-",
@@ -460,47 +524,7 @@
 			"test_*.js",
 			"homepageURL",
 			"4.019",
-			",",
-			"\\n",
-			",",
-			".",
-			",",
-			".",
-			",",
-			"},",
-			" \"price\": ",
-			"{\"time\": ",
-			"},",
-			" \"heating\": ",
-			"{\"time\": ",
-			"1356991200000",
-			"},",
-			" \"consumption\": ",
-			"{\"time\": ",
-			"1365494400000",
-			"src",
-			"1350421200000",
-			"-",
-			"<br>\\n",
-			"<br>",
-			",",
-			"json",
-			"\\n",
-			"\\",
-			",",
-			"\\n",
-			",",
-			"\\n",
-			",",
-			";",
-			",",
-			";",
-			",",
-			"	",
-			",",
-			"(:0)",
-			":0",
-			";"
+			","
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -555,28 +579,27 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "improving/c_improving.tex",
+					"file": "qa_startup/c_qa_startup.tex",
 					"settings":
 					{
-						"buffer_size": 1001,
+						"buffer_size": 666,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								840,
-								840
+								599,
+								599
 							]
 						],
 						"settings":
 						{
-							"spell_check": true,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -587,18 +610,45 @@
 				},
 				{
 					"buffer": 1,
-					"file": "books.bib",
+					"file": "qa_startup/s_evaluation.tex",
 					"settings":
 					{
-						"buffer_size": 2961,
+						"buffer_size": 22060,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1905,
-								1905
+								19272,
+								19272
+							]
+						],
+						"settings":
+						{
+							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 6746.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "books.bib",
+					"settings":
+					{
+						"buffer_size": 3890,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1684,
+								1684
 							]
 						],
 						"settings":
@@ -608,57 +658,108 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "improving/s_post_release.tex",
-					"settings":
-					{
-						"buffer_size": 1842,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1006,
-								1006
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 864.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "improving/s_testing.tex",
+					"file": "improving/s_life-cycle.tex",
 					"settings":
 					{
-						"buffer_size": 16854,
+						"buffer_size": 2061,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12293,
-								12293
+								2021,
+								2021
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "background/s_startup.tex",
+					"settings":
+					{
+						"buffer_size": 8565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2755,
+								2755
 							]
 						],
 						"settings":
 						{
 							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 864.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "improving/s_post_release.tex",
+					"settings":
+					{
+						"buffer_size": 9979,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9799,
+								9799
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2646.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "general/c_references.tex",
+					"settings":
+					{
+						"buffer_size": 186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -734,6 +835,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 254.0,
+	"side_bar_width": 183.0,
 	"status_bar_visible": true
 }
