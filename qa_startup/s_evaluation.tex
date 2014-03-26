@@ -94,9 +94,7 @@ There are some downsides in passionate attitude towards a purpose. First, long w
 
 The position of a master developer is not usually designated, but it is emerged. It is not necessary that there is a known master developer in the beginning of a project. A person with deep experience and understanding on both technical and customer issues usually rises to this position. Master developer is part of the team working towards the purpose and empowering the team. Architects and other advisory roles are not likely in a role of master developer, because they are not a part of the team.
 
-\textbf{Expertise.}
-
-In software development, there are two major areas of expertise: technical knowledge and domain knowledge. Technical knowledge creates experts in areas such as database administration, user interface design and embedded code. Domain knowledge includes understanding of the domain of the business, for example health-care or security.
+\textbf{Expertise.} In software development, there are two major areas of expertise: technical knowledge and domain knowledge. Technical knowledge creates experts in areas such as database administration, user interface design and embedded code. Domain knowledge includes understanding of the domain of the business, for example health-care or security.
 
 Expertise in different areas evolves best in communities of expertise, where people responsible for same kind of activities meet. A traditional method of developing these communities inside a company is to divide the company into functions by core competence. These functions can include program leaders guiding the teams in product development. This structure is called a matrix organization.
 
@@ -111,7 +109,20 @@ Companies not using matrix organization should also preserve communities of expe
 
 \subsection{Activities}
 
-\textbf{Pretest.} Activities used in pretest defect removal were studied and presented by Capers Jones in The Economics of Software Quality. The study was aimed at small software projects and the results divided the defects found by the origin of defect and the activity it was found with. Defect origins distinguished were requirements, design, code and documentation. Used activities were desk check, scrum, client reviews, peer reviews and static analysis. The results show that over half of the defects were found from the code. The most effective activity for finding the defects prior to testing was static analysis. Considering the almost automatic nature of static analysis, it can be seen as a predictable result. The results presented in Figure~\ref{fig:pretest-efficiency} can aid in choosing the pretest defect removal activities.\cite{jones2011economics}
+%http://books.google.fi/books?id=RTt9AgAAQBAJ&lpg=PA27&ots=PXXKjr2e_E&dq=%22According%20to%20Shigeo%20Shingo%2C%20there%20are%20two%20kinds%20of%20inspection%22&pg=PA29#v=onepage&q&f=false
+% In Lean Software Development, the goal is to build quality into the code from the start, not test it in later. Dont focus on putting defects into a tracking system, you avoid creating defects in the first place. It takes a higly disciplined organization to do that. p26
+% There are two kinds of inspections, inspection after defects occur and inspection to prevent defects. If you really want quality, you don't inspect after the fact, you control conditions so as not to allow defects in the first place. If this is not possible, the you inspect the product after each small stemp, so that defects are caught immediately after they occur. When a defect is found, you stop the line, find its cause and fix it immediately. p.27
+% Defect tracking systems are queues of partially done work, queues of rework. In Lean, queues are collection points for waste.
+
+% {poppendieck2006implementing} 
+
+The Lean Software Development focuses on building integrity in and doing the development in short iterations with continuous validation. These guidelines try to assure high quality more as preventing the defects from incurring than finding and repairing the defects after their occurrence. Traditional quality assurance does not fit to startup environment as is, but the principles behind the activities can be applied.
+
+\textbf{Defect prevention.} Traditional defect prevention activities can be applied in Lean Software Development. Agile development method and embedded users can support the iterative development and observing of the customers. Test Driven Development can help in achieving integrity, using tools such as refactoring and testing as a whole. Static analysis can prevent defects in the code and it should be used in modern software development where ever possible.
+
+\textbf{Pretest.} Activities used in pretest defect removal were studied and presented by Capers Jones in The Economics of Software Quality. The study was done to small software projects, which were defined as an application below 1000 function points or 50000 statements in a Java-like language. This applications were developed by a team of under six developers. The results of the study divided the defects found by the origin of defect and the activity it was found with. Defect origins distinguished were requirements, design, code and documentation. Used activities were personal desk checking, scrum sessions, client reviews of specifications, informal peer reviews and static analysis of source code. The results show that over half of the defects were found from the code. The most effective activity for finding the defects prior to testing was static analysis. Considering the almost automatic nature of static analysis, it can be seen as a predictable result. The results presented in Figure~\ref{fig:pretest-efficiency} can aid in choosing the pretest defect removal activities.\cite{jones2011economics}
+
+Using these pretest defect removal methods can be beneficial also when doing LSD. Personal Desk Checking can help when trying to write clean code and when reaching for conceptual integrity. Informal Peer Reviews can be a powerful tool supporting things such as clean code, conceptual integrity and refactoring. Also empowering the team can be done with peer reviews, because the reviews can include elements raising motivation, strengthening leadership and improving expertise. Client reviews of specifications can support in achieving perceived integrity and getting overall understanding of the customer's needs. Scrum sessions are a natural part of iterative development.
 
 \begin{figure}[t]
 \begin{center}
@@ -121,40 +132,12 @@ Companies not using matrix organization should also preserve communities of expe
 \label{fig:pretest-efficiency}
 \end{figure}
 
-\textbf{Defect prevention.}
 
-
-\textbf{Testing.}
-
-
-% PREVENTIVE
-% -Small business applications p.126
-% 	-1000fp
-% 	-embedded users
-% 	-agile development method
-% 	-TDD
-% 	-automated risk analysis
-% 	-static analysis on all code segments
-% -This combination should lower defect potentials by 45\% and ensure defect removal 95\%
-
-% ECO: We use these quality metrics to compare a number of quality improvement techniques at each stage of the software development life cycle and quantify their efficacy using data from real-world applications.
- 
-% Direct costs \& efforts p. 200 table
-% ECO: Analysis of pretest defect removal activities p. 208
- 
-% DEFECT TRACKING IS A WASTE
-
-%http://books.google.fi/books?id=RTt9AgAAQBAJ&lpg=PA27&ots=PXXKjr2e_E&dq=%22According%20to%20Shigeo%20Shingo%2C%20there%20are%20two%20kinds%20of%20inspection%22&pg=PA29#v=onepage&q&f=false
-% In Lean Software Development, the goal is to build quality into the code from the start, not test it in later. Dont focus on putting defects into a tracking system, you avoid creating defects in the first place. It takes a higly disciplined organization to do that. p26
-% There are two kinds of inspections, inspection after defects occur and inspection to prevent defects. If you really want quality, you don't inspect after the fact, you control conditions so as not to allow defects in the first place. If this is not possible, the you inspect the product after each small stemp, so that defects are caught immediately after they occur. When a defect is found, you stop the line, find its cause and fix it immediately. p.27
-% Defect tracking systems are queues of partially done work, queues of rework. In Lean, queues are collection points for waste.
-
-% {poppendieck2006implementing} 
-
-
+\textbf{Testing.} Using traditional testing methods in startup environment is a topic which has to be planned per project. As LSD divides testing in developer and customer tests, each project has to decide which of the traditional methods of testing have the best result when applied. Plain unit testing and subroutine testing can be relevant in some situations, but the use of excessive unit testing in pursuit for full test coverage can be waste of time and resources. In startup environment, the development is usually done as a cross-application development covering full features. In this kind of development the testing should be focused on testing the application as a whole. Though, testing parts of the application can be useful and even necessary depending on the software.
 
 \section{The Don'ts - Things To Avoid}
 
+% DEFECT TRACKING IS A WASTE
 % Liittyy vahvasti Leanin Wasteen
 % Älä raportoi bugeja, joista tiedät, ettei niitä korjata
 % Ei turhia raportteja
