@@ -70,6 +70,13 @@ These methods are based on the actual methods present in the work done by the 17
 
 TODO: Luvut ja faktat 25\% Defect prevention efficiency, 5\% Defect removal efficiency p. 136
 
+% Embedded users p.136 p.58
+
+\subsection{Embedded Users} 
+Embedded users is an Agile method where one or more user representatives are embedded into the project team. The purpose of the user representative is to work in cooperation with the developers creating the critical requirements which are then implemented in short sprints. The idea is to build the specific business critical features and get those running as quickly as possible. The embedded customer representatives are also used to give support in reviewing the features and requirements. The main purpose of this method is to improve the requirements definition.
+
+This method is proven to be useful in small software projects under 2500 function points and effective in projects with under 100 users and size below 1000 function points. In larger scale applications, over 10000 function points or more than 1000 user, a single representative cannot effectively provide enough requirements. This method can however be scaled up by using multiple user representatives, but like other Agile methods, this is most effective in smaller projects.
+
 % Test driven development TDD book?
 \subsection{Test-Driven Development} 
 Test-driven development (TDD) is a development process where the development consists of short repetitious cycles of development. A cycle comprises an initially failing test case, minimum amount of code to pass that test and refactoring of the code. The development process embraces the phrase "clean code that works" by Ron Jeffries. Kent Beck analyses the benefits of that statement in his book "Test-driven Development: By Example".
@@ -79,28 +86,6 @@ Writing clean code that works can help developers by allowing a predictable flow
 Writing clean code that works is not such an easy task. Anyone working in the software development can admit that there are many forces driving the development further from clean code and even from code that works. One solution is using automated tests as the driving force of the development. This is called Test-Driven Development. There are two cornerstones in TDD: new code is written only if an automated test has failed and duplication is eliminated. These rules seem simple enough, but they can actually produce complex behavior for individuals and the whole team. The team must be able to choose between decisions by getting feedback from the running code. Every developer must write his own tests in opposite to waiting for someone else to write the tests. The development environment must be quick enough to provide instant feedback on small changes. The design of the software must allow easy testing by using simple, loosely coupled components.
 
 These complex requirements imply a specific order of activities in development. TDD defines the steps of development and the order of executing them as Red, Green and Refactor. Red and green are the colors of the test success. First a simple test is written so that it won't succeed. The test won't sometimes even compile. Then the test is made green, successful, by not avoiding any means necessary. After the green is achieved, the code is refactored to eliminate all of the duplication created while still keeping the test green.~\cite{beck2003test}
-
-
-
-
-
-
-	% Clean code: Incrementalism TDD p. 213
-
-
-
-
-% Automated risk analysis (p. 177-184)
-% TODO: \subsection{Automated risk analysis} 
-
-
-
-% Embedded users p.136 p.58
-
-\subsection{Embedded Users} 
-Embedded users is an Agile method where one or more user representatives are embedded into the project team. The purpose of the user representative is to work in cooperation with the developers creating the critical requirements which are then implemented in short sprints. The idea is to build the specific business critical features and get those running as quickly as possible. The embedded customer representatives are also used to give support in reviewing the features and requirements. The main purpose of this method is to improve the requirements definition.
-
-This method is proven to be useful in small software projects under 2500 function points and effective in projects with under 100 users and size below 1000 function points. In larger scale applications, over 10000 function points or more than 1000 user, a single representative cannot effectively provide enough requirements. This method can however be scaled up by using multiple user representatives, but like other Agile methods, this is most effective in smaller projects.
 
 
 % Static analysis p. 185 (Automated p. 267-276)
