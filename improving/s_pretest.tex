@@ -1,20 +1,26 @@
- \section{Pretest Methods}
+ \section{Pretest Defect Removal}
 
 Capers Jones suggests that in every software project there should be multiple pretest QA methods used. Jones lists a combination of methods for both small and large projects. A small software project, in this context, is described to have a maximum amount of 1000 function points or 50 000 source code statements. These small projects are generally executed by a team with less than 6 software developers. These teams usually have no specialists for any quality methods, but the developers are generalists handling requirements, design, coding and testing. In many cases with Agile approach, there are users representative embedded in the team providing requirements and customers viewpoint in real time. Jones reminds that removing defects with high efficiency requires trained and technically skilled software engineers instead of generalists. However, this is not as necessary in small projects, since fortunately these projects have usually low defect potentials.
 
-The origins of defects in small studied projects are split into five categories. Source code is the most common origin of defects. About 1.75 defects per function point are found in source code and this leads to 1750 defects in whole projects. Software design is the second most common source of defects. Design is the origin of 1.00 defects per function point. Requirements are causing 0.75 defects per function point and documentation nearly as much with 0.65 defects. Poorly executed fixes are the origin of 0.27 defects per function point. All together these five are the source for 4420 defects in a whole 1000 function point software project. These figures represent the approximate averages and the actual values can be as much as 25\% lower or higher for every source. 
+\subsection{Origin of Defects}
+
+The origins of defects in small studied projects are split into five categories. Source code is the most common origin of defects. About 1.75 defects per function point are found in source code and this leads to 1750 defects in whole projects. Software design is the second most common source of defects. Design is the origin of 1.00 defects per function point. Requirements are causing 0.75 defects per function point and documentation nearly as much with 0.65 defects. Poorly executed fixes are the origin of 0.27 defects per function point. 
+
+All together these five are the source for 4420 defects in a whole 1000 function point software project. These figures represent the approximate averages and the actual values can be as much as 25\% lower or higher for every source. 
+
+\subsection{Pretest Methods}
 
 Jones presents a suite of pretest defect removal activities and their efficiencies for small projects. This suite includes:
 
 \begin{enumerate}
 
-\item personal desk checking
+\item personal desk checking (subsection~\ref{subsec:deskcheck})
 
-\item scrum sessions
+\item scrum sessions(subsection~\ref{subsec:scrumsessions})
 
-\item client reviews of specifications
+\item client reviews of specifications(subsection~\ref{subsec:clientreview})
 
-\item informal peer reviews
+\item informal peer reviews(subsection~\ref{subsec:peerreview})
 
 \end{enumerate}
 
@@ -25,6 +31,7 @@ Each of these forms of defect removal activities are targeted towards a specific
 
 % Desk checking p. 208
 \subsection{Personal Desk Checking} 
+\label{subsec:deskcheck}
 Personal desk checking is a manual operation in where the logic of an algorithm is checked by the creator of the algorithm . The logic used in the desk checking is presented as a pseudo-code rather than the implemented actual program code. The algorithm is executed by a person acting as a computer. The person performing the desk checking carefully follows the algorithm while filling a table of notes with pen and paper. 
 
 The notes form a table which include columns for: line number, variables in use, conditions, input and output. Line number is necessary to identify the line being executed. All variables have a column in alphabetical order. As the value of the variable changes, the appropriate column is filled up. Conditions columns include a column for every condition in the algorithm which shows the result of the condition in either true (T) or false (F). The condition column is updated whenever the condition is evaluated. Input and output columns are used for the inputs got from the user and the output from the program.~\cite{campionDescCheck}
@@ -39,6 +46,7 @@ The efficiency of defect removal for personal desk checking is between 25\% and 
 
 % Scrum sessions p. 222
 \subsection{Scrum Sessions} 
+\label{subsec:scrumsessions}
 
 The development teams in scrum are usually formed by a scrum master, embedded user representative or stakeholder, possible specialists and three to five developers. In average software development, the team usually has around five software engineers plus one or more specialists as needed. Specialists may include technical writers, business analysts or database specialists. As defined in Agile and scrum, teams should be self-organized and consist of generalists. Thought in many cases having specialized requirements, some specialists are needed.
 
@@ -52,6 +60,8 @@ The statistics by Capers Jones show that Scrum sessions are used in over 90\% of
 
 % p. 235
 \subsection{Client Reviews of Specification} 
+\label{subsec:clientreview}
+
 Client reviews of specification are, like the former two methods, among the oldest of defect removal methods. It is still not enough used in average software projects. One of the authors of "The Economy of Software Quality" has got experience in lawsuits for canceled or defective projects. In most of the lawsuits the supplier of the software accuses the customer for failing to review the designs and other documents or not making a remark about any problems during the reviews. In some cases the customer has even accepted the materials quoted in the trial.
 
 The products reviewed by customers usually don't include inner workings of software applications, like source code, test cases or detailed design. Capers Jones presents a list of 12 major items in directly funded software projects, which usually are reviewed:
@@ -79,6 +89,8 @@ The statistics show that the usage of client reviews of specifications are used 
 
 % Peer review p. 209
 \subsection{Peer Reviews} 
+\label{subsec:peerreview}
+
 Peer reviews are almost as old as desk checking. The idea of peer reviews is close to the idea of desk checking. The essential difference is that in peer reviews, the code, documentation or other product under review is checked by another person. This prevents the defects from being hidden by the human tendency to ignore their own mistakes. Peer reviews are best suited in small projects with under five developers. 
 
 In larger projects, because of the informal nature of peer reviews, the efficiency of defect removal is better with formal inspections. This leads to informal peer reviews to being the secondary method of defect removal in large projects. In large projects using Agile development method without formal inspections, peer reviews can be highly important.
