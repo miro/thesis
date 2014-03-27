@@ -18,15 +18,11 @@ Testing is one of the oldest forms of software defect removal. It has been the m
 
 
 
- \begin{itemize}
- 
- \item Crash, Smoke and Kattava testaus
- 
- \item ECO: Chapter 5
-
- \item ROI: Three main activities: Review, process audit and testing
- 
- \end{itemize}
+%  \begin{itemize}
+%  \item Crash, Smoke and Kattava testaus
+%  \item ECO: Chapter 5
+% \item ROI: Three main activities: Review, process audit and testing
+%  \end{itemize}
 
 % Test stage frequency p.289
 % 
@@ -81,6 +77,8 @@ New function testing is used in over 99\% of new software projects and also in o
 
  \subsection{Regression Testing}
 
+TODO: Tämä on vähän vaikea selitettävä kun oikeastaan regressiotestausta voidaan tehdä kaikilla tasoilla? No niin tietysti tuota new function testiäkin, mutta regression suhteen oikeaa kohtaa tässä on vaikea osoittaa.
+
 Regression testing is a method of testing targeting the opposite of new function testing. In regression testing, the subjects under tests are old functionalities and features. The word "regression", in the context of software development, means an unintentional damage done to existing features while introducing new functionality. Regression testing also aims to make sure the known defects, repaired before the implementation of the new features, don't reappear.
 
 Regression testing can be initiated during the development, when a sufficient amount of modules have been implemented. It continues through the whole development phase and further over to the post-release phase. Preventing the regression damage is very important in the systems already in maintenance phase.
@@ -102,7 +100,7 @@ Integration testing is method normally used in relatively large applications hav
 
 The pace of integration testing is usually more or less steady as the integration tests usually target a single release or build. These builds can come in different cycles depending on the organization and the development practice. The interval between the builds can be for example a month or a week. As an example, Microsoft integrates the software projects in daily basis and thus performs daily integration tests.
 
-Since the amount of modules under test can be significant, the test suites can contain significant amounts of test cases. This leads to high amounts of work needed to design the test cases. However, using mathematical test case design methods can produce high test coverages and high defect removal efficiency with relatively small amount of test cases. 
+Since the number of modules under test can be significant, the test suites can contain significant amounts of test cases. This leads to high amounts of work needed to design the test cases. However, using mathematical test case design methods can produce high test coverages and high defect removal efficiency with relatively small amount of test cases. 
 
 With integration testing, there are in most cases other supportive tools and practices used. Testing is usually done to an application under formal configuration control. Formal defect reporting procedures and test plans, planned test suites and test library support tools are also commonly used with integration testing.
 
