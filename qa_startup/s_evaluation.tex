@@ -139,15 +139,16 @@ Using these pretest defect removal methods can be beneficial also when doing LSD
 
 \textbf{Testing.} Using traditional testing methods in startup environment is a topic which has to be planned per project. As LSD divides testing in developer and customer tests, each project has to decide which of the traditional methods of testing have the best result when applied. Plain unit testing and subroutine testing can be relevant in some situations, but the use of excessive unit testing in pursuit for full test coverage can be waste of time and resources. In startup environment, the development is usually done as a cross-application development covering full features. In this kind of development the testing should be focused on testing the application as a whole. Though, testing parts of the application can be useful and even necessary depending on the software.
 
-% \section{The Don'ts - Things To Avoid}
+\section{The Don'ts - Things To Avoid}
+
+% Liittyy vahvasti Leanin Wasteen
+%	~\cite{poppendieck2006implementing}
+When aiming for satisfactory quality, one common mistake is to put the effort available on wrong target. Lean methodology appoints this as waste and seeks to eliminate it. Mary and Tom Poppendieck have interpreted waste in LSD as anything that does not add value or "anything that interferes with giving customers what they value at the time". Some main forms of waste highlighted in their book are partially done work, "churn" and extra features. Partially done work can get obsolete, hide quality problems and ties up money. "Churn" means excessive amounts of unproductive work. "Churn" can include requirements churn, churn in testing long after coding or churn created by delayed integration. These software development churns are usually associated to large inventories of partially done work. Finally, extra features are a major factor in increasing the cost of development. In the book there is an estimate that two-thirds of all features and functions of typical software are only rarely used. These features just increase the complexity of the code.~\cite{poppendieck2006implementing} 
 
 % DEFECT TRACKING IS A WASTE
-% Liittyy vahvasti Leanin Wasteen
-% Älä raportoi bugeja, joista tiedät, ettei niitä korjata
-% Ei turhia raportteja
-% ECO: Cost per defect => paras tulos bugisimmassa projektissa
-% ECO:  p. 127 harmful combinations PREVENTIVE
+%	http://books.google.fi/books?id=RTt9AgAAQBAJ p. 27
+A typical activity in quality assurance is the use of defect tracking system. Found defects are reported in this system, where they are stored until a developer takes them under work. The use of these trackers assumes that the time of discovering the defect is prior to the repair of the defect. Tom And Mary Poppendieck mention that Shigeo Shingo has divided inspections in two: inspections after defects occur and inspections to prevent defects. Reaching for quality means controlling the conditions to not allow the emerging of defects. Thus the usage of defect tracking systems can be seen as a source of waste consisting of partially done work.~\cite{poppendieck2006implementing}
+
+Lisa Crispin considers the topic of using defect tracking systems in agile development in her article based on her presentation in STAREAST conference. She introduces a well-tried practice for handling with defects: immediately after a bug is identified, an automated test is written, the bug is fixed, and both the fix and the test are pushed to repository. With this approach, the tests are instantly written so that they catch the defects if they reappear later and the tests also document the bug. Also when this "fix and forget" approach is used, there should be no need for tracking the defects. Crispin also reminds that using a defect tracking system is not a good way to communicate the defects and it can even get in the way of direct communication. Defects recorded in the tracking system can often suffer from poor and inadequate descriptions. Also the tracking system can be polluted with invalid defects which are never going to be repaired because of their low priorities or their location inside a module waiting for rewrite.~\cite{stareastcrispin}
 
 % Right the first time LSD p.19(?)
-
-% Capers Jones has interpreted from the research of multiple years of software quality that there can be harmful combinations of methods used. Even when combinind harmful methods with helpful ones, the harmful method seem to end up winning. That is, defect potentials are raising instead of coming down. Some methods combined with others can raise the defect potentials and make applications risky with a change of failure.
