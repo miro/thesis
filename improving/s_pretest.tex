@@ -45,25 +45,11 @@ Personal desk checking is used mainly in low-level code. Approximately over 75\%
 The efficiency of defect removal for personal desk checking is between 25\% and 50\% averaging 35\%. The reason for these relatively low figures can be found in human nature. Humans have a natural tendency to ignore their own mistakes. A developer making an error usually does the error thinking that the action was correct. Therefore when the developer checks the code for defects, the train of thought can remain the same and the defect is not found. This could be avoided by using proofreaders or copy editors, which is a rare habit, but could be profitable for software projects. Another solution for avoiding the blindness to own mistakes is to use peer reviews.
 
 
-% Scrum sessions p. 222
-\subsection{Scrum Sessions} 
-\label{subsec:scrumsessions}
-
-The development teams in scrum are usually formed by a scrum master, embedded user representative or stakeholder, possible specialists and three to five developers. In average software development, the team usually has around five software engineers plus one or more specialists as needed. Specialists may include technical writers, business analysts or database specialists. As defined in Agile and scrum, teams should be self-organized and consist of generalists. Thought in many cases having specialized requirements, some specialists are needed.
-
-Projects using Agile and scrum guidelines are split into small units of work. These units are called "sprints" and the development work needed to complete the unit can be achieved in two-week period. The embedded user in the team is responsible to provide the requirements for each sprint. The end result of a sprint should be the source code and supporting documentation ready to be published in production.
-
-One of the principles of scrum is to have daily scrum meetings or "stand ups". The latter name comes from the idea that the people attending the meeting should be standing up so the meeting can stay within the time limit of 15 minutes. During these meetings, every member of the team should describe three things: what was done yesterday, what will be done today and are there any problems that will slow things down. The most interesting topic in the context of defect removal, is listing the issues, bugs and problems there is and simultaneously sharing the knowledge among the team.
-
-Agile and scrum methods are popular and successfully applied in the relatively small, up to 2000 function point in size, projects. In larger software projects, the need for personnel and time raise and the work is more difficult to split in two-week long units. While Agile does have methods for scaling up to larger projects, there are also alternative approaches available.
-
-The statistics by Capers Jones show that Scrum sessions are used in over 90\% of Agile applications and up to 20\% in non-Agile applications. The sessions take under 15 minutes per participant to prepare and optimally not much longer than the limit of 15 minutes per participant to execute. The defect removal efficiency ranges from under 35\% to over 70\% averaging 55\% statistically. However, the statistical efficiency can be somewhat lower than the actual efficiency achieved . This is because the Agile and scrum teams are usually not very strict on collecting the data for defect removal.
-
 % p. 235
 \subsection{Client Reviews of Specification} 
 \label{subsec:clientreview}
 
-Client reviews of specification are, like the former two methods, among the oldest of defect removal methods. It is still not enough used in average software projects. One of the authors of "The Economy of Software Quality" has got experience in lawsuits for canceled or defective projects. In most of the lawsuits the supplier of the software accuses the customer for failing to review the designs and other documents of not making a remark about any problems during the reviews. In some cases the customer has even accepted the materials quoted in the trial.
+Client reviews of specification is as well among the oldest of defect removal methods. It is still not enough used in average software projects. One of the authors of "The Economy of Software Quality" has got experience in lawsuits for canceled or defective projects. In most of the lawsuits the supplier of the software accuses the customer for failing to review the designs and other documents of not making a remark about any problems during the reviews. In some cases the customer has even accepted the materials quoted in the trial.
 
 The products reviewed by customers usually don't include inner workings of software applications, like source code, test cases or detailed design. Capers Jones presents a list of 12 major items in directly funded software projects, which usually are reviewed:
 
@@ -102,3 +88,17 @@ Peer reviews are targeted to find technical, structural and logical defects. Thi
 In addition to removing defects in the pretest phase of projects, peer reviews can benefit projects other ways. Peer reviews can achieve the same effect as formal inspections: the participants of the review tend to unconsciously avoid the problems found in the review. Reviews can also be useful for learning. Novice developers can learn while reviewing the work of more experienced developers. Furthermore, experienced developers can remark the problems the novice members need to understand. Even beginner reviewing other beginners work can be better than nothing. Reviews done by expert for the work of expert can be highly efficient, but these cases can sometimes lead to social problems with big egos colliding when mistakes are being pointed out.
 
 Informal peer reviews are used in under a half of software applications. The achieved defect removal efficiency is usually between 35\% and 65\% and the average removal efficiency is 45\%. Reviews can take up to 30 minutes to prepare and the execution pace is around 70\% of the normal reading speed for text, and around 3 logical code statements per minute for source code. Best results for peer reviews can be achieved with small projects using Agile development method.
+
+% Scrum sessions p. 222
+\subsection{Scrum Sessions} 
+\label{subsec:scrumsessions}
+
+The development teams in scrum are usually formed by a scrum master, embedded user representative or stakeholder, possible specialists and three to five developers. In average software development, the team usually has around five software engineers plus one or more specialists as needed. Specialists may include technical writers, business analysts or database specialists. As defined in Agile and scrum, teams should be self-organized and consist of generalists. Thought in many cases having specialized requirements, some specialists are needed.
+
+Projects using Agile and scrum guidelines are split into small units of work. These units are called "sprints" and the development work needed to complete the unit can be achieved in two-week period. The embedded user in the team is responsible to provide the requirements for each sprint. The end result of a sprint should be the source code and supporting documentation ready to be published in production.
+
+One of the principles of scrum is to have daily scrum meetings or "stand ups". The latter name comes from the idea that the people attending the meeting should be standing up so the meeting can stay within the time limit of 15 minutes. During these meetings, every member of the team should describe three things: what was done yesterday, what will be done today and are there any problems that will slow things down. The most interesting topic in the context of defect removal, is listing the issues, bugs and problems there is and simultaneously sharing the knowledge among the team.
+
+Agile and scrum methods are popular and successfully applied in the relatively small, up to 2000 function point in size, projects. In larger software projects, the need for personnel and time raise and the work is more difficult to split in two-week long units. While Agile does have methods for scaling up to larger projects, there are also alternative approaches available.
+
+The statistics by Capers Jones show that Scrum sessions are used in over 90\% of Agile applications and up to 20\% in non-Agile applications. The sessions take under 15 minutes per participant to prepare and optimally not much longer than the limit of 15 minutes per participant to execute. The defect removal efficiency ranges from under 35\% to over 70\% averaging 55\% statistically. However, the statistical efficiency can be somewhat lower than the actual efficiency achieved . This is because the Agile and scrum teams are usually not very strict on collecting the data for defect removal.
