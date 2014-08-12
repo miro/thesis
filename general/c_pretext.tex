@@ -10,8 +10,8 @@
  
 \vspace{6.8cm}
  
-\noindent{\bf\large \textsf{Mikko Pohja}}\\
-{\bf\large \textsf{Quality control in a startup software project}}\\
+\noindent{\bf\large \textsf{Samuel Ipsum}}\\
+{\bf\large \textsf{Motherfucker}}\\
 \textsf{Master of Science Thesis}
  
 \vspace{8.7cm} % jos kaksi otsikkoriviä vaihda -> 6.7cm
@@ -37,7 +37,7 @@
 \begin{spacing}{1.0}
 \textsf{TAMPEREEN TEKNILLINEN YLIOPISTO}\\
 \textsf{Tietotekniikan koulutusohjelma}\\
-{\bf \textsf{Mikko Pohja: Laadunhallinta startup-yrityksen ohjelmistoprojektissa}}\\
+{\bf \textsf{Samuel Ipsum: Äidinhalaaja}}\\
 \textsf{Diplomityö, 61 sivua}\\
 \textsf{Xxxxxkuu 2014}\\
 \textsf{Pääaine: }\\
@@ -46,23 +46,27 @@
 \end{spacing}
  
 \noindent
-Moderni ohjelmistokehitys on tehnyt mahdolliseksi nopeiden prototyyppien kehityksen pienellä budjetilla ja lyhyellä aikataululla. Tästä on seurannut startup-yritysten nopea yleistyminen. Startup-yritykset voivat kokeilla ja kehittää liikeideaansa nopealla aikataululla käyttäen edistyneitä ohjelmistokehyksiä ja noudattaen ketterän ohjelmistokehityksen periaatteita. Kokenut tiimi kykenee luomaan toimivan prototyypin jo muutamassa viikossa.
+Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.
+
+\noindent
+We have an infinite amount to learn both from nature and from each other
+
+\noindent
+For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.
+
+\noindent
+If you could see the earth illuminated when you were in a place as dark as night, it would look to you more splendid than the moon.
+
+\noindent
+There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning. 
  
-\noindent
-Nopea ohjelmistokehitys saattaa johtaa ohjelmiston lähdekoodin ja rakenteen huonoon laatuun, joka hidastaa ja vaikeuttaa kehitystä tulevaisuudessa. Ohjelmiston laatuun täytyy alkaa kiinnittää huomiota viimeistään siinä vaiheessa, kun liikeidea todetaan menestyväksi ja ohjelmiston kehitystä jatketaan prototyyppivaiheesta eteenpäin. Lisäksi startup-yrityksissä ohjelmiston laatu riippuu kriittisesti toteutettavan järjestelmän sopivuudesta kohderyhmälle. Tämän takia järjestelmän sopivuuden jatkuva validointi kehityksen aikana on tärkeä osa kehitystä.
-
-\noindent
-Tässä diplomityössä on käsitelty perinteisiä laadunvarmistusmenetelmiä sekä niiden tehokkuutta. Myös startup-yrityksiä sekä niiden laatukäsitystä on tarkasteltu yleisellä tasolla. Lisäksi ohjelmistojen laadun parantamiseen käytettyjä tekniikoita on tarkasteltu startupin näkökulmasta sekä yhdistetty perinteisiä laatumenetelmiä startupille tyypilliseen laadunvarmistukseen. Lopuksi esitellään startup-yritykselle toteutettu ohjelmistoprojekti sekä käsitellään sen laadun toteutumista tehtyjen haastattelujen pohjalta.
-
-\noindent
-Työn tuloksena todettiin, että laatukäsitykset eroavat perinteisen ohjelmistokehityksen ja modernin startup-yrityksen ohjelmistokehityksen välillä. Myös laadun parantamiseen käytetyt metodit eroavat näiden kehitysmuotojen välillä. Perinteiset menetelmät luottavat enemmän teknisiin lähestymistapoihin, joilla löydetään virheitä, kun taas modernissa laadunparannuksessa keskitytään enemmän ihmisiin ja kehitysprosessiin. Perinteiseen laadunparannukseen liittyviä teknisiä toimenpiteitä, kuten katselmointeja ja erilaisia testausmuotoja, voi kuitenkin soveltaa modernin laadunparannuksen osana. 
 
 \newpage
 \chapter*{ABSTRACT}
 \begin{spacing}{1.0}
 \textsf{TAMPERE UNIVERSITY OF TECHNOLOGY}\\
 \textsf{Master's Degree Programme in Information Technology}\\
-{\bf \textsf{Mikko Pohja : Quality control in a startup software project}}\\
+{\bf \textsf{Samuel Ipsum : Motherfucker}}\\
 \textsf{Master of Science Thesis, 61 pages}\\
 \textsf{xxxxxx 2014}\\
 \textsf{Major: }\\
@@ -71,21 +75,22 @@ Työn tuloksena todettiin, että laatukäsitykset eroavat perinteisen ohjelmisto
 \end{spacing}
  
  % Konteksti
-\noindent
-Progress in modern software development has enabled tiny prototypes that can be implemented with small budget and short schedule. Since proving the business ideas with fast prototyping has become so easy, the number of startup companies has begun to grow. A team with sufficient experience can implement a simple working prototype as fast as in weeks.
- 
+
  % Ongelma
 \noindent
-Development of these simple prototypes can lead to poor quality of code and structure of the product, which can complicate the future development. This can become an issue if the business idea is indeed validated and proven to be successful.
-
- % Tässä diplomityössä (mitä tehty ratkaisemiseksi)
+If you could see the earth illuminated when you were in a place as dark as night, it would look to you more splendid than the moon.
 \noindent
-This thesis discusses software quality in both traditional software development and software startup environment. Methods traditionally used for improving quality and their efficiency are presented. These methods are also joined to the quality methods recommended for software startup environment. Finally, this thesis presents an example project done for a software startup.
 
-% Arvio onnistumisesta
+A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.
 \noindent
-Conclusions from this thesis include that the definition of quality and methods improving it vary between traditional software development and modern startup environment. In traditional software development, methods for improving quality are focused on technical activities discovering defects. In turn, modern methodologies concentrate more on people and processes. However, activities from traditional quality improvement can be applied to the methods recommended for startup environment.
 
+A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.
+\noindent
+
+As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.
+
+\noindent
+Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species.
 
 \newpage
  
