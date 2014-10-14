@@ -1,17 +1,22 @@
-\documentclass[12pt,a4paper,finnish]{tillbehor/tutthesis}
+\documentclass[12pt,a4paper,finnish]{assets/tutthesis}
  
 % LaTeX-tiedosto opinnäytepohjaksi
 % Tekijä: Sami Paavilainen
 % Muokkaaja: Heikki Huttunen (heikki.huttunen@tut.fi) 31.7.2012.
+% Lisämuokkaajat: Mikko Pohja & Miro Nieminen
  
 % Vaatii lisäksi luokkatiedoston tutthesis.cls
 % sekä tiedoston tty-logo.pdf (pdflatex) tai tty-logo-eps (latex)
 
 \usepackage[utf8]{inputenc}
 
-\usepackage[small]{caption}% kuvatekstien kirjasinkoko ja asettelu
+% kuvatekstien kirjasinkoko ja asettelu
+\usepackage[small]{caption}
+
 %omia käskyjä voi lisätä tähän väliin, esim. \newcommand{\angs}{\textsl{\AA}}
+
 \pagenumbering{Roman}
+
 % alkuvalmistelut loppuu
  
 \begin{document}
@@ -21,38 +26,37 @@
 % Tästä alkaa varsinainen teksti
 \pagenumbering{arabic}
  
+
+ %% ---------------------------------------
+ %% Introduction
 \input{general/c_intro}
  
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- % SOFTWARE QUALITY
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- \input{background/c_background}
+
+%% ---------------------------------------
+%% Related Research
+ \input{related_research/c_related_research}
+
+
+%% ---------------------------------------
+%% Methods 
+ \input{methods/c_methods}
 
  
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- % IMPROVING SOFTWARE QUALITY
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ---------------------------------------
+%% Implementation
+\input{implementation/c_implementation}
  
- \input{improving/c_improving}
 
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	QUALITY ASSURANCE IN STARTUP SOFTWARE PROJECT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
-\input{qa_startup/c_qa_startup}
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	CASE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ---------------------------------------
+%% Results
+\input{results/c_results}
 
-\input{case/c_case}
+%% ---------------------------------------
+%% Discussion
+\input{discussion/c_discussion}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	CONCLUSIONS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%% ---------------------------------------
+%% Conclusions
 \input{conclusions/c_conclusions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
