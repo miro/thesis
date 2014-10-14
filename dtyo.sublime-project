@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"path": "~/Koulu/Dippa/dtyo"
+		}
+	],
+	"build_systems":
+    [
+        {
+			"shell": true,
+            "name": "pdflatex_linux",
+            "cmd": ["pdflatex -interaction=nonstopmode DippaLatex.tex && bibtex DippaLatex.aux && pdflatex -interaction=nonstopmode DippaLatex.tex && pdflatex -interaction=nonstopmode DippaLatex.tex && evince DippaLatex.pdf"],
+			"working_dir": "/home/master/Koulu/Dippa/dtyo"
+        }
+    ]
+}

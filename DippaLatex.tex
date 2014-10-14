@@ -1,0 +1,65 @@
+\documentclass[12pt,a4paper,finnish]{tillbehor/tutthesis}
+ 
+% LaTeX-tiedosto opinnäytepohjaksi
+% Tekijä: Sami Paavilainen
+% Muokkaaja: Heikki Huttunen (heikki.huttunen@tut.fi) 31.7.2012.
+ 
+% Vaatii lisäksi luokkatiedoston tutthesis.cls
+% sekä tiedoston tty-logo.pdf (pdflatex) tai tty-logo-eps (latex)
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[small]{caption}% kuvatekstien kirjasinkoko ja asettelu
+%omia käskyjä voi lisätä tähän väliin, esim. \newcommand{\angs}{\textsl{\AA}}
+\pagenumbering{Roman}
+% alkuvalmistelut loppuu
+ 
+\begin{document}
+
+\input{general/c_pretext}
+
+% Tästä alkaa varsinainen teksti
+\pagenumbering{arabic}
+ 
+\input{general/c_intro}
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % SOFTWARE QUALITY
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \input{background/c_background}
+
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % IMPROVING SOFTWARE QUALITY
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \input{improving/c_improving}
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	QUALITY ASSURANCE IN STARTUP SOFTWARE PROJECT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\input{qa_startup/c_qa_startup}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	CASE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{case/c_case}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	CONCLUSIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{conclusions/c_conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	REFERENCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{general/c_references}
+ 
+%\chapter{Liitteitä}
+\end{document}

@@ -1,4 +1,3 @@
 thesis
 ======
 
-DI-työ

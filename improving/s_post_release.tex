@@ -1,0 +1,62 @@
+\section{Post Release}
+\label{sec:post_release}
+
+After a software product has been released to the market, it practically always still has defects in it. IBM calls these defects latent defects, because before the release, these defects have not yet been found as problems to customers. The existence of these defects is due to the imperfect effectiveness of the defect removal. Usually the defect removal efficiency is around 85\% and virtually never reaches 100\%.
+
+\subsection{Latent defects}
+
+Some latent defects can be defects found during the development or testing but ones that have not been repaired before the release of the software. Other defects were present in the application, but not discovered by the developers or test personnel. Furthermore, some defects can be originated from new development or other defect repairs in the form of bad fixes. The last two weeks before the release can bring in from about 1\% to even 5\% of delivered defects.
+
+In a traditional development of commercial software, most of the latent defects found in after the release were those that hadn't been found and removed in the development and testing phase. In the more recent history, some vendors have started to release software with remarkable amounts of known, but not removed, defects. In small applications, below 1000 function points, there might be a handful of latent defects present. In larger systems, hundreds of latent defects can be released with the software. Moreover, in massive applications, like Windows 7 or SAP, the amount of known latent defects can sometimes be counted in thousands.
+
+The motivation behind releasing a software with known latent defects appears to be compiled from three factors: first, the aspiration for achieving earlier release dates. Second, an assumption that a quick subsequent release will fix the defects. Third, the utilization of the skills of the customers for finding and repairing defects. The latest of the three can include a strategic offer for customers to get a compensation for repairing or identifying flaws.
+
+This trend of releasing a software knowingly with defects has made customers skeptical about buying or installing the first release of a new software. Some customers prefer to wait for a second release, assuming the latter versions have many of the latent defects removed.
+
+
+\subsection{Defect severity levels}
+
+Because of the potential high amount of defects combined with limited amount of resources for removing them, some system for categorizing the defects on the basis of seriousness is needed. One of the oldest methods for assigning severity levels to defects is the IBM severity scale, which dates back to 1950s. It is still probably the most used severity scale.
+
+The IBM severity scale contains four levels of severities and four other categories of defects. The defects in the first severity level cause that the software does not operate at all. Level 2 defects are disruptions or errors in major features. Level 3 contains minor disruptions, with which the software is still usable. Severity level 4 defects cause cosmetic errors that does not impact the operation of the software.
+
+The other categories in the IBM severity scale consist of four levels existing for convenience. Invalid defect level contains problems that are caused by hardware or other software. Duplicate defect is a category for additional reports of a known defect. Abeyant defect contains defects that cannot be reproduced. Improvement category is for reported defects which are actually suggested improvements.
+
+The usage of the severity scale is for arranging the defects to an order in which they are repaired. Defects in the higher levels are more important to customers than the low-severity defects. Because of this, the group responsible for removing post-release defects use more effort to the higher level defects. The defects in the highest levels may even require temporary fixes to allow the continued usage of the software.
+
+% Structural quality !?!
+
+\subsection{Maintainability}
+
+The maintainability of software can be evaluated with several different metrics. According to Capers Jones, this is researched by IBM by interviewing a wide range of maintenance programmers about what makes the software maintainability better or worse. The three most useful metrics are introduced below.
+
+\textbf{Maintenance assignment scope} is the amount of source code or functionality that a single programmer can handle for one year. The range of the maintenance assignment scope indicated by the interviews is from 300 function points to about 3000 function points. Measured in source code statements of java-like language, the range is from a low 15000 statements to a high 150000 code statements. These figures are assembled from the sizes of applications under maintenance and the sizes of the maintenance teams. These ranges seem to work well for maintenance programmers, but the same idea can be applied to other kinds of maintenance specialists.
+
+\textbf{Cyclomatic complexity} can be measured automatically with both commercial and open source tools. For easier maintenance, the cyclomatic complexity levels should be under 10. With levels over 25, the maintenance is getting increasingly harder. Furthermore, higher levels than 25 are virtually never necessary, so high levels can indicate reckless programming practices.
+
+\textbf{Rate of structural decay} is the velocity in which the small changes to the software raise the cyclomatic complexity levels and degrade the original software structure. The velocity can be lowered by running complexity analysis tools frequently. The average velocity of entropy or structural complexity seems to be a little more than 1\% per year. This means that applications with long periods of use become increasingly harder to maintain or change safely.
+
+The interviews by IBM revealed several topics that were mentioned by the dedicated maintenance personnel, which have a positive impact on the maintainability.
+
+\textbf{Training.} Training of the maintenance personnel can improve the maintenance effort. In many cases, the maintenance personnel getting the maintenance responsibility are not properly trained for the application. For large applications, the training should include the general functionality and also the specifics of the components assigned to a single maintenance person. One cost-efficient way of training the maintenance personnel into the application is to include the personnel in inspections during the development.
+
+\textbf{Structural diagrams.} Diagrams can support the understanding of the application structure in large systems. These diagrams can visualize the control flow, branches and other paths through the application. Structural diagrams can be created prior to the development of the system, which makes a requirement for keeping the diagrams up to date. If the diagrams do not exist, they can be generated using a variety of tools that analyzes and visualizes the code.
+
+\textbf{Comments clarity.} The clarity of the comments can affect both positively or negatively on the maintainability. Good comments are clear, accurate and complete. Having too much comments can degrade the understanding of the code and can be almost as bad as too few. Comments should include the purpose of the module and explanation of the calls, branches and error messages.
+
+\textbf{No error-prone modules.} Error-prone modules are one of the biggest topic degrading maintainability. These modules have usually high levels of cyclomatic complexity, are difficult to understand and can contain opaque dependencies to other modules. Perhaps the biggest problem with error-prone modules is that existing error-prone modules can be almost impossible to fix. Because of this, the main defense against error-prone modules is to prevent them from forming in the development phase by using static analysis and inspections.
+
+\textbf{Maintenance tools and workbenches.} Software maintenance can be assisted by several kinds of maintenance tools. Actual maintenance workbenches can assist in analyzing code structure; Static analysis tools can analyze the code continuously; Visualizing tools can automatically generate diagrams from the code structure; Testing tools can execute automated tests; and code refactoring tools can aid with fixing the code structure.
+
+\textbf{Programming languages.} The choice of programming language can be made for business or technical reasons, but maintenance in mind, the readability and ease of understanding can affect positively. Some languages, like Assembly and API, are hard to understand and therefore hard to maintain. Other languages such as java-like languages are readable and straightforward and can be maintained more easily than the harder ones. With several thousand programming languages, sorting them into categories based on their easiness is not easy.
+
+Considering these topics, the worst case scenario would include a long-time running software with high levels of cyclomatic complexity and several error-prone modules. There would be only messy comments or no comments at all and the software would be written in a hard or even dead language. The maintenance would be done by a novice untrained maintenance personnel with no aiding tools. In these circumstances, the maintenance assignment scope would be under 300 function points or under 15000 statements of code.
+
+Mutually, the best case would have a fresh, low complexity software with well commented source code in easy language. In this case the maintenance personnel would consist of well trained maintenance professionals having good tools for maintaining the software. In this situation, the maintenance assignment scope could be over 3000 function points or over 150000 source code statements.
+
+% \subsection{First year discovery rates}
+
+% \subsection{Fixers: Development personnel or Maintenance specialists}
+
+% \subsection{Costs of Post-Release Defects in small application}
+

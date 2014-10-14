@@ -1,0 +1,101 @@
+
+ \section{Preventing defects}
+\label{sec:preventing}
+
+Defect prevention is a set of methods used to lower the amount of defects coming from one or many of the defect origins. Software defects are originated from different parts of the project. Defect origins can be technical and nontechnical. Some nontechnical origins of defects include requirements and documentation. Technical origins include architecture, design and code. Because defects are originated from multiple sources, there is no single method for covering them all. Most methods are not effective against all sources. Usually there are 1-4 defect prevention methods used.
+
+Most of the defect prevention methods are not primarily used for preventing defects, but for some other purpose. Preventing the defects is usually a secondary effect and can be sometimes incidental. These methods don't affect structural quality, but the defects of the software. For achieving high total quality of software, defect prevention should be combined with other types of quality improvement methods.
+
+Defect prevention is one of the most difficult topics of software quality. It is hard to measure, improve and prove the economic value. The difficulty originates from the fact that defect prevention is a negative factor that reduces defect potentials. This means that reliable measurement of the efficiency needs multiple points of reference for both using the method and not using it. Despite this, a number of big companies has studied the topic with significant amounts of projects. IBM, for one example, has been studying this topic since its first studies in 1970s. 
+
+% Inspection
+
+\subsection{Formal Inspections} 
+Formal inspections were inspected as a one line of research by IBM in the 1970s. The inspections were targeted at requirements, design documents, source code and other deliverables. In a short time they discovered that the defect removal efficiency with formal inspections could reach levels beyond 85\%. At that time that was higher than any form of testing could achieve. In addition, the inspections seemed to affect the accuracy and completeness of the requirements and specification documents, which lead to raising the defect removal efficiency of testing by 5\%. Combining formal inspections with formal testing could raise the efficiency even further to levels as high as 97\%. 
+
+With these improvements in efficiency, the amount of defects in the beginning of testing was reduced significantly. The schedules and budgets of the testing could be cut to half and in some cases even more than half. That lead to about 15\% decrease in combined schedule and cumulative effort compared to similar applications without inspections.
+
+Another result from the studies was that using the formal inspections for a longer time, the project teams unconsciously started avoiding the kind of errors found in the inspections. This meant that the inspections not only removed defects but also prevented them from occurring.
+
+% TODO: Jotain nykypäivästä?
+
+
+% Static analysis p. 185 (Automated p. 267-276)
+
+\subsection{Static Analysis} 
+Static analysis is used to detecting syntactic and structural defects in source code without compiling or executing it. It is used in all sizes of software projects and with every type of applications. The concept is originally from the compilers, which performed syntax checking. Later in the 1970s, the features for detecting defects were improved in a tool called Lint. Static analysis has been further developed over time and nowadays it can comprehensively analyze system-level structure and even security vulnerabilities. Modern tools for static analysis can have defect removal efficiency of over 85\%.
+
+Static analysis tools are based on a library of rules defining the conditions to be examined. Some of the modern commercial tools contain over 1500 rules and allow the users to define their own rules for special conditions. Static analysis is effective in defect removal for using the rules to seek out and eliminate syntactic and structural defects. There are two reasons static analysis is also useful in preventing defects: the rule libraries are also useful for preventing defects and the tools can suggest corrections for defects to the developers. The latter enables the developers to see the effective solutions to the defects while examining the results of the analysis.
+
+Automated static analysis of source code is used in both defect prevention and pretest defect removal. Statistics by Capers Jones show that the usage of automated static analysis exceeds 75\% in most types of software projects. The first mentions of automated static analysis are from 1979 from the first release of Lint. In current modern software development, static source code analysis is automatically done by most of the Integrated Development Environments (IDE). IDEs, such as Eclipse and IntelliJ Idea, perform automatic analysis immediately after every minor change.
+
+Static analysis tools are not only very quick and effective but also fairly inexpensive. Because of this, static code analysis has become one of the most used quality methods in software industry. There are tens or even more tools for source code static analysis in the market, both open source and commercial. For such an inexpensive and effective method, one could imagine the market penetration being close to 100\%. Jones suggests that the reason for this not being true is that humans have a natural resistance for new ideas even though the turn out to be valuable.
+
+
+% Test driven development TDD book?
+\subsection{Test-Driven Development} 
+Test-driven development (TDD) is a development process where the development consists of short repetitious cycles of development. A cycle comprises an initially failing test case, minimum amount of code to pass that test and refactoring of the code. The development process embraces the phrase "clean code that works" by Ron Jeffries. Kent Beck analyses the benefits of that statement in his book Test-driven Development: By Example.~\cite{beck2003test}
+
+Writing clean code that works can help developers by allowing a predictable flow of development. Using tests to define the finished state of a task helps developers know when the task is finished. This is contrary to a common way of development, where developers may be uncertain whether the task is finished or is there still some trail of bugs to fix. Another benefit is that when the developers aims to clean code, instead of building the first thing they think of, they can learn different sides of the problem thinking about another solutions. These benefits lead to enhancing the lives of the users and developers and the whole team. The project team can achieve better trust between the developers and the individual developers can feel better when writing clean code.~\cite{beck2003test}
+
+Writing clean code that works is not such an easy task. Anyone working in the software development can admit that there are many forces driving the development further from clean code and even from code that works. One solution is using automated tests as the driving force of the development. This is called Test-Driven Development. There are two cornerstones in TDD: new code is written only if an automated test has failed and duplication is eliminated. These rules seem simple enough, but they can actually produce complex behavior for individuals and the whole team. The team must be able to choose between decisions by getting feedback from the running code. Every developer must write his own tests in opposite to waiting for someone else to write the tests. The development environment must be quick enough to provide instant feedback on small changes. The design of the software must allow easy testing by using simple, loosely coupled components.~\cite{beck2003test}
+
+These complex requirements imply a specific order of activities in development. TDD defines the steps of development and the order of executing them as Red, Green and Refactor. Red and green are the colors of the test success. First a simple test is written so that it won't succeed. The test won't sometimes even compile. Then the test is made green, successful, by not avoiding any means necessary. After the green is achieved, the code is refactored to eliminate all of the duplication created while still keeping the test green.~\cite{beck2003test}
+
+% Agile development method p.136 / Agile manifesto?
+\subsection{Agile Development Method} 
+Agile development method is a set of guidelines based on a publication made by 17 software developers. The developers had gathered to discuss about lightweight development methods and the result was the published in The Agile Manifesto. The people in the signature of the manifest formed the Agile Software Development Alliance.
+
+The Agile Manifesto reads as follows:
+
+\begin{quote}
+
+	"Seventeen anarchists agree: 
+
+	We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value: 
+
+	\begin{itemize}
+	\item Individuals and interactions over processes and tools.
+	\item Working software over comprehensive documentation.
+	\item Customer collaboration over contract negotiation.
+	\item Responding to change over following a plan.
+	\end{itemize}
+
+	That is, while we value the items on the right, we value the items on the left more.
+
+	We follow the following principles:
+	\begin{itemize}
+	\item Our highest priority is to satisfy the customer through early and continuous delivery of valuable software. 
+
+	\item Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage. 
+
+	\item Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale. 
+
+	\item Business people and developers work together daily throughout the project.  
+	\item Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done. 
+
+	\item The most efficient and effective method of conveying information to and within a development team is face-to-face conversation. 
+
+	\item Working software is the primary measure of progress.  
+	\item Agile processes promote sustainable development. The sponsors, developers and users should be able to maintain a constant pace indefinitely. 
+
+	\item Continuous attention to technical excellence and good design enhances agility.  
+	\item Simplicity—the art of maximizing the amount of work not done—is essential.  
+	\item The best architectures, requirements and designs emerge from self-organizing teams.  
+	\item At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly."
+
+	\end{itemize}
+
+\end{quote}
+
+These methods are based on the actual methods present in the work done by the 17 developers in that time. The purpose of the manifest is not to give definite answers but some guidelines of how to prefer the aspects of software development. It is not trying tell how things are done but help developers with agile methods. When listing the things to value, the purpose is not to underrate the aspects with lower priority but give some hints about what brings the most value to the project.~\cite{beck2001agile}
+
+% TODO: Principlet avattuna paremmin ??????
+
+% TODO: Luvut ja faktat 25\% Defect prevention efficiency, 5\% Defect removal efficiency p. 136
+
+% Embedded users p.136 p.58
+
+\textbf{Embedded users.} Embedded users is an Agile method where one or more user representatives are embedded into the project team. The purpose of the user representative is to work in cooperation with the developers creating the critical requirements which are then implemented in short sprints. The idea is to build the specific business critical features and get those running as quickly as possible. The embedded customer representatives are also used to give support in reviewing the features and requirements. The main purpose of this method is to improve the requirements definition.
+
+This method is proven to be useful in small software projects under 2500 function points and effective in projects with under 100 users and size below 1000 function points. In larger scale applications, over 10000 function points or more than 1000 user, a single representative cannot effectively provide enough requirements. This method can however be scaled up by using multiple user representatives, but like other Agile methods, this is most effective in smaller projects.
