@@ -519,29 +519,21 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 15,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "untitled.sublime-project",
-			"settings":
-			{
-				"buffer_size": 73,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 107.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"theme",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"set syntax lat",
+				"Set Syntax: LaTeX"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -707,7 +699,7 @@
 				"Set Syntax: CSS"
 			]
 		],
-		"width": 467.0
+		"width": 430.0
 	},
 	"console":
 	{
@@ -729,15 +721,33 @@
 	"expanded_folders":
 	[
 		"/Users/mnie/projects/thesis",
-		"/Users/mnie/projects/thesis/case",
-		"/Users/mnie/projects/thesis/conclusions",
-		"/Users/mnie/projects/thesis/general",
-		"/Users/mnie/projects/thesis/image",
-		"/Users/mnie/projects/thesis/improving",
-		"/Users/mnie/projects/thesis/tillbehor"
+		"/Users/mnie/projects/thesis/assets",
+		"/Users/mnie/projects/thesis/general"
 	],
 	"file_history":
 	[
+		"/Users/mnie/projects/thesis/general/c_pretext.tex",
+		"/Users/mnie/projects/thesis/conclusions/c_conclusions.tex",
+		"/Users/mnie/projects/thesis/thesis-mnie.aux",
+		"/Users/mnie/projects/thesis/example-improving/s_pretest.tex",
+		"/Users/mnie/projects/thesis/thesis-mnie.tex",
+		"/Users/mnie/projects/thesis/compile.sh",
+		"/Users/mnie/projects/thesis/thesis-mnie.log",
+		"/Users/mnie/projects/thesis/related_research/c_related_research.tex",
+		"/Users/mnie/projects/thesis/methods/c_methods.tex",
+		"/Users/mnie/projects/thesis/introduction/c_intro.tex",
+		"/Users/mnie/projects/thesis/example-improving/s_post_release.tex",
+		"/Users/mnie/projects/thesis/assets/tutthesis.cls",
+		"/Users/mnie/projects/thesis/README.md",
+		"/Users/mnie/projects/thesis/thesis.sublime-project",
+		"/Users/mnie/projects/thesis/improving/s_preventing.tex",
+		"/Users/mnie/projects/thesis/case/s_methods_processes.tex",
+		"/Users/mnie/projects/thesis/results/c_results.tex",
+		"/Users/mnie/projects/thesis/background/c_background.tex",
+		"/Users/mnie/projects/thesis/DippaLatex.tex",
+		"/Users/mnie/projects/thesis/qa_startup/s_qa_futurice.tex",
+		"/Users/mnie/projects/thesis/discussion/c_discussion.tex",
+		"/Users/mnie/projects/thesis/implementation/c_implementation.tex",
 		"/Users/mnie/projects/tana-smartsite/client/interceptors/authInterceptor.js",
 		"/Users/mnie/projects/tana-smartsite/client/controllers/config.js",
 		"/Users/mnie/projects/tana-smartsite/client/styles/_colors.scss",
@@ -843,33 +853,11 @@
 		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery-ui/ui/i18n/datepicker-be.js",
 		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery/test/data/dimensions/documentLarge.html",
 		"/Users/mnie/projects/tana-smartsite/client/constants/processCrusher.js",
-		"/Users/mnie/projects/tana-smartsite/server/index.js",
-		"/Users/mnie/projects/tana-smartsite/.gitignore",
-		"/Users/mnie/projects/tana-smartsite/.env",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery-ui/ui/i18n/datepicker-en-NZ.js",
-		"/Users/mnie/projects/tana-smartsite/client/bower.json",
-		"/Users/mnie/projects/tana-smartsite/client/directives/slider.js",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery/src/serialize.js",
-		"/Users/mnie/projects/tana-smartsite/client/styles/views/_widget-cost-breakdown.scss",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery-ui/ui/i18n/datepicker-pt-BR.js",
-		"/Users/mnie/projects/tana-smartsite/server/util.js",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery/speed/filter.html",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/ng-grid/plugins/ng-grid-layout.js",
-		"/Users/mnie/projects/tana-smartsite/client/partials/components/header.html",
-		"/Users/mnie/projects/tana-smartsite/client/controllers/operator.js",
-		"/Users/mnie/projects/tana-smartsite/client/partials/components/setuplist.html",
-		"/Users/mnie/projects/tana-smartsite/client/controllers/setup.js",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery/test/data/event/promiseReady.html",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/angularjs-toaster/toaster.css",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery-ui/ui/i18n/datepicker-ar-DZ.js",
-		"/Users/mnie/projects/tana-smartsite/client/partials/setup.html",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery/test/data/dimensions/documentSmall.html",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery-ui/ui/minified/droppable.min.js",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/ng-grid/plugins/ng-grid-pdf-export.js"
+		"/Users/mnie/projects/tana-smartsite/server/index.js"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -900,6 +888,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"tekts",
+			"tekstiä",
+			"xxxkuu",
+			"pohja",
+			"thesis-mnie",
+			"c_results",
+			"general/c_intro",
+			"tutthesis",
+			"TUTTHESIS",
+			"DippaLatex",
+			"c_prete",
+			"tillb",
+			"c_pretext",
+			"tillbehor",
 			"protrack.protacon.fi",
 			"httpProvider",
 			"put",
@@ -1013,21 +1015,7 @@
 			".map(",
 			"stylesDir",
 			"mountFolder",
-			"gascalendar",
-			"localhost:3000",
-			"perf",
-			"protrack-db",
-			"tana",
-			"tana-",
-			"\"",
-			"forever",
-			"\"",
-			"tana-mvp-dashboard",
-			"localstorage",
-			"crusher",
-			"_validateConfigRequest",
-			"configupdate",
-			"sudo"
+			"gascalendar"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1060,65 +1048,13 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "untitled.sublime-project",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 73,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -1139,11 +1075,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.378349367252,
 			1.0
 		],
 		"rows":
@@ -1168,6 +1111,38 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"conclus",
+				"conclusions/c_conclusions.tex"
+			],
+			[
+				"pretext",
+				"general/c_pretext.tex"
+			],
+			[
+				"thesis",
+				"thesis-mnie.tex"
+			],
+			[
+				"tutthe",
+				"assets/tutthesis.cls"
+			],
+			[
+				"methods",
+				"methods/c_methods.tex"
+			],
+			[
+				"relate",
+				"related_research/c_related_research.tex"
+			],
+			[
+				"dippa",
+				"DippaLatex.tex"
+			],
+			[
+				"mnie",
+				"thesis-mnie.tex"
+			],
 			[
 				"authser",
 				"client/services/authService.js"
@@ -1647,38 +1622,6 @@
 			[
 				"setupfo",
 				"client/partials/components/setupForm.html"
-			],
-			[
-				"contsetup",
-				"client/controllers/setup.js"
-			],
-			[
-				"setupconfi",
-				"client/styles/views/_setupconfig.scss"
-			],
-			[
-				"_lay",
-				"client/styles/_layout.scss"
-			],
-			[
-				"production",
-				"server/config/db_config.production.js"
-			],
-			[
-				"protr",
-				"server/protrack-db.js"
-			],
-			[
-				"index.js",
-				"server/index.js"
-			],
-			[
-				"serverconfigdb",
-				"server/config/db_config.production.js"
-			],
-			[
-				"sersmar",
-				"server/smartsiteConfigTemplate.js"
 			]
 		],
 		"width": 0.0

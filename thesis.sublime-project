@@ -1,10 +1,20 @@
 {
-	"folders":
-	[
-		{
-			"follow_symlinks": true,
-			"path": ".",
-			"file_exclude_patterns": ["*.sublime-project", ".gitignore"]
-		}
-	]
+    "folders":
+    [
+        {
+            "follow_symlinks": true,
+            "path": "/Users/mnie/projects/thesis",
+            "file_exclude_patterns": [".gitignore"]
+        }
+    ],
+
+    "build_systems":
+    [
+        {
+            "shell": true,
+            "name": "pdflatex-mnie",
+            "cmd": "/Users/mnie/projects/thesis/compile.sh",
+            "working_dir": "/Users/mnie/projects/thesis"
+        }
+    ]
 }
