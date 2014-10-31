@@ -1,35 +1,51 @@
 
 \chapter{Implementation}
-<Tähän yleisinfo>
+This chapter coverages what was done to the Päikky system in order to get it working also during the Internet connection shortages, and how that was done. 
 
 %% --------------
 
-\section{Basic Principles of the Päikky's Offline-mode}
+\section{Basic Principles of the Päikky Offline-mode}
+blabla
+
 \subsection{The goal of the Offline-mode}
 Mitä Offline-modella pyrittiin saavuttamaan
 
 \subsection{Limited Feature Set}
 Offline-moden rajoitettu featuresetti - mitä ja miksi
 
+\subsection{Actions when entering and leaving offline-mode}
+Yleisellä tasolla mitä sovellus tekee kun mennään offline-modeen, ja mitä kun tullaan sieltä pois
 
 %% --------------
 \section{Technical Details}
-\subsection{Application Cache}
-
-
-\subsection{Local Storage}
-Tekstivä
-
 
 \subsection{HTML Cache Headers}
 Apacheconffauksista, otsikko saattaa vaatia työtä
 
 
+\subsection{Application Cache}
+Cache manifestista juttua, perusteet, ja se, miten Päikky sitä käyttää
+
+\subsection{Identifying Bad Connectivity}
+Millä mekanismilla yhteyden häviäminen tunnistetaan
+
+
+\subsection{Local Storage}
+Local stroagen perusteet
+
+REST-API-pyyntöjen cachettamisesta local storageen juttua
+
+
 \subsection{Promise-based Presence Marking queue}
 Kuinka koodin tasolla on toteutettu tehtävien merkkauksien jonosysteemi ja sen purkaminen
+
+(Perus)Teoriaa Promiseista JavaScriptissä
 
 
 %% --------------
 \section{Known Limitations of the Offline-mode}
+Esimerkiksi konfliktitilanteita nykyisessä ratkaisussa ei huomioida/niihin ei varauduta mitenkään (esimerkiksi jos kaksi käyttäjää yhtäaikaa editoi offlinessa juttuja ja laitteet menevät onlineen -> mitä tapahtuu on mysteeri. Tätä on paikattu käyttäjäkoulutuksella, että eivät aja järjestelmää tällaisiin tilanteisiin)
 
+
+(Onkohan tämä sittenkin turha kappale, tai väärässä paikassa? Olisiko yhdistettävissä evaluation-kappaleeseen?)
 
