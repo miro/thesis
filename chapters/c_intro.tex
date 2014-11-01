@@ -9,10 +9,10 @@
 The world is digitalizing around us on a always more quicker pace. More and more of our work tasks and our past time activities are somehow affiliated to digital devices and services. Most of these things are often useless without connectivity to a broader context, usually the Internet. 
 
 % Mobile usage has surpassed desktop usage in <lähde>, on jo iso joukko käyttäjiä joiden ainoa tie Internetiin on heidän mobiililaitteensa <lähde>. Joku viittaus "seuraavaan miljardiin netin käyttäjään?""
-Age of the desktop hegemony is already over. XX percentage of people use mobile devices as their primary method of accessing the Internet. <viite> Unlike as in desktop devices, which usually are operated from static location aided by cable access to the Internet, mobile devices often travel with their owners where ever they might go. That creates challenges for connectivity, which is nowadays essentials for device proper usage. 
+Age of the desktop hegemony is already over. XX percentage of people use mobile devices as their primary method of accessing the Internet. <viite> Unlike as in desktop devices, which usually are operated from static location aided by physical access to the Internet, mobile devices often travel with their owners where ever they might go. That creates challenges for connectivity, which is nowadays essential for device proper usage. 
 
 % Mobiilinetti-coverage ei optimaalinen -> verkkokatkoksia tulee, laadullisia ja kokonaan yhteyden katoamisia. Näiltä ei voida välttyä.
-When mobile device is not in the coverage area of an Wireless Local Area Network, device relies on mobile broadband connection. Mobile broadband coverage varies within different locations. When moving away from the nearest base station the reception of signal weakens. Mobile device user experiences this as an increased latency times, lower data transferring speeds, or even as a total blackout of the broadband service. When moving away from highly populated areas this is unevitable, since not all locations are to be covered properly while keeping cost efficiency on a sane level <source?>, especially in countries with large acreage but low population, like Finland. However digitalization of services is even more important on a places like this, since supplying physical services to areas with low population density is expensive. 
+When mobile device is not in the coverage area of an Wireless Local Area Network, device relies on a possible mobile broadband connection. Mobile broadband coverage varies within different locations. When moving away from the nearest base station the reception of signal weakens. Mobile device user experiences this as an increased latency times, lower data transferring speeds, or even as a total blackout of the broadband service. When moving away from highly populated areas this is inevitable, since not all locations are to be covered properly while keeping cost efficiency on a sane level <source?>, especially in countries with large acreage but low population, like Finland. However digitalization of services is even more important on a places like this, since supplying physical services to areas with low population density is expensive. 
 
 People are more and more reliant digital services and their device of choose is mobile devices on an increasing scale. But how to use services and devices dependent on the Internet with coincidental connection? The thesis you are about to read researches this problem. 
 
@@ -20,21 +20,41 @@ People are more and more reliant digital services and their device of choose is 
 
 
 
+
+\section{Context}
+This thesis studies one real-life case of implementing offline support to already existing system created for supporting kindergarten personnel and the parents of daycare children, the Päikky system. Päikky is used by various kindergartens in Finland and it's key feature is to provide passage control mechanism for the kindergarten's children.
+
+The Päikky system is owned and managed by MukavaIT Oy, a small Finnish start-up company. MukavaIT has bought consulting and development to the Päikky from Futurice Oy, where I myself have also worked as a part of the Päikky development team.
+
+%% kuva päikystä?
+
+Currently in Finland families are charged from the kindergarten service on a fixed price basis. Every child with similar care plans are charged with equal amount. Upcoming changes in Finnish daycare legislation [lakimuutos-viite?] changes the basis for payment to be hour rate based, which creates the need for systems like Päikky that are able to track the children's attendance on the kindergarten for billing purposes. 
+
+On a high level Päikky consists of four modules: \textit{Family UI, Kindergarten UI, Manager UI} and the \textit{Backend}. System under this thesis' analysis is the \textit{Kindergarten UI}, which is mobile-first[viite?] designed web application, key activity being marking the children and daycare personnel in or out based on their presence on the kindergarten. Kindergarten nurses uses the Kindergarten UI on smart phones every time a child enters or leaves the kindergarten. As this is an additional task to their current workload, it has to be as effortless as possible, especially when it is performed tens of times per day.
+
+
+
+
 \section{Research Objectives}
-The objective of this research is to find useful and working fallback mechanisms for connectivity loss in Single-Page Web Applications, in both from the user experience perspective and from the developer's viewpoint. The state where the application loses the connectivity to the Internet is referred on this thesis as an \textbf{offline mode}. This thesis tries to find efficient methods of allowing the user to continue his/hers tasks when the connection is lost and the application enters the offline mode.
+The objective of this research is to find useful and working fallback mechanisms for connectivity loss in Single-Page Web Applications, in both from the user experience perspective and from the developer's viewpoint. The state where the application loses the connectivity to the Internet is referred on this thesis as an \textbf{offline mode}. This thesis tries to find efficient methods to be implemented on the application which allows the user to continue his/hers tasks when the connection is lost and the application enters the offline mode.
 
 From software development point of view looking, how to deliver seamless user experience, even when the connectivity is bad or nonexistent? How much resources can this reserve on the development phase? Is it possible to abstract the connection quality completely away and handle the issues with connection internally on the application level, invisible to the user?
 
 From the user experience perspective, how to notify the user about the loss of Internet connection? Does the user has to be notified at all? If the user is notified, what is exactly the message that needs to be told? 
 
 
-This thesis studies one real-life case of implementing offline supported functionality to already existing system created for supporting daycare personnel and the parents of daycare children, the Päikky system. <tähä jotai lisää päikystä>
+
 
 
 
 \section{Research Question}
 This thesis answers to the following question: "How to prepare for Internet connection shortages on a Single-Page web application?"
 % TODO: block quote for the question
+
+
+
+
+
 
 \section{Scope}
 The whole Internet is build on top of the client-server -paradigm [Berson]. In this thesis we focus on the client end of this paradigm and research ways of dealing the connectivity problem in there while delimiting the server out of this thesis' context. 
@@ -43,7 +63,11 @@ On the client we will focus on how to deal with the issue on the web application
 
 
 \section{Motivation}
-<Yleinen ongelma, saadaan Design Guidelineja aikaiseksi muille kehittäjille, eivät uppoa samoihin kuoppiin kuin mitä me Päikkyä kehittäessä upottiin>
+As stated in the previous sections, digital services are more and more common in business critical tasks for a emerging amount of applications. And with the increasing mobile device usage, adding offline support at least in some level is not an uncommon task for developer. 
+
+This thesis tries to study the reasoning and issues of implementing the offline mode to Päikky, and find the possible missteps that were made. Ultimately this thesis tries to find design guidelines for both in user experience and in software development -wise, so other developers would be able to achieve offline support implementation with less work.
+
+
 
 
 \section{Structure of the thesis}
@@ -58,9 +82,6 @@ In here well be described contents of each chapter, because that's how it has al
 % -ratkaisu, “tässä diplomityössä tehdään”
 % -arviointi, “miten hyvä tästä tuli”
 
-
-% HUOM RAJAUS KOSKEMAAN VAIN FRONTEND PÄÄN TEKNIIKOITA
-% TUTKIMUSKYSYMYS?!?!?!
 
 
 
