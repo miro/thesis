@@ -6,15 +6,17 @@
 
 % ### yleistä taustaa (esim. on enemmän ja enemmän verkon kautta käytettäviä mobiilipalveluita. tämä vaatii sen että verkko toimii, ihmisten arki ja sen vuorovaikutustilanteen ovat nykyään hyvin verkkovälitteisiä)
 % Maailma digitalisoituu ympärillämme, yhä useampi työtehtävistä ja vapaa-ajan aktiviteeteista liittyy jotenkin digitaalisiin palveluihin ja laitteisiin. Harva näistä toimii täysin ilman Internetin tukea
-The world is digitalizing around us on a always more quicker pace. More and more of our work tasks and our past time activities are somehow affiliated to digital devices and services. Most of these things are often useless without connectivity to a broader context, usually the Internet. 
+The world is digitalizing around us on a always quicker pace. More and more of our work tasks and everyday activities are evolvingly affiliated to digital devices and services. Most of these things are often useless without connectivity to a broader context, usually the Internet. 
 
 % Mobile usage has surpassed desktop usage in <lähde>, on jo iso joukko käyttäjiä joiden ainoa tie Internetiin on heidän mobiililaitteensa <lähde>. Joku viittaus "seuraavaan miljardiin netin käyttäjään?""
-Age of the desktop hegemony is already over. XX percentage of people use mobile devices as their primary method of accessing the Internet. <viite> Unlike as in desktop devices, which usually are operated from static location aided by physical access to the Internet, mobile devices often travel with their owners where ever they might go. That creates challenges for connectivity, which is nowadays essential for device proper usage. 
+Age of the desktop hegemony is already over. XX percentage of people use mobile devices as their primary method of accessing the Internet <viite>. Unlike as in desktop devices, which usually are operated from static location aided by physical access to the Internet, mobile devices often travel with their owners where ever they might go. That creates challenges for connectivity, which is nowadays essential for device proper usage. 
 
 % Mobiilinetti-coverage ei optimaalinen -> verkkokatkoksia tulee, laadullisia ja kokonaan yhteyden katoamisia. Näiltä ei voida välttyä.
-When mobile device is not in the coverage area of an Wireless Local Area Network, device relies on a possible mobile broadband connection. Mobile broadband coverage varies within different locations. When moving away from the nearest base station the reception of signal weakens. Mobile device user experiences this as an increased latency times, lower data transferring speeds, or even as a total blackout of the broadband service. When moving away from highly populated areas this is inevitable, since not all locations are to be covered properly while keeping cost efficiency on a sane level <source?>, especially in countries with large acreage but low population, like Finland. However digitalization of services is even more important on a places like this, since supplying physical services to areas with low population density is expensive. 
+The problem is that mobile broadband coverage varies within different locations. When mobile device is not in the coverage area of an Wireless Local Area Network, device relies on a possible mobile broadband connection. When moving away from the nearest base station the reception of signal weakens. Mobile device user experiences this as an increased latency times, lower data transferring speeds, or even as a total blackout of the broadband service. When moving away from highly populated areas this is inevitable, since not all locations are to be covered properly while keeping cost efficiency on a sane level <source?>, especially in countries with large acreage but low population, like Finland. However digitalization of services is even more important on a places like this, since supplying physical services to areas with low population density is expensive. 
 
-People are more and more reliant digital services and their device of choose is mobile devices on an increasing scale. But how to use services and devices dependent on the Internet with coincidental connection? The thesis you are about to read researches this problem. 
+
+
+% People are more and more reliant digital services and their device of choose is mobile devices on an increasing scale. But how to use services and devices dependent on the Internet with coincidental connection? The thesis you are about to read researches this problem. <kommentoitu pois SV ohjeesta>
 
 % Tämä dippa tarkastelee tätä perusyhtälöä ohjelmistonkehittäjän kannalta - kuinka ja millä tasolla verkon laadun huonontumiseen/kokonaiseen katkeamiseen tulisi varautua? Onko mahdollista abstarhoida verkon laadun vaihteleminen käyttäjältä piiloon kokonaan, ja hallita sen tuomat ongelmat applikaation sisäisesti? Millaisia resursseja tällainen vaatii ohjelmiston kehitysvaiheessa? Entä mahdollinen lisäkuorma laitteille?
 
@@ -36,11 +38,11 @@ On a high level Päikky consists of four modules: \textit{Family UI, Kindergarte
 
 
 \section{Research Objectives}
-The objective of this research is to find useful and working fallback mechanisms for connectivity loss in Single-Page Web Applications, in both from the user experience perspective and from the developer's viewpoint. The state where the application loses the connectivity to the Internet is referred on this thesis as an \textbf{offline mode}. This thesis tries to find efficient methods to be implemented on the application which allows the user to continue his/hers tasks when the connection is lost and the application enters the offline mode.
+The objective of this research is to find useful and working fallback mechanisms for connectivity loss in Single-Page Web Applications, in both from the user experience perspective and from the developer's viewpoint. The state where the application loses the connectivity to the Internet is referred on this thesis as an \textbf{offline mode}. This thesis tries to find efficient methods to be implemented on the application which allows the user to continue hers tasks when the connection is lost and the application enters the offline mode.
 
-From software development point of view looking, how to deliver seamless user experience, even when the connectivity is bad or nonexistent? How much resources can this reserve on the development phase? Is it possible to abstract the connection quality completely away and handle the issues with connection internally on the application level, invisible to the user?
+From software development point of view the question is, how to deliver seamless user experience, even when the connectivity is bad or nonexistent? How much resources can this reserve on the development phase? Is it possible to abstract the connection quality completely away and handle the issues with connection internally on the application level, invisible to the user?
 
-From the user experience perspective, how to notify the user about the loss of Internet connection? Does the user has to be notified at all? If the user is notified, what is exactly the message that needs to be told? 
+From the user experience perspective, how to notify the user about the loss of Internet connection? Does the user need to be notified at all? If the user is notified, what is exactly the message that needs to be told? 
 
 
 
@@ -48,7 +50,7 @@ From the user experience perspective, how to notify the user about the loss of I
 
 
 \section{Research Question}
-This thesis answers to the following question: "How to prepare for Internet connection shortages on a Single-Page web application?"
+This thesis answers to the following question: "How to develope fallback mechanisms efficiently for Internet connection shortages on a single-page web application to support user experience?"
 % TODO: block quote for the question
 
 
