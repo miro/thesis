@@ -6,15 +6,15 @@
             "path": "/Users/mnie/projects/thesis",
             "file_exclude_patterns": [".gitignore", "*.aux", "*.blg"]
         }
-    ],
-
-    "build_systems":
-    [
-        {
-            "shell": true,
-            "name": "pdflatex-mnie",
-            "cmd": "/Users/mnie/projects/thesis/compile.sh",
-            "working_dir": "/Users/mnie/projects/thesis"
-        }
     ]
+
+    // "build_systems":
+    // [
+    //     {
+    //         "shell": true,
+    //         "name": "pdflatex-mnie",
+    //         "cmd": "/Users/mnie/projects/thesis/compile.sh",
+    //         "working_dir": "/Users/mnie/projects/thesis"
+    //     }
+    // ]
 }
