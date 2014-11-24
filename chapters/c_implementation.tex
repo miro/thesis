@@ -92,21 +92,38 @@ The technical details of the implementation covers almost entirely only the Kind
 
 
 %% ###
-\subsection{HTML Cache Headers}
+\subsection{HTTP Cache Headers}
 % maininta, että tämä olisi ollut hyvä tehdä myös ilman offline-tuen tekemistä
-Apacheconffauksista, otsikko saattaa vaatia työtä
 
-% päikky main.js -requsta:
-% Cache-Control:max-age=0, no-cache, no-store, must-revalidate
-% Pragma:no-cache
-% Date:Mon, 24 Nov 2014 08:36:04 GMT
-% Expires:Wed, 11 Jan 1984 05:00:00 GMT
+% mahdollisia viitteitä:
+% - http://tools.ietf.org/html/rfc2965 (????)
+% - http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9 !
 
-% päikky kuvarequsta:
-% Cache-Control:max-age=86400
-% Content-Type:image/jpeg
-% Date:Mon, 24 Nov 2014 12:41:01 GMT
-% Expires:Tue, 25 Nov 2014 12:41:01 GMT
+Starting point for the offline support implementation was to take as much advantage as possible from the techniques already in use on the Päikky system's implementation. First task for the development team was to ensure that the cache related features of the HTTP protocol were utilized thoroughly.
+
+Previously there were issues reported by the users after production environment updates that the new features announced weren't visible on their devices. This was the result of poor and some part nonexistent cache header usage. The cache headers prior the change instructed the browser to save the \textit{index.html} document – the starting point of the Kindergarten UI web application – and all the JavaScript files for 24 hours on the file system of the device. If those files were requested within that 24 hours, the cached versions were used. This created a huge lag on the rollout of the latest version to the end users' devices, which caused work for the development team since both the old and the new version of the frontend client had to be supported on the backend.
+% HOX tsekkaa tästä kappaleesta toi vanhan cachetusajan pituus, emmä muista, tuo 24h on vejetty stetsonista :----D 
+
+The "release lag" was addressed by changing the HTTP 1.1 headers related to caching, returned by the Päikky backend's Apache web server. The first solution was to 
+% päikky main.js -nykyrequsta:
+\begin{lstlisting}
+    Cache-Control:max-age=0, no-cache, no-store, must-revalidate
+    Pragma:no-cache
+    Date:Mon, 24 Nov 2014 08:36:04 GMT
+    Expires:Wed, 11 Jan 1984 05:00:00 GMT
+\end{lstlisting}
+\lstinputlisting[caption=rororlrotl]
+
+% päikky kuva-nykyrequsta:
+% (86400s == 24h)
+\begin{lstlisting}
+    Cache-Control:max-age=86400
+    Content-Type:image/jpeg
+    Date:Mon, 24 Nov 2014 12:41:01 GMT
+    Expires:Tue, 25 Nov 2014 12:41:01 GMT
+\end{lstlisting}
+
+Addressing the HTTP cache header related problems were not directly coupled to the implementation of offline mode, but fixing them would have benefit the Päikky system even if the offline support would not have been on the product's road map.
 
 
 %% ###
@@ -116,8 +133,8 @@ Cache manifestista juttua, perusteet, ja se, miten Päikky sitä käyttää
 
 
 %% ###
-\subsection{Identifying Bad Connectivity}
-Millä mekanismilla yhteyden häviäminen tunnistetaan
+\subsection{Identifying Connection Issues}
+Millä mekanismilla yhteyden häviäminen tunnistetaan?
 
 
 %% ###
