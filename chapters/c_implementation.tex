@@ -94,6 +94,16 @@ The technical details of the implementation covers almost entirely only the Kind
 %% ###
 \subsection{HTTP Cache Headers}
 % maininta, että tämä olisi ollut hyvä tehdä myös ilman offline-tuen tekemistä
+% TODO:
+% - pitäisikö tänne vielä erotella API-pyynnöt omiksi jutuikseen? Nehän tulee tosin Tomcatilta, käpisteleekö Apache sinne headereita ollenkaan? 
+% -> API-pyynnön response headerit:
+% Access-Control-Allow-Origin:*
+% Connection:Keep-Alive
+% Content-Type:application/json;charset=UTF-8
+% Date:Mon, 24 Nov 2014 12:45:59 GMT
+% Keep-Alive:timeout=5, max=99
+% Server:Apache-Coyote/1.1
+% Transfer-Encoding:chunked
 
 % mahdollisia viitteitä:
 % - http://tools.ietf.org/html/rfc2965 (????)
@@ -104,15 +114,21 @@ Starting point for the offline support implementation was to take as much advant
 Previously there were issues reported by the users after production environment updates that the new features announced weren't visible on their devices. This was the result of poor and some part nonexistent cache header usage. The cache headers prior the change instructed the browser to save the \textit{index.html} document – the starting point of the Kindergarten UI web application – and all the JavaScript files for 24 hours on the file system of the device. If those files were requested within that 24 hours, the cached versions were used. This created a huge lag on the rollout of the latest version to the end users' devices, which caused work for the development team since both the old and the new version of the frontend client had to be supported on the backend.
 % HOX tsekkaa tästä kappaleesta toi vanhan cachetusajan pituus, emmä muista, tuo 24h on vejetty stetsonista :----D 
 
-The "release lag" was addressed by changing the HTTP 1.1 headers related to caching, returned by the Päikky backend's Apache web server. The first solution was to 
+The "release lag" was addressed by altering the HTTP 1.1 headers related to caching, which are returned by the Päikky backend's Apache web server to the browser. The first solution was to disable cache entirely, forcing the browser to fetch the data again each time from the backend while browsing. This was achieved via the following headers:
 % päikky main.js -nykyrequsta:
+% [TODO-HOX koodityylit, ja joku caption tälle, miten?]
 \begin{lstlisting}
     Cache-Control:max-age=0, no-cache, no-store, must-revalidate
     Pragma:no-cache
     Date:Mon, 24 Nov 2014 08:36:04 GMT
     Expires:Wed, 11 Jan 1984 05:00:00 GMT
 \end{lstlisting}
-\lstinputlisting[caption=rororlrotl]
+\lstinputlisting[caption=Päikky HTTP Cache Headers]
+\noindent The goal with these headers is that the browser saves intentionally none of the content it receives. Achieving this is done by several mechanisms to cover the most of the browsers in use. From the HTTP 1.1 protocol view of point some of the instructions overlap each other (e.g. Pragma:no-cache and Cache-Control:no-cache) while some are there to address the HTTP 1.0 protocol (using Expire-date from the past). [Fielding, et al]
+
+Using these headers solved the release lag problem and streamlined the production deploy process, but otherwise did little to actually help the development team to get closer to the offline support on the system. Actually these changes made the Kindergarten UI to be more reliable on Internet connection, since browsers were instructed not to save any data fetched from the Päikky backend. This also increased the average loads of the backend.
+
+To take advantage of the HTTP Cache Headers from the offline support perspective, different cache rules were made for the most bandwidth-greedy assets: the images. On the Apache web server following headers were set to be sent on response to each request that were made for images, no matter if they were graphical assets to the web application (icons etc) or profile pictures of children and nurses:
 
 % päikky kuva-nykyrequsta:
 % (86400s == 24h)
@@ -122,8 +138,15 @@ The "release lag" was addressed by changing the HTTP 1.1 headers related to cach
     Date:Mon, 24 Nov 2014 12:41:01 GMT
     Expires:Tue, 25 Nov 2014 12:41:01 GMT
 \end{lstlisting}
+\lstinputlisting[caption=Päikky HTTP Cache Headers for images]
+\noindent These headers allows the browser to cache the image for 24 hours. For person profile pictures there won't be any lag on updates when the image changes. Every picture gets a generated unique file name on the upload, so from the browser's point of view they are totally new pictures instead of new version of the old picture. The cache validness duration can therefore be decided based only on how fast the update cycle on the graphical assets of the needs to be. If generating unique names for the graphical assets would be done on the production version build phase, this cache duration could be increased to e.g. one year and only side effect would be increased cache sizes on the clients' browsers.
 
-Addressing the HTTP cache header related problems were not directly coupled to the implementation of offline mode, but fixing them would have benefit the Päikky system even if the offline support would not have been on the product's road map.
+Addressing the HTTP cache header related problems were not directly coupled to the enabling of the offline mode, but fixing them would have benefit the Päikky system even if the offline support would not have been on the product's road map.
+
+
+
+
+
 
 
 %% ###
