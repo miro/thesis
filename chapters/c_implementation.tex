@@ -2,44 +2,98 @@
 \chapter{Implementation}
 This chapter coverages what was done to the Päikky system in order to get it working also during the Internet connection shortages, and how that was done. 
 
+This chapter is concerned with the facts of what the offline mode consists of and how it was implemented. Reasoning for the decisions done are also explained. Analyzing the consequences of those decisions are done later on the evaluation chapter.
+
 %% --------------
+\section{The goal of the Offline-mode}
+% Mitä Offline-modella pyrittiin saavuttamaan?
+The primary goal for the offline mode on Päikky was to enable the most critical tasks for kindergarten nurses on all situations [?petehaastattelu?]. Päikky's main and the most important feature is the ability to track the attendance of the kindergarten's children on real time. In order to achieve that, nurses must be able to mark the children's coming and going without getting interrupted by the limitations of the application. The offline mode was implemented in order to remove the network status related limitations on the key activity mentioned above. Nurses should be able to use the children logging feature on Päikky under any kind network condition. If the network connection is nonexistent, the application should record user's actions and save them to the server once the network connection is achieved again.
 
-\section{Basic Principles of the Päikky Offline-mode}
-blabla
+Secondary goal for the offline mode were to allow as seamless usage as possible of the Päikky on kindergartens where network connection is weak. Nurses should be able to see the information from Päikky even if there is no network connection at the time. Information should be served based on the best-effort delivery: application should show all the information it has at the time to the user while trying to fetch the most latest version of the information.
 
-\subsection{The goal of the Offline-mode}
-Mitä Offline-modella pyrittiin saavuttamaan
+The vision - yet to be reached - for the offline mode is that it could abstract the network quality completely away from the user's consideration. Under any network quality the user should be able to use Päikky normally without any interference. On the current version this is not yet achieved. 
 
-\subsection{Limited Feature Set}
-Offline-moden rajoitettu featuresetti - mitä ja miksi
 
-\subsection{Actions when Entering and Leaving Offline mode}
+
+%% --------------
+\section{Limited Feature Set}
+% Offline-moden rajoitettu featuresetti - mitä ja miksi
+Similar to every other real life software project also in Päikky compromises has been made while balancing between the scope, resources and quality. In order to create software with good quality under given budget, the scope had to be kept reasonable. This resulted the first version (the one studied by this thesis) to be technically quite simple and even naive on some aspects. Users experience this as a lack or disabling of some features on the offline mode.
+
+
+
+
+%% ###
+\subsection{Disabled features}
+When the application enters offline mode, every feature but the critical key functionality are disabled for the user. These include features such as
+
+\begin{enumerate}
+    \item sending messages on the application,
+    \item editing persons' information,
+    \item changing persons' photos,
+    \item editing existing presence markings or upcoming presence plans.
+\end{enumerate}
+
+These features were left out from the offline support based on feature importance evaluation done by the customer [?todo-hox petehaastis?]. Since under available budget some features had to excluded from the offline mode, the ones listed above were selected due to the nature of their basic use case.
+
+None of the listed activities are essential for the Päikky's key feature, the real time tracking of kindergarten's personnel attendance. If there is no Internet connection available at the time, each one of these activities can be postponed without sacrificing the integrity of the presence data on the system until the Internet connection is available again.
+
+
+
+
+%% ###
+\subsection{Simplified Data Synchronizing}
+% synkkaus-yksinkertaistus-juttui
+% nonexistent collision check!
+
+
+
+
+
+
+%% --------------
+\section{State transitions on Offline mode}
+%\section{Actions when Entering and Leaving Offline mode}
 Yleisellä tasolla mitä sovellus tekee kun mennään offline-modeen, ja mitä kun tullaan sieltä pois
+
+
+
+
+
 
 %% --------------
 \section{Technical Details}
+% HOX tää koko setti on lähinnä frontendissä, backendiin ei juurikaan tehty mitään lisätemppuja offline-moodia varten??
 
+%% ###
 \subsection{HTML Cache Headers}
 Apacheconffauksista, otsikko saattaa vaatia työtä
 
-
+%% ###
 \subsection{Application Cache}
 Cache manifestista juttua, perusteet, ja se, miten Päikky sitä käyttää
 
+
+%% ###
 \subsection{Identifying Bad Connectivity}
 Millä mekanismilla yhteyden häviäminen tunnistetaan
 
 
+%% ###
 \subsection{Local Storage}
-Local stroagen perusteet
+Local storagen perusteet
 
 REST-API-pyyntöjen cachettamisesta local storageen juttua
 
-
+%% ###
 \subsection{Promise-based Presence Marking queue}
 Kuinka koodin tasolla on toteutettu tehtävien merkkauksien jonosysteemi ja sen purkaminen
 
 (Perus)Teoriaa Promiseista JavaScriptissä
+
+
+
+
 
 
 %% --------------
