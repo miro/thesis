@@ -123,7 +123,7 @@ The "release lag" was addressed by altering the HTTP 1.1 headers related to cach
     Date:Mon, 24 Nov 2014 08:36:04 GMT
     Expires:Wed, 11 Jan 1984 05:00:00 GMT
 \end{lstlisting}
-\lstinputlisting[caption=Päikky HTTP Cache Headers]
+%\lstinputlisting[caption=Päikky HTTP Cache Headers] [hox-todo, nämä aiheutti jonkun latex-oksennuksen, tarkista myöhemmin että how do i shoot web, sama alemmassa koodilistauksessa]
 \noindent The goal with these headers is that the browser saves intentionally none of the content it receives. Achieving this is done by several mechanisms to cover the most of the browsers in use. From the HTTP 1.1 protocol view of point some of the instructions overlap each other (e.g. Pragma:no-cache and Cache-Control:no-cache) while some are there to address the HTTP 1.0 protocol (using Expire-date from the past). [Fielding, et al]
 
 Using these headers solved the release lag problem and streamlined the production deploy process, but otherwise did little to actually help the development team to get closer to the offline support on the system. Actually these changes made the Kindergarten UI to be more reliable on Internet connection, since browsers were instructed not to save any data fetched from the Päikky backend. This also increased the average loads of the backend.
@@ -138,7 +138,7 @@ To take advantage of the HTTP Cache Headers from the offline support perspective
     Date:Mon, 24 Nov 2014 12:41:01 GMT
     Expires:Tue, 25 Nov 2014 12:41:01 GMT
 \end{lstlisting}
-\lstinputlisting[caption=Päikky HTTP Cache Headers for images]
+%\lstinputlisting[caption=Päikky HTTP Cache Headers for images]
 \noindent These headers allows the browser to cache the image for 24 hours. For person profile pictures there won't be any lag on updates when the image changes. Every picture gets a generated unique file name on the upload, so from the browser's point of view they are totally new pictures instead of new version of the old picture. The cache validness duration can therefore be decided based only on how fast the update cycle on the graphical assets of the needs to be. If generating unique names for the graphical assets would be done on the production version build phase, this cache duration could be increased to e.g. one year and only side effect would be increased cache sizes on the clients' browsers.
 
 Addressing the HTTP cache header related problems were not directly coupled to the enabling of the offline mode, but fixing them would have benefit the Päikky system even if the offline support would not have been on the product's road map.
@@ -151,13 +151,30 @@ Addressing the HTTP cache header related problems were not directly coupled to t
 
 %% ###
 \subsection{Application Cache}
+% Mahdollisia viitteitä:
+% - https://paikky.fi/m/demo/manifest.appcache
+% - https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
+% - http://www.html5rocks.com/en/tutorials/appcache/beginner/#toc-manifest-file-creating
+
+% Joku sananen siitä, että tämä tehdään grunttiautomaatiolla Päikyssä?
+% -> https://github.com/futurice/mukavait-paivahoito-kindergarten-ui/blob/development/Gruntfile.js
+
 % myös maininta, että tämä olisi ollut hyvä tehdä myös ilman offline-tuen tekemistä
+
+
+% Cache manifest! watitis ->
+
+% UHHHH TIMANTTISTA LÄHDETTÄ TÄÄLLÄ http://dl.acm.org/citation.cfm?id=2307649 katso erityisesti kohta "[3]" !!!
 Cache manifestista juttua, perusteet, ja se, miten Päikky sitä käyttää
+
+
 
 
 %% ###
 \subsection{Identifying Connection Issues}
 Millä mekanismilla yhteyden häviäminen tunnistetaan?
+
+
 
 
 %% ###
