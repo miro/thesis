@@ -152,20 +152,46 @@ Addressing the HTTP cache header related problems were not directly coupled to t
 %% ###
 \subsection{Application Cache}
 % Mahdollisia viitteitä:
-% - https://paikky.fi/m/demo/manifest.appcache
+% -     
 % - https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
 % - http://www.html5rocks.com/en/tutorials/appcache/beginner/#toc-manifest-file-creating
 
 % Joku sananen siitä, että tämä tehdään grunttiautomaatiolla Päikyssä?
 % -> https://github.com/futurice/mukavait-paivahoito-kindergarten-ui/blob/development/Gruntfile.js
 
-% myös maininta, että tämä olisi ollut hyvä tehdä myös ilman offline-tuen tekemistä
+% HOX miltäosin tämä on päällekkäistä noiden cache headerien kanssa? korvaako nämä cache headerit?
+% -> HTTP cache headers and restrictions on caching pages served over TLS (encrypted, using https:) are overridden by manifests. Thus, pages will not expire from an application cache before the user agent has updated it, and even applications served over TLS can be made to work offline.
 
+% myös maininta, että tämä olisi ollut hyvä tehdä myös ilman offline-tuen tekemistä
 
 % Cache manifest! watitis ->
 
-% UHHHH TIMANTTISTA LÄHDETTÄ TÄÄLLÄ http://dl.acm.org/citation.cfm?id=2307649 katso erityisesti kohta "[3]" !!!
-Cache manifestista juttua, perusteet, ja se, miten Päikky sitä käyttää
+% UHHHH TIMANTTISTA LÄHDETTÄ TÄÄLLÄ http://dl.acm.org/citation.cfm?id=2307649 katso erityisesti kohta "[3]" !!! [Qian et al.]
+
+HTML 5 specification adds a new tool aiding the creation of offline supported web applications: the application cache. Application cache is initialized by creating a Cache Manifest file for each HTML document. In Single-Page Applications, which Päikky also is, this is achieved easily since as the name implies there is only a single HTTP document for the whole web application that needs to be loaded [HTML5 spec].  Whereas HTTP headers regarding cache rules addresses the problem with generic information about the expiry date of the fetched resources, cache manifest states more elaborate instructions for situations where Internet connection is unavailable. [Qian et al.]
+
+\begin{lstlisting}
+CACHE:
+js/configurations/local.js
+js/main-b13f3e6.js
+img/icon_delete.png
+img/paikky_logo.png
+css/client.css
+
+NETWORK:
+*
+\end{lstlisting} % Snippet from the Päikky Kindergarten UI's Application Cache Manifest
+
+On the listing <x> [todo-hox viittaus tuohon päikky cache manifestiin] we can see a shortened version of the Cache Manifest of Päikky's \textit{index.html} and how it describes the nature of the resources to the browser. On the complete version of the Päikky's manifest each of the known resources for the application is listed under the "CACHE:" -notation, which means that these resources should be cached by the browser. After that everything else is whitelisted with the "*" whitecard to be downloaded from the network. The whitelisting of the rest of the possible resources is important, since when working with the Cache Manifest browser tries to do exactly as stated on the manifest. This means that if that wildcard network rule would be removed, the browser couldn't be able to fetch the possible third party resources. [Lawson and Sharp s. 212] % hox tuosta serverin lataustavasta ei ole mainintaa tuossa kirjassa (ainakaan en löytänyt vielä), vaan se on peräisin appcache-douchebag-artikkelista
+
+<Tänne vielä jotain lisää asiasta,hmm,mitäs>
+
+It is also possible to insert fallback version for the resources on the Cache Manifest that are used if the network connection is unavailable. This can be useful in some browser heavy applications that use minimal amount of data from the Internet, e.g. applications like \textit{Google Spreadsheet} [Using the application cache].  However this was not seen useful on the implementation of Päikky's offline support.
+
+The Application Cache also differs from the HTTP caching by not defining expiration dates for individual resource, but instead all of the cached resources are re-downloaded every time when the manifest updates. If the expiration date set to the resource concurs before updating of the manifest file, the resource is re-downloaded. % TODO-HOX pitääkö tämä varmasti paikkaansa?
+
+% pitäisikö täällä mainita jotain tästä http://alistapart.com/article/application-cache-is-a-douchebag ?
+
 
 
 
