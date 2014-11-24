@@ -4,7 +4,7 @@
         {
             "follow_symlinks": true,
             "path": "/Users/mnie/projects/thesis",
-            "file_exclude_patterns": [".gitignore", "*.aux", "*.blg"]
+            "file_exclude_patterns": [".gitignore", "*.aux", "*.blg", "*.log"]
         }
     ]
 

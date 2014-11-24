@@ -10,24 +10,19 @@ Erityisesti tämä osio
 
 
 %% ------------------------------------------
-\section{Case: Päikky and Offline mode}
-
-This thesis approaches the research problem through a real-life case study on implementing an offline-mode to a mobile daycare application Päikky. Päikky is a collaborative mobile application for daycare personel and parents to plan and coordinate daily activitities in kindergarter. 
-
-% Tänne jotain tavaraa Päikky-toimitusjohtajan haastattelusta (jota ei siis vielä ole tehty?). Ehkä jos jotain löytyy kommunikaatiosta/kehitysdokumenteista niin se myös?
-
-% Kannattaisiko tänne kaivaa versionhallinnasta dataa offlinemoodista, tyyliin millä aikavälillä se kehitettiin, paljonko arvioitu rivien määrä, etc?
-
-\subsection{Päikky System Description}
+\section{Päikky System Description}
+% tänne Presence -termin avaus kunnolla! Siihen viitataan myöhemmin tyyliin jokapaikassa
+% sekä lasten ETTÄ hoitajien läsnäoloa seurataan päikyllä!
+% tänne Päikyn Presence-tilakone?
 Application under our case analysis is Päikky, a solution for daycare personnel & daycare children’s parents for planning the needed daycare and passage control of the children on the daycare. 
 
 Päikky consists of four parts:
 
 \begin{enumerate}
-	\item \textit{Kindergarten UI}, single-page application used for logging children in/out to kindergarten
+	\item \textit{Kindergarten UI}, mobile-first single-page application used for logging children in/out to kindergarten
 	\item \textit{Family UI}, single-page application used by parents when planning children daycare time
 	\item \textit{Manager UI}, single-page application used by kindergarten management 
-	\item \textit{Backend}, Grails-powered REST-API
+	\item \textit{Server}, Grails-powered REST-API and back-end service
 \end{enumerate}
 
 \noindent In this thesis we are focusing on the \textit{Kindergarten UI}, which is the tool used on daily basis by the kindergarten nurses for tracking the attendance. From the Kindergarten UI nurses can also see elaborate information about the children, including allergies and persons who are allowed to pick them up, have parents allowed the children to be photographed. Updating this information is also possible. They can also monitor the overall presence of persons in the kindergarten, including both children and other nurses.
@@ -38,6 +33,21 @@ Key activity for nurses is to log in child when they arrive at the kindergarten 
 
 %% jotain käyttäjistä?
 
+
+
+
+
+
+%% ------------------------------------------
+\section{Case: Päikky and Offline mode}
+% tänne taustoja budurajotteista, käytettävissä olevista henkilömääristä jne -> miksi tehtiin niinkin paljon kompromisseja kuin tehtiin
+
+
+This thesis approaches the research problem through a real-life case study on implementing an offline-mode to a mobile daycare application Päikky. Päikky is a collaborative mobile application for daycare personel and parents to plan and coordinate daily activitities in kindergarter. 
+
+% Tänne jotain tavaraa Päikky-toimitusjohtajan haastattelusta (jota ei siis vielä ole tehty?). Ehkä jos jotain löytyy kommunikaatiosta/kehitysdokumenteista niin se myös?
+
+% Kannattaisiko tänne kaivaa versionhallinnasta dataa offlinemoodista, tyyliin millä aikavälillä se kehitettiin, paljonko arvioitu rivien määrä, etc?
 
 
 \subsection{Before and after Offline-mode}

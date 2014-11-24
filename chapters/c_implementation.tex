@@ -5,13 +5,16 @@ This chapter coverages what was done to the Päikky system in order to get it wo
 This chapter is concerned with the facts of what the offline mode consists of and how it was implemented. Reasoning for the decisions made are also explained. Analyzing the consequences of those decisions are done later on the evaluation chapter.
 
 %% --------------
-\section{The goal of the Offline mode}
-% Mitä Offline-modella pyrittiin saavuttamaan?
-The primary goal for the offline mode on Päikky was to enable the most critical tasks for kindergarten nurses on all situations [?petehaastattelu?] on the Kindergarten UI (the mobile friendly version of the Päikky system). Päikky's main and the most important feature is the ability to track the attendance of the kindergarten's children on real time. In order to achieve that, nurses must be able to mark the children's coming and going without getting interrupted by the limitations of the application. The offline mode was implemented in order to remove the network status related limitations on the key activity mentioned above. Nurses should be able to use the children logging feature on Päikky under any kind network condition. If the network connection is nonexistent, the application should record user's actions and save them to the server once the network connection is achieved again.
+\section{The goal of the Offline support}
+% Mitä Offline-modella TAI SIIS SUPPORTILLA pyrittiin saavuttamaan?
+% (Pitäisikö yleisemminkin erottaa offline TUKI ja kindergarten-UI:n offline MOODI?)
+The primary goal for the offline support on Päikky was to enable the most critical tasks for kindergarten nurses on all situations [?petehaastattelu?] on the Kindergarten UI (the mobile friendly version of the Päikky system). 
 
-Secondary goal for the offline mode were to allow as seamless usage as possible of the Päikky on kindergartens where network connection is weak. Nurses should be able to see the information from Päikky even if there is no network connection at the time. Information should be served based on the best-effort delivery: application should show all the information it has at the time to the user while trying to fetch the most latest version of the information.
+Päikky's main and the most important feature is the ability to track the attendance of the kindergarten's children on real time. In order to achieve that, nurses must be able to mark the children's coming and going without getting interrupted by the limitations of the application. In order to offer offline support on the Kindergarten UI, a new feature called \textit{Offline mode} was implemented. Offline mode aims in removing the Internet connection quality related limitations on the nurses' key activity. Nurses should be able to use the children logging feature on Päikky under any kind of Internet condition. If the Internet connection is nonexistent, the application should record user's actions and save them to the server once the Internet connection is achieved again.
 
-The ultimate vision - yet to be reached - for the offline mode is that it could abstract the network quality completely away from the user's consideration. Under any network quality the user should be able to use Päikky normally without any interference. On the current version this is not yet achieved nor scoped to be achieved. 
+Secondary goal for the offline support were to allow as seamless usage as possible of the Päikky on kindergartens where Internet connection is weak. Nurses should be able to see the information from Päikky even if there is no Internet connection at the time. Information should be served based on the best-effort delivery: application should show all the information it has at the time to the user while trying to fetch the most latest version of the information.
+
+The ultimate vision - yet to be reached - for the offline support is that it would abstract the Internet connection quality completely away from the user's consideration. Under any connection quality the user should be able to use Päikky normally without any interference. On the current version this is not yet achieved (nor it was scoped to be achieved). % saisko tähän kappaleeseen jonkin viitteen johonkin käytettävyys-diibadaapaan, johonkin käyttäjän "mielenmalleihin" tms eli siis että ultimate goali olisi, ettei käyttäjän tarvitsisi huolehtia tuosta verkon laadusta ollenkaan, jopa niin että käyttäjä ei edes tietäisi ollaanko online- vai offline-moodissa?
 
 
 
@@ -21,17 +24,25 @@ The ultimate vision - yet to be reached - for the offline mode is that it could 
 % offline ja online -moodin selitykset, termien avaus? erityisesti "online-moodi" (jos online-moodia ei selitetä, niin sitten ainakin pitää muissa kappaleissa puhua jostain muusta kuin online-moodista)
 
 % HOX onko päällekkäisyyttä methods-case -kuvauksen kanssa?
+Implementation of the offline support to the Kindergarten UI made it to have two different states related to the Internet connection status, the already mentioned \textit{Offline mode} when the Internet connection is poor or nonexistent, and the \textit{Online mode} when the Internet connection is working normally. 
 
- 
+The current mode is implicated to the user clearly: while in offline-mode, the Kindergarten UI's header changes color scheme to greyscale and the title says directly "You are working on the offline mode", localized to the user's language.
+
+While in Online mode the Kindergarten UI works almost identically as it did before the offline support implementation. Major changes are that all the API requests done to the Päikky backend are cached to the Local Storage of the device running the Kindergarten UI. Also the sending of Presence marking changes to the backend are done by a dedicated component. Both of these are primarily refactoring the inner parts of the Kindergarten UI, while using the application the user should not experience any difference to the versions prior from these changes.
+
+When entering the Offline mode the method on how data is fetched changes. Instead of fetching the data user requests from the backend, the Kindergarten UI fallbacks to the data cached on the Local Storage. This won't guarantee the availability of the newest information to the user, but at least showing the best effort version is possible. Due to the nature of the Päikky's data, in most of the cases this is acceptable (e.g. when looking for children's parents' phone numbers, and other similar data that is not altered on daily basis). Also some of the features on the Kindergarten UI are disabled when the Offline mode comes active. This functionality is described thoroughly on the <Using Local Storage as a Cache> -section [hox-todo].
+
+While the Offline mode is active, the component responsible for sending the Presence marking changes – the \textit{Job Queue} – acts also differently. If there is a recognized issue with the Internet connectivity (which triggers the Offline mode to be activated), Job Queue stops sending the Presence Markings to the backend but instead saves them to the Local Storage. User is notified on this by showing all the time the size of the queue on the top right corner of the Kindergarten UI. When the Internet connection is active again, the Job Queue starts to send the cached Presence Markings to the backend one at a time. This functionality is explained in depth on the <Job Queue> -section [hox-todo]. 
 
 
 
 
 
 %% --------------
-\section{Limited Feature Set}
+\section{Limited Feature Set on the Offline mode}
 % Offline-moden rajoitettu featuresetti - mitä ja miksi
-Similar to every other real life software project also in Päikky compromises has been made while balancing between the scope, resources and quality. In order to create software with good quality under given budget, the scope had to be kept reasonable and some prioritization between features had to be made. This resulted the first version (the one studied by this thesis) to be technically quite simple and even naive on some aspects. Users experience this as a lack or disabling of some features on the offline mode.
+
+Similar to every other real life software project also in Päikky compromises have been made while balancing between the scope, the available resources and the quality of the end product. In order to create software with good quality under given budget, the scope had to be kept reasonable and some prioritization between features had to be made. This resulted the first version (the one studied by this thesis) to be technically quite simple and even naive on some aspects. Users experience this as a lack or disabling of some features on the offline mode.
 
 
 
@@ -74,16 +85,33 @@ From the server point of view, presence markings done on the offline mode are re
 
 
 
-%% --------------
+%% ----------------------------------
 \section{Technical Details}
 % HOX tää koko setti on lähinnä frontendissä, backendiin ei juurikaan tehty mitään lisätemppuja offline-moodia varten??
+The technical details of the implementation covers almost entirely only the Kindergarten UI of the Päikky system. This is due to the allowed boundaries for the development team and the real life limitations of the Päikky system usage. In order to achieve the required level of offline support on the system, almost all of the work could have been done only on the mobile frontend codebase: the Kindergarten UI. In addition to the changes made to the backend, no other modules (\textit{Family UI, Manager UI}) of the system needed changes. However the other modules did not gain any kind of added offline support either.
+
 
 %% ###
 \subsection{HTML Cache Headers}
+% maininta, että tämä olisi ollut hyvä tehdä myös ilman offline-tuen tekemistä
 Apacheconffauksista, otsikko saattaa vaatia työtä
+
+% päikky main.js -requsta:
+% Cache-Control:max-age=0, no-cache, no-store, must-revalidate
+% Pragma:no-cache
+% Date:Mon, 24 Nov 2014 08:36:04 GMT
+% Expires:Wed, 11 Jan 1984 05:00:00 GMT
+
+% päikky kuvarequsta:
+% Cache-Control:max-age=86400
+% Content-Type:image/jpeg
+% Date:Mon, 24 Nov 2014 12:41:01 GMT
+% Expires:Tue, 25 Nov 2014 12:41:01 GMT
+
 
 %% ###
 \subsection{Application Cache}
+% myös maininta, että tämä olisi ollut hyvä tehdä myös ilman offline-tuen tekemistä
 Cache manifestista juttua, perusteet, ja se, miten Päikky sitä käyttää
 
 
@@ -93,13 +121,15 @@ Millä mekanismilla yhteyden häviäminen tunnistetaan
 
 
 %% ###
-\subsection{Local Storage}
+\subsection{Using Local Storage as a Cache}
 Local storagen perusteet
 
 REST-API-pyyntöjen cachettamisesta local storageen juttua
 
+
+
 %% ###
-\subsection{Promise-based Presence Marking queue}
+\subsection{Job Queue: Promise-based Presence Marking queue}
 Kuinka koodin tasolla on toteutettu tehtävien merkkauksien jonosysteemi ja sen purkaminen
 
 (Perus)Teoriaa Promiseista JavaScriptissä
