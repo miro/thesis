@@ -152,6 +152,7 @@ Addressing the HTTP cache header related problems were not directly coupled to t
 %% ###
 \subsection{Application Cache}
 % Tänne kappaleeseen saa tarvittaessa paljon lisää kamaa tosta "appcache is a douchebag" -artikkelista, sudenkuoppia jne
+% responsiiviset erilaiset kuvat -issuesta maininta?
 
 % UHHHH TIMANTTISTA LÄHDETTÄ TÄÄLLÄ http://dl.acm.org/citation.cfm?id=2307649 katso erityisesti kohta "[3]" !!! [Qian et al.]
 
@@ -182,8 +183,6 @@ Due to the nature of the cache manifest (has to be updated on every web applicat
 
 It is also possible to insert a fallback version for the resources on the Cache Manifest that are used if the network connection is unavailable. In practice the manifest can state alternate version for resources to be used, if there is no network connectivity. This can be useful in some browser heavy applications that use minimal amount of data from the Internet, e.g. applications like \textit{Google Spreadsheet} [Using the application cache]. However this was not seen useful on the implementation of Päikky's offline support and therefore was not used. % hox-todo numeroviitejuttu tohon google spreadsheettiin
 
-% hox-osa: responsiiviset erilaiset kuvat -issue
-
 As was the case with the HTTP Cache Headers, the Cache Manifest would also have benefit Päikky even if the offline support wouldn't have been implemented to the system.
 
 % pitäisikö täällä mainita jotain tästä http://alistapart.com/article/application-cache-is-a-douchebag ?
@@ -192,42 +191,106 @@ As was the case with the HTTP Cache Headers, the Cache Manifest would also have 
 
 
 
+
 %% ###
-\subsection{Identifying Connection Issues}
-Millä mekanismilla yhteyden häviäminen tunnistetaan?
+\subsection{Monitoring Connection Quality}
+Identifying connection issues is a key activity regarding to the Offline mode. When a connection issue is noticed, the Kindergarten UI fallbacks from the Online mode to the Offline mode. While on the Offline mode, the application must monitor the health of the connection to determine when it is safe to use the network connection again.
+
+On Päikky the connection quality is monitored via errors on \textit{Ajax requests} [ajaxError], triggered by the \textit{jQuery}-library. As described on the Related Research chapter, the Kindergarten UI communicates to the backend via REST API requests for different kind of resources. There is an application level error handler for cases when one of these requests should fail:
+\begin{lstlisting}
+    // Function for identifying network related Ajax errors
+    var isOfflineTriggerError = function(thrownError) {
+        return _.contains([
+            'timeout', // "JavaScript-level" timeout
+            ''         // "network-level" errors - all of them
+        ], thrownError);
+    };
+
+    // Error handler for Ajax errors
+    $(document).on("ajaxError",
+        function (e, jqXHR, ajaxSettings, thrownError) {
+        // List of exceptions that triggers offline-mode
+        if (networkStatus.isOfflineTriggerError(thrownError)) {
+            vent.trigger('offline');
+        }
+    });
+\end{lstlisting}
+\noindent
+In practice Kindergarten UI triggers Offline mode on two different kind of errors: if there is a error coming from the JavaScript-level (usually meaning that no response for request was received within the configured time period) or if there was an error on the network level (connectivity was nonexistent). In these cases an \textit{offline-event} is triggered via the \textit{vent}, the event bus of the application.
+
+Modern browsers implements also the \textit{navigator.onLine}-property which indicates the network status as a boolean value. Despite the promising specification this can't be the only way of checking the network connectivity, since the behaviour is heavily dependent on the browser. For example in \textit{Chrome} and \textit{Safari} having only a connectivity to local area network will result the onLine-property being true. [window.navigator.onLine]
+
+After the application has entered the Offline mode, it halts all the Ajax requests except a specified \textit{ping}-request to the backend which is used to determine the health of the connection. If the ping should fail, another ping request is scheduled. There is a maximum time interval configured on the application in which the response must be received. Only after a successful ping request within the allowed time range the pinging is stopped and the Online mode is activated again.
+
+% tänne vois kirjottaa pingin yhteydessä tapahtuvasta kellosynkkauksesta, jos tarvii lisätekstiä? muuten ei ehkä hirmu oleellinen network statuksen suhteen
+% iteasiassa onko sittenkin, sitähän käytetään noiden presence markingien teon yhteydessä
 
 
 
 
 %% ###
 \subsection{Using Local Storage as a Cache}
-Local storagen perusteet
+% Local storagen perusteet
+% REST-API-pyyntöjen cachettamisesta local storageen juttua
+% hox [Casario et al]
 
-REST-API-pyyntöjen cachettamisesta local storageen juttua
+The new HTML5 standard adds also another important tool for the Päikky's offline support to take benefit from: the \textit{Local Storage}. It is an origin specific storage which saves its contents to the user's file system and persists them between sessions. While being only a simple key-value -storage it is not the most sophisticated solution for client-side storage mechanisms there is available on the modern web development toolbox, but for simple use cases like the Kindergarten UI it's simplicity is a decisive advantage.
+
+While being on the Online mode, every request made by Kindergarten UI to the backend's API is stored to the Local Storage. The request's URL is used as the key for the entry, and the response of request is saved as a value for that key. At the current version of the application there are no optimization mechanisms implemented with the Local Storage content. When Internet connection is available the saved responses are ignored. On each request the possibly already existing responses are overwritten.
+
+After the Offline mode is activated the Kindergarten UI continues to make API requests based on user's actions. But instead of making them to the backend's API, the \textit{Backbone}-library – which is responsible for data fetching and synchronizing on the application – forwards the requests to the Local Storage API, where cached versions of the once fetched requests can be found. This allows the user to navigate within the application and see the latest version he/she has fetched from the backend. If the user navigates to a view not visited before, view without the actual content is rendered. 
+
+Due to the limited feature set of the Offline mode (as described on the section <x> [todo-hox viite tuonne yläkappaleeseen tähän]) there is no need for checking dirty cache entries [Laplante s. 138], since user can not alter the cached data while having no Internet connectivity. Only after the Online mode is activated the editing of the data is made possible, and then the contents of the cache is ignored. Exception to this are the \textit{Presence Markings}, whose are explained in more detail on the following section.
+
+
+% miksi tämä tehdään local storagella eikä esm cache manifestilla? -> selitä(?
+
+% HOX tietoturvaongelmat tämän suhteen (ei tässä keississä mutta yleisesti), problematiikka tämän tiedon kryptaamisesta -> ei mahdollista
+
+
 
 
 
 %% ###
 \subsection{Job Queue: Promise-based Presence Marking queue}
-Kuinka koodin tasolla on toteutettu tehtävien merkkauksien jonosysteemi ja sen purkaminen
+% Kuuluiskohan tuo promise-konseptiosa related researchiin ennemmin?
+% hox presence markingien LUONTI vs. olemassaolevien muokkaus?
 
-(Perus)Teoriaa Promiseista JavaScriptissä
+% https://github.com/futurice/mukavait-paivahoito-kindergarten-ui/blob/development/src/js/JobQueue.js
+
+The key activity for nurses recognized before on this thesis is the altering of the kindergarten's personnel presence data. This activity must be available for user no matter what the Internet connection status is. Allowing this activity was also the primary goal for the offline support to have. With the resource limitations the development process had it was therefore apposite to create a dedicated mechanism for syncing specifically this data and disabling other data altering features while the Offline mode is active. % todo-hox oliko näin?:-D
+
+On the Kindergarten UI this is enabled by a component called the \textit{Job Queue.} Job Queue is an array of jQuery's \textit{Promise} objects. Each of the objects on the array represents single Presence Marking to be saved to the backend. Every time user creates a new Presence Marking it is added to the queue, no matter if there if an Internet connection problem is recognized or not.
+
+% HUOM .promise jquery specistä:
+% The deferred.promise() method allows an asynchronous function to prevent other code from interfering with the progress or status of its internal request. The Promise exposes only the Deferred methods needed to attach additional handlers or determine the state (then, done, fail, always, pipe, progress, and state), but not ones that change the state (resolve, reject, notify, resolveWith, rejectWith, and notifyWith).
+
+The concept of "promise" was first time introduced in 1976 by Friedman and Wise [Friedman and Wise]. It is used to describe an object which value is yet to be resolved, being a temporary placeholder and a \textit{promise} for the to-be value. In asynchronous languages such as JavaScript this is highly useful since for example when fetching data the developer can't trust that the results are available immediately after the request. Promise makes sure that altering the state or the progress of its internal request is not possible from outside. This makes it an ideal capsule to wrap the Ajax requests with. [deferred.promise] % todo-hox miten tässä viittaaminen tohon antiicciseen teokseen? entä onko tossa viimesessä lauseessa mitään järkeä? :--D
+
+%%%%%%
+KUVA-TODO tänne joku hieno kaavio tosta promisejonosta?
+%%%%%%
+
+When user creates a new Presence Marking on the Kindergarten UI (e.g. logs child in to the kindergarten when he/she arrives), a new Promise is created which includes Ajax request to the backend. Request's payload is the new Presence Marking. That Promise is then added to the Job Queue. 
+
+While the Online mode is active, Job Queue constantly looks for the oldest job on the queue and tries to execute it. Executing it means activating the Ajax request inside the Promise. After the request is successfully sent to the backend and a response is received, the promise marks itself as \textit{solved} and that job is then removed from the queue. This process is repeated within a configured interval as long as the application is active on user's browser. If an ongoing request fails due to a network error, the application fallbacks to the Offline mode, and the Job Queue execution halts until Internet connectivity is gained again. It is possible for the request also to fail due a e.g. mismatched parameters, which causes the job being removed from the queue.
+
+The state of the queue is persisted on the Local Storage to address the case if the user shuts down the application before the whole queue is sent to the server. Therefore every time the application starts the queue is initialized from the contents stored locally on the user's browser.  % HOX onko näin oikeasti?
+
+
+
+
 
 
 %% ###
 \subsection{Storing and Receiving Presence Markings on the Server}
-% ainoa offlineen liittyvä muutos mikä toteutettiin bäkkäriin
-% presenceille timestamp, milloin ne on tehty -> voi (ja on) eri kuin mitä vastaanottotimestamp on
-% -> yliyksinkertaistaen käytännössä kaikista merkinnöistä tuli "offlinessä-tehtyjä" verrattuna aikaisempaan, missä merkintöihin otettiin timestampit serverille saapumisajan mukaan
+- ainoa offlineen liittyvä muutos mikä toteutettiin bäkkäriin
+- presenceille timestamp, milloin ne on tehty -> voi (ja on) eri kuin mitä vastaanottotimestamp on
+-> yliyksinkertaistaen käytännössä kaikista merkinnöistä tuli "offlinessä-tehtyjä" verrattuna aikaisempaan, missä merkintöihin otettiin timestampit serverille saapumisajan mukaan
+- Tänne jotain juttua kellosynkasta pingauksen yhteydessä? Vai pitäisikö siitä taruilla ton network-laatutunnistuksen yhteydessä?
 
 
 
 
-%% --------------
-% \section{Known Limitations of the Offline mode}
-% Esimerkiksi konfliktitilanteita nykyisessä ratkaisussa ei huomioida/niihin ei varauduta mitenkään (esimerkiksi jos kaksi käyttäjää yhtäaikaa editoi offlinessa juttuja ja laitteet menevät onlineen -> mitä tapahtuu on mysteeri. Tätä on paikattu käyttäjäkoulutuksella, että eivät aja järjestelmää tällaisiin tilanteisiin)
 
-
-% (Onkohan tämä sittenkin turha kappale, tai väärässä paikassa? Olisiko yhdistettävissä evaluation-kappaleeseen?)
-% --> toistaiseksi otettu pois, tätä kamaa tuli jo tämän chapterin alussa & lisää tulee (luultavasti) evaluationissa
 
