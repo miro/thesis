@@ -1,7 +1,8 @@
 \chapter{Evaluation}
 % TODO:
-% - offline-tilan tietojen cacheamis+tiedon enkryptaus -ongelma, siitä jotain? ei siis päikkyspesifi, mutta yleisesti. antin "no sehän on mahdoton ongelma"
 
+
+%% -------------------------------
 \section{Technical Effectiviness of the Implementation}
 % -> HTTP-cacheheaderit kuntoon, tehtiin offline-tukea tai ei?
 
@@ -16,9 +17,11 @@ Kuinka toimii teknisesti, toimiiko? Mitä huonoja puolia jäi?
 Tätä mitattiin käyttäjähaastatteluilla, blabla, katso kappale Methods
 % Validointi haastattelujen kautta, mitä mieltä offlinen toimivuudesta
 
+% ###
 \subsection{User interview results}
 Selitystä haastiksien tuloksista. Saisko jopa jotain hassunhauskaa graafia aikaiseksi?
-%% pollausajan vaikutus lapsimäärien luotettavuuteen!
+
+-> pollausajan vaikutus lapsimäärien luotettavuuteen!
 
 
 \subsection{Users' Understanding on Offline-mode}
@@ -27,34 +30,13 @@ Selitystä haastiksien tuloksista. Saisko jopa jotain hassunhauskaa graafia aika
 
 
 
+
 %% -------------------------------
-\section{Design Guidelines}
-% - AppCachen käyttösuosituksia
-% - mahdolliset tietoturva&kryptausongelmat local storage -kaman kanssa?
-Mitä suosituksia voisi Päikky-sekoilusta muodostaa jälkipolville?
-Onko tämä osuus oikeassa chapterissa??
+\section{Known Limitations of the Offline mode}
+Esimerkiksi konfliktitilanteita nykyisessä ratkaisussa ei huomioida/niihin ei varauduta mitenkään (esimerkiksi jos kaksi käyttäjää yhtäaikaa editoi offlinessa juttuja ja laitteet menevät onlineen -> mitä tapahtuu on mysteeri. Tätä on paikattu käyttäjäkoulutuksella, että eivät aja järjestelmää tällaisiin tilanteisiin)
 
-\subsection{Recognize the Required Feature set for Offline Support}
-Kaikkea ei välttämättä tarvitse tukea Offline-moodissa, resurssien säästämiseksi on mahdollista etsiä avainaktiviteetit ja mahdollistaa vain niiden käyttö
+offline-tilan tietojen cacheamis+tiedon enkryptaus -ongelma, siitä jotain? ei siis päikkyspesifi, mutta yleisesti. antin "no sehän on mahdoton ongelma" (kryptausavaimen sijainti/toimitusongelma)
 
+(Onkohan tämä sittenkin turha kappale? Pelkona että varsinaista uutta pihviä implementationissa esitettyjen rajoituksien lisäksi ei ole ihan hirveästi. Vai olisiko yhdistettävissä ton tämänc hapterin ensimmäisen sectionin kanssa, kyllä?)
 
-\subsection{Implement Offline Features in an Early πhase}
-Jos on ajatus siitä, että voisi olla pienikin tarve offline-tuelle, tee se samantien (budjetin/ajan sallimissa rajoissa)
-
-\subsection{Naming the Offline Concept on the UI-level}
-Offline-moodi ei selkeä "normikäyttäjälle", nimeämistä tulee harkita
-
-
-
-
-
-
-
-%% -------------- TÄMÄ ON SIIRRETTY TOISTAISEKSI TÄNNE IMPLEMENTATION-CHAPTERISTA
-% \section{Known Limitations of the Offline mode}
-% Esimerkiksi konfliktitilanteita nykyisessä ratkaisussa ei huomioida/niihin ei varauduta mitenkään (esimerkiksi jos kaksi käyttäjää yhtäaikaa editoi offlinessa juttuja ja laitteet menevät onlineen -> mitä tapahtuu on mysteeri. Tätä on paikattu käyttäjäkoulutuksella, että eivät aja järjestelmää tällaisiin tilanteisiin)
-
-
-% (Onkohan tämä sittenkin turha kappale, tai väärässä paikassa? Olisiko yhdistettävissä evaluation-kappaleeseen?)
-% --> toistaiseksi otettu pois, tätä kamaa tuli jo tämän chapterin alussa & lisää tulee (luultavasti) evaluationissa
 
