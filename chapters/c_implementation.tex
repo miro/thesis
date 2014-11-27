@@ -5,7 +5,7 @@ This chapter coverages what was done to the Päikky system in order to get it wo
 This chapter is concerned with the facts of what the offline mode consists of and how it was implemented. Reasoning for the decisions made are also explained. Analyzing the consequences of those decisions are done later on the evaluation chapter.
 
 %% --------------
-\section{The goal of the Offline support}
+\section{The goal for the Offline support}
 % tämä case päikky -lukuun?
 
 % Mitä Offline-modella TAI SIIS SUPPORTILLA pyrittiin saavuttamaan?
@@ -16,6 +16,8 @@ The primary goal for the offline support on Päikky was to enable the most criti
 Päikky's main and the most important feature is the ability to track the attendance of the kindergarten's children on real time. In order to achieve that, nurses must be able to mark the children's coming and going without getting interrupted by the limitations of the application. In order to offer offline support on the Kindergarten UI, a new feature called \textit{Offline mode} was implemented. Offline mode aims in removing the Internet connection quality related limitations on the nurses' key activity. Nurses should be able to use the children logging feature on Päikky under any kind of Internet condition. If the Internet connection is nonexistent, the application should record user's actions and save them to the server once the Internet connection is achieved again.
 
 Secondary goal for the offline support were to allow as seamless usage as possible of the Päikky on kindergartens where Internet connection is weak. Nurses should be able to see the information from Päikky even if there is no Internet connection at the time. Information should be served based on the best-effort delivery: application should show all the information it has at the time to the user while trying to fetch the most latest version of the information.
+
+Other parts of Päikky – the \textit{Manager UI} and the \textit{Family UI} were left out of the offline support.
 
 The ultimate vision - yet to be reached - for the offline support is that it would abstract the Internet connection quality completely away from the user's consideration. Under any connection quality the user should be able to use Päikky normally without any interference. On the current version this is not yet achieved (nor it was scoped to be achieved). % saisko tähän kappaleeseen jonkin viitteen johonkin käytettävyys-diibadaapaan, johonkin käyttäjän "mielenmalleihin" tms eli siis että ultimate goali olisi, ettei käyttäjän tarvitsisi huolehtia tuosta verkon laadusta ollenkaan, jopa niin että käyttäjä ei edes tietäisi ollaanko online- vai offline-moodissa?
 
@@ -280,19 +282,51 @@ When user creates a new Presence Marking on the Kindergarten UI (e.g. logs child
 
 While the Online mode is active, Job Queue constantly looks for the oldest job on the queue and tries to execute it. Executing it means activating the Ajax request inside the Promise. After the request is successfully sent to the backend and a response is received, the promise marks itself as \textit{solved} and that job is then removed from the queue. This process is repeated within a configured interval as long as the application is active on user's browser. If an ongoing request fails due to a network error, the application fall backs to the Offline mode, and the Job Queue execution halts until Internet connectivity is gained again. It is possible for the request also to fail due a e.g. mismatched parameters, which causes the job being removed from the queue.
 
-The state of the queue is persisted on the Local Storage to address the case if the user shuts down the application before the whole queue is sent to the server. Therefore every time the application starts the queue is initialized from the contents stored locally on the user's browser.  % HOX onko näin oikeasti?
-
-
+The state of the queue is persisted on the Local Storage to address the case if the user shuts down the application before the whole queue is sent to the server. Therefore every time the application starts the queue is initialized from the contents stored locally on the user's browser. However also this solution outsources some of the responsibility to the user: in order to have up-to-date information about the attendance status every nurse must ensure that the queue is empty when their shift ends.  % HOX onko näin oikeasti? HOX TODO pitäisikö viimeisen lauseen juttu siirtää evaluation -kappaleeseen?
 
 
 
 
 %% ###
-\subsection{Storing and Receiving Presence Markings on the Server}
-- ainoa offlineen liittyvä muutos mikä toteutettiin bäkkäriin
-- presenceille timestamp, milloin ne on tehty -> voi (ja on) eri kuin mitä vastaanottotimestamp on
--> yliyksinkertaistaen käytännössä kaikista merkinnöistä tuli "offlinessä-tehtyjä" verrattuna aikaisempaan, missä merkintöihin otettiin timestampit serverille saapumisajan mukaan
-- Tänne jotain juttua kellosynkasta pingauksen yhteydessä? Vai pitäisikö siitä taruilla ton network-laatutunnistuksen yhteydessä?
+\subsection{Storing and Receiving Presence Markings on the Backend}
+% "Storing and Receiving Presence Markings on the Backend"
+% - ainoa offlineen liittyvä muutos mikä toteutettiin bäkkäriin
+% - presenceille timestamp, milloin ne on tehty -> voi (ja on) eri kuin mitä vastaanottotimestamp on
+% -> yliyksinkertaistaen käytännössä kaikista merkinnöistä tuli "offlinessä-tehtyjä" verrattuna aikaisempaan, missä merkintöihin otettiin timestampit serverille saapumisajan mukaan
+% - Tänne jotain juttua kellosynkasta pingauksen yhteydessä? Vai pitäisikö siitä taruilla ton network-laatutunnistuksen yhteydessä?
+
+Due to the simplicity of the offline support required for Päikky, most of the code related work was done on the Kindergarten UI only. Only offline supported feature which needed modifications to the backend was the ability for the user to create Presence Markings without active Internet connection at the time. This required some changes to be done on the mechanisms which receives and stores the Presence Markings coming from the Kindergarten UI. 
+
+Before the offline support Kindergarten UI did not send timestamps of the created Presence Markings to the backend. Timestamps were created on the backend at the time when the requests from the Kindergarten UI were received. 
+
+To allow the postponed sending of the Presence Markings created in the past, the responsibility of creating the timestamps for the markings had to be moved from the backend to the Kindergarten UI.
+
+<TODO tänne selitystä kellosynkasta>
+
+
+
+
+%% ###
+\subsection{Duplicating the Presence State Machine}
+
+% (tarviikohan tämän välttämättä olla oma otsikkonsa?)
+Before the offline support the backend also validated the state transfer for the Kindergarten UI. If the new Presence type requested by the application was invalid, the backend would have returned a legal state, which the Kindergarten UI would have applied to the current person. From the user experience point of view this could be seen as a slight lag on the changing of the person's state when the new Presence marking was created. Kindergarten UI at time would not have known what the new state would be and therefore was forced to wait for the backend's response. 
+
+%Since there is always a restricted amount of legal presence state transfers, allowing the Kindergarten UI to set the timestamps for the Presence Markings required it to know about the allowed state transitions from a presence status into another. 
+
+In order to enable the Kindergarten UI to know the allowed possible state transfers and to determine the new Presence state. This resulted as a need for duplicating the Presence State Machine (described on the <chapter three> [todo hox viittaus]) from the backend to the Kindergarten UI. Duplicating it created some redundancy to the backend and Kindergarten UI codebases. Having the Presence state machine on both components of Päikky was inevitable, since as the keeper of the master data, removing the state validating from the backend would be shortsighted. Requests made to the API can be tampered with, and the actual payload has to be always validated by the backend. However having the same validation in two places creates a challenge for the developers: both have to be kept in sync in order for the system to operate properly. 
+
+On the bright side the lag on the user interface with the Presence state transfer got minimized with the added functionality, since new state could be determined on the browser without having to wait for the backend interaction's result.
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,30 +1,22 @@
 
 \chapter{Case Päikky}
-todo blablabla
+This thesis approaches the research problem through a real-life case study where an offline support was implemented to a already live system. The system under the analysis is Päikky, a solution for daycare personnel & daycare children’s parents for planning the needed daycare and providing passage control of the children on the daycare. It also provides functionality which helps kindergarten personnel to coordinate daily activities on the kindergarten and communicate with the children's parents.
 
 
 %% ------------------------------------------
 \section{System Description}
-TODO-LISTA:
--tänne Presence -termin avaus kunnolla! Siihen viitataan myöhemmin tyyliin jokapaikassa
--sekä lasten ETTÄ hoitajien läsnäoloa seurataan päikyllä!
--tänne Päikyn Presence-tilakone?
--tänne selitys Apachen ja Tomcatin suhteesta Päikyssä?
--Päikyn browser-scope avattuna tänne?
--REST API requista tänne jotain, että mitä hä? Hox linkissä tämä-implementation-research
--backbonesta jotain juttua? Vai backgroundiin?
 
-This thesis approaches the research problem through a real-life case study on implementing an offline-mode to a mobile daycare application Päikky. Päikky is a collaborative mobile application for daycare personnel and children's parents to plan and coordinate daily activitities in kindergarten. 
 
+Päikky is a collaborative mobile application for daycare personnel and children's parents to plan and coordinate daily activitities in kindergarten. 
 %Application under our case analysis is Päikky, a solution for daycare personnel & daycare children’s parents for planning the needed daycare and passage control of the children on the daycare. 
 
 Päikky consists of four parts:
 
 \begin{enumerate}
-	\item \textit{Kindergarten UI}, mobile-first single-page application used for logging children in/out to kindergarten
+	\item \textit{Kindergarten UI}, mobile-first single-page application used for logging children in/out to kindergarten, referenced as an \textit{application} later on
 	\item \textit{Family UI}, single-page application used by parents when planning children daycare time
 	\item \textit{Manager UI}, single-page application used by kindergarten management 
-	\item \textit{Backend}, Grails-powered REST-API and back-end service
+	\item \textit{backend}, Grails-powered server that implements REST API and other services used by the Päikky UI's 
 \end{enumerate}
 
 \noindent In this thesis we are focusing on the \textit{Kindergarten UI}, which is the tool used on daily basis by the kindergarten nurses for tracking the attendance. From the Kindergarten UI nurses can also see elaborate information about the children, including allergies and persons who are allowed to pick them up, have parents allowed the children to be photographed. Updating this information is also possible. They can also monitor the overall presence of persons in the kindergarten, including both children and other nurses.
@@ -35,15 +27,50 @@ Key activity for nurses is to log in child when they arrive at the kindergarten 
 
 -> jotain käyttäjistä?
 
+% ##
+\subsection{Kindergarten UI}
+-sekä lasten ETTÄ hoitajien läsnäoloa seurataan päikyllä!
+
+-Päikyn browser-scope avattuna tänne?
+
+-backbonesta jotain juttua? Vai backgroundiin?
+
+
+
+
+% ##
+\subsection{Backend}
+-tänne selitys Apachen ja Tomcatin suhteesta Päikyssä?
+
+-REST API requista tänne jotain, että mitä hä? Hox linkissä tämä-implementation-research (vai tulisko tää tohon ylempään sectioniin?)
+
+
+
+
+% ##
+\subsection{Presence Model and the Presence State Machine}
+-tänne Päikyn Presence-tilakone kaavion kera
+-tänne Presence -termin avaus kunnolla! Siihen viitataan myöhemmin tyyliin jokapaikassa
+-termien "Presence type" ja "log marking" (tms) avaaminen
+-> Presence type/state (kumpi?!), Presence state transfer tms, check implementaation viimeinen kappale
+
+
+
+
 %% -------------------------------
-\section{Offline Support}
-tänne() taustoja budurajotteista, käytettävissä olevista henkilömääristä jne -> miksi tehtiin niinkin paljon kompromisseja kuin tehtiin
+\section{Emerged Need for Offline Support}
+tänne() taustoja budurajotteista, käytettävissä olevista henkilömääristä jne 
+-> miksi tehtiin niinkin paljon kompromisseja kuin tehtiin (budu, MVP-lähestyminen)
+-> Pete-haastiksesta (mukavait tj) kamaa
 
-Tänne jotain tavaraa (mahdollisesta) Päikky-toimitusjohtajan haastattelusta (jota ei siis vielä ole tehty?). Ehkä jos jotain löytyy kommunikaatiosta/kehitysdokumenteista niin se myös?
+% Tänne jotain tavaraa (mahdollisesta) Päikky-toimitusjohtajan haastattelusta (jota ei siis vielä ole tehty?). Ehkä jos jotain löytyy kommunikaatiosta/kehitysdokumenteista niin se myös?
 
-Kannattaisiko tänne kaivaa versionhallinnasta dataa offlinemoodista, tyyliin millä aikavälillä se kehitettiin, paljonko arvioitu rivien määrä, etc? Vai voisko tämä knoppitieto olla jossain muualla?
+Kannattaisiko tänne kaivaa versionhallinnasta dataa offlinemoodista, tyyliin millä aikavälillä se kehitettiin, paljonko arvioitu rivien määrä, etc? Vai voisko tämä knoppitieto olla jossain muualla? Tai ylipäätään missään?
 
-\subsection{Before and after Offline-mode}
+
+
+% ##
+% \subsection{Before and after Offline-mode}
 
 -> Softan käytöstä ennen offline-modea
 
