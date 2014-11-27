@@ -1,5 +1,7 @@
 
-\chapter{Related Research}
+\chapter{Background}
+
+"Ongelmakentän esittely".
 
 This chapter focuses on the background of today's web applications and the literature that relates to the circumstances causing the connectivity issues. This chapter addresses the basics of today's web technologies and the methods that makes offline supported features possible. This chapter coverages also briefly principles on mobile device communication on the network layer, the ideology on Computer Supported Collaborative Work and takes a glimpse on already existing efforts done on solving the offline issue in web applications.
 
@@ -7,15 +9,15 @@ This chapter focuses on the background of today's web applications and the liter
 
 %% ----------------------------------
 \section{Single-Page Applications}
-% TODO:
-% - REST API:sta jotain (Päikky cachettaa nimenomaan tämäntyyppisiä requesteja)\citation{taivalsaari_mashware:_2009}
-% - kuva havainnollistamaan että SPA hakee resursseja yksitellen ja vanhassa mallissa haetaan kokonaisia sivuja?
-% - rise of the javascript, (1995 ja netscape?), siitä jotain?=
-% - "Frontend gets fatter and fatter" -> Päikyn tilakone myös frontendissä nyt, bisneslogiikka duplikoitava/siirrettävä clienttiin
-% - yleisesti tuotantojavaskriptistä, yks yhdistetty&minimifoitu .js-möykky tuotannossa (tähän viittaan implementaatio-osuudessa)
-% - tarviikohan AJAXista tänne jotain?
-% - jQuery?
-% - "occasionally connected application" [Casario et al], onko hyötyvä? voisi mahdollisesti olla asiallinen termi avata tässä
+TODO: % näitä kerätty tänne sitä mukaa kun kirjoitettu implementationia
+- REST API:sta jotain (Päikky cachettaa nimenomaan tämäntyyppisiä requesteja)\citation{taivalsaari_mashware:_2009}
+- kuva havainnollistamaan että SPA hakee resursseja yksitellen ja vanhassa mallissa haetaan kokonaisia sivuja?
+- rise of the javascript, (1995 ja netscape?), siitä jotain?=
+- "Frontend gets fatter and fatter" -> Päikyn tilakone myös frontendissä nyt, bisneslogiikka duplikoitava/siirrettävä clienttiin
+- yleisesti tuotantojavaskriptistä, yks yhdistetty&minimifoitu .js-möykky tuotannossa (tähän viittaan implementaatio-osuudessa)
+- tarviikohan AJAXista tänne jotain?
+- jQuery?
+- "occasionally connected application" [Casario et al], onko hyötyvä? voisi mahdollisesti olla asiallinen termi avata tässä
 
 
 In the past decade the software industry as a whole has been facing a major paradigm shift on the way how and where applications are developed and operated. Progress in web technologies and standards have made possible for the browser environment to be a more and more powerful but still universal computing platform. Software applications that were previously builded for different kind of operating system and CPU combinations are now written with web technologies and ran on the browser. This change is mainly accomplished by the power of distribution the web platform provides. Software provider or the organization's IT function doesn't have to take care of updating end user software to the latest version anymore, because the client-server paradigm [Berson] makes running outdated software version virtually impossible. In a traditional desktop application patching the software to fix bugs or introducing a new feature requires downloading a installer or a patcher and then it must be ran on the computer. This requires action from the user or from the IT function. This might not cover the whole upgrading process in every situation: sometimes updating dependent libraries or operating system might be required. It also enables possibility for different computers to be running different versions of the software, creating circumstances for version mismatches between different clients. [jazayeri 3.3] [taivalsaari_mashware:_2009]
@@ -42,23 +44,26 @@ The application state handling on the browser environment and the increased amou
 
 
 %% ----------------------------------
-\section{Problems in Internet Connectivity}
+\section{Internet Connectivity Issues}
 % http://dl.acm.org/citation.cfm?id=2307649 ?
  - eri tavat yhdistää internetiin (piuhayhteys, wlan, mobiilidata)
  - kännyverkon toiminnasta jotain?
 
- - kännyverkon toimivuuden vaihtelun yleisyydestä? 
+ - kännyverkon toimivuuden vaihtelun yleisyydestä
+ - yleisimmät ongelmatilannetyypit
 
 
 
 
 %% ----------------------------------
-\section{Existing Solutions for the Offline Problem}
-Minkälaisia offline ratkaisuja on olemassa web/känny-puolella (miten google/microsoft yms. ovat lähestyneet ongelmaa)?
-% onko muita kenttäkokeita tehty offline-moodiin liittyen??
+% \section{Existing Solutions for the Offline Problem}
+% Minkälaisia offline ratkaisuja on olemassa web/känny-puolella (miten google/microsoft yms. ovat lähestyneet ongelmaa)?
+% % onko muita kenttäkokeita tehty offline-moodiin liittyen??
 
 
 
 %% ----------------------------------
 \section{Research Gap}
-% -> Gappiin ehkä jotain, että verkkovälitteistä vuorovaikutusta on tutkittu paljon (katso CSCW kamaa) ja että mobiiliverkojen tutkimus/kehitys/käyttö ollut räjähdymäistä. Kuitenkaan ei ole paljoa tutkimusta siitä kuinka verkon katkeaminen vaikuttaa reaalisaikaista tiedonvälitystä vaativan sovelluksen käyttökokemukseen ja kuinka sovellussuunnittelussa tulisi katkot ottaa huomioon.  
+% -> Gappiin ehkä jotain, että verkkovälitteistä vuorovaikutusta on tutkittu paljon (katso CSCW kamaa) ja että mobiiliverkojen tutkimus/kehitys/käyttö ollut räjähdymäistä. Kuitenkaan ei ole paljoa tutkimusta siitä kuinka verkon katkeaminen vaikuttaa reaalisaikaista tiedonvälitystä vaativan sovelluksen käyttökokemukseen ja kuinka sovellussuunnittelussa tulisi katkot ottaa huomioon. 
+
+"Tämän dipan käsittelemä aihe sijaitsee kolmen edellisen kappaleen keskiössä -> CSCW mahdollistettuna SPA:na mutta Internet-yhteyden katkeamisten riivaamana -> whattodo"
