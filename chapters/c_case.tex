@@ -1,40 +1,52 @@
 
 \chapter{Case Päikky}
-This thesis approaches the research problem through a real-life case study where an offline support was implemented to a already live system. The system under the analysis is Päikky, a solution for daycare personnel & daycare children’s parents for planning the needed daycare and providing passage control of the children on the daycare. It also provides functionality which helps kindergarten personnel to coordinate daily activities on the kindergarten and communicate with the children's parents.
+This thesis approaches the research problem through a real-life case study in which an offline support was implemented to a already existing system. The system under the analysis is \textit{Päikky}, a solution for daycare personnel & daycare children’s parents for planning the needed daycare and providing passage control of the children (and for the personnel) on the kindergarten. It also provides functionality which helps kindergarten personnel to coordinate daily activities on the kindergarten and communicate with the children's parents.
 
 
 %% ------------------------------------------
 \section{System Description}
 
 
-Päikky is a collaborative mobile application for daycare personnel and children's parents to plan and coordinate daily activitities in kindergarten. 
+Päikky is a collaborative web application for daycare personnel and children's parents to plan and coordinate daily activities in kindergarten. 
 %Application under our case analysis is Päikky, a solution for daycare personnel & daycare children’s parents for planning the needed daycare and passage control of the children on the daycare. 
 
 Päikky consists of four parts:
 
 \begin{enumerate}
-	\item \textit{Kindergarten UI}, mobile-first single-page application used for logging children in/out to kindergarten, referenced as an \textit{application} later on
+	\item \textit{Kindergarten UI}, mobile-first single-page application used for logging children in/out to kindergarten, referenced as \textit{the application} later on,
 	\item \textit{Family UI}, single-page application used by parents when planning children daycare time
 	\item \textit{Manager UI}, single-page application used by kindergarten management 
-	\item \textit{backend}, Grails-powered server that implements REST API and other services used by the Päikky UI's 
+	\item \textit{backend}, Grails-powered server that implements REST API and other services used by the Päikky UI's.
 \end{enumerate}
 
-\noindent In this thesis we are focusing on the \textit{Kindergarten UI}, which is the tool used on daily basis by the kindergarten nurses for tracking the attendance on their care group. 
+Under the hood \textit{Manager UI} and \textit{Family UI} are actually both on the same codebase, and from technical point of view they are a single web application. From user's standpoint they are although inseparable, since despite sharing the same architechture the layout and functionalities are completely different. Contrary to the \textit{Kindergarten UI} they are designed to be used primarily from desktop clients. 
 
-<TODO: kaaviokuva yleissetupista? Vai onko vain redundanssia?>
+In this thesis we are focusing mainly on the \textit{Kindergarten UI}, which is the tool used on daily basis by the kindergarten nurses for tracking the attendance on their care group. Some emphasis is also on the backend due to it's major role on the system's overall view.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{assets/architechture.png}
+\end{center}
+\caption{The high-level architechture of Päikky <META: jos tämä kuva antaa oikeaa lisäarvoa niin piirrän koneella puhtaaksi>}
+\label{fig:architechture}
+\end{figure}
+
+
 
 % ##
 \subsection{Backend}
 
-The backend is the web server of Päikky which holds all the master data of the system. It serves the HTML files and other resources (graphical assets, JavaScript files, Cascading Style Sheets) to the other modules of Päikky. The backend also implements a REST API which from the other modules requests and alters the data on the system. Data is stored in a \textit{MySQL} database.
+The backend is the web server of Päikky which holds all the master data of the system. It serves the HTML content and other resources (graphical assets, JavaScript files, Cascading Style Sheets) to the other modules of Päikky. The backend also implements a REST API which from the other modules requests and alters the data on the system. The abilities the API offers differs between the type of the user's account, but in practice all of the data can be modified via it. Data is exchanged between the backend and the UI modules of Päikky as a JSON objects.
 
-Currently the backend is operated as a single virtual machine on the Amazon Web Services cloud. The backend is \textif{multitenant}: single instance serves multiple municipalities and kindergartens. % hox todo tänne sellanen numeroviittaus
+Currently the backend is operated as a single virtual machine on the Amazon Web Services cloud. The data is stored on a single \textit{MySQL} database. The backend is \textif{multitenant}: single instance serves multiple municipalities and kindergartens. % hox todo tänne sellanen numeroviittaus ja termin selitys alareunaan
 
-%-tänne selitys Apachen ja Tomcatin suhteesta Päikyssä?
+<tänne selitys Apachen ja Tomcatin suhteesta Päikyssä? vai onko mitään järkeä?>
 
 %-REST API requista tänne jotain, että mitä hä? Hox linkissä tämä-implementation-research (vai tulisko tää tohon ylempään sectioniin?)
 
-<TODO tarvisko jotain lisää kertoa vielä bäkkäristä? mitä?>
+<TODO tarvisko jotain lisää kertoa vielä bäkkäristä? mitä? hitusen tynkäkappale just ny>
+
+
 
 % ##
 \subsection{Kindergarten UI}
@@ -47,9 +59,9 @@ The simplicity requirement goes for every other aspect of the system: the Päikk
 
 Based on the plans done by parents on the \textit{Family UI}, nurses can see how many and who of the children they are expecting to appear for each day. If the parents have to change the already existing plans with short notice, automated message is sent to the nurses stating the change, and the plans visible for the child relating the case gets updated in real time. Nurses can also see the exact amount of children and nurses present at the kindergarten for any given time.
 
-The usual usage environment for Kindergarten UI are the kindergarten
+As stated above, the attendance of nurses can also be tracked with the Kindergarten UI. With the \textit{Manager UI} it is also possible to plan shifts for the nurses. Combined with the planned attendance data of children done by the parents, this makes Päikky a powerful tool for organizing the kindergarten's daily schedule and ensuring that there are always enough nurses present to take care on the children. This is important since required nurses/children ratio is dictated by law in Finland. % todo tarttisko tähän lakiviitteen?
 
-From technical point of view looking the Kindergarten UI is a single-page web application (explained on the <chapter two> [todo hox viittaus wadap]) created to be used primarily with mobile devices. The devices and browsers targeted during the development process were \textit{Samsung Ace II}'s and the latest stable version of the \textit{Chrome}. The libraries the application consists of are: % todo hox tarvitaanko viitettä tohon samsungii? todo tänne semmonen alaviite myös vai?
+From technical point of view looking the Kindergarten UI is a single-page web application (explained on the <chapter two> [todo hox viittaus wadap]) created to be used primarily with mobile devices. The libraries the application consists of are: % todo hox tarvitaanko viitettä tohon samsungii? todo tänne semmonen alaviite myös vai?
 
 \begin{enumerate}
 	\item \textit{Backbone}, \textit{Model-View-Template} –framework providing the – wait for it – backbone for the application,
@@ -59,21 +71,68 @@ From technical point of view looking the Kindergarten UI is a single-page web ap
 	\item \textit{Moment}, time and timezone handling library. 
 \end{enumerate}
 
-<TODO: tänne semmonen numeroviittaus noihin kirjastoihin ja sivun alalaitaan linkit, vai miten?>
+<TODO: tänne semmonen numeroviittaus noihin kirjastoihin ja sivun alalaitaan linkit?>
 
+The devices and browsers targeted during the development process and which  were delivered to the kindergartens by the client organization were \textit{Samsung Ace 3 Style}'s and the latest stable version of the \textit{Chrome} browser. The devices uses mobile broadband connection as their access method in reaching the Internet. Usually each of the kindergarten's care groups have at least one dedicated device at their disposal. Large groups might have two devices. 
 
-
+The usual – and most of the time the only – usage environment for Kindergarten UI are the kindergartens around Finland which are using Päikky. The application is used in both outside and inside. Kindergartens can be located practically anywhere, and the mobile reception can vary a lot between different kindergartens. In some locations the coverage and experienced connection quality can be at par with physical broadbands, but the locations with the worst reception are very challenging from the connection speed and latency point of view looking. It is not unusual for the kindergarten to be located on a remote location where getting 3G connection is more of an exception than standard behaviour. % no pitäsköhä tälle olla joku viite:-D
 
 
 % ##
-\subsection{Presence Model and the Presence State Machine}
-% -tänne Päikyn Presence-tilakone kaavion kera
-% -tänne Presence -termin avaus kunnolla! Siihen viitataan myöhemmin tyyliin jokapaikassa
-% -termien "Presence type" ja "log marking" (tms) avaaminen
+\subsection{Presence Model}
+
 % -> Presence type/state (kumpi?!), Presence state transfer tms, check implementaation viimeinen kappale
 
+As the primary functionality for Päikky is the monitoring and planning of the attendance of the people on the kindergarten, one of the most essential data models is also the one implementing this feature. The backbone for holding and handling this data is Päikky's \textit{presence model}. In brief presence model is an entity which indicates a range of time when person has had a certain status. These entities are persisted by the Päikky backend on the database.
 
-<KUVA-TODO: Presence State Machine>
+There are different \textit{purposes} for presences: \textit{actual, plan, plan change} and \textit{default plan}. Each presence has always a single purpose. The purposes are similar for both children and for nurses.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{assets/presencemodel.png}
+\end{center}
+\caption{The presence model of Päikky <META: jos tämä kuva antaa oikeaa lisäarvoa niin piirrän koneella puhtaaksi>}
+\label{fig:architechture}
+\end{figure}
+
+Each presence also has a single type. The ones used the most are \textit{present, sick} and \textit{day off.} These basic types are the same for children and nurses, but nurses also have a extended set of types indicating specialized reasons for not being at the kindergarten. For example these types includes likes of different cases of sick leaves, trainings and holidays. In this thesis we are concentrating at looking the system primarily from the children's presence markings perspective.
+
+A single presence always belongs to a single person. The presence always has a start time and an end time. There is one special case when presence doesn't need to have an end time (it is then set null on the database): if the purpose for presence is \textit{actual} and that presence is the latest ongoing presence for the person. For example when person is logged in to the daycare on the morning, a new presence entity is created. For this presence start time is set to be the time when he/she arrived to the kindergarten, and end time is left null. This means that this presence is \textit{active} for the current person, indicating ongoing activity. When the person leaves the kindergarten the active presence's end time is set to be the leaving time. If his/hers state is otherwise altered, the active presence is ended and new presence entity with the new type is created. The ending time for the previous presence is the same as the starting time for the new presence. Person's presences with same purpose may never overlap. For single person there can be only one or zero presences per purpose at any given time.
+
+
+
+% ###
+\subsection{Presence Status and Presence State Machine}
+
+Based on the presence entities of an individual person a \textit{presence status} for they can be determined on any time point. For example if person has a planned presence for the day but they has not arrived at the kindergarten yet, the status would be transcribed as "not yet present" indicating that this person will be present later on today. Mutually if the person has been today at the kindergarten but has already left, their status would be "left for today". The status mechanism is implemented for providing more information about the current attendance status for the kindergarten personnel, in contrary to what simple boolean "present / away" statuses would implicate.
+
+Within presences sharing the same presence purpose, there is a set of rules of allowed state transitions. These rules can be visualized as a \textit{finite-state machine} that shows the possible transitions from different status into another. 
+
+% https://docs.google.com/drawings/d/17hQD7BYT4MUqfRaWlX0ykesfond-cTlAmOQ9Zn9LFQk/edit
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{assets/statemachine.png}
+\end{center}
+\caption{Presence State Machine. For visualizing purposes this state machine is a simplified version from the one actually implemented on Päikky}
+\label{fig:statemachine}
+\end{figure}
+
+The figure~\ref{fig:statemachine} describes a simplified version of Päikky's state machine. In this finite-state machine each state indicates two things: is there an active ongoing presence entity for the individual person which has "actual" as the presence purpose ("Inactive~/~Active" on the visualization), and if the current state means that the person is physically present at the kindergarten or not ("Present~/~Away").
+
+Based on the allowed state transitions different kind of buttons for altering the presence state are shown on the person's profile UI. For the most straightforward example if the person is already present on the kindergarten, only a \textit{sign out} button is shown. Since signing in a person already present on the kindergarten is prohibited by the presence state machine, the button \textit{sign in} button is therefore also hidden from the UI. This can be seen on the figure~\ref{fig:child-profile}. 
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{assets/child-profile.png}
+\end{center}
+\caption{Screen capture from a child's profile on the Kindergarten UI}
+\label{fig:child-profile}
+\end{figure}
+
+
+
+
 
 
 
@@ -83,6 +142,7 @@ From technical point of view looking the Kindergarten UI is a single-page web ap
 tänne() taustoja budurajotteista, käytettävissä olevista henkilömääristä jne 
 -> miksi tehtiin niinkin paljon kompromisseja kuin tehtiin (budu, MVP-lähestyminen)
 -> Pete-haastiksesta (mukavait tj) kamaa
+-> HOX PÄIVÄMÄÄRÄT SELVITETTÄVÄ; ainakin milloin offline-moodin rollout tuotantoon?
 
 % Tänne jotain tavaraa (mahdollisesta) Päikky-toimitusjohtajan haastattelusta (jota ei siis vielä ole tehty?). Ehkä jos jotain löytyy kommunikaatiosta/kehitysdokumenteista niin se myös?
 
