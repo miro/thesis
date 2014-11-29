@@ -317,7 +317,7 @@ Before the offline support the backend also validated the state transfer for the
 
 In order to enable the Kindergarten UI to know the allowed possible state transfers and to determine the new Presence state. This resulted as a need for duplicating the Presence State Machine (described on the <chapter three> [todo hox viittaus]) from the backend to the Kindergarten UI. Duplicating it created some redundancy to the backend and Kindergarten UI codebases. Having the Presence state machine on both components of Päikky was inevitable, since as the keeper of the master data, removing the state validating from the backend would be shortsighted. Requests made to the API can be tampered with, and the actual payload has to be always validated by the backend. However having the same validation in two places creates a challenge for the developers: both have to be kept in sync in order for the system to operate properly. 
 
-On the bright side the lag on the user interface with the Presence state transfer got minimized with the added functionality, since new state could be determined on the browser without having to wait for the backend interaction's result.
+On the bright side the lag on the user interface with the Presence state transfer got minimized with the added functionality, since new state could be determined on the browser instantly without having to wait for the backend interaction's result.
 
 
 
