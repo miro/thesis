@@ -277,7 +277,7 @@ On the Kindergarten UI this is enabled by a component called the \textit{Job Que
 The concept of "promise" was first time introduced in 1976 by Friedman and Wise [Friedman and Wise]. It is used to describe an object which value is yet to be resolved, being a temporary placeholder and a \textit{promise} for the to-be value. In asynchronous languages such as JavaScript this is highly useful since for example when fetching data the developer can't trust that the results are available immediately after the request. Promise makes sure that altering the state or the progress of its internal request is not possible from outside. This makes it an ideal capsule to wrap the Ajax requests with. [deferred.promise] % todo-hox miten tässä viittaaminen tohon antiicciseen teokseen? entä onko tossa viimesessä lauseessa mitään järkeä? :--D
 
 %%%%%%
-<KUVA-TODO tänne joku hieno kaavio tosta promisejonosta? vai onkohan mitään lisäarvoa?>
+<KUVA-TODO tänne joku hieno kaavio tosta promisejonosta? vai onkohan mitään lisäarvoa? tai sitten kuva jonoindikaattorista UI:ssa?>
 %%%%%%
 
 When user creates a new Presence Marking on the Kindergarten UI (e.g. logs child in to the kindergarten when he/she arrives), a new Promise is created which includes Ajax request to the backend. Request's payload is the new Presence Marking. That Promise is then added to the Job Queue. 
@@ -301,7 +301,7 @@ Due to the simplicity of the offline support required for Päikky, most of the c
 
 Before the offline support Kindergarten UI did not send timestamps of the created Presence Markings to the backend. Timestamps were created on the backend at the time when the requests from the Kindergarten UI were received. 
 
-To allow the postponed sending of the Presence Markings created in the past, the responsibility of creating the timestamps for the markings had to be moved from the backend to the Kindergarten UI. Since the client's clock can be set to anything, this created a need for a mechamism that could synchronize the clocks between the backend and the application.
+To allow the postponed sending of the Presence Markings created in the past, the responsibility of creating the timestamps for the markings had to be moved from the backend to the Kindergarten UI. Since the client's clock can be set to anything, this created a need for a mechanism that could synchronize the clocks between the backend and the application.
 
 Since the precision required by the application area is closer to a minute than a second, the client-backend clock synchronization could be done with a quite simple and straightforward approach. The same ping functionality which is used to determine the network status (described in chapter x.x [todo hox viite]) has also the ability to measure the time spent from sending the request from the client to the receiving of the backend's response. When this interval is known, the offset of the clocks on the application and on the backend can be determined. The backend returns the timestamp when the ping request is received on the backend to the application. When the measured duration of the request is split into half, the application can determine what is the offset between its and the backend's clocks. This offset is saved to the local storage, and added to each presence markings timestamp. 
 

@@ -1,44 +1,133 @@
 \chapter{Evaluation}
-% TODO:
+
+This section goes through the results got from the interviews. Solutions and compromises done on the technical side are also evaluated critically.
 
 
 %% -------------------------------
-\section{Technical Effectiviness of the Implementation}
-% -> HTTP-cacheheaderit kuntoon, tehtiin offline-tukea tai ei?
-
-% HOX tietoturvaongelmat tämän suhteen (ei tässä keississä mutta yleisesti), problematiikka tämän tiedon kryptaamisesta -> ei mahdollista (tätä hoxia on pastettu joka paikkaan, johonkin pitää selittää tästä, poista muut maininnat)
-
-Kuinka toimii teknisesti, toimiiko? Mitä huonoja puolia jäi?
-
-Tarvittaiskohan tänne jotain mittausdataa? Mitä mittausdataa?
-
-offline-tilan tietojen cacheamis+tiedon enkryptaus -ongelma, siitä jotain? ei siis päikkyspesifi, mutta yleisesti. antin "no sehän on mahdoton ongelma" (kryptausavaimen sijainti/toimitusongelma)
- 
-
-
-
-%% -------------------------------
-\section{User Experience on the Offline support Implementation}
-% Tätä mitattiin käyttäjähaastatteluilla, blabla, katso kappale Methods
+\section{User Interviews}
+% caption=User Interview Results?
 % Validointi haastattelujen kautta, mitä mieltä offlinen toimivuudesta
+% HOX mikkokokski-dippaan, täällä on enemmän ollut selitetty noita haastateltavien tyyppien valintaprosessista yms. Tässä mun versiossa kaikki tarpeellinen on imo kerrottu jo methodseissa, joten ei ehkä niin tärkeä tässä?
 
-This section introduces the analyzed results from the interviews. 
+<meta todo hox: onko jako tämän ja methods -kappaleen sisältöjen välillä hyvä? pitäisikö veivata kamaa eestaas joltain kohdin?>
+
+This section covers the analyzed results from the interviews. Main goal is to validate the prediction that the user experience of the offline mode is supporting the actual use cases on the kindergartens. Full transcriptions of the interviews are not available.
+
+All of the users interviewed were full-time kindergarten nurses. Average age for the interviewees was 36,5 years. Youngest interviewee was 31 years old and the oldest was 52 years old. Both kindergartens where interviews were executed were opened fairly recent making the average length of employment only about 1,5 years (exact length of the employment periods were not questioned). Nevertheless there were lots of experience from the day care sector within the interviewees; the oldest interviewee had started their career on this field of operation in 1997.
+
+Interviewees were asked about what kind of phone they own, and how they would describe their skills on taking advantage from the phone. This aimed at charting the readiness and the base level of the user in using a digital service via smartphone. 
+
+Only one of the interviewees didn't have a phone that couldn't be described as a smartphone. They were also the only one who directly stated that their skills on using modern devices were fairly low. Other interviewees had smartphones, but only one had a smartphone sharing the same operating system used by Päikky. That correspondent was also the only one who described themselves as an advanced user of a smartphone. Other two stated that they can achieve basic functionality without much hesitation, but everything beyond that would be a challenge from some magnitude. 
+
+The mobile network coverage varied a lot between the kindergartens. The other was said to  have fairly good reception on most of the places, while having couple of dead spots. On the other kindergarten the reception was reported to be very bad, and this was also noticed by the interviewer when arriving on the premises. 
+
+The interviewees are not referred by their real name or the kindergarten they work on. Referring them is done by a randomly generated <todo hox footnote-viite random.org> number from a range from two to ten. The linking between interviewees or kindergartens and the generated numbers is not available.
+
 
 
 % ###
-\subsection{User Interview Results}
-Selitystä haastiksien tuloksista. Saisko jopa jotain hassunhauskaa graafia aikaiseksi?
+\subsection{General Feedback from the Päikky Usage}
 
--> pollausajan vaikutus lapsimäärien luotettavuuteen!
--> lasten merkkaus nopeampaa tilakonesiirtymän ansiosta, ei tarvitse odotella tuloksia serveriltä->pääsee nopeammin seuraavaan tehtävään
+In general the interviewees stated that they are satisfied with Päikky, and that it makes a lot of the daily activities easier. For example looking for children's parents' phone numbers from Päikky is a really straightforward and simple task in contrast to the old way of finding them from paper archives. 
+
+Nevertheless neither of the kindergartens did use Päikky as the only method of recording children attendance on the day care. Both kindergartens created markings also in writing to the \textit{care group diary}. Goings and leavings didn't get marked to the diary as precisely as they get to Päikky though; no time markings were written into it. The diary logs could be seen more of an coexistence of a legacy system than a direct backup method. The diaries have existed long before the implementation of Päikky, since they were the method for tracking attendance prior it. 
+
+Non-surprising result from the interviews was that each of the interviewees stated the logging of children in and out as the activity they do the most with Päikky. This was said to be done tens of times per day.
+
+At the start of the Päikky usage parents asked quite often instructions from the nurses. Interviewees stated that this stopped shortly thereafter. Mostly this was caused by the nurses instructions which told the parents to contact the client organization's help desk in case of issues. In day-to-day interaction with parents the interviewees said that Päikky didn't usually come up as an topic, unless there were some issues with it. Usually the issue was parents who forgot to add care plans for their children.
+
+Interviewees from the other kindergarten said that they have successfully moved all the communication between the homes and the kindergarten to be done via Päikky. The other kindergarten also used Päikky as their primary communication channel, but on addition to that they had standard procedure on communicating via paper which was used on some occasions.
+
+All the interviewees told that within the nurses Päikky is a daily topic. Interviewees number 9, 2 and 5 stated that sometimes they vent their frustration with blaming Päikky out loud to fellow colleagues. More often talks relating to Päikky were regarded syncing with colleagues that did they correct some noticed inaccuracy on the attendance data or something else relating to correction of the markings.
+
+Interviewee number two said that in their care group Kindergarten UI was often used on a desktop computer. Also the standard way of using it via smartphone was in use. The desktop computer was mostly in use due the easiness of the usage, and the central location of the said computer. 
+
+Interviewee number eight stated that if there appears any issue with Päikky, they usually tries to find someone else to solve it. Other interviewees couldn't remember an issue with Päikky that they couldn't handle. Only exception for this was the case on the other kindergarten's devices, which would seemingly load Päikky everlastingly on the start. On situations like that the loader icon wouldn't disappear after user started Kindergarten UI from the home menu, making the using of the application impossible. This was fixed on an update to the system later on.
+
 
 % ###
-\subsection{Users' Understanding of the Offline mode}
-- missä tieto säilössä? asiakaspalvelin-mallin ymmärtämättömyys
+\subsection{User Experience on the Offline Mode Implementation}
+
+All the interviewees stated that they would always notice if the application goes to the offline mode. The offline mode header was said to be too eye-catching to be missed.
+
+When the application entered offline mode, common model of operation was just to wait for the connectivity to be reached again and keep on using the application on the offline mode as best as they can. Interviewees were asked if they had a habit of going to a specific place in order to achieve better reception, but this was said to be impossible since the nurses found themselves usually in a situation where they where the currently only supervisor for the children, and therefore they were unable to move. One interviewee said that they sometime try to move the device higher while trying to get a better reception.
+
+Interviewees from the first kindergarten reported that the Kindergarten UI can be on the offline mode for several minutes once it has entered it. Gaps on the Internet connectivity and the time for the application being on the offline mode were reported to be up to 15 minutes in length. Interviewees from the second kindergarten – which had better general coverage of mobile broadband network – said that the usual length for the offline mode being active was only couple of minutes. When asked directly about the speculated average length, both interviewees supposed that it would be near one minute.
+
+In the abstract the interviewees were satisfied to the offline mode regarding the key activity for Kindergarten UI, the logging in and out of kindergarten personnel. Interviewees had a consensus about the offline mode supporting their use case well; if the connection was nonexistent, they could still mark the children and the other nurses in or out, and the application would save them after the connectivity was reached again. If the offline mode was active at the end of the day, it was experienced as somehow burdensome. The client organization has instructed the nurses not to turn off the device when the offline mode is active, since not all the data is sent to the backend yet on that case. They have also been instructed to log out from the application and shut down the device when the kindergarten closes, so if the offline mode is active when they should end their workday and leave, they must wait for the Internet connectivity before they are allowed to leave. Although this was reported to happen only rarely.
+
+Offline support also made the logging of kindergarten children and personnel more faster and easier, mostly due to the speed of the response got from clicking a button on the UI. This is a direct result of duplicating the state machine from the backend also to the Kindergarten UI. 
+
+Some inconvenience was experienced on how the offline mode affected the total head count of the kindergarten stated by the application. Since with the offline mode the devices can hold the data for long period of time without sending it to the backend, and therefore the information about changes in attendance wouldn't get propagated into other devices. This resulted in an extra effort required especially on the morning and on the late afternoon, when most of the comings and leavings happens, and the information about the current headcount present is important. Usually the nurses kept the total headcount on their mind manually, because the amount implied by the application was felt too imprecise for real usage. Nevertheless it was said to be used as a general guide about the current amount of persons present.
+
+Some randomly appearing issues on the application were reported by the inteviewees, but they were not identifiable as a direct errors on the functional logic of the offline mode. They seemed to be related on the startup procedure of application and how the user interface is initialized. Once found these errors were left to a lower emphasis on the interview.
+
+All of the interviewees had used Päikky prior to the existence of the offline mode. All of them stated that the offline mode has made their usage of Päikky more easier and less frustrating. The interviewees also said that even with its flaws, Päikky has made their job easier, and they wouldn't stop using it even if they were offered a chance on that.
+
+%-> pollausajan vaikutus lapsimäärien luotettavuuteen!
+%-> lasten merkkaus nopeampaa tilakonesiirtymän ansiosta, ei tarvitse odotella tuloksia serveriltä->pääsee nopeammin seuraavaan tehtävään
+
+
 
 
 
 %% ###
 \subsection{User Experience on the Limited Feature Set}
-Esimerkiksi konfliktitilanteita nykyisessä ratkaisussa ei huomioida/niihin ei varauduta mitenkään (esimerkiksi jos kaksi käyttäjää yhtäaikaa editoi offlinessa juttuja ja laitteet menevät onlineen -> mitä tapahtuu on mysteeri. Tätä on paikattu käyttäjäkoulutuksella, että eivät aja järjestelmää tällaisiin tilanteisiin) 
+% Esimerkiksi konfliktitilanteita nykyisessä ratkaisussa ei huomioida/niihin ei varauduta mitenkään (esimerkiksi jos kaksi käyttäjää yhtäaikaa editoi offlinessa juttuja ja laitteet menevät onlineen -> mitä tapahtuu on mysteeri. Tätä on paikattu käyttäjäkoulutuksella, että eivät aja järjestelmää tällaisiin tilanteisiin) 
+
+As described on the previous chapters, once the application enters the offline mode, some of the features are disabled from the users. The interviewees didn't find this distracting. The key activity being possible on both online and offline mode covered the major part of use cases described by the interviewees.
+
+When asked about tasks that the interviewees had to have postponed due to Internet connection shortages and the limited feature set of the offline mode, they had hard time thinking of one. Two from the interviewees described writing a message to be one of the use cases that would some time need postponing due to the offline mode being active, but they didn't think that this was frustrating. (From some part this can be explained by the way they create messages on the application: on the kindergarten were the reception was very bad, they use application on a desktop computer, which has physical access to the Internet.)
+
+%Restriction of changing the photos was reported to be sometimes distracting, 
+
+
+
+
+% ###
+\subsection{Users' Understanding of the Offline mode}
+% missä tieto säilössä? asiakaspalvelin-mallin ymmärtämättömyys
+% yhteyden katkeamis -selitys ja sen yleisesti hyivn ymmrätäminen
+
+Interviewees were asked a set of questions around technical theme on how do they understand the actual functionality behind the offline mode. These questions aimed at resolving if the concepts and abstractions done on the user interface were understandable by the users. 
+
+When asked to describe what causes the application going into offline mode, each of the interviewees successfully linked that into the Internet connection being lost. The understanding on what happens after that or why does it matter was not so well comprehended. 
+
+Every interviewee except one understood that the presence markings done while being on the offline mode were stored on the current device. The purpose of the size of the presence marking queue indicated on the user interface's header was also well comprehended. When asked about what happens when the application comes from the offline mode to the online mode, each of the interviewees correctly stated that the application sends the markings done to a place which none of them couldn't describe in more depth.
+
+Each interviewee was asked what would happen on a imaginary scenario like this: "You are in the middle of morning rush, and lots of children are coming into the kindergarten. The application is on the offline mode, but you ignore that and keep on marking the children in. The rush settles, but the application is still on the offline mode. Then on a blink of an eye, a lightning strikes from the clear sky and turns your device into a pile of dust. What happened to the presence markings you created during the rush?" % todo tähän quoteblokki
+
+None of the interviewees could give a straight, right answer to this scenario and about the data's destiny. With some aid, three of them came to the conclusion that the data was indeed lost. What was confusing was that even the interviewees understood that after the offline mode being active the presence markings created during it must be synchronized, they did not understand that the actual data weren't locate on the smartphones. The concept of the master data being on the backend was not clear to any of them, and this resulted in a kind of a hole on their logic. They recognized the importance of having an Internet connection, but they didn't exactly know what is the main purpose for having the Internet connection.
+
+
+
+
+
+
+
+%% -------------------------------
+\section{Technical Effectiveness of the Implementation}
+% -> HTTP-cacheheaderit kuntoon, tehtiin offline-tukea tai ei?
+
+% HOX tietoturvaongelmat tämän suhteen (ei tässä keississä mutta yleisesti), problematiikka tämän tiedon kryptaamisesta -> ei mahdollista (tätä hoxia on pastettu joka paikkaan, johonkin pitää selittää tästä, poista muut maininnat)
+
+% Kuinka toimii teknisesti, toimiiko? Mitä huonoja puolia jäi?
+
+% Tarvittaiskohan tänne jotain mittausdataa? Mitä mittausdataa?
+
+% offline-tilan tietojen cacheamis+tiedon enkryptaus -ongelma, siitä jotain? ei siis päikkyspesifi, mutta yleisesti. antin "no sehän on mahdoton ongelma" (kryptausavaimen sijainti/toimitusongelma)
+
+With the scope being kept on mind, the implementation of the offline support can be considered to be successful. 
+
+Lot of the functionality implemented on the offline mode development would have been beneficial to the system and the users even if the actual offline support wouldn't been on the Päikky's roadmap. For example effort towards the HTTP cache header optimization and the usage of application cache makes the Päikky's usage better for the user, resulting smaller data bandwidth usage and faster starting times.
+
+The missing merge functionality on the backend is a downside, but that was a known compromise done in order to save available development resources during the creation of the offline support. The lack of this feature is covered with the instructions given to the users by the client organization. The nature of the general use case of the application also makes the nonexistence of this feature less meaningful, since most of the time care group's children are handled on a dedicated device. This makes possibility of conflicted data happening relatively small.
+
+On this area of operation the caching of the data on the browser is not problematic, but this might not be the same for every case. No encryption would be possible for that data, since both the key for decrypting and the actual data would need to be delivered and stored on the same place. This would make efficient encrypting impossible. For strictly confidential data the approach used in Päikky with the API response caching wouldn't therefore be useful.  <hox, tarvitsisiko tämä viitettä?>
+
+Otherwise no compromises were made that would have left the technical aspect of any feature partial.  
+
+
+
+ 
 
