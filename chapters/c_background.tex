@@ -29,23 +29,49 @@ The application state handling on the browser environment and the increased amou
 
 
 % ###
-\subsection{REST API}
+\subsection{REST APIs}
 % - JSON -termin avaus?
 % - REST API:sta jotain (Päikky cachettaa nimenomaan tämäntyyppisiä requesteja)\citation{taivalsaari_mashware:_2009}
 % - kuva havainnollistamaan että SPA hakee resursseja yksitellen ja vanhassa mallissa haetaan kokonaisia sivuja?
 % - tarviikohan AJAXista tänne jotain?
 
+REST is a term first time introduced by \textit{Roy Fielding} in his Ph.D. dissertation [Fielding] as an description for an architecture style of networked systems. The REST acronym stands for \textit{Representational State Transfer}. Even the term REST comes up often in materials relating web technologies, it has to be remembered that it is more of an idea for architectural style than an actual well-defined standard. 
+
+Roy Fielding explained the term on his dissertation in the following way:
+\begin{quote}
+"Representational State Transfer is intended to evoke an image of how a well-designed Web application behaves: a network of web pages (a virtual state-machine), where the user progresses through an application by selecting links (state transitions) resulting in the next page (representing the next state of the application) being transferred to the user and rendered for their use."
+\end{quote}
+
+The momentum behind the wide use of the REST principles rises from the key motivation behind it: REST tries to capture the key components and ideas of which made the Web successful. These characteristics are in use with guiding the evolution of the Web today. [Costello]
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{assets/restapi.png}
+\end{center}
+\caption{Basic structure of a REST API service}
+\label{fig:restapi}
+\end{figure}
+
+All the single-page applications which interacts with data that is used by various clients requires some kind of backend service. Usually this is provided by creating \textit{application programming interfaces} (later on referrenced by APIs) on the backend for the client-server communication. In practice API exposes methods for fetching and altering the server's data. Therefore APIs can be thought as the \textit{face} for the web service, aimed for listening and responding the clients' requests. [Masse]
+
+In the figure~\ref{fig:restapi} can be seen a retold presentation from Masse (2011) about the general principle regarding a REST API. Well designed REST API is easily understood by humans, since the URLs themselves should describe precisely what resources will be returned to requests send to them. A REST API can be thought as an assembly of interlinked resources. This resources forms the REST API's \textit{resource model}. [Masse]
+
+REST APIs plays an integral part on the single-page applications. Basically after the client side code is initialized on the browser, all the actual content (depending on the context whatever that might be) is fetched to the browser via an API which nowadays are almost always RESTful. All the modification and the creation of the data is also done through the functionality exposed to the client by the API. Usually the data is transferred between the client and the server using \textit{JSON objects} (JavaScript Object Notation) for the payload.
 
 
-
-
+<meta: ajattelin tänne kertoa MVC-mallista ja erityisesti backbonen käyttämästä model-view-template -sovellutuksesta, mutta liekköhän sittenkään oleellista?>
 
 % ###
-%\subsection{MVC Architecture}
+% \subsection{MVC Architecture}
 % - MVT -termin avaus?
 % ---> ennen vain view selaimessa, backbonessa koko härveli
 % ---> "Frontend gets fatter and fatter" -> Päikyn tilakone myös frontendissä nyt, bisneslogiikka duplikoitava/siirrettävä clienttiin
-% - jQuery?
+
+%[Deacon] -viitteestä löytyy tavaraa tähän jos tarve ilmenee
+
+
+
+
 
 
 
@@ -55,10 +81,38 @@ The application state handling on the browser environment and the increased amou
 
 %% ----------------------------------
 \section{Computer Supported Collaborative Work}
-"Reaaliaikaisesta informaationjaosta päiväkotiympäristössä"
-- verkkovälitteinen vuorovaikutus
-- hakusanalla computer supported collaborative work (CSCW) löytyy kamaa 
-- web 2.0 on nimeomaa tätä??
+% "Reaaliaikaisesta informaationjaosta päiväkotiympäristössä"
+% - verkkovälitteinen vuorovaikutus
+% - hakusanalla computer supported collaborative work (CSCW) löytyy kamaa 
+% - web 2.0 on nimeomaa tätä??
+
+% Käyttämättömien lähteiden lista (löytyvät Zoterosta)
+
+
+As the automation level of work tasks keep on getting higher, a lot of the tasks left for human actors on the modern working life gets more complex. The nature of the work also transforms to be much more \textit{distributed} than before, both in the sense of location and time. There is for example a lot more of problem solving and rule interpreting left for the human employees to solve which usually need to be coordinated within the other actors related to that activity. When doing decisions information from several sources have to be considered and noted. \textit{Computer Supported Collaborative Work} (later referenced as CSCW) is a field of study concentrating on how collaborative actions and coordination of them can be aided by support of computer systems. The term was introduced for the first time in 1984 by Irene Greif and Paul M. Cashman. [Carstensen and Schmidt]
+
+Web has been seen as a prolific platform for CSCW implementations since the creating of WWW and HTML. The general idea behind WWW by Tim-Berners Lee could be seen as an implementation of a CSCW system. Despite the limitations set by the primitive web technologies of that time, the first implementations of CSCW saw daylight and wide usage already on the 1990's. Usual application for that time concentrated on storing documents on a shared workspace, where a given group could browse and share the documents relating to their work. Even with the limitations set by the web technology that would seem very primitive compared to modern standards, the power of web and "its ability to provide basic features for cooperation in an integrated service, accessible from different computing platforms and making no demands on users to adopt new word processing, spreadsheet or other application software" was recognized to be from the highest of potentials. [Bentley et al.]
+
+People using CSCW tools can often be described as a group of individuals working synchronously or asynchronously towards of achieving common goal(s). Depending on the situation they can be located on different locations geographically and/or on different time zones. In circumstances such these all of the people involved have to have up-to-date awareness about each other's intentions, actions and results. [Carroll et al.] 
+
+From the figure~\ref{fig:cscw-matrix} can be seen a reproduced time / space matrix of collaborative systems from research done by Saad and Maher (1996). This matrix splits the types of collaborative systems in to four categories. These categories aren't explicitly limited to the CSCW domain but they concern collaboration activities in general. Face to face discussion is the most common case of collaboration happening on same place and time. Traditional physical bulletin boards are an example of collaboration happening on same place different time. Video conference systems are nowadays common scenario of people from different locations collaborating simultaneously. The evolved Internet version of bulletin boards – forums and wikis – can be seen as a way of working from different place and on a different time. That is also the sweet spot for CSCW systems; they deliver the most value to the users when they allow people to collaborate without location or time restrictions. % hox tarvitaanko tänne viite tuon lisäksi vielä? [Saad and Maher]
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{assets/cscw-matrix.png}
+\end{center}
+\caption{Collaborative systems in time / space matrix, based on the work by Saad and Maher (1996).}
+\label{fig:cscw-matrix}
+\end{figure}
+
+
+CSCW tools can also be used to create disruption to the hierarchies of the applied work environment, while getting more of the stakeholders involved in the creation of the information. For example in kindergartens the primary gatekeepers for the information flow towards children's homes are the kindergarten nurses. On a research by Näsänen et al. (2009) a web service for showing parents photos taken on the kindergarten were created. One of the goals for the research was to allow efficient way of displaying the life on the kindergarten to the children's parents, whom usually just drop off and pick up the children without being otherwise present. The children also had access to smartphones with camera, allowing them to upload photos directly to the availability of homes without the moderation of kindergarten nurses. [Näsänen et al.] 
+
+The real-life case study of this thesis is essentially an application which provides tools for computer supported collaborative work on kindergarten environment. Awareness of activities and events within the kindergarten are distributed to all the nurses and also to the parents if it concerns their own children. 
+
+
+
+
 
 
 
@@ -66,14 +120,19 @@ The application state handling on the browser environment and the increased amou
 \section{Internet Connectivity Issues}
 % vai pelkkä "Internet Connectivity"?
 % http://dl.acm.org/citation.cfm?id=2307649 ?
- - eri tavat yhdistää internetiin (piuhayhteys, wlan, mobiilidata)
- - kännyverkon toiminnasta jotain?
+ % - eri tavat yhdistää internetiin (piuhayhteys, wlan, mobiilidata)
+ % - kännyverkon toiminnasta jotain?
 
- - kännyverkon toimivuuden vaihtelun yleisyydestä
- - yleisimmät ongelmatilannetyypit
+ % - kännyverkon toimivuuden vaihtelun yleisyydestä
+ % - yleisimmät ongelmatilannetyypit
 
+
+% Tänne yhdistettynä jotenkin myös vanha "existing methods to solve offline problem" -rojut:
 % Minkälaisia offline ratkaisuja on olemassa web/känny-puolella (miten google/microsoft yms. ovat lähestyneet ongelmaa)?
 % % onko muita kenttäkokeita tehty offline-moodiin liittyen??
+
+
+
 
 
 
