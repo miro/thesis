@@ -1,24 +1,46 @@
 \chapter{Lessons Learned}
-todo bla bla bla
+
+This chapter introduces lessons learnt by the developers while implementing the offline support to Päikky. 
+
+The points presented on the \textit{design guidelines} section are factors that are recommended to be taken into account when developing similar functionalities into other single-page applications.
+
+The discussion section speculates with points and matters detected during the development and deployment of the offline support, but which were too vague to be based any recommendations on. 
+
 
 
 
 %% -------------------------------
 \section{Design Guidelines}
-- AppCachen käyttösuosituksia
-- mahdolliset tietoturva&kryptausongelmat local storage -kaman kanssa?
-"Mitä suosituksia voisi Päikky-sekoilusta muodostaa jälkipolville?""
+%"Mitä suosituksia voisi Päikky-sekoilusta muodostaa jälkipolville?""
 
-\subsection{Recognize the Feature Set Required for Offline Support}
-Kaikkea ei välttämättä tarvitse tukea Offline-moodissa, resurssien säästämiseksi on mahdollista etsiä avainaktiviteetit ja mahdollistaa vain niiden käyttö
+%- AppCachen käyttösuosituksia
+%- mahdolliset tietoturva&kryptausongelmat local storage -kaman kanssa?
 
 
-\subsection{Implement Offline Features in an Early phase}
-Jos on ajatus siitä, että voisi olla pienikin tarve offline-tuelle, tee se samantien (budjetin/ajan sallimissa rajoissa)
+
+% ###
+\subsection{Recognize the Essential Feature Set for Offline Support}
+% Kaikkea ei välttämättä tarvitse tukea Offline-moodissa, resurssien säästämiseksi on mahdollista etsiä avainaktiviteetit ja mahdollistaa vain niiden käyttö
+
+% ### -> käytä appcachea yms vaikka ei olekaan tarkoituksena tehdä varsinaista offline-tukea(????)
+
+
+% ###
+\subsection{Prepare for Possible Offline Support}
+% Jos on ajatus siitä, että voisi olla pienikin tarve offline-tuelle, tee se samantien (budjetin/ajan sallimissa rajoissa)
+
 % päikyssä myöhäisestä implmeentoinnista ei varsinaisesti ollut haittaa, mutta olisi ehkä nopeuttanut  kehitystä
 
+% -> datasynkkaus selaimessa yhteen keskitettyyn paikkaan, mistä se on helppo kirjoittaa suuntaan tai toiseen (päikyssä backbone.sync)
+
+
+
+
+
+% ###
 \subsection{Naming the Offline Concept on the UI-level}
-Offline-moodi ei selkeä "normikäyttäjälle", nimeämistä tulee harkita
+% Offline-moodi ei selkeä "normikäyttäjälle", nimeämistä tulee harkita, viite discussioniin
+% discussioniin?
 
 
 
@@ -31,17 +53,6 @@ Offline-moodi ei selkeä "normikäyttäjälle", nimeämistä tulee harkita
 -> väite: offline-hommat tulevat käytännössä pakollisiksi lähituleviasuudessa vakavastiotettavissa web-applikaatioissa
 
 
-
-
-% HUOM nämä mpohj kommentteja
-
-% kerrottiin softa-startupeista yleisellä tasolla
-% listattiin perinteisen softakehityksen laatumetodit eri elinkaaren vaiheissa sekä metodien tehokkuudesta
-% kerrottiin laadusta yleisesti sekä startupin näkökulmasta
-% kerrottiin startupin laatukäsityksestä ja siitä miten hyvää laatua voi tavoitella
-% yhdistettiin perinteisen softakehityksen laatumetodeita startupin ympäristöön
-% käsiteltiin case-projektin suoritus ja vaiheet 
-% käsiteltiin case-projektin toteutunut laatu haastattelujen perusteella
 
 
 
