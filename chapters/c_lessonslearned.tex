@@ -12,9 +12,10 @@ The discussion section speculates with points and matters detected during the de
 %% -------------------------------
 \section{Design Guidelines}
 %"Mitä suosituksia voisi Päikky-sekoilusta muodostaa jälkipolville?""
-
 %- AppCachen käyttösuosituksia
 %- mahdolliset tietoturva&kryptausongelmat local storage -kaman kanssa?
+
+This section introduces guidelines recommended by the development team for other developers facing similar kind of scenarios. These guidelines are literally \textit{lessons learned} by the development team and factors that they will take into consideration on the future projects.
 
 
 
@@ -22,7 +23,16 @@ The discussion section speculates with points and matters detected during the de
 \subsection{Recognize the Essential Feature Set for Offline Support}
 % Kaikkea ei välttämättä tarvitse tukea Offline-moodissa, resurssien säästämiseksi on mahdollista etsiä avainaktiviteetit ja mahdollistaa vain niiden käyttö
 
-% ### -> käytä appcachea yms vaikka ei olekaan tarkoituksena tehdä varsinaista offline-tukea(????)
+When creating offline support to an application, optimal approach is naturally to support the whole user experience no matter if there is network connectivity or not. But the experiences got from the interviews of Päikky's users tell that splitting the features into primary and secondary categories and after that providing offline support only for the primary ones is a viable solution. This allows streamlining the development process and decreasing the amount of new code required a lot by having the possibility of simply disabling the secondary features when the Internet connection is not available.
+
+It is important to identify the key activities of the use case in hand. They are different between systems operating on different kind of domains. These activities have in common the basic aspect of being non-postponable actions. In Päikky's case they are activities which include the time factor being a key part of the activity, like the marking of children and nurses to the application. If this is not done exactly when the arrive to or the depart from the kindergarten happens, extra work is required. 
+
+The kindergarten nurses didn't experience the limited feature set of offline mode on the Kindergarten UI to be problematic. The postponing of sending messages and editing the presence data later on was natural to them, since these were either way tasks that they would do on occasions when they have a moment of spare time from the actual work.
+
+By recognizing the essential features for offline support a great user experience can be achieved without refactoring the whole codebase to comply with stoppages on the Internet connection. 
+
+
+
 
 
 % ###
@@ -33,22 +43,49 @@ The discussion section speculates with points and matters detected during the de
 
 % -> datasynkkaus selaimessa yhteen keskitettyyn paikkaan, mistä se on helppo kirjoittaa suuntaan tai toiseen (päikyssä backbone.sync)
 
+As web applications are used more often as the implementation method of "serious" use cases, the need for cases when offline support is required can be expected to grow.  When developing new applications and making design decisions regarding architecture, it is reasonable to at least keep the possibility of needing to implement offline support later on in mind. 
+
+On the browser environment a great level of the preparedness can be achieved with simple solutions. For example in Päikky it was very advantageous that all the interaction towards the backend was implemented through a single module (on Kindergarten UI that module was Backbone's \textit{sync function}). Overriding it to use the local storage cache on the offline mode could be done in only single location on the code, in contrast to what it would have been if AJAX requests would have been made individually by different modules. 
+
+The most important part of a single-page application where this can be taken into account is the place where data synchronizing happens. It is essential that there \textbf{is} a centralized place where it happens. By this a drop-in creation of offline support is made much more feasible. This can be seen as a good practice on web applications overall, even when the possible offline support is left out of consideration. 
+
+
 
 
 
 
 % ###
-\subsection{Naming the Offline Concept on the UI-level}
-% Offline-moodi ei selkeä "normikäyttäjälle", nimeämistä tulee harkita, viite discussioniin
-% discussioniin?
+\subsection{Use Application Cache}
+
+% ### -> käytä appcachea yms vaikka ei olekaan tarkoituksena tehdä varsinaista offline-tukea(????) -> mutta tiedä mitä teet
+
+Use \textit{application cache} (described on the subsection~\ref{subsec:appcache}) no matter if you are implementing offline support or not. At the same time know the limitations and pitfalls of it.
+
+User experience of the application gets better when using the application cache. Proper usage of it results in form of shorter initializing times and faster loading of content when switching between the views on the application. Amount of data transfer required can also be reduced. 
+
+One shouldn't try to get advantage from the application cache without proper exploration of the technique. The nature of the application's resources (image assets, JavaScript files) must also be studied and the cache manifest has to be tailered to match the needs of the application. In order to having a efficient production roll-out processes creating a build step to the deploy process is also required, if one doesn't already exist for the application.
+
+The use of HTTP cache headers (described on the subsection~\ref{subsec:cacheheaders}) has also to be synced with the usage of cache manifest. Otherwise the cache invalidation on end users' browsers can become a major challenge, and without knowledge of the mechanisms involved developers can easily find themselves on a situation where the application's cache manifest itself is cached. 
+
+With all this taken into consideration, a well considered and planned usage of the application cache is encouraged to any kind of single-page application.
+
+
+
+
+
 
 
 
 %% -------------------------------
 \section{Discussion}
 
-<spekulaatiota siitä, pitäisikö opettaa käyttäjille asiakas-palvelin-systeemin periaatteet>
+%<spekulaatiota siitä, pitäisikö opettaa käyttäjille asiakas-palvelin-systeemin periaatteet>
 
+% Offline-moodi ei selkeä "normikäyttäjälle", nimeämistä tulee harkita, viite discussioniin
+% discussioniin?
+
+
+KUVA-TODO: shotti Päikyn presence-job-jonosta
 
 -> väite: offline-hommat tulevat käytännössä pakollisiksi lähituleviasuudessa vakavastiotettavissa web-applikaatioissa
 

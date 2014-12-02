@@ -151,6 +151,8 @@ Based on the allowed state transitions different kind of buttons for altering th
 \label{sec:need-for-offline-support}
 % pitäisikö tässä esittää jotenkin selkeämmin, että nämä on Peten kautta validoituja ajatuksia?
 
+% jari: "kilpailutus päättyi tammikuun lopussa muistaakseni (20.1.), koekäytön piti alkaa maaliskuussa jne"
+
 Päikky's development was originally started with creating of a \textit{MVP version}\footnote{Minimum Viable Product} of the product, which was used in validating the business case of the idea. Therefore it had only a thin feature set, covering only the most essential features needed for the application. According to the client organization's CEO, the need for some level of of offline support was noticed on an early phase of the system's development. The marking of persons' status was also recognized to be the key activity already at the start of the development.
 
 First time the Kindergarten UI's total dependency on the backend realized to be problematic was during a roll-out of Päikky to a kindergarten where for the first time the network quality was way worse than the average. On that site the latency experienced on the Internet connection was often couple of seconds. This caused the changing the state of person on Päikky to be frustratingly slow, since the new state would update only after the server response was received. Although this didn't yet formed to be a obligatory need for the offline support, since it could have been solved with more lighter solution.

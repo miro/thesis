@@ -115,15 +115,15 @@ None of the interviewees could give a straight, right answer to this scenario an
 
 % Tarvittaiskohan tänne jotain mittausdataa? Mitä mittausdataa?
 
-% offline-tilan tietojen cacheamis+tiedon enkryptaus -ongelma, siitä jotain? ei siis päikkyspesifi, mutta yleisesti. antin "no sehän on mahdoton ongelma" (kryptausavaimen sijainti/toimitusongelma)
+% offline-tilan tietojen cacheamis+tiedon enkryptaus -ongelma, siitä jotain? ei siis päikkyspesifi, mutta yleisesti. antin "no sehän on mahdoton ongelma" (kryptausavaimen sijainti/toimitusongelma) -> avainsana "secure storing of keys client side"
 
 With the scope being kept on mind, the implementation of the offline support can be considered to be successful. 
 
-Lot of the functionality implemented on the offline mode development would have been beneficial to the system and the users even if the actual offline support wouldn't been on the Päikky's roadmap. For example effort towards the HTTP cache header optimization and the usage of application cache makes the Päikky's usage better for the user, resulting smaller data bandwidth usage and faster starting times.
+Lot of the functionality implemented on the offline mode development would have been beneficial to the system and the users even if the actual offline support wouldn't been on the Päikky's road map. For example effort towards the HTTP cache header optimization and the usage of application cache makes the Päikky's usage better for the user, resulting smaller data bandwidth usage and faster starting times.
 
 The missing merge functionality on the backend is a downside, but that was a known compromise done in order to save available development resources during the creation of the offline support. The lack of this feature is covered with the instructions given to the users by the client organization. The nature of the general use case of the application also makes the nonexistence of this feature less meaningful, since most of the time care group's children are handled on a dedicated device. This makes possibility of conflicted data happening relatively small.
 
-The outsourcing of some responsibilities to the user – such as the possible merge conflict solving – is unfortunate when looking from both the user experience point of view and from the technical perspective. But since this was a known decision in order to save resources and simplify development, evaluating it further is beneficial regarding this thesis.
+The outsourcing of some responsibilities to the user – such as the possible merge conflict solving – can be seen as a kind of half-baked solution. It is also unfortunate when looking from both the user experience point of view and from the technical perspective. However this was a known decision in order to save resources and simplify development, evaluating it further is beneficial regarding this thesis.
 
 On this area of operation the caching of the data on the browser is not problematic, but this might not be the same for every case. No encryption would be possible for that data, since both the key for decrypting and the actual data would need to be delivered and stored on the same place. This would make efficient encrypting impossible. For strictly confidential data the approach used in Päikky with the API response caching wouldn't therefore be useful.  <hox, tarvitsisiko tämä viitettä?>
 
