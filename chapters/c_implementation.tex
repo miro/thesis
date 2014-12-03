@@ -63,7 +63,7 @@ When the application enters the Offline mode all the features except the critica
     \item editing existing \textit{presence markings} or upcoming \textit{presence plans}.
 \end{enumerate}
 
-These features were left out from the Offline support based on feature importance evaluation done by the client organization [?todo-hox petehaastis?]. Since under available budget some features had to excluded from the offline mode, the ones listed above were selected due to the nature of their basic use case.
+These features were left out from the Offline support based on feature importance evaluation done by the client organization. Since under available budget some features had to excluded from the offline mode, the ones listed above were selected due to the nature of their basic use case.
 
 None of the listed activities are essential for the Päikky's key feature, the real time tracking of kindergarten's personnel attendance. If there is no Internet connection available at the time, each one of these activities can be postponed without sacrificing the integrity of the presence data on the system until the Internet connection is available again.
 
@@ -77,7 +77,7 @@ None of the listed activities are essential for the Päikky's key feature, the r
 % googlewavepaprusta jotain dadaaa tänne?
 The nature of the Päikky usage by the nurses allowed the development team to make some simplifications to the implementation of the offline mode. These simplifications included the way how conflicts between concurrent changes are solved. To put it bluntly, they aren't solved in any way.
 
-To understand why this solution was feasible, one has to understand the environment and practices about how Päikky is operated. The usual scenario on the kindergartens where Päikky is used is that each kindergarten group has only one, dedicated device. With minor exceptions all of the presence markings for the care group's personnel are done via the group's dedicated device, which is also the only device for the group to access Päikky. This is also the way how usage of Päikky is instructed by the client organization to the kindergarten personnel. Editing person's presence status from different devices while on offline mode is especially discouraged. With these guidelines the probability for cases where two different devices have made concurrent changes to individual person becomes almost non-existent. [?todo-hox tähän Pete-haastiksesta vahvistus?]
+To understand why this solution was feasible, one has to understand the environment and practices about how Päikky is operated. The usual scenario on the kindergartens where Päikky is used is that each kindergarten group has only one, dedicated device. With minor exceptions all of the presence markings for the care group's personnel are done via the group's dedicated device, which is also the only device for the group to access Päikky. This is also the way how usage of Päikky is instructed by the client organization to the kindergarten personnel. Editing person's presence status from different devices while on offline mode is especially discouraged. With these guidelines the probability for cases where two different devices have made concurrent changes to individual person becomes almost non-existent. 
 
 These circumstances allowed the development team to streamline the data synchronization on the Päikky server. On agreement with the client organization, there is no functionality that tries to solve possible merge conflicts on the presence data. If there appears a situation where two devices have concurrently changed the attendance status of a single person - contrary on the instructions given to the users - both of the changes are saved to the database. Fixing the data to reflect the situation happened in the real world is left to the responsibility of the kindergarten personnel.
 
@@ -278,15 +278,25 @@ On the Kindergarten UI this is enabled by a component called the \textit{Job Que
 
 The concept of "promise" was first time introduced in 1976 by Friedman and Wise [Friedman and Wise]. It is used to describe an object which value is yet to be resolved, being a temporary placeholder and a \textit{promise} for the to-be value. In asynchronous languages such as JavaScript this is highly useful since for example when fetching data the developer can't trust that the results are available immediately after the request. Promise makes sure that altering the state or the progress of its internal request is not possible from outside. This makes it an ideal capsule to wrap the Ajax requests with. [deferred.promise] % todo-hox miten tässä viittaaminen tohon antiicciseen teokseen? entä onko tossa viimesessä lauseessa mitään järkeä? :--D
 
-%%%%%%
-<KUVA-TODO tänne joku hieno kaavio tosta promisejonosta? vai onkohan mitään lisäarvoa? tai sitten kuva jonoindikaattorista UI:ssa?>
-%%%%%%
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{assets/offline-ui.png}
+\end{center}
+\caption{Offline Mode being active on the Kindergarten UI}
+\label{fig:offline-ui}
+\end{figure}
+
 
 When user creates a new Presence Marking on the Kindergarten UI (e.g. logs child in to the kindergarten when he/she arrives), a new Promise is created which includes Ajax request to the backend. Request's payload is the new Presence Marking. That Promise is then added to the Job Queue. 
 
 While the Online mode is active, Job Queue constantly looks for the oldest job on the queue and tries to execute it. Executing it means activating the Ajax request inside the Promise. After the request is successfully sent to the backend and a response is received, the promise marks itself as \textit{solved} and that job is then removed from the queue. This process is repeated within a configured interval as long as the application is active on user's browser. If an ongoing request fails due to a network error, the application fall backs to the Offline mode, and the Job Queue execution halts until Internet connectivity is gained again. It is possible for the request also to fail due a e.g. mismatched parameters, which causes the job being removed from the queue.
 
-The state of the queue is persisted on the Local Storage to address the case if the user shuts down the application before the whole queue is sent to the server. Therefore every time the application starts the queue is initialized from the contents stored locally on the user's browser. However also this solution outsources some of the responsibility to the user: in order to have up-to-date information about the attendance status every nurse must ensure that the queue is empty when their shift ends.  % HOX onko näin oikeasti? HOX TODO pitäisikö viimeisen lauseen juttu siirtää evaluation -kappaleeseen?
+The state of the queue is persisted on the local storage to address the case if the user shuts down the application before the whole queue is sent to the server. Therefore every time the application starts the queue is initialized from the contents stored locally on the user's browser. However also this solution outsources some of the responsibility to the user: in order to have up-to-date information about the attendance status every nurse must ensure that the queue is empty when their shift ends.  % HOX onko näin oikeasti? HOX TODO pitäisikö viimeisen lauseen juttu siirtää evaluation -kappaleeseen?
+
+
+
+
+
 
 
 

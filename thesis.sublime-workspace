@@ -726,17 +726,28 @@
 	],
 	"file_history":
 	[
+		"/Users/mnie/projects/thesis/chapters/c_background.tex",
+		"/Users/mnie/projects/thesis/chapters/c_methods.tex",
+		"/Users/mnie/projects/thesis/chapters/c_case.tex",
+		"/Users/mnie/projects/thesis/chapters/c_evaluation.tex",
+		"/Users/mnie/projects/thesis/chapters/c_implementation.tex",
+		"/Users/mnie/projects/thesis/chapters/c_conclusions.tex",
+		"/Users/mnie/projects/thesis/compile.sh",
+		"/Users/mnie/projects/thesis/thesis-mnie.tex",
+		"/Users/mnie/projects/thesis/chapters/c_intro.tex",
 		"/Users/mnie/projects/thesis/general/c_pretext.tex",
+		"/Users/mnie/projects/thesis/chapters/c_related_research.fdb_latexmk",
+		"/Users/mnie/projects/thesis/material/interviews/paikky-ceo-interview-template.docx",
+		"/Users/mnie/projects/thesis/example-improving/s_post_release.tex",
+		"/Users/mnie/projects/thesis/chapters/c_lessonslearned.tex",
+		"/Users/mnie/projects/thesis/books.bib",
 		"/Users/mnie/projects/thesis/conclusions/c_conclusions.tex",
 		"/Users/mnie/projects/thesis/thesis-mnie.aux",
 		"/Users/mnie/projects/thesis/example-improving/s_pretest.tex",
-		"/Users/mnie/projects/thesis/thesis-mnie.tex",
-		"/Users/mnie/projects/thesis/compile.sh",
 		"/Users/mnie/projects/thesis/thesis-mnie.log",
 		"/Users/mnie/projects/thesis/related_research/c_related_research.tex",
 		"/Users/mnie/projects/thesis/methods/c_methods.tex",
 		"/Users/mnie/projects/thesis/introduction/c_intro.tex",
-		"/Users/mnie/projects/thesis/example-improving/s_post_release.tex",
 		"/Users/mnie/projects/thesis/assets/tutthesis.cls",
 		"/Users/mnie/projects/thesis/README.md",
 		"/Users/mnie/projects/thesis/thesis.sublime-project",
@@ -842,18 +853,7 @@
 		"/Users/mnie/projects/tana-smartsite/client/partials/gascalendar.html",
 		"/Users/mnie/projects/tana-smartsite/server/fabfile.py",
 		"/Users/mnie/projects/tana-smartsite/client/frontend-server.js",
-		"/Users/mnie/projects/tana-smartsite/package.json",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery/package.json",
-		"/Users/mnie/projects/tana-smartsite/client/jquery.ui.touch-punch.min.js",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery-ui/ui/effect-puff.js",
-		"/Users/mnie/projects/tana-smartsite/client/package.json",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery/test/data/with_fries_over_jsonp.php",
-		"/Users/mnie/projects/tana-smartsite/client/partials/components/setupForm.html",
-		"/Users/mnie/projects/tana-smartsite/server/config/db_config.heroku.js",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery-ui/ui/i18n/datepicker-be.js",
-		"/Users/mnie/projects/tana-smartsite/client/bower_components/jquery/test/data/dimensions/documentLarge.html",
-		"/Users/mnie/projects/tana-smartsite/client/constants/processCrusher.js",
-		"/Users/mnie/projects/tana-smartsite/server/index.js"
+		"/Users/mnie/projects/tana-smartsite/package.json"
 	],
 	"find":
 	{
@@ -888,6 +888,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"vahvistus",
+			"petehaastis",
+			"e.g.",
+			"subse",
+			"~subse",
+			"ajax",
+			"haasti",
+			"pete",
+			"petri",
 			"tekts",
 			"tekstiä",
 			"xxxkuu",
@@ -1006,16 +1015,7 @@
 			"gas ca",
 			"gas cal",
 			"gasca",
-			"h2",
-			"es.he",
-			"machinesList",
-			"method",
-			"gas",
-			"gascalen",
-			".map(",
-			"stylesDir",
-			"mountFolder",
-			"gascalendar"
+			"h2"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1051,16 +1051,11 @@
 			"sheets":
 			[
 			]
-		},
-		{
-			"sheets":
-			[
-			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -1075,18 +1070,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.378349367252,
 			1.0
 		],
 		"rows":
@@ -1103,7 +1091,7 @@
 	"project": "thesis.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1111,6 +1099,70 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"conclu",
+				"chapters/c_conclusions.tex"
+			],
+			[
+				"evalu",
+				"chapters/c_evaluation.tex"
+			],
+			[
+				"case",
+				"chapters/c_case.tex"
+			],
+			[
+				"meth",
+				"chapters/c_methods.tex"
+			],
+			[
+				"back",
+				"chapters/c_background.tex"
+			],
+			[
+				"metho",
+				"chapters/c_methods.tex"
+			],
+			[
+				"pretex",
+				"general/c_pretext.tex"
+			],
+			[
+				"intro",
+				"chapters/c_intro.tex"
+			],
+			[
+				"thes",
+				"thesis-mnie.tex"
+			],
+			[
+				"evalua",
+				"chapters/c_evaluation.tex"
+			],
+			[
+				"imple",
+				"chapters/c_implementation.tex"
+			],
+			[
+				"backg",
+				"chapters/c_background.tex"
+			],
+			[
+				"lesso",
+				"chapters/c_lessonslearned.tex"
+			],
+			[
+				"less",
+				"chapters/c_lessonslearned.tex"
+			],
+			[
+				"les",
+				"chapters/c_lessonslearned.tex"
+			],
+			[
+				"eva",
+				"chapters/c_evaluation.tex"
+			],
 			[
 				"conclus",
 				"conclusions/c_conclusions.tex"
@@ -1173,10 +1225,6 @@
 			],
 			[
 				"backend",
-				"server/backend-server.js"
-			],
-			[
-				"back",
 				"server/backend-server.js"
 			],
 			[
@@ -1562,66 +1610,6 @@
 			[
 				"config.ht",
 				"client/partials/config.html"
-			],
-			[
-				"colors",
-				"client/styles/_colors.scss"
-			],
-			[
-				"clientsma",
-				"client/constants/smartsiteConfigTemplate.js"
-			],
-			[
-				"smart",
-				"server/smartsiteConfigTemplate.js"
-			],
-			[
-				"clientsmar",
-				"client/constants/smartsiteConfigTemplate.js"
-			],
-			[
-				"mytan",
-				"server/mytana-db.js"
-			],
-			[
-				"boot",
-				"client/css/bootstrap-modal.css"
-			],
-			[
-				"clientsm",
-				"client/constants/smartsiteConfigTemplate.js"
-			],
-			[
-				"templa",
-				"server/smartsiteConfigTemplate.js"
-			],
-			[
-				"clientsmart",
-				"client/constants/smartsiteConfigTemplate.js"
-			],
-			[
-				"smarts",
-				"server/smartsiteConfigTemplate.js"
-			],
-			[
-				"setuplist",
-				"client/partials/components/setuplist.html"
-			],
-			[
-				"setupcon",
-				"client/styles/views/_setupconfig.scss"
-			],
-			[
-				"landin",
-				"client/controllers/landing.js"
-			],
-			[
-				"setup.ht",
-				"client/partials/setup.html"
-			],
-			[
-				"setupfo",
-				"client/partials/components/setupForm.html"
 			]
 		],
 		"width": 0.0
@@ -1649,7 +1637,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 224.0,
 	"status_bar_visible": true,
 	"template_settings":
