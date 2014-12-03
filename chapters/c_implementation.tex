@@ -9,9 +9,9 @@ This chapter is concerned with the facts of what the offline mode consists of an
 % tämä case päikky -lukuun?
 
 % Mitä Offline-modella TAI SIIS SUPPORTILLA pyrittiin saavuttamaan?
-<META: Pitäisikö yleisemminkin erottaa offline TUKI ja kindergarten-UI:n offline MOODI? Tulisiko tämän tavaran olla jossain muualla kappaleessa kuin täällä?>
+% <META: Pitäisikö yleisemminkin erottaa offline TUKI ja kindergarten-UI:n offline MOODI? Tulisiko tämän tavaran olla jossain muualla kappaleessa kuin täällä?>
 
-The primary goal for the offline support on Päikky was to enable the most critical tasks for kindergarten nurses on all situations [?petehaastattelu?] on the Kindergarten UI (the mobile friendly version of the Päikky system). 
+The primary goal for the offline support on Päikky was to enable the most critical tasks for kindergarten nurses on all situations on the Kindergarten UI (the mobile friendly version of the Päikky system). 
 
 Päikky's main and the most important feature is the ability to track the attendance of the kindergarten's children on real time. In order to achieve that, nurses must be able to mark the children's coming and going without getting interrupted by the limitations of the application. In order to offer offline support on the Kindergarten UI, a new feature called \textit{Offline mode} was implemented. Offline mode aims in removing the Internet connection quality related limitations on the nurses' key activity. Nurses should be able to use the children logging feature on Päikky under any kind of Internet condition. If the Internet connection is nonexistent, the application should record user's actions and save them to the server once the Internet connection is achieved again.
 
@@ -35,9 +35,9 @@ The current mode is implicated to the user clearly: while in Offline mode, the K
 
 While in Online mode the Kindergarten UI works almost identically as it did before the offline support implementation. Major changes are that all the API requests done to the Päikky backend are cached to the Local Storage of the device running the Kindergarten UI. Also the sending of Presence marking changes to the backend are done by a dedicated component. Both of these are primarily refactoring the inner parts of the Kindergarten UI, while using the application the user should not experience any difference to the versions prior from these changes.
 
-When entering the Offline mode the method on how data is fetched changes. Instead of fetching the data user requests from the backend, the Kindergarten UI fall backs to the data cached on the \textit{Local Storage}. This won't guarantee the availability of the up-to-date information to the user, but at least showing the best effort version is possible. Due to the nature of the Päikky's data, in most of the cases this is acceptable (e.g. when looking for children's parents' phone numbers, and other similar data that is not altered on daily basis). Also some of the features on the Kindergarten UI are disabled when the Offline mode comes active. This functionality is described thoroughly on the <Using Local Storage as a Cache> -section [hox-todo].
+When entering the Offline mode the method on how data is fetched changes. Instead of fetching the data user requests from the backend, the Kindergarten UI fall backs to the data cached on the \textit{Local Storage}. This won't guarantee the availability of the up-to-date information to the user, but at least showing the best effort version is possible. Due to the nature of the Päikky's data, in most of the cases this is acceptable (e.g. when looking for children's parents' phone numbers, and other similar data that is not altered on daily basis). Also some of the features on the Kindergarten UI are disabled when the Offline mode comes active. This functionality is described thoroughly on the section~\ref{subsec:localstorage}.
 
-While the Offline mode is active, the component responsible for sending the Presence marking changes – the \textit{Job Queue} – acts also differently. If there is a recognized issue with the Internet connectivity (which triggers the Offline mode to be activated), Job Queue stops sending the Presence Markings to the backend but instead saves them to the Local Storage. User is notified on this by showing all the time the size of the queue on the top right corner of the Kindergarten UI. When the Internet connection is active again, the Job Queue starts to send the cached Presence Markings to the backend one at a time. This functionality is explained in depth on the <Job Queue> -section [hox-todo]. 
+While the Offline mode is active, the component responsible for sending the Presence marking changes – the \textit{Job Queue} – acts also differently. If there is a recognized issue with the Internet connectivity (which triggers the Offline mode to be activated), Job Queue stops sending the Presence Markings to the backend but instead saves them to the Local Storage. User is notified on this by showing all the time the size of the queue on the top right corner of the Kindergarten UI. When the Internet connection is active again, the Job Queue starts to send the cached Presence Markings to the backend one at a time. This functionality is explained in depth on the section~\ref{subsec:jobqueue}.
 
 
 
@@ -45,6 +45,7 @@ While the Offline mode is active, the component responsible for sending the Pres
 
 %% --------------
 \section{Limited Feature Set on the Offline mode}
+\label{sec:limitedfeatureset}
 % Offline-moden rajoitettu featuresetti - mitä ja miksi
 
 Similar to every other real life software project also in Päikky compromises have been made while balancing between the scope, the available resources and the quality of the end product. In order to create software with good quality under given budget, the scope had to be kept reasonable and some prioritization between features had to be made. This resulted the first version (the one studied by this thesis) to be technically quite simple and even naive on some aspects. Users experience this as a lack or disabling of some features on the offline mode.
@@ -81,12 +82,11 @@ To understand why this solution was feasible, one has to understand the environm
 
 These circumstances allowed the development team to streamline the data synchronization on the Päikky server. On agreement with the client organization, there is no functionality that tries to solve possible merge conflicts on the presence data. If there appears a situation where two devices have concurrently changed the attendance status of a single person - contrary on the instructions given to the users - both of the changes are saved to the database. Fixing the data to reflect the situation happened in the real world is left to the responsibility of the kindergarten personnel.
 
-The decision which passed on the responsibility of the data correctness to users also removed functionality needed on the Päikky backend. Because of this the work done in order to implement the required level of offline support to Päikky was almost entirely done to the Kindergarten UI. The backend required only minimal changes relating this. Read more about the backend changes on <Storing and Receiving Pres....> section. [todo hox mite nää viittaukset]
-% backend-offline-tuen olemattomuus myös tässä?
+The decision which passed on the responsibility of the data correctness to users also removed functionality needed on the Päikky backend. Because of this the work done in order to implement the required level of offline support to Päikky was almost entirely done to the Kindergarten UI. The backend required only minimal changes relating this. The backend changes that were required are explained in depth on section~\ref{subsec:backend-implementation}. 
 
 This approach removes the need of offline related functionality on the Päikky server almost completely. By this the development effort was cut significantly: the probability of creating data conflicts has been made minimal with the user instructions, and in the implausible case of a conflict to appear resolving it is left to the responsibility of the user, not by the code base. 
 
-From the server point of view, presence markings done on the offline mode are received and stored exactly same way as are the markings done real time on the online mode. Only thing that differs is the time gap between the presence marking's timestamp and the occasion when the presence marking is received on the server. This is described in detail on the section <Storing and Receiving Presence M...>[todo-hox]. % tämä ehkä muualle?
+From the server point of view, presence markings done on the offline mode are received and stored exactly same way as are the markings done real time on the online mode. Only thing that differs is the time gap between the presence marking's timestamp and the occasion when the presence marking is received on the server. 
 
 
 
@@ -102,7 +102,7 @@ The technical details of the implementation covers almost entirely only the Kind
 \subsection{HTTP Cache Headers}
 \label{subsec:cacheheaders}
 % maininta, että tämä olisi ollut hyvä tehdä myös ilman offline-tuen tekemistä
-% TODO:
+% IMPR:
 % - pitäisikö tänne vielä erotella API-pyynnöt omiksi jutuikseen? Nehän tulee tosin Tomcatilta, käpisteleekö Apache sinne headereita ollenkaan? 
 % -> API-pyynnön response headerit:
 % Access-Control-Allow-Origin:*
@@ -122,31 +122,30 @@ Starting point for the offline support implementation was to take as much advant
 Previously there were issues reported by the users after production environment updates that the new features announced weren't visible on their devices. This was the result of poor and some part nonexistent cache header usage. The cache headers prior the change instructed the browser to save the \textit{index.html} document – the starting point of the Kindergarten UI web application – and all the JavaScript files for 24 hours on the file system of the device. If those files were requested within that 24 hours, the cached versions were used. This created a huge lag on the rollout of the latest version to the end users' devices, which caused work for the development team since both the old and the new version of the frontend client had to be supported on the backend.
 % HOX tsekkaa tästä kappaleesta toi vanhan cachetusajan pituus, emmä muista, tuo 24h on vejetty stetsonista :----D 
 
-The "release lag" was addressed by altering the HTTP 1.1 headers related to caching, which are returned by the Päikky backend's Apache web server to the browser. The first solution was to disable cache entirely, forcing the browser to fetch the data again each time from the backend while browsing. This was achieved via the following headers:
+The "release lag" was addressed by altering the HTTP 1.1 headers related to caching, which are returned by the Päikky backend's Apache web server to the browser. The first solution was to disable cache entirely, forcing the browser to fetch the data again each time from the backend while browsing. This was achieved via headers described on the listing~\ref{lst:cacheheader-1}.
+
 % päikky main.js -nykyrequsta:
-% [TODO-HOX koodityylit, ja joku caption tälle, miten?]
-\begin{lstlisting}
+\begin{lstlisting}[caption={Päikky HTTP Cache Headers},label={lst:cacheheader-1}]
     Cache-Control:max-age=0, no-cache, no-store, must-revalidate
     Pragma:no-cache
     Date:Mon, 24 Nov 2014 08:36:04 GMT
     Expires:Wed, 11 Jan 1984 05:00:00 GMT
 \end{lstlisting}
-%\lstinputlisting[caption=Päikky HTTP Cache Headers] [hox-todo, nämä aiheutti jonkun latex-oksennuksen, tarkista myöhemmin että how do i shoot web, sama alemmassa koodilistauksessa]
-\noindent The goal with these headers is that the browser saves intentionally none of the content it receives. Achieving this is done by several mechanisms to cover the most of the browsers in use. From the HTTP 1.1 protocol view of point some of the instructions overlap each other (e.g. Pragma:no-cache and Cache-Control:no-cache) while some are there to address the HTTP 1.0 protocol (using Expire-date from the past). [Fielding, et al]
+
+\noindent The goal with these headers is that the browser saves intentionally none of the content it receives. Achieving this is done by several mechanisms to cover the most of the browsers in use. From the HTTP 1.1 protocol view of point some of the instructions overlap each other (e.g. Pragma:no-cache and Cache-Control:no-cache) while some are there to address the HTTP 1.0 protocol (using Expire-date from the past). \cite{fielding_et_al_hypertext_????}
 
 Using these headers solved the release lag problem and streamlined the production deploy process, but otherwise did little to actually help the development team to get closer to the offline support on the system. Actually these changes made the Kindergarten UI to be more reliable on Internet connection, since browsers were instructed not to save any data fetched from the Päikky backend. This also increased the average loads of the backend.
 
-To take advantage of the HTTP Cache Headers from the offline support perspective, different cache rules were made for the most bandwidth-greedy assets: the images. On the Apache web server following headers were set to be sent on response to each request that were made for images, no matter if they were graphical assets to the web application (icons etc) or profile pictures of children and nurses:
+To take advantage of the HTTP Cache Headers from the offline support perspective, different cache rules were made for the most bandwidth-greedy assets: the images. On the backend following headers were set to be sent on response to each request that were made for images, no matter if they were graphical assets to the web application (icons etc) or profile pictures of children and nurses:
 
 % päikky kuva-nykyrequsta:
 % (86400s == 24h)
-\begin{lstlisting}
+\begin{lstlisting}[caption=Päikky HTTP Cache Headers for images]
     Cache-Control:max-age=86400
     Content-Type:image/jpeg
     Date:Mon, 24 Nov 2014 12:41:01 GMT
     Expires:Tue, 25 Nov 2014 12:41:01 GMT
 \end{lstlisting}
-%\lstinputlisting[caption=Päikky HTTP Cache Headers for images]
 \noindent These headers allows the browser to cache the image for 24 hours. For person profile pictures there won't be any lag on updates when the image changes. Every picture gets a generated unique file name on the upload, so from the browser's point of view they are totally new pictures instead of new version of the old picture. The cache validness duration can therefore be decided based only on how fast the update cycle on the graphical assets of the needs to be. If generating unique names for the graphical assets would be done on the production version build phase, this cache duration could be increased to e.g. one year and only side effect would be increased cache sizes on the clients' browsers.
 
 Addressing the HTTP cache header related problems were not directly coupled to the enabling of the offline mode, but fixing them would have benefit the Päikky system even if the offline support would not have been on the product's road map.
@@ -167,9 +166,9 @@ Addressing the HTTP cache header related problems were not directly coupled to t
 
 HTML 5 specification adds a new tool aiding the creation of offline supported web applications: the Application Cache. The specification was designed to allow creating of web applications that would work (after caching) without Internet connection, but it is also useful in decreasing load and start up times in a normal, Internet-aided usage. 
 
-Application cache is initialized by creating a Cache Manifest file for each HTML document. In Single-Page Applications, which Päikky also is, this is achieved easily since as the name implies there is only a single HTTP document for the whole web application that needs to be loaded [HTML5 spec].  Whereas HTTP headers regarding cache rules addresses the problem with generic information about the expiry date of the fetched resources, cache manifest states more elaborate instructions for situations where Internet connection is unavailable. [Qian et al.]
+Application cache is initialized by creating a Cache Manifest file for each HTML document. In Single-Page Applications, which Päikky also is, this is achieved easily since as the name implies there is only a single HTTP document for the whole web application that needs to be loaded \cite{_html_????}.  Whereas HTTP headers regarding cache rules addresses the problem with generic information about the expiry date of the fetched resources, cache manifest states more elaborate instructions for situations where Internet connection is unavailable. \cite{qian_web_2012}
 
-\begin{lstlisting}
+\begin{lstlisting}[caption={Snippet of Päikky's Cache Manifest},label={lst:manifest}]
     CACHE:
     js/configurations/local.js
     js/main-b13f3e6.js
@@ -181,16 +180,16 @@ Application cache is initialized by creating a Cache Manifest file for each HTML
     *
 \end{lstlisting} % Snippet from the Päikky Kindergarten UI's Application Cache Manifest
 
-On the listing <x> [todo-hox viittaus manifestiin] we can see a shortened version of the Cache Manifest of Päikky's \textit{index.html} and how it describes the nature of the resources to the browser. On the complete version of the Päikky's manifest each of the known resources for the application is listed under the "CACHE:" -notation, which means that these resources should be cached by the browser. After that everything else is whitelisted with the "*" wild card to be downloaded from the network. The whitelisting of the rest of the possible resources is important, since when working with the Cache Manifest browser tries to do exactly as stated on the manifest. This means that if that wild card network rule would be removed, the browser wouldn't be able to fetch the resources not listed on explicitly stated on the manifest. [Lawson and Sharp s. 212] % hox tuosta serverin lataustavasta ei ole mainintaa tuossa kirjassa (ainakaan en löytänyt vielä), vaan se on peräisin appcache-douchebag-artikkelista
+On the listing \ref{lst:manifest} a shortened version of the Cache Manifest of Päikky's \textit{index.html} can be seen. The manifest describes the nature of the applications resources regarding network status to the browser. On the complete version of the Päikky's manifest each of the known resources for the application is listed under the \textit{"CACHE:"} -notation, which means that these resources should be cached by the browser. After that everything else is whitelisted with the \textit{"*"} wild card to be downloaded from the network. The whitelisting of the rest of the possible resources is important, since when working with the Cache Manifest browser tries to do exactly as stated on the manifest. This means that if that wild card network rule would be removed, the browser wouldn't be able to fetch the resources not listed on explicitly stated on the manifest. \cite[Page 212]{lawson_introducing_2011}% hox tuosta serverin lataustavasta ei ole mainintaa tuossa kirjassa (ainakaan en löytänyt vielä), vaan se on peräisin appcache-douchebag-artikkelista
 
 % REDUNDANTTIA TAVARAA 
-%The Application Cache also differs from the HTTP caching by not defining expiration dates for individual resource, but instead all of the cached resources are re-downloaded every time when the manifest updates. If the expiration date set to the resource concurs before updating of the manifest file, the resource is re-downloaded. Also when using the % TODO-HOX pitääkö tämä varmasti paikkaansa?
+%The Application Cache also differs from the HTTP caching by not defining expiration dates for individual resource, but instead all of the cached resources are re-downloaded every time when the manifest updates. If the expiration date set to the resource concurs before updating of the manifest file, the resource is re-downloaded. Also when using the 
 
-When using the Cache Manifest it must be noted that even when the user is online, the files are served from the Application Cache. Developers must also notice that updating the resources listed on the Cache Manifest is not enough. Browser doesn't re-download them if the manifest itself is not updated (or if the cache expiry date set by the HTTP headers for individual resource doesn't expire) When visiting a site with a cache manifest again, the browser renders the first version of the site with resources stored on the Application Cache, and only after that connects to Internet for checking possible updates to the content. [Archibald, J]
+When using the Cache Manifest it must be noted that even when the user is online, the files are served from the Application Cache. Developers must also notice that updating the resources listed on the Cache Manifest is not enough. Browser doesn't re-download them if the manifest itself is not updated (or if the cache expiry date set by the HTTP headers for individual resource doesn't expire) When visiting a site with a cache manifest again, the browser renders the first version of the site with resources stored on the Application Cache, and only after that connects to Internet for checking possible updates to the content. \cite{archibald_application_2012}
 
 Due to the nature of the cache manifest (has to be updated on every web application update, has to handle each of the resources somehow) it is highly recommended that the creation of the manifest file is automated as a part of the build process of the web application. On Päikky's Kindergarten UI this is done with the \textit{grunt-manifest}-tool every time a new production version is created. For the development environments a different, static cache manifest is used, which tells the browser not to use the application cache at all.
 
-It is also possible to insert a fallback version for the resources on the Cache Manifest that are used if the network connection is unavailable. In practice the manifest can state alternate version for resources to be used, if there is no network connectivity. This can be useful in some browser heavy applications that use minimal amount of data from the Internet, e.g. applications like \textit{Google Spreadsheet} [Using the application cache]. However this was not seen useful on the implementation of Päikky's offline support and therefore was not used. % hox-todo numeroviitejuttu tohon google spreadsheettiin
+It is also possible to insert a fallback version for the resources on the Cache Manifest that are used if the network connection is unavailable. In practice the manifest can state alternate version for resources to be used, if there is no network connectivity. This can be useful in some browser heavy applications that use minimal amount of data from the Internet, e.g. applications like \textit{Google Spreadsheet}\footnote{http://spreadsheet.google.com/} \cite{_using_????}. However this was not seen useful on the implementation of Päikky's offline support and therefore was not used. 
 
 As was the case with the HTTP Cache Headers, the Cache Manifest would also have benefit Päikky even if the offline support wouldn't have been implemented to the system.
 
@@ -203,9 +202,10 @@ As was the case with the HTTP Cache Headers, the Cache Manifest would also have 
 
 %% ###
 \subsection{Monitoring Connection Quality}
+\label{subsec:connection-monitoring}
 Identifying connection issues is a key activity regarding the Offline mode. When a connection issue is noticed, the Kindergarten UI fall backs from the Online mode to the Offline mode. While on the Offline mode, the application must monitor the health of the connection to determine when it is safe to use the network connection again.
 
-On Päikky the connection quality is monitored via errors on \textit{Ajax requests} [ajaxError], triggered by the \textit{jQuery}-library. As described on the Backend-chapter, the Kindergarten UI communicates to the backend via REST API requests for different kind of resources. There is an application level error handler for cases when one of these requests should fail:
+On Päikky the connection quality is monitored via errors on \textit{Ajax requests} \cite{_.ajaxerror_????}, triggered by the \textit{jQuery}-library. As described on the Backend-chapter, the Kindergarten UI communicates to the backend via REST API requests for different kind of resources. There is an application level error handler for cases when one of these requests should fail:
 \begin{lstlisting}
     // Function for identifying network related Ajax errors
     var isOfflineTriggerError = function(thrownError) {
@@ -227,7 +227,7 @@ On Päikky the connection quality is monitored via errors on \textit{Ajax reques
 \noindent
 In practice Kindergarten UI triggers Offline mode on two different kind of errors: if there is a error coming from the JavaScript-level (usually meaning that no response for request was received within the configured time period) or if there was an error on the network level (connectivity was nonexistent). In these cases an \textit{offline-event} is triggered via the \textit{vent}, the event bus of the application.
 
-Modern browsers implements also the \textit{navigator.onLine}-property which indicates the network status as a boolean value. Despite the promising specification this can't be the only way of checking the network connectivity, since the behaviour is heavily dependent on the browser. For example in \textit{Chrome} and \textit{Safari} having only a connectivity to local area network will result the onLine-property being true. [window.navigator.onLine]
+Modern browsers implements also the \textit{navigator.onLine}-property which indicates the network status as a boolean value. Despite the promising specification this can't be the only way of checking the network connectivity, since the behaviour is heavily dependent on the browser. For example in \textit{Chrome} and \textit{Safari} having only a connectivity to local area network will result the onLine-property being true. \cite{_window.navigator.online_????}
 
 After the application has entered the Offline mode, it halts all the Ajax requests except a specified \textit{ping}-request to the backend which is used to determine the health of the connection. If the ping should fail, another ping request is scheduled. There is a maximum time interval configured on the application in which the response must be received. Only after a successful ping request within the allowed time range the pinging is stopped and the Online mode is activated again.
 
@@ -239,6 +239,7 @@ After the application has entered the Offline mode, it halts all the Ajax reques
 
 %% ###
 \subsection{Using Local Storage as a Cache}
+\label{subsec:localstorage}
 % Local storagen perusteet
 % REST-API-pyyntöjen cachettamisesta local storageen juttua
 % hox [Casario et al]
@@ -249,7 +250,7 @@ While being on the Online mode, every request made by Kindergarten UI to the bac
 
 After the Offline mode is activated the Kindergarten UI continues to make API requests based on user's actions. But instead of making them to the backend's API, the \textit{Backbone}-library – which is responsible for data fetching and synchronizing on the application – forwards the requests to the Local Storage API, where cached versions of the once fetched requests can be found. This allows the user to navigate within the application and see the latest version he/she has fetched from the backend. If the user navigates to a view not visited before, view without the actual content is rendered. 
 
-Due to the limited feature set of the Offline mode (as described on the section <x> [todo-hox viite tuonne yläkappaleeseen tähän]) there is no need for checking dirty cache entries [Laplante s. 138], since user can not alter the cached data while having no Internet connectivity. Only after the Online mode is activated the editing of the data is made possible, and then the contents of the cache is ignored. Exception to this are the \textit{Presence Markings}, whose are explained in more detail on the following section.
+Due to the limited feature set of the Offline mode (as described on the section~\ref{sec:limitedfeatureset}) there is no need for checking dirty cache entries \cite[Page 138]{laplante_dictionary_2000}, since user can not alter the cached data while having no Internet connectivity. Only after the Online mode is activated the editing of the data is made possible, and then the contents of the cache is ignored. Exception to this are the \textit{Presence Markings}, whose are explained in more detail on the following section.
 
 
 % miksi tämä tehdään local storagella eikä esm cache manifestilla? -> selitä(?
@@ -264,19 +265,20 @@ Due to the limited feature set of the Offline mode (as described on the section 
 
 %% ###
 \subsection{Job Queue: Promise-based Presence Marking queue}
+\label{subsec:jobqueue}
 % Kuuluiskohan tuo promise-konseptiosa related researchiin ennemmin?
 % hox presence markingien LUONTI vs. olemassaolevien muokkaus?
 
 % https://github.com/futurice/mukavait-paivahoito-kindergarten-ui/blob/development/src/js/JobQueue.js
 
-The key activity for nurses recognized before on this thesis is the altering of the kindergarten's personnel presence data. This activity must be available for user no matter what the Internet connection status is. Allowing this activity was also the primary goal for the offline support to have. With the resource limitations the development process had it was therefore apposite to create a dedicated mechanism for syncing specifically this data and disabling other data altering features while the Offline mode is active. % todo-hox oliko näin?:-D
+The key activity for nurses recognized before on this thesis is the altering of the kindergarten's personnel presence data. This activity must be available for user no matter what the Internet connection status is. Allowing this activity was also the primary goal for the offline support to have. With the resource limitations the development process had it was therefore apposite to create a dedicated mechanism for syncing specifically this data and disabling other data altering features while the Offline mode is active. % IMPR-hox oliko näin?:-D
 
 On the Kindergarten UI this is enabled by a component called the \textit{Job Queue.} Job Queue is an array of jQuery's \textit{Promise} objects. Each of the objects on the array represents single Presence Marking to be saved to the backend. Every time user creates a new Presence Marking it is added to the queue, no matter if there if an Internet connection problem is recognized or not.
 
 % HUOM .promise jquery specistä:
 % The deferred.promise() method allows an asynchronous function to prevent other code from interfering with the progress or status of its internal request. The Promise exposes only the Deferred methods needed to attach additional handlers or determine the state (then, done, fail, always, pipe, progress, and state), but not ones that change the state (resolve, reject, notify, resolveWith, rejectWith, and notifyWith).
 
-The concept of "promise" was first time introduced in 1976 by Friedman and Wise [Friedman and Wise]. It is used to describe an object which value is yet to be resolved, being a temporary placeholder and a \textit{promise} for the to-be value. In asynchronous languages such as JavaScript this is highly useful since for example when fetching data the developer can't trust that the results are available immediately after the request. Promise makes sure that altering the state or the progress of its internal request is not possible from outside. This makes it an ideal capsule to wrap the Ajax requests with. [deferred.promise] % todo-hox miten tässä viittaaminen tohon antiicciseen teokseen? entä onko tossa viimesessä lauseessa mitään järkeä? :--D
+The concept of "promise" was first time introduced in 1976 by Friedman and Wise \cite{friedman_impact_1976}. It is used to describe an object which value is yet to be resolved, being a temporary placeholder and a \textit{promise} for the to-be value. In asynchronous languages such as JavaScript this is highly useful since for example when fetching data the developer can't trust that the results are available immediately after the request. Promise makes sure that altering the state or the progress of its internal request is not possible from outside. This makes it an ideal capsule to wrap the AJAX requests with. \cite{_deferred.promise_????} % IMPR onko tossa viimesessä lauseessa mitään järkeä? :--D
 
 \begin{figure}[t]
 \begin{center}
@@ -291,7 +293,7 @@ When user creates a new Presence Marking on the Kindergarten UI (e.g. logs child
 
 While the Online mode is active, Job Queue constantly looks for the oldest job on the queue and tries to execute it. Executing it means activating the Ajax request inside the Promise. After the request is successfully sent to the backend and a response is received, the promise marks itself as \textit{solved} and that job is then removed from the queue. This process is repeated within a configured interval as long as the application is active on user's browser. If an ongoing request fails due to a network error, the application fall backs to the Offline mode, and the Job Queue execution halts until Internet connectivity is gained again. It is possible for the request also to fail due a e.g. mismatched parameters, which causes the job being removed from the queue.
 
-The state of the queue is persisted on the local storage to address the case if the user shuts down the application before the whole queue is sent to the server. Therefore every time the application starts the queue is initialized from the contents stored locally on the user's browser. However also this solution outsources some of the responsibility to the user: in order to have up-to-date information about the attendance status every nurse must ensure that the queue is empty when their shift ends.  % HOX onko näin oikeasti? HOX TODO pitäisikö viimeisen lauseen juttu siirtää evaluation -kappaleeseen?
+The state of the queue is persisted on the local storage to address the case if the user shuts down the application before the whole queue is sent to the server. Therefore every time the application starts the queue is initialized from the contents stored locally on the user's browser. However also this solution outsources some of the responsibility to the user: in order to have up-to-date information about the attendance status every nurse must ensure that the queue is empty when their shift ends.  % HOX onko näin oikeasti? HOX IMPR pitäisikö viimeisen lauseen juttu siirtää evaluation -kappaleeseen?
 
 
 
@@ -303,6 +305,7 @@ The state of the queue is persisted on the local storage to address the case if 
 
 %% ###
 \subsection{Storing and Receiving Presence Markings on the Backend}
+\label{subsec:backend-implementation}
 % "Storing and Receiving Presence Markings on the Backend"
 % - ainoa offlineen liittyvä muutos mikä toteutettiin bäkkäriin
 % - presenceille timestamp, milloin ne on tehty -> voi (ja on) eri kuin mitä vastaanottotimestamp on
@@ -315,13 +318,12 @@ Before the offline support Kindergarten UI did not send timestamps of the create
 
 To allow the postponed sending of the Presence Markings created in the past, the responsibility of creating the timestamps for the markings had to be moved from the backend to the Kindergarten UI. Since the client's clock can be set to anything, this created a need for a mechanism that could synchronize the clocks between the backend and the application.
 
-Since the precision required by the application area is closer to a minute than a second, the client-backend clock synchronization could be done with a quite simple and straightforward approach. The same ping functionality which is used to determine the network status (described in chapter x.x [todo hox viite]) has also the ability to measure the time spent from sending the request from the client to the receiving of the backend's response. When this interval is known, the offset of the clocks on the application and on the backend can be determined. The backend returns the timestamp when the ping request is received on the backend to the application. When the measured duration of the request is split into half, the application can determine what is the offset between its and the backend's clocks. This offset is saved to the local storage, and added to each presence markings timestamp. 
+Since the precision required by the application area is closer to a minute than a second, the client-backend clock synchronization could be done with a quite simple and straightforward approach. The same ping functionality which is used to determine the network status (described in section~\ref{subsec:connection-monitoring}) has also the ability to measure the time spent from sending the request from the client to the receiving of the backend's response. When this interval is known, the offset of the clocks on the application and on the backend can be determined. The backend returns the timestamp when the ping request is received on the backend to the application. When the measured duration of the request is split into half, the application can determine what is the offset between its and the backend's clocks. This offset is saved to the local storage, and added to each presence markings timestamp. 
 
 % hox tänne tarvittaessa saisi Kimmon tekemän kaavion https://github.com/futurice/mukavait-paivahoito-kindergarten-ui/blob/development/src/js/networkStatus.js
 
 Due to the asymmetrical nature of TCP protocol (on which HTTP packets are delivered), the exact time spent on receiving the response from server can't be measured. Due to handshakes and other required precautions TCP does, more time is spent on the sending and delivering of the request than what it takes the response to arrive from the backend to the application. This creates the basic problem why the clock synchronizing can never be exact with this method. Päikky is configured to allow synchronizing result only from pings done within a three second timeframe, and as stated above, this is easily within the required precision for this use case. <meta: pitäisikö tästä taruilla lisää, vai liekkö tarve? entä tarvitsisiko tänne jotain lähdettä? tännehän saa vertailua NTP:n ja UDP:n käyttöön jos haluaa>
 
-% TODO tänne selitystä kellosynkasta -> clientin kello voi olla mitä vaan, täytyy saada synkka selville että merkinnöistä saadaan järkeviä merkintöjä. 
 
 
 
@@ -335,7 +337,7 @@ Before the offline support the backend also validated the state transfer for the
 
 %Since there is always a restricted amount of legal presence state transfers, allowing the Kindergarten UI to set the timestamps for the Presence Markings required it to know about the allowed state transitions from a presence status into another. 
 
-In order to enable the Kindergarten UI to know the allowed possible state transfers and to determine the new Presence state. This resulted as a need for duplicating the Presence State Machine (described on the <chapter three> [todo hox viittaus]) from the backend to the Kindergarten UI. Duplicating it created some redundancy to the backend and Kindergarten UI codebases. Having the Presence state machine on both components of Päikky was inevitable, since as the keeper of the master data, removing the state validating from the backend would be shortsighted. Requests made to the API can be tampered with, and the actual payload has to be always validated by the backend. However having the same validation in two places creates a challenge for the developers: both have to be kept in sync in order for the system to operate properly. 
+In order to enable the Kindergarten UI to know the allowed possible state transfers and to determine the new Presence state. This resulted as a need for duplicating the Presence State Machine (described on the section~\ref{subsec:presensestate}) from the backend to the Kindergarten UI. Duplicating it created some redundancy to the backend and Kindergarten UI codebases. Having the Presence state machine on both components of Päikky was inevitable, since as the keeper of the master data, removing the state validating from the backend would be shortsighted. Requests made to the API can be tampered with, and the actual payload has to be always validated by the backend. However having the same validation in two places creates a challenge for the developers: both have to be kept in sync in order for the system to operate properly. 
 
 On the bright side the lag on the user interface with the Presence state transfer got minimized with the added functionality, since new state could be determined on the browser instantly without having to wait for the backend interaction's result.
 
