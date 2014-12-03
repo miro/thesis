@@ -1,6 +1,16 @@
+
 \chapter{Conclusions}
 % "Koko hässäkän kiteytys mahdollisimman ytimekkäästi."
 
+Requirement for offline supported functionality on single-page applications is not extraordinary today, and the need for it can be expected to grow in the future. Developers should keep that in mind when developing web applications and especially when designing software architecture of single-page applications.
 
+Offline support can be implemented to an application with different levels of extent. The support can also be implemented to an already existing application, and in case the architecture is well designed, this can be done without extraordinary effort. Providing offline support may not require major changes to the server side of the system, but can be applied primarily to the code ran on the browser environment.
 
-% Check conclusion.pdf Dropboxista
+Knowing the specifics of the domain area helps on identifying the essential key activities within the application. Supporting only these activities during a Internet connection blackout is usually sufficient and won't sacrifice the user experience disturbingly much. This allows restricting of the scope of offline support, resulting in a fewer resources required on the development effort.
+
+New features on the HTML standards – such as \textit{application cache} and \textit{local storage} – forms a great toolbox for implementing an offline support on a single-page application.
+
+When looking from the user experience point of view, the technical methods introduced and evaluated on this thesis can also be beneficial on the single-page application development in cases there is no need for enabling usage of the application during a total Internet connection blackout. Applying these methods properly will result in a faster initializing times and smaller bandwidth usage.
+
+On cases where the status of the Internet connection can't be fully abstracted from the user's comprehension (only partial offline support is implemented), the concepts shown on the user interface must be considered thoroughly. For an average user the \textit{client-server model} in which Internet is built on might not be distinct at all, and that can make motivating them to observe or care for the network status challenging. In scenarios like these instructing the users about the context of the web applications in general might be in place.
+
