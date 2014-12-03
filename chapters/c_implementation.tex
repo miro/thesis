@@ -284,14 +284,14 @@ The concept of "promise" was first time introduced in 1976 by Friedman and Wise 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{assets/offline-ui.png}
 \end{center}
-\caption{Offline Mode being active on the Kindergarten UI}
+\caption{Kindergarten UI's care group view, offline mode being active. The size of the presence marking queue is indicated at the top right corner of the user interface.}
 \label{fig:offline-ui}
 \end{figure}
 
 
-When user creates a new Presence Marking on the Kindergarten UI (e.g. logs child in to the kindergarten when he/she arrives), a new Promise is created which includes Ajax request to the backend. Request's payload is the new Presence Marking. That Promise is then added to the Job Queue. 
+When user creates a new Presence Marking on the Kindergarten UI (e.g. logs child in to the kindergarten when he/she arrives), a new Promise is created which includes Ajax request to the backend. Request's payload is the new Presence Marking. That Promise is then added to the job queue. On the figure~\ref{fig:offline-ui} can be seen a screenshot of the Kindergarten UI while the offline mode is active. On that figure the size of the job queue is indicated to be \textit{five}.
 
-While the Online mode is active, Job Queue constantly looks for the oldest job on the queue and tries to execute it. Executing it means activating the Ajax request inside the Promise. After the request is successfully sent to the backend and a response is received, the promise marks itself as \textit{solved} and that job is then removed from the queue. This process is repeated within a configured interval as long as the application is active on user's browser. If an ongoing request fails due to a network error, the application fall backs to the Offline mode, and the Job Queue execution halts until Internet connectivity is gained again. It is possible for the request also to fail due a e.g. mismatched parameters, which causes the job being removed from the queue.
+While the Online mode is active, job queue constantly looks for the oldest job on the queue and tries to execute it. Executing it means activating the Ajax request inside the Promise. After the request is successfully sent to the backend and a response is received, the promise marks itself as \textit{solved} and that job is then removed from the queue. This process is repeated within a configured interval as long as the application is active on user's browser. If an ongoing request fails due to a network error, the application fall backs to the Offline mode, and the job queue execution halts until Internet connectivity is gained again. It is possible for the request also to fail due a e.g. mismatched parameters, which causes the job being removed from the queue.
 
 The state of the queue is persisted on the local storage to address the case if the user shuts down the application before the whole queue is sent to the server. Therefore every time the application starts the queue is initialized from the contents stored locally on the user's browser. However also this solution outsources some of the responsibility to the user: in order to have up-to-date information about the attendance status every nurse must ensure that the queue is empty when their shift ends.  % HOX onko näin oikeasti? HOX IMPR pitäisikö viimeisen lauseen juttu siirtää evaluation -kappaleeseen?
 
