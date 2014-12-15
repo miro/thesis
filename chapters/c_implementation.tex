@@ -246,7 +246,7 @@ After the application has entered the Offline mode, it halts all the Ajax reques
 
 %% TODO VIITE TÄNNE LÖYTYY ZOTEROSTA
 
-The new HTML5 standard adds also another important tool for the Päikky's offline support to take benefit from: the \textit{Local Storage}. It is an origin specific storage which saves its contents to the user's file system and persists them between sessions. While being only a simple key-value -storage it is not the most sophisticated solution for client-side storage mechanisms there is available on the modern web development toolbox, but for simple use cases like the Kindergarten UI it's simplicity is a decisive advantage.
+The new HTML5 standard adds also another important tool for the Päikky's offline support to take benefit from: the \textit{Local Storage}. It is an origin specific storage which saves its contents to the user's file system and persists them between sessions. While being only a simple key-value -storage it is not the most sophisticated solution for client-side storage mechanisms there is available on the modern web development toolbox, but for simple use cases like the Kindergarten UI its simplicity is a decisive advantage.
 
 While being on the Online mode, every request made by Kindergarten UI to the backend's API is stored to the Local Storage. The request's URL is used as the key for the entry, and the response of request is saved as a value for that key. At the current version of the application there are no optimization mechanisms implemented with the Local Storage content. When Internet connection is available the saved responses are ignored. On each request the possibly already existing responses are overwritten.
 
