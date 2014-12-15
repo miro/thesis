@@ -132,7 +132,7 @@ The "release lag" was addressed by altering the HTTP 1.1 headers related to cach
     Expires:Wed, 11 Jan 1984 05:00:00 GMT
 \end{lstlisting}
 
-\noindent The goal with these headers is that the browser saves intentionally none of the content it receives. Achieving this is done by several mechanisms to cover the most of the browsers in use. From the HTTP 1.1 protocol view of point some of the instructions overlap each other (for example \verb{Pragma:no-cache} and \verb{Cache-Control:no-cache}) while some are there to address the HTTP 1.0 protocol (using Expire-date from the past). \cite{fielding_et_al_hypertext_????}
+\noindent The goal with these headers is that the browser saves intentionally none of the content it receives. Achieving this is done by several mechanisms to cover the most of the browsers in use. From the HTTP 1.1 protocol view of point some of the instructions overlap each other (for example \texttt{Pragma:no-cache} and \texttt{Cache-Control:no-cache}) while some are there to address the HTTP 1.0 protocol (using Expire-date from the past). \cite{fielding_et_al_hypertext_????}
 
 Using these headers solved the release lag problem and streamlined the production deploy process, but otherwise did little to actually help the development team to get closer to the offline support on the system. Actually these changes made the Kindergarten UI to be more reliable on Internet connection, since browsers were instructed not to save any data fetched from the Päikky backend. This also increased the average loads of the backend.
 
@@ -180,7 +180,7 @@ Application cache is initialized by creating a Cache Manifest file for each HTML
     *
 \end{lstlisting} % Snippet from the Päikky Kindergarten UI's Application Cache Manifest
 
-On the listing \ref{lst:manifest} a shortened version of the Cache Manifest of Päikky's \textit{index.html} can be seen. The manifest describes the nature of the applications resources regarding network status to the browser. On the complete version of the Päikky's manifest each of the known resources for the application is listed under the \textit{"CACHE:"} -notation, which means that these resources should be cached by the browser. After that everything else is whitelisted with the \textit{"*"} wild card to be downloaded from the network. The whitelisting of the rest of the possible resources is important, since when working with the Cache Manifest browser tries to do exactly as stated on the manifest. This means that if that wild card network rule would be removed, the browser would not be able to fetch the resources not listed on explicitly stated on the manifest. \cite[Page 212]{lawson_introducing_2011}% hox tuosta serverin lataustavasta ei ole mainintaa tuossa kirjassa (ainakaan en löytänyt vielä), vaan se on peräisin appcache-douchebag-artikkelista
+On the listing \ref{lst:manifest} a shortened version of the Cache Manifest of Päikky's \textit{index.html} can be seen. The manifest describes the nature of the applications resources regarding network status to the browser. On the complete version of the Päikky's manifest each of the known resources for the application is listed under the \texttt{``CACHE:''} -notation, which means that these resources should be cached by the browser. After that everything else is whitelisted with the \textit{``*''} wild card to be downloaded from the network. The whitelisting of the rest of the possible resources is important, since when working with the Cache Manifest browser tries to do exactly as stated on the manifest. This means that if that wild card network rule would be removed, the browser would not be able to fetch the resources not listed on explicitly stated on the manifest. \cite[Page 212]{lawson_introducing_2011}% hox tuosta serverin lataustavasta ei ole mainintaa tuossa kirjassa (ainakaan en löytänyt vielä), vaan se on peräisin appcache-douchebag-artikkelista
 
 % REDUNDANTTIA TAVARAA 
 %The Application Cache also differs from the HTTP caching by not defining expiration dates for individual resource, but instead all of the cached resources are re-downloaded every time when the manifest updates. If the expiration date set to the resource concurs before updating of the manifest file, the resource is re-downloaded. Also when using the 
@@ -205,8 +205,9 @@ As was the case with the HTTP Cache Headers, the Cache Manifest would also have 
 \label{subsec:connection-monitoring}
 Identifying connection issues is a key activity regarding the Offline mode. When a connection issue is noticed, the Kindergarten UI fall backs from the Online mode to the Offline mode. While on the Offline mode, the application must monitor the health of the connection to determine when it is safe to use the network connection again.
 
-On Päikky the connection quality is monitored via errors on \textit{Ajax requests} \cite{_.ajaxerror_????}, triggered by the \textit{jQuery}-library. As described on the Backend-chapter, the Kindergarten UI communicates to the backend via REST API requests for different kind of resources. There is an application level error handler for cases when one of these requests should fail:
-\begin{lstlisting}
+On Päikky the connection quality is monitored via errors on \textit{Ajax requests} \cite{_.ajaxerror_????}, triggered by the \textit{jQuery}-library. As described on the Backend-chapter, the Kindergarten UI communicates to the backend via REST API requests for different kind of resources. There is an application level error handler for cases when one of these requests should fail. Main part of this handler can be seen in Listing~\ref{lst:offlinetrigger}.
+
+\begin{lstlisting}[caption={Code Snippet which triggers Päikky's Offline Mode},label={lst:offlinetrigger}]
     // Function for identifying network related Ajax errors
     var isOfflineTriggerError = function(thrownError) {
         return _.contains([
@@ -224,7 +225,7 @@ On Päikky the connection quality is monitored via errors on \textit{Ajax reques
         }
     });
 \end{lstlisting}
-\noindent
+
 In practice Kindergarten UI triggers Offline mode on two different kind of errors: if there is a error coming from the JavaScript-level (usually meaning that no response for request was received within the configured time period) or if there was an error on the network level (connectivity was nonexistent). In these cases an \textit{offline-event} is triggered via the \textit{vent}, the event bus of the application.
 
 Modern browsers implements also the \textit{navigator.onLine}-property which indicates the network status as a boolean value. Despite the promising specification this can not be the only way of checking the network connectivity, since the behaviour is heavily dependent on the browser. For example in \textit{Chrome} and \textit{Safari} having only a connectivity to local area network will result the onLine-property being true. \cite{_window.navigator.online_????}
