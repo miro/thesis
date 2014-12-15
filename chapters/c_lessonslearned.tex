@@ -63,7 +63,7 @@ Use \textit{application cache} no matter if you are implementing offline support
 
 User experience of the application gets better when using the application cache. Proper usage of it results in form of shorter initializing times and faster loading of content when switching between the views on the application. Amount of data transfer required can also be reduced. 
 
-One shouldn't try to get advantage from the application cache without proper exploration of the technique. The nature of the application's resources (image assets, JavaScript files) must also be studied and the cache manifest has to be tailored to match the unique characteristics of each application. In order to having a efficient production roll-out processes creating a build step to the deploy process is also required, if one doesn't already exist for the application.
+One should not try to get advantage from the application cache without proper exploration of the technique. The nature of the application's resources (image assets, JavaScript files) must also be studied and the cache manifest has to be tailored to match the unique characteristics of each application. In order to having a efficient production roll-out processes creating a build step to the deploy process is also required, if one doesn't already exist for the application.
 
 The use of HTTP cache headers has also to be synced with the usage of cache manifest. Otherwise the cache invalidation on end users' browsers can become a major challenge, and without knowledge of the mechanisms involved developers can easily find themselves on a situation where the application's cache manifest itself is cached. 
 
