@@ -19,7 +19,12 @@
 
 \usepackage{nowidow}
 
-\usepackage{hyperref}
+\usepackage{hyperref} % hyperlinkki-viittaukset, linkit sisällysluettelosta kappaleisiin
+
+\usepackage[toc,page]{appendix} % liite-setit
+
+\usepackage{pdfpages} % PDF include
+
 
 
 % omia käskyjä voi lisätä tähän väliin, esim. \newcommand{\angs}{\textsl{\AA}}
@@ -82,8 +87,22 @@
 
 %% ---------------------------------------
 %% Appendix
-%% hox-todo: haastispohja tänne liitteeksi
-%\appendix
-%\renewcommand{\chaptername}{Liite}
+% \newpage
+
+\appendix
+\input{material/interview_template}
+
+% unworking pdf import
+% (see http://www.latex-community.org/forum/viewtopic.php?f=5&t=11837)
+% \chapter{Appendix: Interview Template}
+% \includepdf[pages={1,2}]{assets/interview_template.pdf}
+% \includepdf[pages={1,2},picturecommand*={%
+%      \put(600,800){%
+%          \parbox{\textwidth}{\section{Appendix}\label{app:appendix}}
+%      }}]{assets/interview_template.pdf}
+% \end{document}
+
+
+
 
 \end{document}
