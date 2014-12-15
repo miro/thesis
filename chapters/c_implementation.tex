@@ -2,7 +2,7 @@
 \chapter{Implementation}
 This chapter coverages what was done to the Päikky system in order to get it working also during the Internet connection shortages, and how that was done. 
 
-This chapter is concerned with the facts of what the offline mode consists of and how it was implemented. Reasoning for the decisions made are also explained. Analyzing the consequences of those decisions are done later on the evaluation chapter.
+This chapter is concerned with the facts of what the offline mode consists of and how it was implemented. Reasoning for the decisions made are also explained. Analyzing the consequences of those decisions are done later on Chapter~\ref{chap:evaluation}.
 
 %% --------------
 \section{The goal for the Offline support}
@@ -19,7 +19,7 @@ Secondary goal for the offline support were to allow as seamless usage as possib
 
 Other parts of Päikky – the \textit{Manager UI} and the \textit{Family UI} were left out of the offline support.
 
-The ultimate vision - yet to be reached - for the offline support is that it would abstract the Internet connection quality completely away from the user's consideration. Under any connection quality the user should be able to use Päikky normally without any interference. On the current version this is not yet achieved (nor it was scoped to be achieved). % saisko tähän kappaleeseen jonkin viitteen johonkin käytettävyys-diibadaapaan, johonkin käyttäjän "mielenmalleihin" tms eli siis että ultimate goali olisi, ettei käyttäjän tarvitsisi huolehtia tuosta verkon laadusta ollenkaan, jopa niin että käyttäjä ei edes tietäisi ollaanko online- vai offline-moodissa?
+The ultimate vision – yet to be reached – for the offline support is that it would abstract the Internet connection quality completely away from the user's consideration. Under any connection quality the user should be able to use Päikky normally without any interference. On the current version this is not yet achieved (nor it was scoped to be achieved). % saisko tähän kappaleeseen jonkin viitteen johonkin käytettävyys-diibadaapaan, johonkin käyttäjän "mielenmalleihin" tms eli siis että ultimate goali olisi, ettei käyttäjän tarvitsisi huolehtia tuosta verkon laadusta ollenkaan, jopa niin että käyttäjä ei edes tietäisi ollaanko online- vai offline-moodissa?
 
 
 
@@ -82,7 +82,7 @@ To understand why this solution was feasible, one has to understand the environm
 
 These circumstances allowed the development team to streamline the data synchronization on the Päikky server. On agreement with the client organization, there is no functionality that tries to solve possible merge conflicts on the presence data. If there appears a situation where two devices have concurrently changed the attendance status of a single person - contrary on the instructions given to the users - both of the changes are saved to the database. Fixing the data to reflect the situation happened in the real world is left to the responsibility of the kindergarten personnel.
 
-The decision which passed on the responsibility of the data correctness to users also removed functionality needed on the Päikky backend. Because of this the work done in order to implement the required level of offline support to Päikky was almost entirely done to the Kindergarten UI. The backend required only minimal changes relating this. The backend changes that were required are explained in depth on Section~\ref{subsec:backend-implementation}. 
+The decision which passed on the responsibility of the data correctness to users also removed functionality needed on the Päikky backend. Because of this the work done in order to implement the required level of offline support to Päikky was almost entirely done to the Kindergarten UI. The backend required only minimal changes relating this. The backend changes that were required are explained in depth on Subsection~\ref{subsec:backend-implementation}. 
 
 This approach removes the need of offline related functionality on the Päikky server almost completely. By this the development effort was cut significantly: the probability of creating data conflicts has been made minimal with the user instructions, and in the implausible case of a conflict to appear resolving it is left to the responsibility of the user, not by the code base. 
 
@@ -119,10 +119,10 @@ The technical details of the implementation covers almost entirely only the Kind
 
 Starting point for the offline support implementation was to take as much advantage as possible from the techniques already in use on the Päikky system's implementation. First task for the development team was to ensure that the cache related features of the HTTP protocol were utilized thoroughly.
 
-Previously there were issues reported by the users after production environment updates that the new features announced weren't visible on their devices. This was the result of poor and some part nonexistent cache header usage. The cache headers prior the change instructed the browser to save the \textit{index.html} document – the starting point of the Kindergarten UI web application – and all the JavaScript files for 24 hours on the file system of the device. If those files were requested within that 24 hours, the cached versions were used. This created a huge lag on the rollout of the latest version to the end users' devices, which caused work for the development team since both the old and the new version of the frontend client had to be supported on the backend.
+Previously there were issues reported by the users after production environment updates that the new features announced were not visible on their devices. This was the result of poor and some part nonexistent cache header usage. The cache headers prior the change instructed the browser to save the \textit{index.html} document – the starting point of the Kindergarten UI web application – and all the JavaScript files for 24 hours on the file system of the device. If those files were requested within that 24 hours, the cached versions were used. This created a huge lag on the rollout of the latest version to the end users' devices, which caused work for the development team since both the old and the new version of the frontend client had to be supported on the backend.
 % HOX tsekkaa tästä kappaleesta toi vanhan cachetusajan pituus, emmä muista, tuo 24h on vejetty stetsonista :----D 
 
-The "release lag" was addressed by altering the HTTP 1.1 headers related to caching, which are returned by the Päikky backend's Apache web server to the browser. The first solution was to disable cache entirely, forcing the browser to fetch the data again each time from the backend while browsing. This was achieved via headers described on the listing~\ref{lst:cacheheader-1}.
+The "release lag" was addressed by altering the HTTP 1.1 headers related to caching, which are returned by the Päikky backend's Apache web server to the browser. The first solution was to disable cache entirely, forcing the browser to fetch the data again each time from the backend while browsing. This was achieved via headers described in Listing~\ref{lst:cacheheader-1}.
 
 % päikky main.js -nykyrequsta:
 \begin{lstlisting}[caption={Päikky HTTP Cache Headers},label={lst:cacheheader-1}]
@@ -132,7 +132,7 @@ The "release lag" was addressed by altering the HTTP 1.1 headers related to cach
     Expires:Wed, 11 Jan 1984 05:00:00 GMT
 \end{lstlisting}
 
-\noindent The goal with these headers is that the browser saves intentionally none of the content it receives. Achieving this is done by several mechanisms to cover the most of the browsers in use. From the HTTP 1.1 protocol view of point some of the instructions overlap each other (for example \textit{Pragma:no-cache} and \textit{Cache-Control:no-cache}) while some are there to address the HTTP 1.0 protocol (using Expire-date from the past). \cite{fielding_et_al_hypertext_????}
+\noindent The goal with these headers is that the browser saves intentionally none of the content it receives. Achieving this is done by several mechanisms to cover the most of the browsers in use. From the HTTP 1.1 protocol view of point some of the instructions overlap each other (for example \verb{Pragma:no-cache} and \verb{Cache-Control:no-cache}) while some are there to address the HTTP 1.0 protocol (using Expire-date from the past). \cite{fielding_et_al_hypertext_????}
 
 Using these headers solved the release lag problem and streamlined the production deploy process, but otherwise did little to actually help the development team to get closer to the offline support on the system. Actually these changes made the Kindergarten UI to be more reliable on Internet connection, since browsers were instructed not to save any data fetched from the Päikky backend. This also increased the average loads of the backend.
 
@@ -291,7 +291,7 @@ The concept of "promise" was first time introduced in 1976 by Friedman and Wise 
 \end{figure}
 
 
-When user creates a new Presence Marking on the Kindergarten UI (for example logs child in to the kindergarten when he/she arrives), a new Promise is created which includes Ajax request to the backend. Request's payload is the new Presence Marking. That Promise is then added to the job queue. On the Figure~\ref{fig:offline-ui} can be seen a screenshot of the Kindergarten UI while the offline mode is active. On that figure the size of the job queue is indicated to be \textit{five}.
+When user creates a new Presence Marking on the Kindergarten UI (for example logs child in to the kindergarten when he/she arrives), a new Promise is created which includes Ajax request to the backend. Request's payload is the new Presence Marking. That Promise is then added to the job queue. In Figure~\ref{fig:offline-ui} can be seen a screenshot of the Kindergarten UI while the offline mode is active. On that figure the size of the job queue is indicated to be \textit{five}.
 
 While the Online mode is active, job queue constantly looks for the oldest job on the queue and tries to execute it. Executing it means activating the Ajax request inside the Promise. After the request is successfully sent to the backend and a response is received, the promise marks itself as \textit{solved} and that job is then removed from the queue. This process is repeated within a configured interval as long as the application is active on user's browser. If an ongoing request fails due to a network error, the application fall backs to the Offline mode, and the job queue execution halts until Internet connectivity is gained again. It is possible for the request also to fail due a mismatched parameters, which causes the job being removed from the queue.
 
@@ -320,7 +320,7 @@ Before the offline support Kindergarten UI did not send timestamps of the create
 
 To allow the postponed sending of the Presence Markings created in the past, the responsibility of creating the timestamps for the markings had to be moved from the backend to the Kindergarten UI. Since the client's clock can be set to anything, this created a need for a mechanism that could synchronize the clocks between the backend and the application.
 
-Since the precision required by the application area is closer to a minute than a second, the client-backend clock synchronization could be done with a quite simple and straightforward approach. The same ping functionality which is used to determine the network status (described in Section~\ref{subsec:connection-monitoring}) has also the ability to measure the time spent from sending the request from the client to the receiving of the backend's response. When this interval is known, the offset of the clocks on the application and on the backend can be determined. The backend returns the timestamp when the ping request is received on the backend to the application. When the measured duration of the request is split into half, the application can determine what is the offset between its and the backend's clocks. This offset is saved to the local storage, and added to each presence markings timestamp. 
+Since the precision required by the application area is closer to a minute than a second, the client-backend clock synchronization could be done with a quite simple and straightforward approach. The same ping functionality which is used to determine the network status has also the ability to measure the time spent from sending the request from the client to the receiving of the backend's response. When this interval is known, the offset of the clocks on the application and on the backend can be determined. The backend returns the timestamp when the ping request is received on the backend to the application. When the measured duration of the request is split into half, the application can determine what is the offset between its and the backend's clocks. This offset is saved to the local storage, and added to each presence markings timestamp. 
 
 % hox tänne tarvittaessa saisi Kimmon tekemän kaavion https://github.com/futurice/mukavait-paivahoito-kindergarten-ui/blob/development/src/js/networkStatus.js
 
@@ -339,9 +339,9 @@ Before the offline support the backend also validated the state transfer for the
 
 %Since there is always a restricted amount of legal presence state transfers, allowing the Kindergarten UI to set the timestamps for the Presence Markings required it to know about the allowed state transitions from a presence status into another. 
 
-In order to enable the Kindergarten UI to know the allowed possible state transfers and to determine the new Presence state. This resulted as a need for duplicating the Presence State Machine (described on the Section~\ref{subsec:presencestate}) from the backend to the Kindergarten UI. Duplicating it created some redundancy to the backend and Kindergarten UI codebases. Having the Presence state machine on both components of Päikky was inevitable, since as the keeper of the master data, removing the state validating from the backend would be shortsighted. Requests made to the API can be tampered with, and the actual payload has to be always validated by the backend. However having the same validation in two places creates a challenge for the developers: both have to be kept in sync in order for the system to operate properly. 
+In order to enable the Kindergarten UI to know the allowed possible state transfers and to determine the new Presence state. This resulted as a need for duplicating the Presence State Machine from the backend to the Kindergarten UI. Duplicating it created some redundancy to the backend and Kindergarten UI codebases. Having the Presence state machine on both components of Päikky was inevitable, since as the keeper of the master data, removing the state validating from the backend would be shortsighted. Requests made to the API can be tampered with, and the actual payload has to be always validated by the backend. However having the same validation in two places creates a challenge for the developers: both have to be kept in sync in order for the system to operate properly. 
 
-On the bright side the lag on the user interface with the Presence state transfer got minimized with the added functionality, since new state could be determined on the browser instantly without having to wait for the backend interaction's result.
+On the bright side, the lag on the user interface with the Presence state transfer got minimized with the added functionality, since new state could be determined on the browser instantly without having to wait for the backend interaction's result.
 
 
 

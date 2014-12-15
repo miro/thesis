@@ -18,9 +18,9 @@ Päikky consists of four parts:
 
 \begin{enumerate}
 	\item \textit{Kindergarten UI}, mobile-first single-page application used for logging children in/out to kindergarten, referenced as \textit{the application} later on,
-	\item \textit{Family UI}, single-page application used by parents when planning children daycare time
-	\item \textit{Manager UI}, single-page application used by kindergarten management 
-	\item \textit{backend}, Grails-powered server that implements REST API and other services used by the Päikky UI's.
+	\item \textit{Family UI}, single-page application used by parents when planning children daycare time,
+	\item \textit{Manager UI}, single-page application used by kindergarten management,
+	\item \textit{Backend}, Grails-powered server that implements REST API and other services used by the Päikky UI's.
 \end{enumerate}
 
 Under the hood \textit{Manager UI} and \textit{Family UI} are actually both on the same codebase, and from technical point of view they are a single web application. From user's standpoint they are although inseparable, since despite sharing the same architecture the layout and functionalities are completely different. Contrary to the \textit{Kindergarten UI} they are designed to be used primarily from desktop clients. 
@@ -67,7 +67,7 @@ As stated above, the attendance of nurses can also be tracked with the Kindergar
 From technical point of view looking the Kindergarten UI is a single-page web application (introduced on the Section~\ref{sec:spa}) created to be used primarily with mobile devices. The libraries the application consists of are: %
 
 \begin{enumerate}
-	\item \textit{Backbone}\footnote{\href{http://backbonejs.org/}{http://backbonejs.org/}}, \textit{Model-View-Template} –framework providing the – wait for it – backbone for the application,
+	\item \textit{Backbone}\footnote{\href{http://backbonejs.org/}{http://backbonejs.org/}}, \textit{Model-View-Template} –framework providing the skeleton for the application,
 	\item \textit{Marionette}\footnote{\href{http://marionettejs.com/}{http://marionettejs.com/}}, library of common design and implementation patterns for Backbone,
 	\item \textit{RequireJS}\footnote{\href{http://requirejs.org/}{http://requirejs.org/}}, module loader and dependency manager,
 	\item \textit{Underscore}\footnote{\href{http://underscorejs.org/}{http://underscorejs.org/}}, functional programming inspired library for utility functions,
@@ -124,9 +124,9 @@ Within presences sharing the same presence purpose, there is a set of rules of a
 \label{fig:statemachine}
 \end{figure}
 
-The Figure~\ref{fig:statemachine} describes a simplified version of Päikky's state machine. In this finite-state machine each state indicates two things: is there an active ongoing presence entity for the individual person which has "actual" as the presence purpose ("Inactive~/~Active" on the visualization), and if the current state means that the person is physically present at the kindergarten or not ("Present~/~Away").
+Figure~\ref{fig:statemachine} describes a simplified version of Päikky's state machine. In this finite-state machine each state indicates two things: is there an active ongoing presence entity for the individual person which has "actual" as the presence purpose ("Inactive~/~Active" on the visualization), and if the current state means that the person is physically present at the kindergarten or not ("Present~/~Away").
 
-Based on the allowed state transitions different kind of buttons for altering the presence state are shown on the person's profile UI. For the most straightforward example if the person is already present on the kindergarten, only a \textit{sign out} button is shown. Since signing in a person already present on the kindergarten is prohibited by the presence state machine, the button \textit{sign in} button is therefore also hidden from the UI. This can be seen on the Figure~\ref{fig:child-profile}. 
+Based on the allowed state transitions different kind of buttons for altering the presence state are shown on the person's profile UI. For the most straightforward example if the person is already present on the kindergarten, only a \textit{sign out} button is shown. Since signing in a person already present on the kindergarten is prohibited by the presence state machine, the button \textit{sign in} button is therefore also hidden from the UI. This can be seen on Figure~\ref{fig:child-profile}. 
 
 
 \begin{figure}[t]
