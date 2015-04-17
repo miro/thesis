@@ -1,10 +1,6 @@
 \chapter{Lessons Learned}
 
-This chapter introduces lessons learnt by the developers while implementing the offline support to Päikky. 
-
-The points presented in the \textit{design guidelines} section are factors that are recommendations for developing similar functionalities into other single-page applications.
-
-The discussion section contains speculation on points detected during the development and deployment of the offline support, but which were too vague for basing any recommendations on. 
+This chapter introduces lessons learnt by the developers while implementing the offline support to Päikky. The points presented in the \textit{design guidelines} section are factors that are recommendations for developing similar functionalities into other single-page applications. The discussion also contains speculation on points detected during the development and deployment of the offline support, but which were too vague for basing any recommendations on. 
 
 
 
@@ -23,11 +19,11 @@ This section introduces guidelines recommended by the development team for other
 \subsection{Recognize the Essential Feature Set for Offline Support}
 % Kaikkea ei välttämättä tarvitse tukea Offline-moodissa, resurssien säästämiseksi on mahdollista etsiä avainaktiviteetit ja mahdollistaa vain niiden käyttö
 
-When creating offline support to an application, optimal approach is naturally to support the whole user experience no matter if there is network connectivity or not. But the experiences got from the interviews of Päikky's users tell that splitting the features into primary and secondary categories and after that providing offline support only for the primary ones is a viable solution. This allows streamlining the development process and decreasing the amount of new code required a lot by having the possibility of simply disabling the secondary features when the Internet connection is not available.
+When creating offline support to an application, optimal approach is naturally to support the whole user experience no matter if there is network connectivity or not. But the experiences gotten from the interviews of Päikky users indicate that splitting the features into primary and secondary categories and after that providing offline support only for the primary ones is a viable solution. This allows streamlining the development process and decreasing the amount of new code required a lot by having the possibility of simply disabling the secondary features when the Internet connection is not available.
 
-It is important to identify the key activities of the use case in hand. They are different between systems operating on different kind of domains. These activities have in common the basic aspect of being non-postponable actions. In Päikky's case they are activities which include the time factor being a key part of the activity, like the marking of children and nurses to the application. If this is not done exactly when the arrive to or the depart from the kindergarten happens, extra work is required. 
+It is important to identify the key activities of the use case at hand. They are different between systems operating in different kind of domains. These activities share the basic aspect of being non-postponable actions. In Päikky's case they are activities which include the time factor being a key part of the activity, like the marking of children and nurses to the application. If this is not done exactly when the arrive to or the depart from the kindergarten happens, extra work is required. 
 
-The kindergarten nurses did not experience the limited feature set of offline mode on the Kindergarten UI to be problematic. The postponing of sending messages and editing the presence data later on was natural to them, since these were either way tasks that they would do on occasions when they have a moment of spare time from the actual work.
+The kindergarten nurses did not experience the limited feature set of offline mode in the Kindergarten UI to be problematic. Postponing sending messages and editing the presence data later on was natural to them, since these were either way tasks that they would do on occasions when they have a moment of spare time from the actual work.
 
 By recognizing the essential features for offline support a great user experience can be achieved without refactoring the whole codebase to comply with stoppages on the Internet connection. 
 
@@ -47,7 +43,7 @@ As web applications are used more often as the implementation method of ``seriou
 
 On the browser environment a great level of the preparedness can be achieved with simple solutions. For example in Päikky it was very advantageous that all the interaction towards the backend was implemented through a single module (on Kindergarten UI that module was Backbone's \textit{sync function}). Overriding it to use the local storage cache on the offline mode could be done in only single location on the code, in contrast to what it would have been if AJAX requests would have been made individually by different modules. 
 
-The most important part of a single-page application where this can be taken into account is the place where data synchronizing happens. It is essential that there \textbf{is} a centralized place where it happens. By this a drop-in creation of offline support is made much more feasible. This can be seen as a good practice on web applications overall, even when the possible offline support is left out of consideration. 
+The most important part of a single-page application where this can be taken into account is the section of the system where data synchronizing happens. It is essential that there \textbf{is} a centralized point where this happens. By this a drop-in creation of offline support is made much more feasible. This can be seen as a good practice on web applications overall, even when the possible offline support is left out of consideration. 
 
 
 
@@ -59,13 +55,13 @@ The most important part of a single-page application where this can be taken int
 
 % ### -> käytä appcachea yms vaikka ei olekaan tarkoituksena tehdä varsinaista offline-tukea(????) -> mutta tiedä mitä teet
 
-Use \textit{application cache} no matter if you are implementing offline support or not. At the same time know the limitations and pitfalls of it.
+Use \textit{application cache} regardless you are implementing offline support or not. At the same time know the limitations and pitfalls of it.
 
 User experience of the application gets better when using the application cache. Proper usage of it results in form of shorter initializing times and faster loading of content when switching between the views on the application. Amount of data transfer required can also be reduced. 
 
-One should not try to get advantage from the application cache without proper exploration of the technique. The nature of the application's resources (image assets, JavaScript files) must also be studied and the cache manifest has to be tailored to match the unique characteristics of each application. In order to having a efficient production roll-out processes creating a build step to the deploy process is also required, if one does not already exist for the application.
+One should not try to get advantage from the application cache without proper exploration of the technique. The nature of the application's resources (image assets, JavaScript files) must also be studied and the cache manifest has to be tailored to match the unique characteristics of each application. In order to create an efficient production roll-out processes creating a build step to the deploy process is also required, if one does not already exist for the application.
 
-The use of HTTP cache headers has also to be synced with the usage of cache manifest. Otherwise the cache invalidation on end users' browsers can become a major challenge, and without knowledge of the mechanisms involved developers can easily find themselves on a situation where the application's cache manifest itself is cached. 
+The use of HTTP cache headers has also to be synchronized with the usage of cache manifest. Otherwise the cache invalidation in end users' browsers can become a major challenge, and without knowledge of the mechanisms involved developers can easily find themselves on a situation where the application's cache manifest itself is cached. 
 
 With all this taken into consideration, a well considered and planned usage of the application cache is encouraged to any kind of single-page application.
 
@@ -86,15 +82,15 @@ With all this taken into consideration, a well considered and planned usage of t
 
 No direct guidelines regarding user experience design could be pinpointed from the development process researched on this thesis. However a need for re-thinking the concepts presented on the user interface of the Kindergarten UI regarding the offline support was recognized. The current version -- especially the concept of the \textit{job queue} -- can not be easily adapted intuitively. Instead instructions or trainings are needed.
 
-As described above, users' understanding on the concepts of offline mode seemed to be inadequate. They are aware that the application being on the offline mode is a result of  problems on the Internet connection, but they do not fully understand why it matters. The \textit{client-server model} is not apparent to them, nor is the fact (originating from the unawareness of that model) that the master data exists on a single, centralized point instead of their smartphones. Without acknowledging the fact that the smartphones are merely a terminals where from the data can be looked and modified from, shaping a thorough understanding on the need for offline mode is challenging.
+As described above, users' understanding on the concepts of offline mode seemed to be inadequate. They are aware that the application being on the offline mode is a result of  problems on the Internet connection, but they do not fully understand why it matters. The \textit{client-server model} is not apparent to them, nor is the fact (originating from the unawareness of that model) that the master data exists in a single, centralized point instead of their smartphones. Without acknowledging the fact that the smartphones are merely a terminals where from the data can be looked and modified from, shaping a thorough understanding on the need for offline mode is challenging.
 
-On a software development process where resources available are not substantial abstracting the Internet connection status completely away from the end user is a handful. This depends on the domain of operation and the requirements set for the application, but some level of awareness regarding connection status is usually required from the user. Nevertheless the ultimate goal for offline support would be removal of the network status from the user consideration, and maybe notice them about unsynchronized data only in the cases like exiting the application while unsaved changes exists.
+Abstracting the Internet connection status completely away from the end user is a handful. This depends on the domain of operation and the requirements set for the application, but some level of awareness regarding connection status is usually required from the user. Nevertheless the ultimate goal for offline support would be the removal of the network status from the user consideration, and maybe notice them about unsynchronized data only in the cases like exiting the application while unsaved changes exist.
 
-With that being kept in mind, it comes worth speculating on cases like Päikky where the status of the Internet connection is all the time implied to the user that \textbf{should the users be taught the basics of how web services work?} Knowing that they are based on the \textit{client-server model} and understanding that model would result in a better context for understanding the offline mode in general and give the motivation for working with the inconvenience it causes. The users would not need to know the technical specifics of the system's architecture, but teaching them only the fact that the data exists somewhere else than on their smartphones would probably make a difference on understanding the main reason for the offline mode.
+With that being kept in mind, it is worth speculating on cases like Päikky where the status of the Internet connection is all the time implied to the user that \textbf{should the users be taught the basics of how web services work?} Knowing that they are based on the \textit{client-server model} and understanding that model would result in a better context for understanding the offline mode in general and give the motivation for working with the inconvenience it causes. The users would not need to know the technical specifics of the system's architecture, but teaching them only the fact that the data exists somewhere else than on their smartphones would probably make a difference on understanding the main reason for the offline mode.
 
 General naming of the concepts regarding offline support must also be reconsidered in cases where the Internet connection status must be implied to the user. The words \textit{online} and \textit{offline} (exactly the same term is used on all localizations of Päikky's user interface) are obvious for software engineers, but for a kindergarten nurse the meaning of those words might not be so clear. Choosing of terminology coming not from foreign origin would make assimilation of the concepts easier.
 
-Further research on this topic could focus more on the human aspects of the development and give the technical point of view less significance.
+Therefore, and probably also more generally, further research on this topic could focus more on the human aspects of the development and give the technical point of view less significance.
 
 
 
