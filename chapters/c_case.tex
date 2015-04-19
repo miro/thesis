@@ -40,7 +40,7 @@ In this thesis we are focusing mainly on the \textit{Kindergarten UI}, which is 
 
 The backend is the web server of Päikky, which holds all the master data of the system. It serves HTML content and other resources (graphical assets, JavaScript files, Cascading Style Sheets) to the other modules of Päikky. The backend also implements a REST API which requests and alters the dat from the other modules of the system. The abilities the API offers differs between the type of the user's account, but in practice all of the data can be modified via it. Data is exchanged between the backend and the UI modules as JSON objects.
 
-Currently the backend is operated as a single virtual machine on the Amazon Web Services cloud. The data is stored on a single \textit{MySQL} database. The backend is \textif{multitenant}\footnote{Principle where single instance serves multiple tenants}: single instance serves multiple municipalities and kindergartens. 
+Currently the backend is operated as a single virtual machine on the Amazon Web Services cloud. The data is stored on a single \textit{MySQL} database. The backend is \textif{multitenant} (principle, where single application and database instance serves multiple tenants): single instance serves multiple municipalities and kindergartens \cite{bezemer_multi-tenant_2010}.
 
 
 %-REST API requista tänne jotain, että mitä hä? Hox linkissä tämä-implementation-research (vai tulisko tää tohon ylempään sectioniin?)
